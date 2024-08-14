@@ -21,9 +21,16 @@ export default function Navbar() {
                 Resume
             </Link>
             <Link 
+            className="transition-all ease-in-out duration-200 hover:bg-white hover:text-black p-2 px-5 rounded-full text-xs"
+            href="/projects">
+                Projects
+            </Link>
+            <Link 
             className="transition-all ease-in-out duration-200 hover:bg-gray-600 hover:text-black rounded-full p-2"
             href="https://github.com/itsmeprinceyt/portfolio_itsmeprince" target="_blank">
-                <Image src="/github-mark-white.png" 
+                <Image 
+                className="animate-pulse"
+                src="/github-mark-white.png" 
                 height={15}
                 width={15}
                 alt="github logo" />
