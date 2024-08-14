@@ -11,7 +11,7 @@ export default function Home() {
               </div>
               <div className="font-extralight ">Also Known as <span className="font-extrabold">ItsMe Prince</span></div>
             </div>
-            <button className="bg-black px-6 py-3 rounded-full shadow-2xl border-2 shadow-white/30 hover:bg-white hover:text-black transition-all animate-pulse on-hover-pulse">Download CV</button>
+            <button className="bg-black px-6 py-3 rounded-full shadow-2xl border-2 shadow-white/30 hover:bg-white hover:text-black transition-all animate-pulse on-hover-pulse hover:shadow-white/80">Download CV</button>
           </div>
       </div>
     </div>
