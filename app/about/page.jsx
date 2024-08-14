@@ -1,7 +1,8 @@
 import Link from "next/link";
-
+import Footer from "..//(components)/Footer.jsx";
 export default function Home() {
     return (
+        <>
         <div className="">
             <div className="flex justify-center items-center min-h-screen top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]  px-10 ">
                 <div className="text-white p-2 flex flex-col gap-10 items-start sm:justify-center sm:items-center">
@@ -89,5 +90,7 @@ export default function Home() {
                 </div>
             </div>
         </div>
+        <Footer/>
+        </>
     );
 }
