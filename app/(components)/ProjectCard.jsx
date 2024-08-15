@@ -3,13 +3,14 @@ import Link from "next/link.js";
 export default function ProjectCard({ ProjectName, ProjectDescription, Link1, Link2, Link3, Tags }) {
     return (
         <div>
-            <div className="bg-neutral-950  hover:shadow-white/30 p-4 rounded-md col-span-1 sm:col-span-2 border-2 shadow-2xl shadow-white/20 flex flex-col gap-3">
-                <div className="mb-4">
-                    <h2 className="text-3xl font-bold">{ProjectName}</h2>
-                    <p className="text-[13px] mt-4">{ProjectDescription}
+            <div className="bg-neutral-950 h-[450px] w-[300px] hover:shadow-white/50 p-4 rounded-2xl col-span-1 sm:col-span-2 border-2 shadow-2xl shadow-white/20 flex flex-col gap-2 justify-between">
+                <div >
+                    <h2 className="text-3xl font-bold bg-neutral-800 p-2 rounded-2xl h-[100px] flex justify-center items-center text-center">{ProjectName}</h2>
+                    <p className="text-[13px] mt-4 overflow-hidden overflow-ellipsis text-center">{ProjectDescription}
                     </p>
                 </div>
-                <div className="bg-neutral-800 rounded-full h-10  flex justify-around items-center gap-2 hover:bg-white hover:text-black">
+                <div className=" flex flex-col gap-2">
+                <div className="bg-neutral-800 rounded-full h-10  flex justify-around items-center hover:bg-white hover:text-black">
                 {Link1 && Link1.available && Link1.url && (
                     <Link href={Link1.url} target="_blank">
                         <svg
@@ -49,12 +50,13 @@ export default function ProjectCard({ ProjectName, ProjectDescription, Link1, Li
                     </Link>
                     )}
                 </div>
-                <div className="relative bg-neutral-800 p-2 rounded-2xl grid grid-cols-2 gap-2 justify-center items-center text-white">
+                <div className="bg-neutral-800 p-2 rounded-2xl grid grid-cols-2 gap-2 justify-center items-center text-white text-center">
                 {Tags.map((tag, index) => (
-                    <div key={index} className="bg-neutral-950 p-2 rounded-full px-3 text-xs overflow-hidden overflow-ellipsis text-center">
+                    <div key={index} className="bg-neutral-950 p-2 rounded-full px-3 text-xs overflow-hidden overflow-ellipsis ">
                         {tag}
                     </div>
                 ))}
+            </div>
             </div>
             </div>
         </div>
