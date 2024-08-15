@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Footer from "..//(components)/Footer.jsx";
+
 export default function Home() {
     return (
         <>
