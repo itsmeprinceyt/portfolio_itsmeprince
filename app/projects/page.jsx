@@ -64,6 +64,14 @@ export default function Projects() {
                                 Link3={{ available: true, url: "https://github.com/itsmeprinceyt/reflex-time" }}
                                 Tags={["NextJS","TailwindCSS"]}
                             />
+                            <ProjectCard
+                                ProjectName="Registration Form"
+                                ProjectDescription="A user registration form landing page built with Next.js. This project features a responsive registration form with validation using React Hook Form and Tailwind CSS."
+                                Link1={{ available: true, url: "https://registration-form-nextjs.vercel.app/" }}
+                                Link2={{ available: true, url: "https://www.youtube.com/watch?v=M21wITuvN_c" }}
+                                Link3={{ available: true, url: "https://github.com/itsmeprinceyt/registration_form_nextjs" }}
+                                Tags={["NextJS","TailwindCSS","React-Hook-Form"]}
+                            />
                         </div>
                     </div>
                 </div>
