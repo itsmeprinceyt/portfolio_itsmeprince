@@ -15,7 +15,7 @@ export default function Home() {
                         <div className="flex gap-3 sm:justify-center">
                             <Link
                                 className="transition-all ease-in-out border-2 p-2 w-[50px] h-[50px] rounded-full flex justify-center items-center shadow-2xl shadow-white/50 hover:shadow-white hover:animate-pulse"
-                                href="https://www.youtube.com/@itsmeprinceyt" target="_blank"><span class="[&>svg]:h-5 [&>svg]:w-5">
+                                href="https://www.youtube.com/@itsmeprinceyt" target="_blank"><span className="[&>svg]:h-5 [&>svg]:w-5">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
@@ -27,7 +27,7 @@ export default function Home() {
                             </Link>
                             <Link
                                 className="transition-all ease-in-out border-2 p-2 w-[50px] h-[50px] rounded-full flex justify-center items-center shadow-2xl shadow-white/50 hover:shadow-white hover:animate-pulse"
-                                href="https://www.linkedin.com/in/mohduvaish" target="_blank"><span class="[&>svg]:h-5 [&>svg]:w-5">
+                                href="https://www.linkedin.com/in/mohduvaish" target="_blank"><span className="[&>svg]:h-5 [&>svg]:w-5">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
@@ -39,7 +39,7 @@ export default function Home() {
                             </Link>
                             <Link
                                 className="transition-all ease-in-out border-2 p-2 w-[50px] h-[50px] rounded-full flex justify-center items-center shadow-2xl shadow-white/50 hover:shadow-white hover:animate-pulse"
-                                href="https://github.com/itsmeprinceyt" target="_blank"><span class="[&>svg]:h-5 [&>svg]:w-5">
+                                href="https://github.com/itsmeprinceyt" target="_blank"><span className="[&>svg]:h-5 [&>svg]:w-5">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
@@ -52,7 +52,7 @@ export default function Home() {
                             <Link
                                 className="transition-all ease-in-out border-2 p-2 w-[50px] h-[50px] rounded-full flex justify-center items-center shadow-2xl shadow-white/50 hover:shadow-white hover:animate-pulse"
                                 href="https://discord.gg/HgXNs4p5cx" target="_blank"
-                            ><span class="[&>svg]:h-5 [&>svg]:w-5">
+                            ><span className="[&>svg]:h-5 [&>svg]:w-5">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
@@ -64,7 +64,7 @@ export default function Home() {
                             </Link>
                             <Link
                                 className="transition-all ease-in-out border-2 p-2 w-[50px] h-[50px] rounded-full flex justify-center items-center shadow-2xl shadow-white/50 hover:shadow-white hover:animate-pulse"
-                                href="https://twitter.com/itsmeprinceyt" target="_blank"><span class="[&>svg]:h-5 [&>svg]:w-5">
+                                href="https://twitter.com/itsmeprinceyt" target="_blank"><span className="[&>svg]:h-5 [&>svg]:w-5">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
@@ -76,7 +76,7 @@ export default function Home() {
                             </Link>
                             <Link
                                 className="transition-all ease-in-out border-2 p-2 w-[50px] h-[50px] rounded-full flex justify-center items-center shadow-2xl shadow-white/50 hover:shadow-white hover:animate-pulse"
-                                href="https://www.instagram.com/itsmeprinceyt" target="_blank"><span class="[&>svg]:h-5 [&>svg]:w-5">
+                                href="https://www.instagram.com/itsmeprinceyt" target="_blank"><span className="[&>svg]:h-5 [&>svg]:w-5">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"

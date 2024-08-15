@@ -28,7 +28,7 @@ export default function Navbar() {
                 <Link
                     className="transition-all ease-in-out duration-200  hover:text-black hover:bg-white rounded-full p-2"
                     href="https://github.com/itsmeprinceyt/portfolio_itsmeprince" target="_blank">
-                    <span class="[&>svg]:h-5 [&>svg]:w-5">
+                    <span className="[&>svg]:h-5 [&>svg]:w-5">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="currentColor"
