@@ -13,7 +13,7 @@ export default function Resume() {
                             </div>
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">
                                 <h2 className=" text-lg font-bold">Software Skills</h2>
-                                <ul className="text-[12px] font-extralight list-disc list-inside mt-4">
+                                <ul className="text-[12px]  list-disc list-inside mt-4">
                                     <li>C Language</li>
                                     <li>C++</li>
                                     <li>Python</li>
@@ -26,7 +26,7 @@ export default function Resume() {
                             </div>
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">
                                 <h2 className=" text-lg font-bold">Designing Skills</h2>
-                                <ul className="text-[12px] font-extralight list-disc list-inside mt-4">
+                                <ul className="text-[12px]  list-disc list-inside mt-4">
                                     <li>HTML & CSS</li>
                                     <li>Bootstrap</li>
                                     <li>Tailwind CSS</li>
@@ -36,7 +36,7 @@ export default function Resume() {
                             </div>
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">
                                 <h2 className=" text-lg font-bold">Database & Extra Skills</h2>
-                                <ul className="text-[12px] font-extralight list-disc list-inside mt-4">
+                                <ul className="text-[12px]  list-disc list-inside mt-4">
                                     <li>MySQL</li>
                                     <li>MongoDB</li>
                                     <li>Postman</li>
@@ -46,7 +46,7 @@ export default function Resume() {
                             </div>
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">
                                 <h2 className=" text-lg font-bold">Personal Skills</h2>
-                                <ul className="text-[12px] font-extralight list-disc list-inside mt-4">
+                                <ul className="text-[12px]  list-disc list-inside mt-4">
                                     <li>Communication</li>
                                     <li>Adaptability</li>
                                     <li>Time Management</li>
@@ -57,14 +57,14 @@ export default function Resume() {
                             </div>
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">
                                 <h2 className=" text-lg font-bold">Languages</h2>
-                                <ul className="text-[12px] font-extralight list-disc list-inside mt-4">
+                                <ul className="text-[12px]  list-disc list-inside mt-4">
                                     <li>Hindi</li>
                                     <li>English</li>
                                 </ul>
                             </div>
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">
                                 <h2 className=" text-lg font-bold">Hobbies & Interests</h2>
-                                <ul className="text-[12px] font-extralight list-disc list-inside mt-4">
+                                <ul className="text-[12px]  list-disc list-inside mt-4">
                                     <li>Gaming & livestreaming</li>
                                     <li>Gardening</li>
                                     <li>Singing</li>
