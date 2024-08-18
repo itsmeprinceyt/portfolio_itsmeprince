@@ -49,5 +49,9 @@ If you'd like to contribute to this project, follow these steps:
 - Push to the branch (git push origin feature-branch).
 - Create a new Pull Request.
 
+## Explanation Video
+
+https://www.youtube.com/watch?v=LueUMebAVmQ
+
 ## Live Link
 [https://portfolio-itsmeprince.vercel.app/](https://portfolio-itsmeprince.vercel.app/)
