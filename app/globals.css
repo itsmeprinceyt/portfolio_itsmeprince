@@ -6,3 +6,8 @@
 .on-hover-pulse:hover{
     @apply animate-none
 }
+
+*{
+    scrollbar-width: thin;
+    scrollbar-color: white black;
+}
