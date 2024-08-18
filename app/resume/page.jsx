@@ -65,11 +65,8 @@ export default function Resume() {
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">
                                 <h2 className=" text-lg font-bold">Hobbies & Interests</h2>
                                 <ul className="text-[12px]  list-disc list-inside mt-4">
-                                    <li>Gaming & livestreaming</li>
                                     <li>Gardening</li>
-                                    <li>Singing</li>
                                     <li>Stargazing</li>
-                                    <li>Sky photography</li>
                                 </ul>
                             </div>
                         </div>
