@@ -10,4 +10,5 @@
 *{
     scrollbar-width: thin;
     scrollbar-color: white black;
+    cursor: url('/cursor.png'), auto;
 }
