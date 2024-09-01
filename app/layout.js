@@ -4,12 +4,13 @@ import Navbar from "./(components)/Navbar.jsx";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Mohd Uvaish | ItsMe Prince - Portfolio",
-  description: "My Personal Portfolio showcasing my skills and projects.",
+  title: "Mohd Uvaish - Portfolio | ItsMe Prince",
+  description: "Welcome to my personal portfolio! Explore my diverse skills ranging from programming and technical expertise to soft skills. Check out my meticulously crafted projects and get a glimpse of what I can offer.",
   icons: {
     icon: "/assets/Profile.jpg",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
