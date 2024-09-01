@@ -5,8 +5,11 @@ export default function Projects() {
     return (
         <div>
             <div className="">
-                <div className="flex justify-center items-center min-h-screen top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] px-10 pt-[100px] pb-[60px] sm:pt-[80px] sm:pb-[50px]">
-                    <div className="bg-neutral-950/30 rounded-md text-white w-max h-max p-3 grid grid-cols-1 gap-2 items-start sm:grid-cols-1 sm:justify-center sm:items-center">
+                <div className="flex flex-col justify-center items-center gap-10 min-h-screen top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] px-10 pt-[100px] pb-[60px] sm:pt-[80px] sm:pb-[50px]">
+                    
+                    {/* Main Projects */}
+                    <div className="bg-neutral-950/30 rounded-md text-white w-max h-max p-3 grid grid-cols-1 gap-5 items-start sm:grid-cols-1 sm:justify-center sm:items-center">
+                        <div className="text-4xl font-bold text-center">Main Projects</div>
                         <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
                             <ProjectCard
                                 ProjectName="Online Sales Admin Portal"
@@ -64,6 +67,13 @@ export default function Projects() {
                                 Link3={{ available: true, url: "https://github.com/itsmeprinceyt/reflex-time" }}
                                 Tags={["NextJS","TailwindCSS"]}
                             />
+                        </div>
+                    </div>
+
+                    {/* Mini Projects */}
+                    <div className="bg-neutral-950/30 rounded-md text-white w-max h-max p-3 grid grid-cols-1 gap-5 items-start sm:grid-cols-1 sm:justify-center sm:items-center">
+                        <div className="text-4xl font-bold text-center">Mini Projects</div>
+                        <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
                             <ProjectCard
                                 ProjectName="Registration Form"
                                 ProjectDescription="A user registration form landing page built with Next.js. This project features a responsive registration form with validation using React Hook Form and Tailwind CSS."
@@ -71,6 +81,22 @@ export default function Projects() {
                                 Link2={{ available: true, url: "https://www.youtube.com/watch?v=M21wITuvN_c" }}
                                 Link3={{ available: true, url: "https://github.com/itsmeprinceyt/registration_form_nextjs" }}
                                 Tags={["NextJS","TailwindCSS","React-Hook-Form"]}
+                            />
+                            <ProjectCard
+                                ProjectName="Product Landing Page"
+                                ProjectDescription="A modern, responsive product landing page built using Next.js and Tailwind CSS. This project highlights the key features, benefits, and call-to-action for a fictional product."
+                                Link1={{ available: true, url: "https://kreomouse-nextjs.vercel.app/" }}
+                                Link2={{ available: true, url: "https://www.youtube.com/watch?v=XBjNNUiJzOA" }}
+                                Link3={{ available: true, url: "https://github.com/itsmeprinceyt/kreomouse_nextjs" }}
+                                Tags={["NextJS","TailwindCSS"]}
+                            />
+                            <ProjectCard
+                                ProjectName="Food Shop Landing Page"
+                                ProjectDescription="A modern food shop website built with Next.js. This project showcases a variety of food items with categories, descriptions, and prices, all presented through a clean, responsive design powered by Tailwind CSS."
+                                Link1={{ available: true, url: "https://food-shop-nextjs.vercel.app/" }}
+                                Link2={{ available: true, url: "https://www.youtube.com/watch?v=Qbw3Jb0FTnU" }}
+                                Link3={{ available: true, url: "https://github.com/itsmeprinceyt/food_shop_nextjs" }}
+                                Tags={["NextJS","TailwindCSS"]}
                             />
                         </div>
                     </div>
