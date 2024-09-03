@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function ProjectCard({ ProjectName, ProjectDescription, Link1, Link2, Link3, Tags, imageURL }) {
     return (
         <div>
-            <div className="bg-neutral-950 h-[450px] w-[300px] hover:shadow-white/50 p-4 rounded-2xl col-span-1 sm:col-span-2 border-2 shadow-2xl shadow-white/20 flex flex-col gap-2 justify-between">
+            <div className="relative bg-neutral-950 h-[450px] w-[300px] p-4 rounded-2xl col-span-1 sm:col-span-2 border-1 border-white/20 shadow-2xl shadow-white/30 hover:shadow-white flex flex-col gap-2 justify-between hover:scale-105 transition-all ease-in-out">
                 <div >
                     <div className="relative font-bold bg-neutral-800 p-2 rounded-2xl h-[100px] flex justify-center items-center text-center overflow-hidden">
                         <h1 className="z-20 text-3xl">{ProjectName}</h1>

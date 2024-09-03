@@ -104,7 +104,7 @@ export default function Projects() {
                 <div className="flex flex-col justify-center items-center gap-10 min-h-screen top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] px-10 pt-[100px] pb-[60px] sm:pt-[80px] sm:pb-[50px]">
 
                     {/* Main Projects */}
-                    <div className="bg-neutral-950/30 rounded-md text-white w-max h-max p-3 grid grid-cols-1 gap-5 items-start sm:grid-cols-1 sm:justify-center sm:items-center">
+                    <div className=" rounded-md text-white w-max h-max p-3 grid grid-cols-1 gap-5 items-start sm:grid-cols-1 sm:justify-center sm:items-center">
                         <div className="text-4xl font-bold text-center">Main Projects</div>
                         <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
                             {MainProjects.map((project, index) => (
