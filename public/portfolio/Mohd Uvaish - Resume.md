@@ -1,6 +1,6 @@
 **Mohd Uvaish**  
 *Full Stack Developer*  
-Kanpur, Uttar Pradesh, India • \+917271928996  
+Kanpur, Uttar Pradesh, India  
 [mohammadbadshah92@gmail.com](mailto:mohammadbadshah92@gmail.com) • [LinkedIn](https://www.linkedin.com/in/mohduvaish/) • [Portfolio](https://portfolio-itsmeprince.vercel.app/)  
 ---
 
@@ -49,7 +49,7 @@ Projects
 **Statistics Mean Calculator •** [(Github)](https://github.com/itsmeprinceyt/StatisticsCalculator) • [(Live)](https://itsmeprinceyt.github.io/StatisticsCalculator/)
 
 * Built with **HTML**, **CSS**, and **Vanilla** **JavaScript**. Initially written in **C++** using **Linked Lists**.  
-* The online statistics mean calculator, efficiently calculates means for individual, discrete, and continuous data sets. It features a user-friendly interface designed for quick and precise calculations, initially being migrated from [**C++**](https://github.com/itsmeprinceyt/statistics\_calculator/blob/main/Statistic\_Calculator\_v4.cpp) to **JavaScript** for seamless integration into webpages.
+* The online statistics mean calculator, efficiently calculates means for individual, discrete, and continuous data sets. It features a user-friendly interface designed for quick and precise calculations, initially being migrated from [**C++**](https://github.com/itsmeprinceyt/statistics_calculator/blob/main/Statistic_Calculator_v4.cpp) to **JavaScript** for seamless integration into webpages.
 
 **ItsMe Prince Discord Bot •** [(Github)](https://github.com/itsmeprinceyt/itsmeprince-discord-bot-js) • [(Live)](https://discord.gg/HgXNs4p5cx)
 
@@ -102,11 +102,11 @@ Skills
 ---
 
 Mini-Projects  
-**Currency Exchange Web Application •** [(Github)](https://github.com/itsmeprinceyt/currency\_exchange) • [(Live)](https://currency-exchange-lemon-ten.vercel.app/)
+**Currency Exchange Web Application •** [(Github)](https://github.com/itsmeprinceyt/currency_exchange) • [(Live)](https://currency-exchange-lemon-ten.vercel.app/)
 
 * CurrencyExchange is a dynamic and user-friendly web application built with **Next.js** and **TailwindCSS** to provide real-time currency conversion and exchange rate information using **FreeCurrencyAPI**.
 
-**SOFI Guild Manager •** [(Github)](https://github.com/itsmeprinceyt/Sofi\_Guild\_Manager\_Private)
+**SOFI Guild Manager •** [(Github)](https://github.com/itsmeprinceyt/Sofi_Guild_Manager_Private)
 
 * The Sofi Guild Manager, developed using **Python**, streamlines guild management by tracking raid activities and earning rewards for members. It securely monitors withdrawals and elixir balances through encrypted data, ensuring protection and smooth operation within the guild environment.
 
@@ -115,11 +115,11 @@ Mini-Projects
 
 * Reflex Time built using **NextJS, TailwindCSS** is a fast-paced, interactive game where your goal is to hit the random numbers displayed on the screen within 60 seconds. Try to achieve the highest score possible by clicking on the correct numbers as quickly as you can\!
 
-**All Food Shop Website •** [(Github)](https://github.com/itsmeprinceyt/food\_shop\_nextjs) • [(Live)](https://food-shop-nextjs.vercel.app/)
+**All Food Shop Website •** [(Github)](https://github.com/itsmeprinceyt/food_shop_nextjs) • [(Live)](https://food-shop-nextjs.vercel.app/)
 
 * A modern food shop website built with **Next.js**. This project showcases a variety of food items with categories, descriptions, and prices, all presented through a clean, responsive design powered by **Tailwind CSS**.
 
-**Kreo Mouse Product Website •** [(Github)](https://github.com/itsmeprinceyt/kreomouse\_nextjs) • [(Live)](https://kreomouse-nextjs.vercel.app/)
+**Kreo Mouse Product Website •** [(Github)](https://github.com/itsmeprinceyt/kreomouse_nextjs) • [(Live)](https://kreomouse-nextjs.vercel.app/)
 
 * A modern, responsive product landing page built using **Next.js** and **Tailwind CSS**. This project highlights the key features, benefits, and call-to-action for a fictional product.
 
