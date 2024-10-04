@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CustomCursor from './(components)/CustomCursor';
 import Navbar from "./(components)/Navbar.jsx";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         <meta name="author" content="Mohd Uvaish" />
       </head>
       <body className={`${inter.className} relative`}>
+        <CustomCursor />
         <div className="relative">
           <Navbar />
           {children}

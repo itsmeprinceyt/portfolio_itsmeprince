@@ -16,3 +16,53 @@
 .border-1{
     border-width: 1px;
 }
+
+#cursorBlob {
+    width: 50px;
+    height: 50px;
+    background: white;
+    /*background: linear-gradient(120deg, #FF1744, #E040FB, #2979FF, #00E5FF, #76FF03);*/
+    background-size: 1600% 1600%;
+    position: absolute;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 1;
+    transition: 0.3s linear;
+    animation: blobRadius 3s ease infinite, blobBackground 20s ease infinite;
+}
+
+@keyframes blobRadius {
+
+    0%,
+    100% {
+        border-radius: 43% 77% 80% 40%/40% 40% 80% 80%;
+    }
+
+    20% {
+        border-radius: 47% 73% 61% 59%/47% 75% 45% 73%;
+    }
+
+    40% {
+        border-radius: 46% 74% 74% 46%/74% 58% 62% 46%;
+    }
+
+    60% {
+        border-radius: 47% 73% 61% 59%/40% 40% 80% 80%;
+    }
+
+    80% {
+        border-radius: 50% 70% 52% 68%/51% 61% 59% 69%;
+    }
+}
+
+@keyframes blobBackground {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
