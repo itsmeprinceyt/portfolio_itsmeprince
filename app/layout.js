@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import CustomCursor from './(components)/CustomCursor';
+import CustomCursor2 from './(components)/CustomCursor2';
+import CustomCursor3 from './(components)/CustomCursor3';
 import Navbar from "./(components)/Navbar.jsx";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +24,8 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} relative`}>
         <CustomCursor />
+        <CustomCursor2 />
+        <CustomCursor3 />
         <div className="relative">
           <Navbar />
           {children}

@@ -38,10 +38,10 @@ const CustomCursor = () => {
             id="cursorBlob"
             className={`fixed top-0 left-0 bg-black rounded-full pointer-events-none transition-transform duration-100 ease-linear ${hovering ? "scale-150" : ""}`}
             style={{
-                width: "5px",
-                height: "5px",
+                width: "10px",
+                height: "10px",
                 transform: `translate3d(${cursorPos.x}px, ${cursorPos.y}px, 0)`,
-                transition: "transform 0.1s ease-in-out",
+                transition: "transform 0.08s ease-in-out",
             }}
         />
     );
