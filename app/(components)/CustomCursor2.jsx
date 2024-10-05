@@ -36,7 +36,7 @@ const CustomCursor = () => {
     return (
         <div
             id="cursorBlob"
-            className={`fixed top-0 left-0 bg-black rounded-full pointer-events-none transition-transform duration-100 ease-linear ${hovering ? "scale-150" : ""}`}
+            className={`fixed top-4 left-4 bg-black rounded-full pointer-events-none transition-transform duration-100 ease-linear ${hovering ? "scale-150" : ""}`}
             style={{
                 width: "10px",
                 height: "10px",

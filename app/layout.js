@@ -23,9 +23,11 @@ export default function RootLayout({ children }) {
         <meta name="author" content="Mohd Uvaish" />
       </head>
       <body className={`${inter.className} relative`}>
-        <CustomCursor />
-        <CustomCursor2 />
-        <CustomCursor3 />
+        <div className="blob-wrapper">
+          <CustomCursor />
+          <CustomCursor2 />
+          <CustomCursor3 />
+        </div>
         <div className="relative">
           <Navbar />
           {children}

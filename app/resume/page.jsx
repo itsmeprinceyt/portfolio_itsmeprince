@@ -40,7 +40,7 @@ export default function Resume() {
                                     <li>MySQL</li>
                                     <li>MongoDB</li>
                                     <li>Postman</li>
-                                    <li>Git</li>
+                                    <li>Git & GitHub</li>
                                     <li>VS Code</li>
                                 </ul>
                             </div>

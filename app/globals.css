@@ -17,18 +17,28 @@
     border-width: 1px;
 }
 
+.blob-wrapper {
+    position: absolute; 
+    overflow-x: hidden;
+    top:0px;
+    bottom:0px;
+    right:0px;
+    left:0px;
+}
+
+
+
 #cursorBlob {
     width: 50px;
     height: 50px;
     background: white;
-    /*background: linear-gradient(120deg, #FF1744, #E040FB, #2979FF, #00E5FF, #76FF03);*/
     background-size: 1600% 1600%;
     position: absolute;
     mix-blend-mode: difference;
     pointer-events: none;
     z-index: 1;
     transition: 0.3s linear;
-    animation: blobRadius 3s ease infinite, blobBackground 20s ease infinite;
+    animation: blobRadius 3s ease infinite;
 }
 
 @keyframes blobRadius {
@@ -52,17 +62,5 @@
 
     80% {
         border-radius: 50% 70% 52% 68%/51% 61% 59% 69%;
-    }
-}
-
-@keyframes blobBackground {
-
-    0%,
-    100% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
     }
 }
