@@ -2,6 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import KofiButton from "@/app/(components)/KofiButton";
+
 export default function Home() {
   const resumeFiles = [
     { href: "/portfolio/Mohd Uvaish - Resume.docx", fileTypeName: "docx" },
@@ -23,14 +25,15 @@ export default function Home() {
   }
   return (
     <div className="">
+        <KofiButton />
       <div className="flex justify-center items-center min-h-screen top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]  px-10 ">
         {toggle && (
           <div className="absolute z-20 left-0 right-0 bg-black/80 min-h-screen rounded-xl flex justify-center items-center">
             <div className="relative bg-black border-1 border-white/20 text-white flex flex-col justify-center items-center p-10 gap-10 rounded-xl shadow-xl shadow-white/20">
               <button
-              onClick={toggleDownloadMenu}
-              className="absolute top-5 right-5 hover:scale-125 transition-all ease-in-out">
-                <Image src="/cross.png" width={10} height={20} alt="Close"/>
+                onClick={toggleDownloadMenu}
+                className="absolute top-5 right-5 hover:scale-125 transition-all ease-in-out">
+                <Image src="/cross.png" width={10} height={20} alt="Close" />
               </button>
               <div className="text-4xl font-bold">CV File Type</div>
               <div className="grid grid-cols-3 gap-5">
