@@ -70,7 +70,7 @@ export default function Projects() {
             ProjectName: "Pick And Win Time",
             ProjectDescription: "Pick and Win helps you choose giveaway winners easily. Just add participant names, shuffle them, and pick a winner at random. It's perfect for content creators running giveaways and makes selecting a fair winner quick and simple.",
             Link1: { available: true, url: "https://pickandwin-iota.vercel.app/" },
-            Link2: { available: false, url: "" },
+            Link2: { available: false, url: "https://www.youtube.com/watch?v=gBu9qU5doiw" },
             Link3: { available: true, url: "https://github.com/itsmeprinceyt/pickandwin" },
             Tags: ["NextJS", "TailwindCSS"],
             imageURL: "/project-images/PickAndWin.png"
