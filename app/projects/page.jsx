@@ -72,7 +72,7 @@ export default function Projects() {
             Link1: { available: true, url: "https://pickandwin-iota.vercel.app/" },
             Link2: { available: true, url: "https://www.youtube.com/watch?v=gBu9qU5doiw" },
             Link3: { available: true, url: "https://github.com/itsmeprinceyt/pickandwin" },
-            Tags: ["NextJS", "TailwindCSS"],
+            Tags: ["NextJS", "TypeScript", "TailwindCSS"],
             imageURL: "/project-images/PickAndWin.png"
         }
     ];
