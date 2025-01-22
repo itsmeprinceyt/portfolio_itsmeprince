@@ -76,8 +76,8 @@ export default function Projects() {
             imageURL: "/project-images/PickAndWin.png"
         },
         {
-            ProjectName: "PayPal and SoFi Wist Fee Calculator",
-            ProjectDescription: "PayPal and SoFi Wist Fee Calculator simplifies the process of calculating fees for transactions. It provides accurate estimates for both PayPal and SoFi fees, ensuring transparency and efficiency in financial calculations.",
+            ProjectName: "PayPal, SoFi, and Karuta Tickets Fee Calculator",
+            ProjectDescription: "The PayPal, SoFi, and Karuta Tickets Fee Calculator simplifies the process of calculating fees for transactions. It provides accurate estimates for PayPal, SoFi, and Karuta Tickets fees, ensuring transparency and efficiency in financial calculations.",
             Link1: { available: true, url: "https://paypal-and-sofi-wist-fee-calculator.vercel.app/" },
             Link2: { available: true, url: "https://youtu.be/TmGlgE4iUN4" },
             Link3: { available: true, url: "https://github.com/itsmeprinceyt/paypal_calculator_for_sofi" },
