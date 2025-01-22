@@ -18,7 +18,7 @@ export default function Resume() {
                                     <li>C++</li>
                                     <li>Python</li>
                                     <li>Django</li>
-                                    <li>JavaScript</li>
+                                    <li>JavaScript & Typescript</li>
                                     <li>React / Redux</li>
                                     <li>ExpressJS</li>
                                     <li>Next.js</li>
