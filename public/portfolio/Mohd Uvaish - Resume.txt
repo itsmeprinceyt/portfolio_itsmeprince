@@ -6,6 +6,14 @@ ________________
 
 
 Work Experience
+Apna Competitive Corner • Group-Project-Based-Internship        Raigad, Maharashtra, India
+        Nov-2024 - Dec-2024
+* Collaborated in a group project during an internship to develop a YouTube-like video platform with real-time features for inviting friends to watch videos together.
+* Designed the user interface and developed front-end components using modern frameworks like Next.js and Tailwind CSS.
+* Transitioned to handling the backend, ensuring seamless integration with the front end and smooth functionality.
+* Awarded a Certificate of Completion for completing the internship program.
+
+
 GrapplTech • Project-Based-Internship • (Link)        Bengaluru, Karnataka, India
         Sep-2024 - Oct-2024
 * Developed innovative web components, such as Hero Sections, using modern frameworks like Next.js and Tailwind CSS to create visually engaging and responsive user interfaces.
@@ -27,7 +35,7 @@ Bachelor in Computer Application (BCA)        2022-2025
 * Learned about Computer Applications & Programming.
 * Learned about Business & Financial Management.
 * Learned about business work ethics and communication.
-* Awarded a certificate & a medal for good performance in academics. (Only give to 5)
+* Awarded a certificate & a medal for good performance in academics. (Only given to 5)
 
 
 ________________
@@ -37,6 +45,14 @@ Projects
 Online Sales Administration Portal • (Github)
 * Built using NodeJS, ExpressJS, EJS, and MongoDB.
 * The online sales admin portal efficiently collects and stores customer purchase information. Admins can view and edit purchase details, including date, cost, payment status, purchase status, and items purchased. This system ensures seamless sales data management and easy updates.
+
+
+
+
+
+
+PayPal, Sofi, Karuta and Mazoku Fee Calculator• (Github) • (Live)
+* The PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone Fee Calculator simplify the process of calculating fees for transactions across multiple platforms. It provides accurate estimates for PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone fees, ensuring transparency and efficiency in financial calculations.
 
 
 E-Drive • (Github) • (Live)
@@ -51,10 +67,10 @@ Statistics Mean Calculator • (Github) • (Live)
 
 
 
-
-
 ItsMe Prince Discord Bot • (Github) • (Live)
 * The Discord bot, built with Node.js and discord.js library, enables seamless interaction within the Discord application. Users can execute commands to perform simple mathematical calculations, making the workspace more productive and stress-free.
+
+
 
 
 ________________
@@ -65,7 +81,7 @@ Programming Languages
 * C Language
 * C++
 * Python
-* Javascript
+* Javascript & Typescript
 
 
 Front-End Development 
@@ -93,6 +109,7 @@ Problem-Solving Skills
 
 
 Technical-Skills
+* OOMD (Object Oriented Modeling and Design)
 * Adobe Photoshop & Lightroom - Photo Editing
 * Adobe Premiere Pro & After Effects - Video Editing
 * Postman - API Testing
@@ -106,6 +123,8 @@ Currency Exchange Web Application • (Github) • (Live)
 * CurrencyExchange is a dynamic and user-friendly web application built with Next.js and TailwindCSS to provide real-time currency conversion and exchange rate information using FreeCurrencyAPI.
 
 
+
+
 SOFI Guild Manager • (Github)
 * The Sofi Guild Manager, developed using Python, streamlines guild management by tracking raid activities and earning rewards for members. It securely monitors withdrawals and elixir balances through encrypted data, ensuring protection and smooth operation within the guild environment.
 
@@ -114,14 +133,10 @@ Reflex Time • (Github) • (Live)
 * Reflex Time built using NextJS, TailwindCSS is a fast-paced, interactive game where your goal is to hit the random numbers displayed on the screen within 60 seconds. Try to achieve the highest score possible by clicking on the correct numbers as quickly as you can!
 
 
-
-
-
-
-
-
 All Food Shop Website • (Github) • (Live)
 * A modern food shop website built with Next.js. This project showcases a variety of food items with categories, descriptions, and prices, all presented through a clean, responsive design powered by Tailwind CSS.
+
+
 Kreo Mouse Product Website • (Github) • (Live)
 * A modern, responsive product landing page built using Next.js and Tailwind CSS. This project highlights the key features, benefits, and call-to-action for a fictional product.
 ________________

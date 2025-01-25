@@ -5,6 +5,14 @@ Kanpur, Uttar Pradesh, India
 ---
 
 Work Experience  
+**Apna Competitive Corner • Group-Project-Based-Internship**	Raigad, Maharashtra, India  
+	Nov-2024 \- Dec-2024
+
+* Collaborated in a group project during an internship to develop a **YouTube-like video platform** with real-time features for inviting friends to watch videos together.  
+* Designed the user interface and developed front-end components using modern frameworks like **Next.js** and **Tailwind CSS**.  
+* Transitioned to handling the backend, ensuring seamless integration with the front end and smooth functionality.  
+* Awarded a Certificate of Completion for completing the internship program.
+
 **GrapplTech • Project-Based-Internship** • [(Link)](https://food-shop-nextjs.vercel.app/)	Bengaluru, Karnataka, India  
 	Sep-2024 \- Oct-2024
 
@@ -29,7 +37,7 @@ Education
 * Learned about **Computer Applications** & **Programming.**  
 * Learned about Business & Financial Management.  
 * Learned about business work ethics and communication.  
-* Awarded a certificate & a medal for good performance in academics. (Only give to 5\)
+* Awarded a certificate & a medal for good performance in academics. (Only given to 5\)
 
 ---
 
@@ -38,6 +46,10 @@ Projects
 
 * Built using **NodeJS**, **ExpressJS**, **EJS**, and **MongoDB**.  
 * The online sales admin portal efficiently collects and stores customer purchase information. Admins can view and edit purchase details, including date, cost, payment status, purchase status, and items purchased. This system ensures seamless sales data management and easy updates.
+
+**PayPal, Sofi, Karuta and Mazoku Fee Calculator•** [(Github)](https://github.com/itsmeprinceyt/paypal_calculator_for_sofi) • [(Live)](https://paypal-and-sofi-wist-fee-calculator.vercel.app/)
+
+* The **PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone Fee Calculator** simplify the process of calculating **fees for transactions** across multiple platforms. It provides accurate estimates for PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone fees, ensuring transparency and efficiency in **financial calculations**.
 
 
 **E-Drive •** [(Github)](https://github.com/itsmeprinceyt/e-drive) • [(Live)](https://itsmeprinceyt.github.io/e-drive/)
@@ -64,7 +76,7 @@ Skills
 * C Language  
 * C++  
 * Python  
-* Javascript
+* Javascript & Typescript
 
 
 **Front-End Development** 
@@ -93,6 +105,7 @@ Skills
 
 **Technical-Skills**
 
+* OOMD (Object Oriented Modeling and Design)  
 * Adobe Photoshop & Lightroom \- **Photo Editing**  
 * Adobe Premiere Pro & After Effects \- **Video Editing**  
 * Postman \- **API Testing**  
@@ -118,6 +131,7 @@ Mini-Projects
 **All Food Shop Website •** [(Github)](https://github.com/itsmeprinceyt/food_shop_nextjs) • [(Live)](https://food-shop-nextjs.vercel.app/)
 
 * A modern food shop website built with **Next.js**. This project showcases a variety of food items with categories, descriptions, and prices, all presented through a clean, responsive design powered by **Tailwind CSS**.
+
 
 **Kreo Mouse Product Website •** [(Github)](https://github.com/itsmeprinceyt/kreomouse_nextjs) • [(Live)](https://kreomouse-nextjs.vercel.app/)
 
