@@ -20,7 +20,7 @@ export default function Resume() {
                                     <li>Django</li>
                                     <li>JavaScript & Typescript</li>
                                     <li>React / Redux</li>
-                                    <li>ExpressJS</li>
+                                    <li>Express.js</li>
                                     <li>Next.js</li>
                                 </ul>
                             </div>
@@ -58,8 +58,8 @@ export default function Resume() {
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">
                                 <h2 className=" text-lg font-bold">Languages</h2>
                                 <ul className="text-[12px]  list-disc list-inside mt-4">
-                                    <li>Hindi</li>
                                     <li>English</li>
+                                    <li>Hindi</li>
                                 </ul>
                             </div>
                             <div className="bg-neutral-950 hover:text-black hover:bg-white hover:shadow-white/80 p-4 rounded-md border-2 shadow-2xl shadow-white/20">

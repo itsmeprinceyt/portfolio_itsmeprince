@@ -4,6 +4,15 @@ import ProjectCard from "..//(components)/ProjectCard.jsx";
 export default function Projects() {
     const MainProjects = [
         {
+            ProjectName: "Share Away",
+            ProjectDescription: "ShareAway is a thoughtfully crafted platform designed to provide a safe, non-judgmental space where users can openly express their feelings, thoughts, and personal stories. ShareAway offers a welcoming environment powered by a smooth and intuitive user experience.",
+            Link1: { available: true, url: "https://share-away-prince.vercel.app/" },
+            Link2: { available: false, url: "" },
+            Link3: { available: true, url: "https://share-away-showcase.vercel.app/" },
+            Tags: ["ExpressJS","NextJS", "MySQL"],
+            imageURL: "/project-images/ShareAway.png"
+        },
+        {
             ProjectName: "Online Sales Admin Portal",
             ProjectDescription: "The online sales admin portal, built with ExpressJS, EJS, and MongoDB, efficiently collects and stores customer purchase information. Admins can view and edit purchase details, including date, cost, payment status, purchase status, and items purchased.",
             Link1: { available: false, url: "" },

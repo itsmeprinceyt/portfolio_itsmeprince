@@ -11,7 +11,7 @@ export default function Home() {
                         <div className=" text-[80px] font-bold leading-[80px] ">
                             About Me
                         </div>
-                        <div className="font-extralight text-left sm:text-center w-full md:w-[700px] sm:w-[500px]">I&apos;m Mohd Uvaish, a passionate Full Stack Developer. I run a YouTube channel where I showcase all kinds of content, from gaming to coding. I&apos;m always honing my skills in tech and staying eager to learn and grow.</div>
+                        <div className="font-extralight text-left sm:text-center w-full md:w-[700px] sm:w-[500px]">I&apos;m Mohd Uvaish, a passionate Full Stack Developer. I also run a YouTube channel where I showcase all kinds of content, from gaming to coding. I&apos;m always honing my skills in tech and staying eager to learn and grow while helping others and staying humble!</div>
                         <span className="h-[1px] w-full bg-white/10 mb-5"></span>
                         <div className="flex gap-3 sm:justify-center">
                             <Link
