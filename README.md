@@ -1,4 +1,4 @@
-# Portfolio by ItsMe Prince
+# Portfolio by ItsMe Prince v1
 
 A personal portfolio landing page built with Next.js. This project showcases my skills, projects, and experiences through a modern, responsive design powered by Tailwind CSS.
 
