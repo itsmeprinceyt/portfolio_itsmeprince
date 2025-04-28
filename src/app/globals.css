@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+* {
+    transition: all 300ms ease-in-out;
+}
+
+@keyframes pulseSlow {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pulse-slow {
+    animation: pulseSlow 3s ease-in-out infinite;
+}
+
+.pulse-slow:hover {
+    animation-play-state: paused;
+}

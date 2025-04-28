@@ -6,7 +6,7 @@ export default function MainWindow({
     children
 }: PageWrapper) {
     return (
-        <div className="bg-white flex flex-col items-start gap-2  mt-14 mb-14">
+        <div className="flex flex-col items-start gap-2  mt-14 mb-14">
             {children}
         </div>
     );
