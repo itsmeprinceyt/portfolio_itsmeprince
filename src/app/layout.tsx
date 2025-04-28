@@ -34,6 +34,7 @@ export default function RootLayout({
         <Suspense fallback={<Loader />}>
           <DynamicIsland />
           {children}
+          <div className="fixed text-white text-[5px] left-1/2 bottom-1 transform -translate-x-[50%] -translate-y-[50%] text-center">© 2025 ItsMe Prince. Licensed under the MIT License. ™ ItsMe Prince</div>
         </Suspense>
       </body>
     </html>

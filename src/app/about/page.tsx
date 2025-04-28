@@ -9,7 +9,7 @@ export default function About() {
             <MainWindow>
                 <div className="flex max-[700px]:flex-col items-center justify-center gap-5 text-center p-4 text-white">
                     <Image
-                        className="w-[340px] max-[400px]:w-[250px] max-[300px]:w-[180px] rounded-full max-[700px]:rounded-full hover:scale-110 shadow-xl/20 hover:shadow-xl/40 shadow-neutral-700"
+                        className="w-[340px] max-[700px]:w-[300px] max-[400px]:w-[250px] max-[300px]:w-[180px] rounded-full max-[700px]:rounded-full hover:scale-110 shadow-xl/20 hover:shadow-xl/40 shadow-neutral-700"
                         src={"/profile-picture/pfp1.jpg"}
                         width={3000}
                         height={3000}
