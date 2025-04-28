@@ -33,12 +33,11 @@ export default function Home() {
       <MainWindow>
 
         {showDownloadMenu && (
-          <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center">
+          <div className="fixed z-20 top-0 left-0 w-screen h-screen bg-black/80 flex items-center justify-center">
 
-            <div ref={downloadMenuRef} className="relative z-20 bg-white rounded-md p-5 flex flex-col gap-5">
+            <div ref={downloadMenuRef} className="relative bg-white rounded-md p-5 flex flex-col gap-5 max-h-[80vh] overflow-y-auto">
 
-              <p className="text-xs tracking-widest px-2">Download CV in . . .</p>
-
+              <p className="text-xs tracking-widest p-2 rounded-md hover:scale-105 animate-pulse">/download-cv-in . . .</p>
               <button
                 className="absolute top-2 right-2 hover:scale-125"
                 onClick={handleDownloadMenu}>
@@ -50,32 +49,35 @@ export default function Home() {
                   alt="cross"
                 />
               </button>
-
               {fileIcons.map((file) => (
                 <Link
                   key={file.fileTypeName}
                   href={file.href}
                   download
-                  className="flex items-center gap-5 text-black hover:bg-black hover:text-white px-4 py-1 rounded-md tracking-widest"
+                  className="flex items-center gap-5 text-black border border-black/10 bg-black/5 hover:bg-black shadow-lg/10
+                  hover:shadow-lg/20 hover:text-white px-4 py-2 rounded-md tracking-widest"
                 >
                   {file.icon}
                   <span>{file.label}</span>
                 </Link>
               ))}
-              
+
             </div>
 
           </div>
         )}
 
         <div className="flex flex-col justify-center items-center gap-5">
+
           <div className="flex flex-col items-center text-cneter">
             <p className="shine-effect text-8xl max-[780px]:text-6xl max-[600px]:text-5xl max-[420px]:text-4xl text-center font-bold bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">I&apos;m Mohd Uvaish</p>
             <p className="text-xl max-[600px]:text-xs font-extralight text-white text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Also known as <span className="text-shadow-neutral-500 font-bold bg-gradient-to-r from-neutral-300 via-neutral-400 to-neutral-500 text-transparent bg-clip-text">ItsMe Prince</span></p>
           </div>
-          <button onClick={handleDownloadMenu} className="pulse-slow bg-gradient-to-r from-neutral-800 to-neutral-900 px-4 py-2 rounded-full text-neutral-300 border border-neutral-700 hover:border-neutral-400 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20">
-            Download CV
+
+          <button onClick={handleDownloadMenu} className="pulse-slow bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-full text-neutral-300 border border-neutral-800 hover:border-neutral-700 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs">
+            /download-cv
           </button>
+
         </div>
       </MainWindow>
     </PageWrapper>

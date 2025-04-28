@@ -2,33 +2,33 @@ import { FaFileWord, FaFilePdf, FaGoogle, FaMarkdown, FaFileAlt, FaHtml5 } from 
 import ResumeFile from '../types/ResumeFile';
 
 export const resumeFiles: ResumeFile[] = [
-  { href: "/cv/Mohd Uvaish - Resume.pdf", fileTypeName: "pdf" },
-  { href: "/cv/Mohd Uvaish - Resume.docx", fileTypeName: "docx" },
-  { href: "/cv/Mohd Uvaish - Resume.gdoc", fileTypeName: "gdoc" },
-  { href: "/cv/Mohd Uvaish - Resume.md", fileTypeName: "md" },
-  { href: "/cv/Mohd Uvaish - Resume.txt", fileTypeName: "txt" },
-  { href: "/cv/MohdUvaishResume.html", fileTypeName: "html" },
+  { href: "/cv/Mohd Uvaish - Resume.pdf", fileTypeName: "/.pdf" },
+  { href: "/cv/Mohd Uvaish - Resume.docx", fileTypeName: "/.docx" },
+  { href: "/cv/Mohd Uvaish - Resume.gdoc", fileTypeName: "/.gdoc" },
+  { href: "/cv/Mohd Uvaish - Resume.md", fileTypeName: "/.md" },
+  { href: "/cv/Mohd Uvaish - Resume.txt", fileTypeName: "/.txt" },
+  { href: "/cv/MohdUvaishResume.html", fileTypeName: "/.html" },
 ];
 
 export const fileIcons = resumeFiles.map((file) => {
   let icon;
   switch (file.fileTypeName) {
-    case 'pdf':
+    case '/.pdf':
       icon = <FaFilePdf />;
       break;
-    case 'docx':
+    case '/.docx':
       icon = <FaFileWord />;
       break;
-    case 'gdoc':
+    case '/.gdoc':
       icon = <FaGoogle />;
       break;
-    case 'md':
+    case '/.md':
       icon = <FaMarkdown />;
       break;
-    case 'txt':
+    case '/.txt':
       icon = <FaFileAlt />;
       break;
-    case 'html':
+    case '/.html':
       icon = <FaHtml5 />;
       break;
     default:
@@ -38,7 +38,7 @@ export const fileIcons = resumeFiles.map((file) => {
   return {
     ...file,
     icon,
-    label: file.fileTypeName.toUpperCase(),
+    label: file.fileTypeName
   };
 });
 
