@@ -1,6 +1,6 @@
-# Portfolio by ItsMe Prince v1
+# Portfolio by ItsMe Prince v2
 
-A personal portfolio landing page built with Next.js. This project showcases my skills, projects, and experiences through a modern, responsive design powered by Tailwind CSS.
+A personal portfolio landing page built with Next.js and in Typescript. This project showcases my skills, projects, and experiences through a modern, responsive design powered by Tailwind CSS.
 
 ## Features
 
@@ -13,6 +13,7 @@ A personal portfolio landing page built with Next.js. This project showcases my 
 
 - **Next.js**: A React framework for server-rendered applications and static websites.
 - **Tailwind CSS**: Utility-first CSS framework for building custom designs easily and efficiently.
+- **Typescript**:
 
 ## Installation
 
@@ -51,7 +52,7 @@ If you'd like to contribute to this project, follow these steps:
 
 ## Explanation Video
 
-https://www.youtube.com/watch?v=LueUMebAVmQ
+TBA
 
 ## Live Link
 [https://portfolio-itsmeprince.vercel.app/](https://portfolio-itsmeprince.vercel.app/)
