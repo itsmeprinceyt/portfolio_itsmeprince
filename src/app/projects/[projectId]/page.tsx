@@ -14,6 +14,7 @@ const getProjectById = (id: string) => {
 
 export default function ProjectPage({ params }: { params: Promise<{ projectId: string }> }) {
     const [images, setImages] = useState<string[]>([]);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const { projectId } = use(params);
     const project = getProjectById(projectId);
 
@@ -125,22 +126,38 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                             )}
                         </div>
 
-                        {/* Image Gallery */}
                         {images.length > 0 && (
-                            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                                {images.map((src, index) => (
+                            <div className="mt-10 flex flex-col items-center gap-4">
+                                <div className="relative w-full max-w-[600px] h-[350px] overflow-hidden rounded-md shadow-lg ">
                                     <Image
-                                        key={index}
-                                        src={src}
-                                        alt={`${project.name} screenshot ${index + 1}`}
-                                        width={400}
-                                        height={300}
-                                        className="rounded shadow-lg object-cover"
-                                        priority={index < 2}
+                                        src={images[currentImageIndex]}
+                                        alt={`${project.name} screenshot ${currentImageIndex + 1}`}
+                                        fill
+                                        className="object-contain"
+                                        priority
                                     />
-                                ))}
+                                </div>
+
+                                <div className="flex max-[500px]:flex-col max-[500px]:gap-2 gap-5">
+                                    <button
+                                        onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
+                                        className="bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-md w-[100px] text-neutral-300 border border-neutral-800 hover:border-neutral-700 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs"
+                                    >
+                                        Previous
+                                    </button>
+                                    <button
+                                        onClick={() => setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
+                                        className="bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-md w-[100px] text-neutral-300 border border-neutral-800 hover:border-neutral-700 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs"
+                                    >
+                                        Next
+                                    </button>
+                                </div>
+                                <div className="text-xs text-neutral-400">
+                                    Image {currentImageIndex + 1} of {images.length}
+                                </div>
                             </div>
                         )}
+
                     </div>
 
                 </div>
