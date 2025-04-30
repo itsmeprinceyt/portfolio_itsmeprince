@@ -46,7 +46,7 @@ export const majorProjects: Project[] = [
     {
         id: `paypal-sofi-wists-calculator`,
         name: `PayPal, SoFi, and Karuta Tickets Fee Calculator`,
-        breif_description: `A fee calculator for PayPal, SoFi, and Karuta Tickets transactions.`,
+        breif_description: `A fee calculator for PayPal, SoFi Wists, Mazoku Bloodstones, and Karuta Tickets transactions.`,
         full_description: `The PayPal, SoFi, and Karuta Tickets Fee Calculator simplifies the process of calculating fees for transactions. It provides accurate estimates for PayPal, SoFi, and Karuta Tickets fees, ensuring transparency and efficiency in financial calculations`,
         tags: [`/next.js`, `/typescript`, `/tailwind-css`],
         links: {
@@ -86,7 +86,7 @@ export const majorProjects: Project[] = [
     {
         id: `e-drive`,
         name: `E-Drive`,
-        breif_description: `A collection of academic resources and self-written notes for BCA IVth Semester.`,
+        breif_description: `A collection of academic resources and self-written notes for Bachelor's of Computer Application's IVth Semester.`,
         full_description: `This platform offers a sophisticated collection of resources tailored to support your academic journey. You'll find self-written notes of BCA IVth Semester as well as the notes that are being taught in the institute that I'm currently studying in!`,
         tags: [`/html`, `/css`, `/javascript`],
         links: {
@@ -112,8 +112,8 @@ export const majorProjects: Project[] = [
     {
         id: `itsme-prince-discord-bot`,
         name: `ItsMe Prince Discord Bot`,
-        breif_description: `A Discord bot that enables seamless interaction and simple math calculations within Discord.`,
-        full_description: `The Discord bot, built with Node.js and discord.js library, enables seamless interaction within the Discord application. Users can execute commands to perform simple mathematical calculations, making the workspace more productive and stress-free.`,
+        breif_description: `A Discord utility bot for the server that enables seamless interaction and simple math calculations and various commands.`,
+        full_description: `The Discord bot, built with Node.js and discord.js library, enables seamless interaction within the Discord application. Users can execute commands to perform simple mathematical calculations, making the workspace more productive and stress-free for the server and server owner!.`,
         tags: [`/node.js`],
         links: {
             live: { url: ``, enabled: false },
@@ -124,7 +124,7 @@ export const majorProjects: Project[] = [
     {
         id: `sofi-guild-manager`,
         name: `SOFI Guild Manager`,
-        breif_description: `A Python project for tracking raid activities and member rewards within a guild environment.`,
+        breif_description: `A Python project for tracking raid activities and member rewards within a Sofi Guild.`,
         full_description: `The Sofi Guild Manager, developed using Python, streamlines guild management by tracking raid activities and earned rewards for members. It securely monitors withdrawals and elixir balances through encrypted data, ensuring protection and smooth operation within the guild environment.`,
         tags: [`/python`],
         links: {
@@ -189,7 +189,7 @@ export const miniProjects: Project[] = [
         id: `product-landing-page`,
         name: `Product Landing Page`,
         breif_description: `A responsive product landing page built with Next.js and Tailwind CSS.`,
-        full_description: `This project showcases a fictional product through a sleek, responsive landing page. Built using Next.js and Tailwind CSS, it highlights product features and includes call-to-action sections optimized for user engagement.`,
+        full_description: `This project showcases a fictional product through a sleek, responsive landing page. Built using Next.js and Tailwind CSS, it highlights product features and includes call-to-action sections optimized for user engagement. For this example, I've taken Kreo Mouse as the main product example. `,
         tags: [`/next.js`, `/tailwind-css`],
         links: {
             live: {
