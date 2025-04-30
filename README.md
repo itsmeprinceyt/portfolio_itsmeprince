@@ -1,58 +1,85 @@
-# Portfolio by ItsMe Prince v2
+# ⚡ ItsMe Prince Portfolio — Version 2
 
-A personal portfolio landing page built with Next.js and in Typescript. This project showcases my skills, projects, and experiences through a modern, responsive design powered by Tailwind CSS.
+A fully revamped personal portfolio website built with **Next.js** and **TypeScript**, showcasing my skills, projects, and experiences in a polished, interactive, and responsive design. This is **Version 2**, a major upgrade from the original portfolio with dynamic routing, image sliders, and a more scalable project display system.
 
-## Features
+## 🚀 What's New in Version 2
 
-- **Personal Introduction**: A section introducing myself with details about my skills, experiences, and background.
-- **Project Showcase**: Highlights of my recent work, including project descriptions and links to live demos and GitHub repositories.
-- **Skill Showcase**: A section displaying my core technical skills and proficiencies.
-- **Responsive Design**: Built with Tailwind CSS for a sleek, responsive user interface.
+- ✅ **Modern, Clean UI** with smooth gradients and refined typography
+- 📄 **Dedicated Project Pages** — each project now has its own unique route with:
+  - Full description
+  - Tech stack tags
+  - Image slider
+  - Live/GitHub/YouTube links
+- 🧠 **Better Data Structure** for scalable project listings and categories
+- 📱 **Improved Responsive Design** for mobile and tablets
+- 🖼️ **Dynamic Image Gallery** for each project using `/api/getProjectImages`
+- 🧩 **Adaptive Grid Layouts** for tags and cards
 
-## Tech Stack
+---
 
-- **Next.js**: A React framework for server-rendered applications and static websites.
-- **Tailwind CSS**: Utility-first CSS framework for building custom designs easily and efficiently.
-- **Typescript**:
+## ✨ Features
 
-## Installation
+- **About Me**: Short intro, background, and core philosophy
+- **Projects Section**: Interactive and categorized project previews
+- **Project Details Pages**: Deep dive into each project with visuals and links
+- **Skills**: Dynamic grid showing technologies and tools
+- **Contact Info**: (Planned) Add a message/contact form in the next release
 
-1. Install Dependencies
-    ```bash
-    npm install
-    ```
+---
 
-2. Run the Development Server
-    ```bash
-    npm run dev
-    ```
+## 🛠 Tech Stack
 
-    Your application will be running on http://localhost:3000.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Image Optimization**: [next/image](https://nextjs.org/docs/api-reference/next/image)
 
-## Usage
+---
 
-1. Open the Application: Navigate to http://localhost:3000 in your browser.
+## 📦 Installation
 
-2. Explore: Browse through the different sections to learn more about my skills and projects.
+```bash
+# Install dependencies
+npm install
 
-3. Contact: Use the contact form to send a message directly from the website.
+# Run the development server
+npm run dev
+```
+Visit: http://localhost:3000
 
-## Customization
-Feel free to customize the layout, styles, and content as per your preferences. The setup with Tailwind CSS allows for easy design adjustments.
+## 🧪 Usage
 
-## Contributing
-If you'd like to contribute to this project, follow these steps:
+- Launch the app locally and browse your portfolio
+- Click on any project to visit its individual page
+- Use external links to explore live sites or source code
+- Responsive across all screen sizes
 
-- Fork the repository.
-- Create a new branch (git checkout -b feature-branch).
-- Make your changes.
-- Commit your changes (git commit -am 'Add new feature').
-- Push to the branch (git push origin feature-branch).
-- Create a new Pull Request.
+---
 
-## Explanation Video
+## 🎨 Customization
 
-TBA
+Want to personalize it?
 
-## Live Link
-[https://portfolio-itsmeprince.vercel.app/](https://portfolio-itsmeprince.vercel.app/)
+- Replace content in `utility/ProjectData.ts` with your own project data
+- Update global styles or components under `(components)/`
+- Extend the design with custom Tailwind classes or animations
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+To contribute:
+
+1. Fork this repository  
+2. Create a new branch (`git checkout -b feature-branch`)  
+3. Commit your changes (`git commit -am 'Add new feature'`)  
+4. Push to your branch (`git push origin feature-branch`)  
+5. Open a Pull Request
+
+---
+
+## 🌐 Live Demo
+
+👉 https://portfolio-itsmeprince.vercel.app/
+
