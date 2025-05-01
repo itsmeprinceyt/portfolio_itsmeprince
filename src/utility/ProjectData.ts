@@ -10,7 +10,7 @@ export const bestProjects: Project[] = [
         links: {
             live: { url: `https://share-away-prince.vercel.app/`, enabled: true },
             github: { url: `https://share-away-showcase.vercel.app/`, enabled: true },
-            youtube: { url: ``, enabled: false },
+            youtube: { url: `https://youtube.com/playlist?list=PLiFooJ43_R5SK0wE1LnaBlyWw-B1Uqpwj&si=nro67NPo5rZt-4bF`, enabled: true },
         },
         banner: `/projects/shareaway/1.png`,
     },
@@ -39,7 +39,7 @@ export const majorProjects: Project[] = [
         links: {
             live: { url: `https://share-away-prince.vercel.app/`, enabled: true },
             github: { url: `https://share-away-showcase.vercel.app/`, enabled: true },
-            youtube: { url: ``, enabled: false },
+            youtube: { url: `https://youtube.com/playlist?list=PLiFooJ43_R5SK0wE1LnaBlyWw-B1Uqpwj&si=nro67NPo5rZt-4bF`, enabled: true },
         },
         banner: `/projects/shareaway/1.png`,
     },
