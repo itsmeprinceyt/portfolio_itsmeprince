@@ -164,6 +164,27 @@ export const majorProjects: Project[] = [
 
 export const miniProjects: Project[] = [
     {
+        id: `base64-converter`,
+        name: `Image to Base64 Converter Tool`,
+        breif_description: `A web tool built with Next.js to convert images to Base64 strings, with image compression and download functionality.`,
+        full_description: `This project is a responsive image-to-Base64 converter built with Next.js. Users can upload images, convert them to Base64, compress the image using a slider, and download the compressed image in PNG format. The tool offers a clean and mobile-friendly UI for seamless interaction.`,
+        tags: [`/next.js`, `/tailwind-css`],
+        links: {
+            live: {
+                url: `https://base64-image-converter.vercel.app/`,
+                enabled: true
+            },
+            github: {
+                url: `https://github.com/itsmeprinceyt/base64-image-converter`,
+                enabled: true
+            },
+            youtube: {
+                url: ``,
+                enabled: false
+            }
+        },
+    },
+    {
         id: `registration-form`,
         name: `Registration Form`,
         breif_description: `A user registration form landing page built with Next.js, React Hook Form, and Tailwind CSS.`,
