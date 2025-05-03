@@ -5,6 +5,16 @@ Kanpur, Uttar Pradesh, India
 ---
 
 Work Experience  
+**Nezuware • Project-Based-Internship** • [(Link)](https://share-away-showcase.vercel.app/)	Nodia, Uttar Pradesh, India  
+	April-2025 \- May-2025
+
+* Conceptualized and developed **Share Away**, an anonymous blogging platform for sharing personal thoughts without judgment, as part of the internship project.  
+* Built core features like **user registration, post creation, sharing**, **editing profile,** and **hearts (likes)** system using a full-stack approach.  
+* Developed the frontend using **Next.js** and **Tailwind CSS**, focusing on a clean, responsive, and accessible user interface.  
+* Engineered the backend APIs using **Express.js**, **MySQL**, and **RESTful principles**, handling authentication, session management, JWT Token, and user role control.  
+* Awarded a Certificate of Completion for completing the internship program.
+
+
 **Apna Competitive Corner • Group-Project-Based-Internship**	Raigad, Maharashtra, India  
 	Nov-2024 \- Dec-2024
 
@@ -42,12 +52,23 @@ Education
 ---
 
 Projects  
+**Share Away •** [(Github)](https://share-away-showcase.vercel.app/) • [(Live)](https://share-away-prince.vercel.app/)
+
+* Built using **NodeJS**, **ExpressJS**, **EJS**, and **MongoDB**.  
+* Developed a blogging platform allowing users to share their feelings without fear of judgment.  
+* Implemented **user authentication** and **session management** using **JWT Token** for secure access.  
+* Enabled users to **create, edit, and delete posts** with a clean, responsive UI built using **Tailwind CSS**.  
+* Built backend **APIs** using **Express.js** and **REST principles** for handling users, posts, and likes.  
+* Integrated **real-time session validation** to verify user identity and role-based access (user/admin).  
+* Ensured seamless interaction between frontend and backend, optimizing for performance and maintainability.
+
+
 **Online Sales Administration Portal •** [(Github)](https://github.com/itsmeprinceyt/itsmeprince-shop-with-db)
 
 * Built using **NodeJS**, **ExpressJS**, **EJS**, and **MongoDB**.  
 * The online sales admin portal efficiently collects and stores customer purchase information. Admins can view and edit purchase details, including date, cost, payment status, purchase status, and items purchased. This system ensures seamless sales data management and easy updates.
 
-**PayPal, Sofi, Karuta and Mazoku Fee Calculator•** [(Github)](https://github.com/itsmeprinceyt/paypal_calculator_for_sofi) • [(Live)](https://paypal-and-sofi-wist-fee-calculator.vercel.app/)
+**PayPal, Sofi, Karuta and Mazoku Fee Calculator •** [(Github)](https://github.com/itsmeprinceyt/paypal_calculator_for_sofi) • [(Live)](https://paypal-and-sofi-wist-fee-calculator.vercel.app/)
 
 * The **PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone Fee Calculator** simplify the process of calculating **fees for transactions** across multiple platforms. It provides accurate estimates for PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone fees, ensuring transparency and efficiency in **financial calculations**.
 
@@ -89,7 +110,7 @@ Skills
 **Back-End & Framework Development**
 
 * Node.js  
-* Django  
+* Django \- **Basics**  
 * Express.js  
 * Next.js
 
@@ -105,12 +126,12 @@ Skills
 
 **Technical-Skills**
 
-* OOMD (Object Oriented Modeling and Design)  
+* OOMD (Object Oriented Modeling and Design) \- **Basics**  
 * Adobe Photoshop & Lightroom \- **Photo Editing**  
 * Adobe Premiere Pro & After Effects \- **Video Editing**  
 * Postman \- **API Testing**  
 * Git \- **Version Control**  
-* Vs Code
+* Vs Code \- **IDE**
 
 ---
 
@@ -118,6 +139,11 @@ Mini-Projects
 **Currency Exchange Web Application •** [(Github)](https://github.com/itsmeprinceyt/currency_exchange) • [(Live)](https://currency-exchange-lemon-ten.vercel.app/)
 
 * CurrencyExchange is a dynamic and user-friendly web application built with **Next.js** and **TailwindCSS** to provide real-time currency conversion and exchange rate information using **FreeCurrencyAPI**.
+
+
+**Image to base64 Converter •** [(Github)](https://github.com/itsmeprinceyt/base64-image-converter) • [(Live)](https://base64-image-converter.vercel.app/)
+
+* Developed using **Next.js**, this tool allows users to upload images and instantly convert them to Base64 strings with easy copy functionality and also offers options to compress the image and download it in PNG format.
 
 **SOFI Guild Manager •** [(Github)](https://github.com/itsmeprinceyt/Sofi_Guild_Manager_Private)
 
