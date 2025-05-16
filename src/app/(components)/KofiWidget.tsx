@@ -11,9 +11,9 @@ const KofiWidget = () => {
         script.async = true;
 
         script.onload = () => {
-            // @ts-expect-error
+            // @ts-expect-error - kofiWidgetOverlay is loaded globally via external script
             if (window.kofiWidgetOverlay) {
-                // @ts-expect-error
+                // @ts-expect-error - draw method exists on kofiWidgetOverlay but is not typed
                 window.kofiWidgetOverlay.draw("itsmeprinceyt", {
                     type: "floating-chat",
                     "floating-chat.donateButton.text": "Tip Me",
