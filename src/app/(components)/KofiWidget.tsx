@@ -11,9 +11,9 @@ const KofiWidget = () => {
         script.async = true;
 
         script.onload = () => {
-            // @ts-ignore
+            // @ts-expect-error
             if (window.kofiWidgetOverlay) {
-                // @ts-ignore
+                // @ts-expect-error
                 window.kofiWidgetOverlay.draw("itsmeprinceyt", {
                     type: "floating-chat",
                     "floating-chat.donateButton.text": "Tip Me",
