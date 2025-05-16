@@ -6,7 +6,7 @@ export default function MainWindow({
     children
 }: PageWrapper) {
     return (
-        <div className="flex flex-col items-start gap-2  mt-16 mb-20 cursor-default">
+        <div className="relative min-h-screen flex flex-col justify-center items-center gap-2  cursor-default">
             {children}
         </div>
     );

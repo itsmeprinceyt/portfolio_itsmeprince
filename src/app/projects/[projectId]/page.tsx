@@ -40,7 +40,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
             <MainWindow>
 
                 <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20
-                shadow-neutral-800 border border-neutral-700 rounded-md m-5 p-12 flex flex-col gap-10
+                shadow-neutral-800 border border-neutral-700 rounded-md m-5 mt-20 mb-20 p-12 flex flex-col gap-10
                 text-white tracking-widest max-w-[1000px]">
 
                     <div className="flex flex-col gap-6">
@@ -80,7 +80,23 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                     />
                                     <span className="text-blue-500">/live:</span>
                                     <Link href={project.links.live.url} target="_blank">
-                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[5rem]  max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[700px]:max-w-[18rem] max-w-[25rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-blue-500">
+                                        <span className="inline-block 
+                                        max-[390px]:max-w-[6rem]
+                                        max-[420px]:max-w-[10rem]
+                                        max-[470px]:max-w-[12rem]
+                                        max-[500px]:max-w-[13rem]
+                                        max-[510px]:max-w-[16rem]
+                                        max-[550px]:max-w-[18rem]
+                                        max-[630px]:max-w-[20rem]
+                                        max-[670px]:max-w-[25rem]
+                                        max-[700px]:max-w-[28rem]
+                                        max-[790px]:max-w-[29rem]
+                                        max-[865px]:max-w-[35rem]
+                                        max-[950px]:max-w-[40rem]
+                                        max-[1030px]:max-w-[45rem]
+                                        max-w-[50rem]
+                                        overflow-hidden whitespace-nowrap text-ellipsis hover:text-blue-500">
+
                                             {project.links.live.url}
                                         </span>
                                     </Link>
@@ -99,7 +115,22 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                     />
                                     <span className="text-purple-500">/github:</span>
                                     <Link href={project.links.github.url} target="_blank">
-                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[5rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[700px]:max-w-[18rem] max-w-[25rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-purple-500">
+                                        <span className="inline-block 
+                                        max-[390px]:max-w-[5rem]
+                                        max-[420px]:max-w-[9rem]
+                                        max-[470px]:max-w-[11rem]
+                                        max-[500px]:max-w-[12rem]
+                                        max-[510px]:max-w-[15rem]
+                                        max-[550px]:max-w-[17rem]
+                                        max-[630px]:max-w-[19rem]
+                                        max-[670px]:max-w-[24rem]
+                                        max-[700px]:max-w-[27rem]
+                                        max-[790px]:max-w-[28rem]
+                                        max-[865px]:max-w-[34rem]
+                                        max-[950px]:max-w-[39rem]
+                                        max-[1030px]:max-w-[44rem]
+                                        max-w-[50rem]
+                                        overflow-hidden whitespace-nowrap text-ellipsis hover:text-purple-500">
                                             {project.links.github.url}
                                         </span>
                                     </Link>
@@ -118,7 +149,22 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                     />
                                     <span className="text-rose-500">/youtube:</span>
                                     <Link href={project.links.youtube.url} target="_blank">
-                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[5rem]  max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[700px]:max-w-[18rem] max-w-[25rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-rose-500">
+                                        <span className="inline-block 
+                                        max-[390px]:max-w-[4rem]
+                                        max-[420px]:max-w-[8rem]
+                                        max-[470px]:max-w-[10rem]
+                                        max-[500px]:max-w-[11rem]
+                                        max-[510px]:max-w-[14rem]
+                                        max-[550px]:max-w-[16rem]
+                                        max-[630px]:max-w-[18rem]
+                                        max-[670px]:max-w-[23rem]
+                                        max-[700px]:max-w-[26rem]
+                                        max-[790px]:max-w-[27rem]
+                                        max-[865px]:max-w-[33rem]
+                                        max-[950px]:max-w-[38rem]
+                                        max-[1030px]:max-w-[43rem]
+                                        max-w-[50rem]
+                                        overflow-hidden whitespace-nowrap text-ellipsis hover:text-rose-500">
                                             {project.links.youtube.url}
                                         </span>
                                     </Link>

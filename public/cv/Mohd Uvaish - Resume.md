@@ -126,6 +126,7 @@ Skills
 
 **Technical-Skills**
 
+* Dev Ops **\- Moderate**  
 * OOMD (Object Oriented Modeling and Design) \- **Basics**  
 * Adobe Photoshop & Lightroom \- **Photo Editing**  
 * Adobe Premiere Pro & After Effects \- **Video Editing**  

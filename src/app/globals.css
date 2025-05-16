@@ -44,3 +44,47 @@
 *::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+
+
+.backface-hidden {
+    backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+
+.button-3d:hover {
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.253);
+}
+
+.arrow-tooltip {
+    rotate: 180deg;
+}
+
+.arrow-tooltip path {
+    fill: white;
+}
+
+
+.button-3d:hover .arrow-tooltip {
+    width: 20px;
+    transition-duration: 0.3s;
+    transform: translateY(200%);
+}
+
+.button-3d::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: black;
+    font-size: 0px;
+}
+
+.button-3d:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    transition-duration: 0.3s;
+}
