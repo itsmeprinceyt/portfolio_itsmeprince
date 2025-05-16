@@ -12,7 +12,6 @@ export default function About() {
     const Home = useRef<HTMLDivElement | null>(null);
     const SecondPage = useRef<HTMLDivElement | null>(null);
     const ThirdPage = useRef<HTMLDivElement | null>(null);
-    const FourthPage = useRef<HTMLDivElement | null>(null);
 
     const ScrollToHome = (): void => {
         if (Home.current) {
@@ -29,12 +28,6 @@ export default function About() {
     const ScrollToThirdPage = (): void => {
         if (ThirdPage.current) {
             ThirdPage.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const ScrollToFourthPage = (): void => {
-        if (FourthPage.current) {
-            FourthPage.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
