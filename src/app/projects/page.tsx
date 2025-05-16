@@ -2,13 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import PageWrapper from "../(components)/PageWrapper";
 import MainWindow from "../(components)/MainWindow";
-import { bestProjects, majorProjects, miniProjects, playgroundProjects } from "../../utility/ProjectData"; // <-- make sure correct path
+import { bestProjects, majorProjects, miniProjects, playgroundProjects } from "../../utility/ProjectData";
+import LinkYouTube from "../(components)/Link-YouTube";
+import LinkGitHub from "../(components)/Link-GitHub";
+import LinkLive from "../(components)/Link-Live";
 
 export default function Skills() {
     return (
         <PageWrapper>
             <MainWindow>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 mt-16 mb-16">
 
                     {/* Best Projects */}
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md mt-5 p-12 max-[400px]:pt-12 max-[400px]:p-3 flex flex-col gap-10 text-white tracking-widest max-w-[1000px]">
@@ -54,12 +57,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-blue-500">/live:</span>
-                                                    <Link href={project.links.live.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-blue-500">
-                                                            {project.links.live.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkLive url={project.links.live.url} />
                                                 </div>
                                             )}
                                             {/* GitHub Link if exists */}
@@ -73,12 +71,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-purple-500">/github:</span>
-                                                    <Link href={project.links.github.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-purple-500">
-                                                            {project.links.github.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkGitHub url={project.links.github.url} />
                                                 </div>
                                             )}
                                             {/* YouTube Link if exists */}
@@ -92,12 +85,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-rose-500">/youtube:</span>
-                                                    <Link href={project.links.youtube.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-rose-500">
-                                                            {project.links.youtube.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkYouTube url={project.links.youtube.url} />
                                                 </div>
                                             )}
                                         </div>
@@ -179,12 +167,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-blue-500">/live:</span>
-                                                    <Link href={project.links.live.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-blue-500">
-                                                            {project.links.live.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkLive url={project.links.live.url} />
                                                 </div>
                                             )}
                                             {/* GitHub Link if exists */}
@@ -198,12 +181,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-purple-500">/github:</span>
-                                                    <Link href={project.links.github.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-purple-500">
-                                                            {project.links.github.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkGitHub url={project.links.github.url} />
                                                 </div>
                                             )}
                                             {/* YouTube Link if exists */}
@@ -217,12 +195,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-rose-500">/youtube:</span>
-                                                    <Link href={project.links.youtube.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-rose-500">
-                                                            {project.links.youtube.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkYouTube url={project.links.youtube.url} />
                                                 </div>
                                             )}
                                         </div>
@@ -304,12 +277,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-blue-500">/live:</span>
-                                                    <Link href={project.links.live.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-blue-500">
-                                                            {project.links.live.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkLive url={project.links.live.url} />
                                                 </div>
                                             )}
                                             {/* GitHub Link if exists */}
@@ -323,12 +291,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-purple-500">/github:</span>
-                                                    <Link href={project.links.github.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-purple-500">
-                                                            {project.links.github.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkGitHub url={project.links.github.url} />
                                                 </div>
                                             )}
                                             {/* YouTube Link if exists */}
@@ -342,12 +305,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-rose-500">/youtube:</span>
-                                                    <Link href={project.links.youtube.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-rose-500">
-                                                            {project.links.youtube.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkYouTube url={project.links.youtube.url} />
                                                 </div>
                                             )}
                                         </div>
@@ -429,12 +387,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-blue-500">/live:</span>
-                                                    <Link href={project.links.live.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-blue-500">
-                                                            {project.links.live.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkLive url={project.links.live.url} />
                                                 </div>
                                             )}
                                             {/* GitHub Link if exists */}
@@ -448,12 +401,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-purple-500">/github:</span>
-                                                    <Link href={project.links.github.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-purple-500">
-                                                            {project.links.github.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkGitHub url={project.links.github.url} />
                                                 </div>
                                             )}
                                             {/* YouTube Link if exists */}
@@ -467,12 +415,7 @@ export default function Skills() {
                                                         loading="lazy"
                                                     />
                                                     <span className="text-rose-500">/youtube:</span>
-                                                    <Link href={project.links.youtube.url} target="_blank">
-                                                        <span className="inline-block max-[550px]:max-w-[14rem] max-[400px]:max-w-[8rem] max-[470px]:max-w-[10rem] max-[500px]:max-w-[13rem] max-[650px]:max-w-[19rem] max-[800px]:max-w-[35rem]
-                                                        max-[900px]:max-w-[14rem] max-[820px]:max-w-[12rem] max-[960px]:max-w-[16rem] max-w-[18rem] overflow-hidden whitespace-nowrap text-ellipsis hover:text-rose-500">
-                                                            {project.links.youtube.url}
-                                                        </span>
-                                                    </Link>
+                                                    <LinkYouTube url={project.links.youtube.url} />
                                                 </div>
                                             )}
                                         </div>

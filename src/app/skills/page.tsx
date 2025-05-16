@@ -11,7 +11,7 @@ export default function Skills() {
     return (
         <PageWrapper>
             <MainWindow>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 mt-16 mb-16">
                     {/* What I Do? */}
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 p-12 flex flex-col gap-8 text-white tracking-widest">
 
@@ -60,7 +60,7 @@ export default function Skills() {
                     {/* Creative Tools */}
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 py-12 p-5 flex flex-col gap-14 text-white tracking-widest">
 
-                        <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Creative Tools</p>
+                        <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Creative tools</p>
                         {/* Mapping */}
                         <div className="grid max-[330px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
                             {creativeTools.map((skill, index) => (
@@ -85,7 +85,7 @@ export default function Skills() {
                     {/* Dev Tools */}
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 py-12 p-5 flex flex-col gap-14 text-white tracking-widest">
 
-                        <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Dev Tools</p>
+                        <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Dev tools</p>
                         {/* Mapping */}
                         <div className="grid max-[330px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
                             {devTools.map((skill, index) => (
@@ -110,7 +110,7 @@ export default function Skills() {
                     {/* Personal Soft Skills */}
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 py-12 p-5 flex flex-col gap-14 text-white tracking-widest">
 
-                        <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Personal Soft Skills</p>
+                        <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Personal soft skills</p>
                         {/* Mapping */}
                         <div className="grid max-[330px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
                             {personalSoftSkills.map((skill, index) => (
