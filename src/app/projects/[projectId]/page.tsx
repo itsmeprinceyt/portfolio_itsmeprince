@@ -46,7 +46,19 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                     <div className="flex flex-col gap-6">
 
                         <div className="text-3xl tracking-widest max-[400px]:text-2xl font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">{project.name}</div>
-                        <div className="text-xs font-extralight tracking-widest">{project.full_description}</div>
+                        <ul className="text-xs font-extralight tracking-widest pl-4">
+                            {project.full_description.split('\n').map((line, index) =>
+                                line.trim() === '' ? (
+                                    <li key={index} className="list-none h-4" />
+                                ) : (
+                                    <li key={index} className="list-disc">{line}</li>
+                                )
+                            )}
+                        </ul>
+
+
+
+
 
                         <div className="flex max-[700px]:flex-col items-start justify-start gap-2">
 
