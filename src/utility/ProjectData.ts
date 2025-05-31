@@ -1,5 +1,6 @@
 import { Project } from '../types/Project';
-
+/* ============================================================================= */
+/* ============================================================================= */
 export const bestProjects: Project[] = [
     {
         id: `shareaway`,
@@ -28,7 +29,8 @@ export const bestProjects: Project[] = [
         banner: `/projects/online-sales-admin-portal/1.png`,
     },
 ];
-
+/* ============================================================================= */
+/* ============================================================================= */
 export const majorProjects: Project[] = [
     {
         id: `shareaway`,
@@ -161,8 +163,30 @@ export const majorProjects: Project[] = [
     },
 
 ];
-
+/* ============================================================================= */
+/* ============================================================================= */
 export const miniProjects: Project[] = [
+        {
+        id: `file-encrypt-decrypter`,
+        name: `File Encrypter/Decrypter Tool`,
+        breif_description: `A small python program which I use to encrypt .env file in my public repo to avoid losing them forever if my computer explodes.`,
+        full_description: `This project is a simple command-line tool for encrypting and decrypting files using a symmetric key derived from a user-provided password. It leverages the cryptography library's Fernet implementation for secure encryption. File Encryption: Securely encrypts files using a password. File Decryption: Decrypts previously encrypted files using the correct password. Password-Derived Key: Generates a strong encryption key from the password using SHA-256 hashing.`,
+        tags: [`/python`],
+        links: {
+            live: {
+                url: ``,
+                enabled: false
+            },
+            github: {
+                url: `https://github.com/itsmeprinceyt/file-encrypt-decrypter`,
+                enabled: true
+            },
+            youtube: {
+                url: ``,
+                enabled: false
+            }
+        },
+    },
     {
         id: `base64-converter`,
         name: `Image to Base64 Converter Tool`,
@@ -251,7 +275,7 @@ export const miniProjects: Project[] = [
         banner: `/projects/food-shop-landing/1.png`,
     }
 ];
-
-
+/* ============================================================================= */
+/* ============================================================================= */
 export const playgroundProjects: Project[] = [
 ];
