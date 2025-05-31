@@ -86,6 +86,19 @@ export const majorProjects: Project[] = [
         banner: `/projects/online-sales-admin-portal/1.png`,
     },
     {
+        id: `prince-kun`,
+        name: `Prince-kun Discord Bot`,
+        breif_description: `Prince-kun is a custom-built Discord bot developed with TypeScript to serve as the all-in-one solution for managing my personal Discord server.`,
+        full_description: `Prince-kun is a custom-built Discord bot developed with TypeScript to serve as the all-in-one solution for managing my personal Discord server.\n\nDesigned with both automation and interactivity in mind, the bot handles essential server moderation, user management, and provides a fully integrated backend for ItsMe Prince Shop powered by a MySQL database.\n\nFrom banning users and sending automated updates to distributing giveaway codes and managing a shop leaderboard, Prince-kun blends practical utility with personal touches. It supports both slash commands and prefix-based commands, and includes rich support for accessing social links, game items, livestream codes, and purchase profiles — making it an essential hub for both server members and clients.`,
+        tags: [`/typescript`, `/my-sql`, `/discord.js`],
+        links: {
+            live: { url: `https://prince-kun.vercel.app/`, enabled: true },
+            github: { url: `https://prince-kun.vercel.app/`, enabled: true },
+            youtube: { url: ``, enabled: false },
+        },
+        banner: `/projects/prince-kun/1.png`,
+    },
+    {
         id: `e-drive`,
         name: `E-Drive`,
         breif_description: `A collection of academic resources and self-written notes for Bachelor's of Computer Application's IVth Semester.`,
@@ -113,7 +126,7 @@ export const majorProjects: Project[] = [
     },
     {
         id: `itsme-prince-discord-bot`,
-        name: `ItsMe Prince Discord Bot`,
+        name: `ItsMe Prince Discord Bot (old)`,
         breif_description: `A Discord utility bot for the server that enables seamless interaction and simple math calculations and various commands.`,
         full_description: `The Discord bot, built with Node.js and discord.js library, enables seamless interaction within the Discord application. Users can execute commands to perform simple mathematical calculations, making the workspace more productive and stress-free for the server and server owner!.`,
         tags: [`/node.js`],
@@ -166,7 +179,7 @@ export const majorProjects: Project[] = [
 /* ============================================================================= */
 /* ============================================================================= */
 export const miniProjects: Project[] = [
-        {
+    {
         id: `file-encrypt-decrypter`,
         name: `File Encrypter/Decrypter Tool`,
         breif_description: `A small python program which I use to encrypt .env file in my public repo to avoid losing them forever if my computer explodes.`,
