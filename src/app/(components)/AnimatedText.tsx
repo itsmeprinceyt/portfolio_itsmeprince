@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { AnimatedText } from '../../types/AnimatedText.type';
 
 const translations: Record<string, string[]> = {
@@ -33,7 +33,7 @@ export default function AnimatedMultilingualText({
     text,
     className = "",
 }: AnimatedText) {
-    const langs = translations[text] || [text];
+    const langs = useMemo(() => translations[text] || [text], [text]);
     const [current, setCurrent] = useState(langs[0]);
     const prevRef = useRef(current);
 
