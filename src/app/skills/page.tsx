@@ -6,6 +6,8 @@ import creativeTools from "../../utility/creative-tools";
 import devTools from "../../utility/devTools";
 import hobbiesInterests from "../../utility/hobbiesInterests";
 import personalSoftSkills from "../../utility/personalSoftSkills";
+import TextHighlighter from "../(components)/textHighlighter";
+import SkillIcon from '../(components)/SkillIcon';
 
 export default function Skills() {
     return (
@@ -18,7 +20,7 @@ export default function Skills() {
                         <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">What I do?</p>
 
                         <div className="max-w-[1000px] leading-7 font-extralight text-xs">
-                            As a <span className="bg-lime-500 border border-lime-800 text-lime-900 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-lime-500">/full-stack-developer</span> , I craft end-to-end web applications that balance <span className="bg-emerald-500 border border-emerald-800 text-emerald-900 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-emerald-500">/performance</span> , <span className="bg-sky-500 border border-sky-800 text-sky-900 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-sky-500">/scalability</span> , and <span className="bg-rose-500 border border-rose-800 text-rose-100 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-rose-500">/exceptional design.</span> My core expertise lies in the MERN stack, C++, and <span className="bg-yellow-500 border border-yellow-800 text-yellow-900 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-yellow-500">/data-structures-&-algorithms</span> , allowing me to build robust and efficient systems.<br /><br />I bring an additional edge with professional UI/UX design skills in Figma, combined with mastery over TailwindCSS and CSS to deliver pixel-perfect, responsive interfaces. With a future-ready mindset, I consistently integrate modern technologies and industry best practices to drive impactful digital experiences.
+                            As a <TextHighlighter text="/full-stack-developer" /> , I craft end-to-end web applications that balance <TextHighlighter text="/performance" /> , <TextHighlighter text="/scalability" /> , and <TextHighlighter text="/exceptional design." /> My core expertise lies in the MERN stack, C++, and <TextHighlighter text="/data-structures-&-algorithms" /> , allowing me to build robust and efficient systems.<br /><br />I bring an additional edge with professional UI/UX design skills in Figma, combined with mastery over TailwindCSS and CSS to deliver pixel-perfect, responsive interfaces. With a future-ready mindset, I consistently integrate modern technologies and industry best practices to drive impactful digital experiences.
                         </div>
                         {/* Audio Player */}
                         <div className="mt-3 flex justify-center">
@@ -37,46 +39,25 @@ export default function Skills() {
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 py-12 p-5 flex flex-col gap-14 text-white tracking-widest">
 
                         <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Dev skills</p>
+
                         {/* Mapping */}
-                        <div className="grid max-[330px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+                        <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {devSkills.map((skill, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col items-center justify-center gap-4 w-32 h-32 p-4 rounded-md bg-white text-black hover:scale-110 transition-transform duration-300 shadow-xl/10 hover:shadow-xl/20 shadow-white"
-                                >
-                                    <Image
-                                        src={`/logo/dev-skills/${skill.file}`}
-                                        alt={skill.name}
-                                        width={48}
-                                        height={48}
-                                        className="object-contain rounded-md"
-                                    />
-                                    <p className="text-xs font-normal text-center">{skill.name}</p>
-                                </div>
+                                <SkillIcon key={index} name={skill.name} file={`dev-skills/${skill.file}`} />
                             ))}
                         </div>
 
                     </div>
+
                     {/* Creative Tools */}
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 py-12 p-5 flex flex-col gap-14 text-white tracking-widest">
 
                         <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Creative tools</p>
+
                         {/* Mapping */}
-                        <div className="grid max-[330px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+                        <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {creativeTools.map((skill, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col items-center justify-center gap-4 w-32 h-32 p-4 rounded-md bg-white text-black hover:scale-110 transition-transform duration-300 shadow-xl/10 hover:shadow-xl/20 shadow-white"
-                                >
-                                    <Image
-                                        src={`/logo/creative-tools/${skill.file}`}
-                                        alt={skill.name}
-                                        width={48}
-                                        height={48}
-                                        className="object-contain rounded-md"
-                                    />
-                                    <p className="text-xs font-normal text-center">{skill.name}</p>
-                                </div>
+                                <SkillIcon key={index} name={skill.name} file={`creative-tools/${skill.file}`} />
                             ))}
                         </div>
 
@@ -86,22 +67,11 @@ export default function Skills() {
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 py-12 p-5 flex flex-col gap-14 text-white tracking-widest">
 
                         <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Dev tools</p>
+
                         {/* Mapping */}
-                        <div className="grid max-[330px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+                        <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {devTools.map((skill, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col items-center justify-center gap-4 w-32 h-32 p-4 rounded-md bg-white text-black hover:scale-110 transition-transform duration-300 shadow-xl/10 hover:shadow-xl/20 shadow-white"
-                                >
-                                    <Image
-                                        src={`/logo/dev-tools/${skill.file}`}
-                                        alt={skill.name}
-                                        width={48}
-                                        height={48}
-                                        className="object-contain rounded-md"
-                                    />
-                                    <p className="text-xs font-normal text-center">{skill.name}</p>
-                                </div>
+                                <SkillIcon key={index} name={skill.name} file={`dev-tools/${skill.file}`} />
                             ))}
                         </div>
 
@@ -111,22 +81,11 @@ export default function Skills() {
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 py-12 p-5 flex flex-col gap-14 text-white tracking-widest">
 
                         <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Personal soft skills</p>
+
                         {/* Mapping */}
-                        <div className="grid max-[330px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+                        <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {personalSoftSkills.map((skill, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col items-center justify-center gap-4 w-32 h-32 p-4 rounded-md bg-white text-black hover:scale-110 transition-transform duration-300 shadow-xl/10 hover:shadow-xl/20 shadow-white"
-                                >
-                                    <Image
-                                        src={`/logo/personal-soft-skills/${skill.file}`}
-                                        alt={skill.name}
-                                        width={48}
-                                        height={48}
-                                        className="object-contain rounded-md"
-                                    />
-                                    <p className="text-xs font-normal text-center">{skill.name}</p>
-                                </div>
+                                <SkillIcon key={index} name={skill.name} file={`personal-soft-skills/${skill.file}`} />
                             ))}
                         </div>
 
@@ -136,22 +95,11 @@ export default function Skills() {
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 py-12 p-5 flex flex-col gap-14 text-white tracking-widest">
 
                         <p className="text-3xl tracking-widest max-[400px]:text-2xl text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Hobbies & Interests</p>
+
                         {/* Mapping */}
-                        <div className="grid max-[330px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+                        <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {hobbiesInterests.map((skill, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col items-center justify-center gap-4 w-32 h-32 p-4 rounded-md bg-white text-black hover:scale-110 transition-transform duration-300 shadow-xl/10 hover:shadow-xl/20 shadow-white"
-                                >
-                                    <Image
-                                        src={`/logo/hobbies-interests/${skill.file}`}
-                                        alt={skill.name}
-                                        width={48}
-                                        height={48}
-                                        className="object-contain rounded-md"
-                                    />
-                                    <p className="text-xs font-normal text-center">{skill.name}</p>
-                                </div>
+                                <SkillIcon key={index} name={skill.name} file={`hobbies-interests/${skill.file}`} />
                             ))}
                         </div>
 

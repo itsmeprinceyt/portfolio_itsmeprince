@@ -7,6 +7,7 @@ import MainWindow from "../(components)/MainWindow";
 import SocialMediaIcons from "../(components)/SocialMediaIcons";
 import KofiWidget from "../(components)/KofiWidget";
 import BirthdayCounter from "../(components)/BirthdayCounter";
+import TextHighlighter from "../(components)/textHighlighter";
 
 export default function About() {
     const Home = useRef<HTMLDivElement | null>(null);
@@ -49,11 +50,11 @@ export default function About() {
                             <div className="flex flex-col gap-2 text-left p-5 rounded-md">
                                 <h1 className="text-5xl max-[400px]:text-2xl max-[700px]:text-center font-bold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">About</h1>
                                 <p className="text-xs w-[220px] max-[400px]:w-[220px] max-[300px]:w-[200px] max-[280px]:w-[150px] max-[700px]:text-center tracking-widest leading-6 font-extralight">
-                                    I&apos;m Mohd Uvaish, a passionate <span className="bg-lime-500 border border-lime-800 text-lime-900 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-lime-500">/full-stack-developer</span>
+                                    I&apos;m Mohd Uvaish, a passionate <TextHighlighter text="/full-stack-developer"/>
                                     <br /><br />
-                                    I also run a <Link href="https://www.youtube.com/@itsmeprinceyt" target="_blank" rel="noopener noreferrer"><span className="bg-red-500 border border-red-800 text-red-200 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-red-500">/youtube-channel</span></Link> where I showcase all kinds of content, from <span className="bg-purple-500 border border-purple-800 text-purple-100 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-purple-500">/gaming</span> to <Link href="https://www.youtube.com/playlist?list=PLiFooJ43_R5SKCLgUOeECaypEXsUv8kEO" target="_blank" rel="noopener noreferrer"><span className="bg-blue-500 border border-blue-800 text-blue-100 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-blue-500">/coding</span></Link>
+                                    I also run a <Link href="https://www.youtube.com/@itsmeprinceyt" target="_blank" rel="noopener noreferrer"><TextHighlighter text="/youtube-channel"/></Link> where I showcase all kinds of content, from <TextHighlighter text="/gaming"/> to <Link href="https://www.youtube.com/playlist?list=PLiFooJ43_R5SKCLgUOeECaypEXsUv8kEO" target="_blank" rel="noopener noreferrer"><TextHighlighter text="/coding"/></Link>
                                     <br /><br />
-                                    I&apos;m always honing my <Link href="/skills"><span className="bg-yellow-500 border border-yellow-800 text-yellow-900 font-normal px-2 rounded-md inline-block hover:scale-125 shadow-lg/10 hover:shadow-lg/20 shadow-yellow-500">/skills</span></Link> in tech and staying eager to learn and grow while helping others and staying humble!</p>
+                                    I&apos;m always honing my <Link href="/skills"><TextHighlighter text="/skills"/></Link> in tech and staying eager to learn and grow while helping others and staying humble!</p>
                             </div>
                         </div>
                         <button onClick={ScrollToSecondPage}>
