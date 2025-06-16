@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import PageWrapper from '../../types/PageWrapper';
+import PageWrapper from '../../types/PageWrapper.type';
 
 export default function PageWrapperNormal({
     children

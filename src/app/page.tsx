@@ -5,6 +5,7 @@ import Link from 'next/link';
 import PageWrapper from "./(components)/PageWrapper";
 import MainWindow from "./(components)/MainWindow";
 import { fileIcons } from "../utility/resumeFiles";
+import AnimatedText from "./(components)/AnimatedText";
 
 export default function Home() {
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
@@ -70,8 +71,8 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center gap-5">
           {/* Text */}
           <div className="flex flex-col items-center text-cneter">
-            <p className="shine-effect text-8xl max-[780px]:text-6xl max-[600px]:text-5xl max-[420px]:text-4xl text-center font-bold bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">I&apos;m Mohd Uvaish</p>
-            <p className="text-xl max-[600px]:text-xs font-extralight text-white text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Also known as <span className="text-shadow-neutral-500 font-bold bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text">ItsMe Prince</span></p>
+            <p className="shine-effect text-8xl max-[780px]:text-6xl max-[600px]:text-5xl max-[420px]:text-4xl text-center font-bold bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">I&apos;m <AnimatedText text="Mohd Uvaish" /></p>
+            <p className="text-xm max-[600px]:text-xs font-extralight text-white text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">Also known as <span className="text-shadow-neutral-500 font-bold bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text"><AnimatedText text="ItsMe Prince" /></span></p>
           </div>
           {/* Download CV Button */}
           <button onClick={handleDownloadMenu} className="pulse-slow bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-full text-neutral-300 border border-neutral-800 hover:border-neutral-700 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs">

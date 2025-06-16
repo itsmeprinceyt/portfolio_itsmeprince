@@ -1,4 +1,4 @@
-import { Project } from '../types/Project';
+import { Project } from '../types/Project.type';
 /* ============================================================================= */
 /* ============================================================================= */
 export const bestProjects: Project[] = [
@@ -92,7 +92,7 @@ export const majorProjects: Project[] = [
         full_description: `Prince-kun is a custom-built Discord bot developed with TypeScript to serve as the all-in-one solution for managing my personal Discord server.\n\nDesigned with both automation and interactivity in mind, the bot handles essential server moderation, user management, and provides a fully integrated backend for ItsMe Prince Shop powered by a MySQL database.\n\nFrom banning users and sending automated updates to distributing giveaway codes and managing a shop leaderboard, Prince-kun blends practical utility with personal touches. It supports both slash commands and prefix-based commands, and includes rich support for accessing social links, game items, livestream codes, and purchase profiles — making it an essential hub for both server members and clients.`,
         tags: [`/typescript`, `/my-sql`, `/discord.js`],
         links: {
-            live: { url: `https://prince-kun.vercel.app/`, enabled: true },
+            live: { url: `https://prince-kun-website.vercel.app/`, enabled: true },
             github: { url: `https://prince-kun.vercel.app/`, enabled: true },
             youtube: { url: ``, enabled: false },
         },
@@ -161,24 +161,33 @@ export const majorProjects: Project[] = [
         },
         banner: `/projects/currency-exchange/1.png`,
     },
-    {
-        id: `reflex-time`,
-        name: `Reflex Time`,
-        breif_description: `A fast-paced game where players hit numbers as quickly as possible within 60 seconds in the race to make the highest score possible.`,
-        full_description: `Reflex Time is a fast-paced, interactive game where your goal is to hit the random numbers displayed on the screen within 60 seconds. Try to achieve the highest score possible by clicking on the correct numbers as quickly as you can!`,
-        tags: [`/next.js`, `/tailwind-css`],
-        links: {
-            live: { url: `https://reflex-time.vercel.app/`, enabled: true },
-            github: { url: `https://github.com/itsmeprinceyt/reflex-time`, enabled: true },
-            youtube: { url: ``, enabled: false },
-        },
-        banner: `/projects/reflex-time/1.png`,
-    },
 
 ];
 /* ============================================================================= */
 /* ============================================================================= */
 export const miniProjects: Project[] = [
+    {
+        id: `yt-thumbnail-downloader`,
+        name: `YouTube Thumbnail Downloader`,
+        breif_description: `A sleek web app built with Next.js and Tailwind CSS that allows users to instantly preview and download high-resolution thumbnails from any YouTube video.`,
+        full_description: `This project is a responsive web application developed using Next.js and styled with Tailwind CSS.\n\nIt enables users to paste or enter a YouTube video URL and automatically fetches the highest quality thumbnail available.\n\nFeatures include real-time URL detection, auto-pasting from clipboard, and direct image download functionality without opening a new tab.\n\nThe app fetches the max resolution thumbnail using YouTube's image CDN and allows clean one-click downloads through Blob URLs. It is designed with accessibility, performance, and UX in mind for fast and frictionless usage.`,
+        tags: [`/next.js`, `/tailwind.css`, `/typescript`],
+        links: {
+            live: {
+                url: `https://yt-thumbnail-downloader-orpin.vercel.app/`,
+                enabled: true
+            },
+            github: {
+                url: `https://github.com/itsmeprinceyt/yt-thumbnail-downloader`,
+                enabled: true
+            },
+            youtube: {
+                url: ``,
+                enabled: false
+            }
+        },
+        banner: `/projects/yt-thumbnail-downloader/1.png`,
+    },
     {
         id: `file-encrypt-decrypter`,
         name: `File Encrypter/Decrypter Tool`,
@@ -291,4 +300,17 @@ export const miniProjects: Project[] = [
 /* ============================================================================= */
 /* ============================================================================= */
 export const playgroundProjects: Project[] = [
+    {
+        id: `reflex-time`,
+        name: `Reflex Time`,
+        breif_description: `A fast-paced game where players hit numbers as quickly as possible within 60 seconds in the race to make the highest score possible.`,
+        full_description: `Reflex Time is a fast-paced, interactive game where your goal is to hit the random numbers displayed on the screen within 60 seconds. Try to achieve the highest score possible by clicking on the correct numbers as quickly as you can!`,
+        tags: [`/next.js`, `/tailwind-css`],
+        links: {
+            live: { url: `https://reflex-time.vercel.app/`, enabled: true },
+            github: { url: `https://github.com/itsmeprinceyt/reflex-time`, enabled: true },
+            youtube: { url: ``, enabled: false },
+        },
+        banner: `/projects/reflex-time/1.png`,
+    },
 ];

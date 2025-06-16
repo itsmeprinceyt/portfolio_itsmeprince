@@ -1,5 +1,5 @@
 import { FaFileWord, FaFilePdf, FaGoogle, FaMarkdown, FaFileAlt, FaHtml5 } from 'react-icons/fa';
-import ResumeFile from '../types/ResumeFile';
+import ResumeFile from '../types/ResumeFile.type';
 
 export const resumeFiles: ResumeFile[] = [
   { href: "/cv/Mohd Uvaish - Resume.pdf", fileTypeName: "/.pdf" },
