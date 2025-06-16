@@ -1,4 +1,3 @@
-import Image from "next/image";
 import PageWrapper from "../(components)/PageWrapper";
 import MainWindow from "../(components)/MainWindow";
 import devSkills from "../../utility/devSkills";

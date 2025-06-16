@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { AnimatedText } from '../../types/AnimatedText.type';
 
 const translations: Record<string, string[]> = {
@@ -35,16 +35,15 @@ export default function AnimatedMultilingualText({
 }: AnimatedText) {
     const langs = translations[text] || [text];
     const [current, setCurrent] = useState(langs[0]);
+    const prevRef = useRef(current);
 
     useEffect(() => {
-        let prev = current;
-
         const interval = setInterval(() => {
-            let next = prev;
-            while (next === prev && langs.length > 1) {
+            let next = prevRef.current;
+            while (next === prevRef.current && langs.length > 1) {
                 next = langs[Math.floor(Math.random() * langs.length)];
             }
-            prev = next;
+            prevRef.current = next;
             setCurrent(next);
         }, 2000);
 
