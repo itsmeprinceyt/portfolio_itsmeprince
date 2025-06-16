@@ -125,6 +125,19 @@ export const majorProjects: Project[] = [
         banner: `/projects/statistics-mean-calculator/1.png`,
     },
     {
+        id: `karuta-work-discord-bot`,
+        name: `Karuta Work Discord Bot`,
+        breif_description: `A helpful utility bot built for the Karuta card game on Discord. It simplifies card management, saves time, and helps players stay efficient — with style!`,
+        full_description: `Karuta Work comes with a very time saving feature to simplify and enhance your gameplay experience. The kkhelp command provides all available commands, making it easy for users to understand how the bot works. With kkinvite, you can instantly get a shareable link to invite the bot to any Discord server.\n\nThe kkscan command intelligently analyzes your job board and highlights which cards are healthy or injured, saving you time and effort. kkwork takes over by giving you cards which you can assign to job board slots, streamlining your card management routine.\n\nIf you're curious about the bot itself, the kkabout command offers insights into its purpose and development background.`,
+        tags: [`/discord.js`, `/typescript`],
+        links: {
+            live: { url: ``, enabled: false },
+            github: { url: `https://github.com/itsmeprinceyt/karuta-work`, enabled: true },
+            youtube: { url: ``, enabled: false },
+        },
+        banner: `/projects/karuta-work-discord-bot/1.png`,
+    },
+    {
         id: `itsme-prince-discord-bot`,
         name: `ItsMe Prince Discord Bot (old)`,
         breif_description: `A Discord utility bot for the server that enables seamless interaction and simple math calculations and various commands.`,
