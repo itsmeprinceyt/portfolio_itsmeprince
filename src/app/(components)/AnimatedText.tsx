@@ -17,41 +17,46 @@ const translations: Record<string, string[]> = {
     ],
     "ItsMe Prince": [
         "ItsMe Prince",
-        "ये हूँ मैं, प्रिंस",
-        "یہ ہوں میں، پرنس",
-        "إنه أنا، الأمير",
-        "それは私、プリンスです",
-        "是我，王子",
-        "Это я, Принц",
-        "நான் தான், பிரின்ஸ்",
+        "मैं हूँ प्रिंस",
+        "میں ہوں پرنس",
+        "أنا الأمير",
+        "私はプリンスです",
+        "我是王子",
+        "Я Принц",
+        "நான் பிரின்ஸ்",
         "আমি প্রিন্স",
-        "હું છું પ્રિન્સ",
+        "હું પ્રિન્સ છું",
     ],
 };
 
 export default function AnimatedMultilingualText({
-    text,
-    className = "",
+    text
 }: AnimatedText) {
-    const langs = useMemo(() => translations[text] || [text], [text]);
-    const [current, setCurrent] = useState(langs[0]);
+    const langs: string[] = useMemo(() => translations[text] || [text], [text]);
+    const [current, setCurrent] = useState<string>(langs[0]);
+
     const prevRef = useRef(current);
 
     useEffect(() => {
+        let showOriginal: boolean = false;
         const interval = setInterval(() => {
-            let next = prevRef.current;
-            while (next === prevRef.current && langs.length > 1) {
-                next = langs[Math.floor(Math.random() * langs.length)];
+            let next: string;
+            if (showOriginal || langs.length === 1) {
+                next = langs[0];
+            } else {
+                const withoutOriginal: string[] = langs.slice(1);
+                next = withoutOriginal[Math.floor(Math.random() * withoutOriginal.length)];
             }
             prevRef.current = next;
             setCurrent(next);
-        }, 2000);
+            showOriginal = !showOriginal;
+        }, 1500);
 
         return () => clearInterval(interval);
     }, [langs]);
 
     return (
-        <span className={`transition-all duration-500 ease-in-out ${className}`}>
+        <span className={`transition-all duration-500 ease-in-out`}>
             {current}
         </span>
     );
