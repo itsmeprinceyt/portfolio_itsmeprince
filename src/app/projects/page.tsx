@@ -1,3 +1,5 @@
+"use client";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PageWrapper from "../(components)/PageWrapper";
@@ -6,12 +8,14 @@ import { bestProjects, majorProjects, miniProjects, playgroundProjects } from ".
 import LinkYouTube from "../(components)/Link-YouTube";
 import LinkGitHub from "../(components)/Link-GitHub";
 import LinkLive from "../(components)/Link-Live";
+import ScrollToButton from "../(components)/ScrollToButton";
 
 export default function Skills() {
+    const Home = useRef<HTMLDivElement | null>(null);
     return (
         <PageWrapper>
             <MainWindow>
-                <div className="flex flex-col gap-5 mt-16 mb-16">
+                <div ref={Home} className="flex flex-col gap-5 mt-16 mb-16">
 
                     {/* Best Projects */}
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md mt-5 p-12 max-[400px]:pt-12 max-[400px]:p-3 flex flex-col gap-10 text-white tracking-widest max-w-[1000px]">
@@ -452,10 +456,8 @@ export default function Skills() {
                             ))}
                         </div>
                     </div>
-
-
-
                 </div>
+                <ScrollToButton scrollRef={Home} />
             </MainWindow>
         </PageWrapper>
     );

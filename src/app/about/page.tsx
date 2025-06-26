@@ -8,17 +8,12 @@ import SocialMediaIcons from "../(components)/SocialMediaIcons";
 import KofiWidget from "../(components)/KofiWidget";
 import BirthdayCounter from "../(components)/BirthdayCounter";
 import TextHighlighter from "../(components)/textHighlighter";
+import ScrollToButton from "../(components)/ScrollToButton";
 
 export default function About() {
     const Home = useRef<HTMLDivElement | null>(null);
     const SecondPage = useRef<HTMLDivElement | null>(null);
     const ThirdPage = useRef<HTMLDivElement | null>(null);
-
-    const ScrollToHome = (): void => {
-        if (Home.current) {
-            Home.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     const ScrollToSecondPage = (): void => {
         if (SecondPage.current) {
@@ -38,7 +33,7 @@ export default function About() {
                 <div ref={Home}>
                     <MainWindow>
                         <div
-                            className="flex max-[700px]:flex-col items-center justify-center gap-5 text-center p-4 text-white">
+                            className="flex max-[700px]:flex-col items-center justify-center max-[700px]:mt-20 gap-5 text-center p-4 text-white">
                             <Image
                                 className="w-[340px] max-[700px]:w-[300px] max-[400px]:w-[250px] max-[300px]:w-[180px] rounded-full max-[700px]:rounded-full hover:scale-110 shadow-xl/20 hover:shadow-xl/40 shadow-neutral-700"
                                 src={"/profile-picture/pfp1.jpg"}
@@ -57,9 +52,9 @@ export default function About() {
                                     I&apos;m always honing my <Link href="/skills"><TextHighlighter text="/skills"/></Link> in tech and staying eager to learn and grow while helping others and staying humble!</p>
                             </div>
                         </div>
-                        <button onClick={ScrollToSecondPage}>
+                        <button onClick={ScrollToSecondPage} className="absolute left-1/2 max-[700px]:-bottom-[30px] bottom-[30px] transform -translate-x-1/2 px-4 py-2">
                             <Image
-                                className="absolute left-1/2 bottom-[30px] transform -translate-x-1/2 animate-pulse hover:animate-none hover:scale-110 transition-all duration-300 ease-in-out"
+                                className="animate-pulse hover:animate-none hover:scale-110 transition-all duration-300 ease-in-out"
                                 src={'/icons/arrow-down.png'}
                                 height={50}
                                 width={50}
@@ -94,19 +89,7 @@ export default function About() {
                             className="flex-col text-center tracking-widest leading-6 font-extralight">
                             <BirthdayCounter />
                         </div>
-                        <div className="absolute left-1/2 bottom-[30px] transform -translate-x-1/2 animate-pulse hover:animate-none hover:scale-110 transition-all duration-300 ease-in-out ">
-                            <button onClick={ScrollToHome}
-                                className="button-3d w-[50px] h-[50px] hover:h-[40px] rounded-full border-none font-semibold flex items-center justify-center cursor-pointer duration-300 overflow-hidden relative hover:w-[140px] hover:rounded-full hover:items-center hover:bg-white hover:text-black "
-                            >
-                                <Image
-                                    className="arrow-tooltip duration-300"
-                                    src={'/icons/arrow-down.png'}
-                                    height={50}
-                                    width={50}
-                                    alt="arrow"
-                                />
-                            </button>
-                        </div>
+                        <ScrollToButton scrollRef={Home} />
                     </MainWindow>
                 </div>
 

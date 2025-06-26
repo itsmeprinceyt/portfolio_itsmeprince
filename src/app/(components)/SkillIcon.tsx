@@ -14,7 +14,7 @@ export default function SkillIcon({ name, file }: SkillIconProps) {
             />
 
             {/* Tooltip */}
-            <div className="absolute bottom-full mb-2 hidden group-hover:flex px-2 py-1 bg-black border border-neutral-800 text-white text-[10px] rounded-md whitespace-nowrap z-10">
+            <div className="absolute bottom-full mb-2 hidden group-hover:flex px-2 py-1 bg-black border border-neutral-800 text-white text-[8px] rounded-md whitespace-nowrap z-10">
                 {name}
             </div>
         </div>

@@ -1,10 +1,6 @@
 'use client';
-
 import Link from 'next/link';
-
-interface ResponsiveLinkProps {
-    url: string;
-}
+import ResponsiveLinkProps from '../../types/ResponsiveLink.type';
 
 export default function LinkLive({ url }: ResponsiveLinkProps) {
     return (
