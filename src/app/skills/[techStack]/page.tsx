@@ -7,10 +7,9 @@ import devTools from '../../../utility/devTools';
 
 export default async function SkillPage(
   props: {
-    params: {
-      techStack: string
-    }
-  }) {
+    params: Promise<{ techStack: string }>
+  }
+) {
   const { techStack } = await props.params;
   const decodedTechStack: string = decodeURIComponent(techStack);
 
@@ -23,12 +22,12 @@ export default async function SkillPage(
   if (!isValid) {
     notFound();
   }
-  
+
   return (
     <PageWrapper>
       <div className="flex flex-col justify-center items-center gap-10 text-white">
         <h1 className="text-3xl font-bold">{decodedTechStack}</h1>
-        <p className="animate-spin-slow">Cooking</p>
+        <p className="animate-spin-slow">🍳Cooking 🔥</p>
       </div>
     </PageWrapper>
   );
