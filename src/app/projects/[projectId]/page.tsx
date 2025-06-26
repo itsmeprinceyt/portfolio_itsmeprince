@@ -14,7 +14,7 @@ const getProjectById = (id: string) => {
 
 export default function ProjectPage({ params }: { params: Promise<{ projectId: string }> }) {
     const [images, setImages] = useState<string[]>([]);
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
     const { projectId } = use(params);
     const project = getProjectById(projectId);
 

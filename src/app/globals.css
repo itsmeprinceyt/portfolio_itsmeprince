@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/GoogleSans-Regular.ttf') format('truetype');
+}
+
 * {
     transition: all 300ms ease-in-out;
     scrollbar-width: thin;
     scrollbar-color: #888 #f0f0f0;
+    font-family: 'Google Sans';
 }
 
 @keyframes pulseSlow {
@@ -87,4 +93,8 @@
     opacity: 1;
     bottom: unset;
     transition-duration: 0.3s;
+}
+
+.animate-spin-slow {
+    animation: spin 10s linear infinite;
 }

@@ -1,3 +1,6 @@
+"use client";
+import { useRef } from "react";
+import Link from "next/link";
 import PageWrapper from "../(components)/PageWrapper";
 import MainWindow from "../(components)/MainWindow";
 import devSkills from "../../utility/devSkills";
@@ -7,12 +10,14 @@ import hobbiesInterests from "../../utility/hobbiesInterests";
 import personalSoftSkills from "../../utility/personalSoftSkills";
 import TextHighlighter from "../(components)/textHighlighter";
 import SkillIcon from '../(components)/SkillIcon';
+import ScrollToButton from "../(components)/ScrollToButton";
 
 export default function Skills() {
+    const Home = useRef<HTMLDivElement | null>(null);
     return (
         <PageWrapper>
             <MainWindow>
-                <div className="flex flex-col gap-5 mt-16 mb-16">
+                <div ref={Home} className="flex flex-col gap-5 mt-16 mb-16">
                     {/* What I Do? */}
                     <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 shadow-neutral-800 border border-neutral-700 rounded-md m-5 p-12 flex flex-col gap-8 text-white tracking-widest">
 
@@ -42,7 +47,9 @@ export default function Skills() {
                         {/* Mapping */}
                         <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {devSkills.map((skill, index) => (
-                                <SkillIcon key={index} name={skill.name} file={`dev-skills/${skill.file}`} />
+                                <Link href={`/skills/${encodeURIComponent(skill.fullName)}`} key={index}>
+                                    <SkillIcon key={index} name={skill.name} file={`dev-skills/${skill.file}`} />
+                                </Link>
                             ))}
                         </div>
 
@@ -56,7 +63,9 @@ export default function Skills() {
                         {/* Mapping */}
                         <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {creativeTools.map((skill, index) => (
-                                <SkillIcon key={index} name={skill.name} file={`creative-tools/${skill.file}`} />
+                                <Link href={`/skills/${encodeURIComponent(skill.fullName)}`} key={index}>
+                                    <SkillIcon key={index} name={skill.name} file={`creative-tools/${skill.file}`} />
+                                </Link>
                             ))}
                         </div>
 
@@ -70,7 +79,9 @@ export default function Skills() {
                         {/* Mapping */}
                         <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {devTools.map((skill, index) => (
-                                <SkillIcon key={index} name={skill.name} file={`dev-tools/${skill.file}`} />
+                                <Link href={`/skills/${encodeURIComponent(skill.fullName)}`} key={index}>
+                                    <SkillIcon key={index} name={skill.name} file={`dev-tools/${skill.file}`} />
+                                </Link>
                             ))}
                         </div>
 
@@ -84,7 +95,9 @@ export default function Skills() {
                         {/* Mapping */}
                         <div className="grid max-[330px]:grid-cols-2 grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 justify-items-center">
                             {personalSoftSkills.map((skill, index) => (
-                                <SkillIcon key={index} name={skill.name} file={`personal-soft-skills/${skill.file}`} />
+                                <Link href={`/skills/${encodeURIComponent(skill.fullName)}`} key={index}>
+                                    <SkillIcon key={index} name={skill.name} file={`personal-soft-skills/${skill.file}`} />
+                                </Link>
                             ))}
                         </div>
 
@@ -103,7 +116,7 @@ export default function Skills() {
                         </div>
 
                     </div>
-
+                    <ScrollToButton scrollRef={Home} />
                 </div>
             </MainWindow>
         </PageWrapper>
