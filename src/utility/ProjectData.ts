@@ -203,7 +203,7 @@ export const miniProjects: Project[] = [
     },
     {
         id: `file-encrypt-decrypter`,
-        name: `File Encrypter/Decrypter Tool`,
+        name: `File Encrypter / Decrypter Tool`,
         breif_description: `A small python and node program which I use to encrypt .env file in my public repo to avoid losing them forever if my computer explodes.`,
         full_description: `This project is a simple command-line tool for encrypting and decrypting files using a symmetric key derived from a user-provided password.\n File Encryption: Securely encrypts files using a password.\n File Decryption: Decrypts previously encrypted files using the correct password.\n Password-Derived Key: Generates a strong encryption key from the password using SHA-256 hashing.`,
         tags: [`/python`, '/node.js'],

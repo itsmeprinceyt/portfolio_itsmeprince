@@ -20,3 +20,8 @@ export type Project = {
     };
     banner?: string;
 };
+
+export interface ProjectCard {
+    project: Project,
+    index: number
+}

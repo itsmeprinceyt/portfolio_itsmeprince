@@ -26,8 +26,8 @@ export default async function SkillPage(
   return (
     <PageWrapper>
       <div className="flex flex-col justify-center items-center gap-10 text-white">
-        <h1 className="text-3xl font-bold">{decodedTechStack}</h1>
-        <p className="animate-spin-slow">🍳Cooking 🔥</p>
+        <h1 className="text-3xl font-bold">{false && decodedTechStack}</h1>
+        <p className="animate-bounce">🍳Cooking 🔥</p>
       </div>
     </PageWrapper>
   );
