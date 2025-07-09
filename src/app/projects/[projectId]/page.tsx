@@ -2,7 +2,6 @@
 import { use, useEffect, useState } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 import PageWrapper from "../../(components)/PageWrapper";
 import MainWindow from '../../(components)/MainWindow';
 import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '../../../utility/ProjectData';
