@@ -5,7 +5,7 @@ import LinkGitHub from "./Link-GitHub";
 import LinkYouTube from "./Link-YouTube";
 import type { ProjectCard } from '../../types/Project.type'
 
-export default function ProjectCard({project,index}: ProjectCard) {
+export default function ProjectCard({ project, index }: ProjectCard) {
     return (
         <div
             key={project.id}
@@ -29,7 +29,7 @@ export default function ProjectCard({project,index}: ProjectCard) {
                 {/* Name */}
                 <div className="text-4xl font-semibold tracking-widest">{project.name}</div>
                 {/* Brief Description */}
-                <div className="text-xs font-extralight tracking-widest">{project.breif_description}</div>
+                <div className="text-xs font-extralight tracking-widest">{project.description}</div>
                 {/* Links*/}
                 <div className="flex flex-col gap-2 justify-center border border-black/10 bg-black/5
                                         rounded-md shadow-lg/10 p-2">
@@ -91,12 +91,11 @@ export default function ProjectCard({project,index}: ProjectCard) {
                 </div>
                 {/* Photo Banner */}
                 {project.banner && (
-                    <div className="w-full h-[200px] overflow-hidden relative border border-black/10 rounded-md shadow-lg/20 hover:scale-105">
+                    <div className="w-full h-[200px] overflow-hidden relative border border-black/10 rounded-md shadow-lg/20 hover:scale-105 transition-transform">
                         <Image
                             src={project.banner}
-                            layout="fill"
-                            objectFit="cover"
-                            objectPosition="top"
+                            fill
+                            style={{ objectFit: "cover", objectPosition: "top" }}
                             alt="Banner"
                             loading="lazy"
                         />

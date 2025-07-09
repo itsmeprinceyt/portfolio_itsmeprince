@@ -1,43 +1,128 @@
 import { Project } from '../types/Project.type';
 /* ============================================================================= */
 /* ============================================================================= */
-export const bestProjects: Project[] = [
-    {
-        id: `shareaway`,
-        name: `Share Away`,
-        breif_description: `ShareAway is a thoughtfully crafted platform designed to provide a safe, non-judgmental space where users can openly express their feelings, thoughts, and personal stories.`,
-        full_description: `ShareAway is a thoughtfully crafted platform designed to provide a safe, non-judgmental space where users can openly express their feelings, thoughts, and personal stories. ShareAway offers a welcoming environment powered by a smooth and intuitive user experience.`,
-        tags: [`/next.js`, `/express.js`, `/my-sql`],
-        links: {
-            live: { url: `https://share-away-prince.vercel.app/`, enabled: true },
-            github: { url: `https://share-away-showcase.vercel.app/`, enabled: true },
-            youtube: { url: `https://youtube.com/playlist?list=PLiFooJ43_R5SK0wE1LnaBlyWw-B1Uqpwj&si=nro67NPo5rZt-4bF`, enabled: true },
-        },
-        banner: `/projects/shareaway/1.png`,
-    },
-    {
-        id: `online-sales-admin-portal`,
-        name: `Online Sales Admin Portal`,
-        breif_description: `The online sales admin portal efficiently collects and stores customer purchase information.`,
-        full_description: `The online sales admin portal, built with ExpressJS, EJS, and MongoDB, efficiently collects and stores customer purchase information. Admins can view and edit purchase details, including date, cost, payment status, purchase status, and items purchased.`,
-        tags: [`/node.js`, `/express.js`, `/ejs`, `/mongo-db`],
-        links: {
-            live: { url: ``, enabled: false },
-            github: { url: `https://github.com/itsmeprinceyt/itsmeprince-shop-with-db`, enabled: true },
-            youtube: { url: ``, enabled: false },
-        },
-        banner: `/projects/online-sales-admin-portal/1.png`,
-    },
-];
-/* ============================================================================= */
-/* ============================================================================= */
 export const majorProjects: Project[] = [
     {
+        id: `file-encrypt-decrypter`,
+        name: `File Encrypter / Decrypter Software`,
+        description: `A secure and user-friendly file encryption & decryption software built with Electron, alongside CLI-based Python and Node.js script versions for developers.`,
+        full_description: {
+            intro: `This project offers a complete solution for file encryption and decryption. The main offering is a desktop application built using Electron, providing a simple graphical interface for securely encrypting and decrypting files using AES-GCM encryption. Users can easily select files, set passwords, and choose save locations for secure data handling.`,
+
+            features: [
+                {
+                    title: "Electron Desktop App",
+                    detail: "A polished UI for non-technical users to encrypt/decrypt files locally."
+                },
+                {
+                    title: "AES-GCM Encryption",
+                    detail: "Secure, authenticated encryption standard used to ensure both confidentiality and integrity."
+                },
+                {
+                    title: "Cross-Platform Support",
+                    detail: "Works on Windows, macOS, and Linux for wide usability."
+                },
+                {
+                    title: "Password-Derived Keys",
+                    detail: "Uses SHA-256 hashing to generate strong encryption keys from user-provided passwords."
+                },
+                {
+                    title: "Python & Node.js Scripts",
+                    detail: "CLI-based versions for automation, scripting, or headless environments."
+                }
+            ],
+
+            dependencies: [
+                "Electron.js",
+                "Node.js",
+                "Typescript",
+                "TailwindCSS",
+                "Node.js Script: [crypto inbuilt module]",
+                "Python Script: [cryptography / hashlib]",
+            ],
+
+            usage_examples: [
+                "Encrypt your `.env` file before pushing to a public repo",
+                "Decrypt client-provided files with a shared password",
+                "Securely store backups in an encrypted format (.prince)"
+            ]
+        },
+
+        tags: [`/electron.js`, `/node.js`, `/typescript`, `/next.js`, `/tailwind-css`, `/python`],
+        links: {
+            live: {
+                url: ``,
+                enabled: false
+            },
+            github: {
+                url: `https://github.com/itsmeprinceyt/file-encrypt-decrypter`,
+                enabled: true
+            },
+            youtube: {
+                url: ``,
+                enabled: false
+            }
+        },
+        banner: `/projects/file-encrypt-decrypter/1.png`,
+    },
+    {
         id: `shareaway`,
         name: `Share Away`,
-        breif_description: `ShareAway is a thoughtfully crafted platform designed to provide a safe, non-judgmental space where users can openly express their feelings, thoughts, and personal stories.`,
-        full_description: `ShareAway is a thoughtfully crafted platform designed to provide a safe, non-judgmental space where users can openly express their feelings, thoughts, and personal stories. ShareAway offers a welcoming environment powered by a smooth and intuitive user experience.`,
-        tags: [`/next.js`, `/express.js`, `/my-sql`],
+        description: `ShareAway is a thoughtfully crafted platform designed to provide a safe, non-judgmental space where users can openly express their feelings, thoughts, and personal stories.`,
+        full_description: {
+            intro: `Share Away is a minimalistic blogging platform where users can express their feelings and share thoughts in a judgment-free and supportive environment. It features user authentication, personalized profiles, a centralized post feed, and seamless interactions between users.`,
+
+            features: [
+                {
+                    title: "User Authentication",
+                    detail: "Secure sign-up and login system with JWT tokens to maximize data protection and session integrity."
+                },
+                {
+                    title: "User Profiles",
+                    detail: "Each user has a personal profile showcasing their posts, interactions, and basic account information."
+                },
+                {
+                    title: "Post System",
+                    detail: "Users can create, edit, and delete posts to share their thoughts and feelings."
+                },
+                {
+                    title: "Like System",
+                    detail: "Users can express support by liking ('hearting') posts."
+                },
+                {
+                    title: "Search Functionality",
+                    detail: "Regex-based search to find users by their username or email."
+                },
+                {
+                    title: "Responsive UI",
+                    detail: "Fully responsive layout that works across mobile and desktop devices."
+                },
+                {
+                    title: "Post Feed",
+                    detail: "View a centralized feed with the latest posts from all users in real-time."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "Typescript",
+                "TailwindCSS",
+                "React Query",
+                "Express.js",
+                "MySQL",
+                "bcrypt.js",
+                "JWT"
+            ],
+
+            usage_examples: [
+                "Create a private or public post to share how you feel anonymously or under your username.",
+                "Interact with a supportive community through posts and likes.",
+                "Search for users to explore their profile and read their shared experiences.",
+                "Use the platform on any device without losing out on the UX."
+            ]
+        }
+        ,
+        tags: [`/next.js`, `/express.js`, `/my-sql`, `/tailwind-css`],
         links: {
             live: { url: `https://share-away-prince.vercel.app/`, enabled: true },
             github: { url: `https://share-away-showcase.vercel.app/`, enabled: true },
@@ -48,8 +133,50 @@ export const majorProjects: Project[] = [
     {
         id: `paypal-sofi-wists-calculator`,
         name: `PayPal, SoFi, and Karuta Tickets Fee Calculator`,
-        breif_description: `A fee calculator for PayPal, SoFi Wists, Mazoku Bloodstones, and Karuta Tickets transactions.`,
-        full_description: `The PayPal, SoFi, and Karuta Tickets Fee Calculator simplifies the process of calculating fees for transactions. It provides accurate estimates for PayPal, SoFi, and Karuta Tickets fees, ensuring transparency and efficiency in financial calculations`,
+        description: `A fee calculator for PayPal, SoFi Wists, Mazoku Bloodstones, and Karuta Tickets transactions.`,
+        full_description: {
+            intro: `The PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone Fee Calculator simplifies transaction fee calculations across four different platforms. Whether you're dealing with online payments, gaming currencies, or cross-border transactions, this tool ensures accurate and real-time fee breakdowns in a sleek and responsive interface.`,
+
+            features: [
+                {
+                    title: "Transaction Fee Calculation",
+                    detail: "Instantly calculate fees and net payouts for PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone transactions based on your input."
+                },
+                {
+                    title: "User-Friendly Interface",
+                    detail: "Minimal, clean layout with responsive design makes it easy to use on all screen sizes."
+                },
+                {
+                    title: "Multi-Platform Support",
+                    detail: "Switch between PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone to get platform-specific fee breakdowns."
+                },
+                {
+                    title: "Currency Switching",
+                    detail: "Seamlessly toggle between USD and INR for SoFi Wist and Mazoku Bloodstone calculations."
+                },
+                {
+                    title: "Customizable Inputs",
+                    detail: "Dynamically adjust transaction values and instantly see updated calculations and results."
+                },
+                {
+                    title: "Optimized Performance",
+                    detail: "Fast and efficient front-end built with Next.js for a smooth user experience."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "TailwindCSS"
+            ],
+
+            usage_examples: [
+                "Calculate your PayPal transaction fees before sending or receiving money.",
+                "Estimate net payout when converting SoFi Wist or Mazoku Bloodstone to INR.",
+                "Check how many Karuta Tickets you'd receive after marketplace fees.",
+                "Switch currencies to compare outcomes across USD and INR.",
+                "Use it to plan fair trades and purchases involving platform-specific digital currencies."
+            ]
+        },
         tags: [`/next.js`, `/typescript`, `/tailwind-css`],
         links: {
             live: { url: `https://paypal-and-sofi-wist-fee-calculator.vercel.app/`, enabled: true },
@@ -61,8 +188,51 @@ export const majorProjects: Project[] = [
     {
         id: `pick-and-win`,
         name: `Pick And Win`,
-        breif_description: `Easily pick a random giveaway winner by shuffling participant names or spinning the wheel. Customize the experience with a variety of settings and shuffle/spin controls.`,
-        full_description: `Pick and Win helps you choose giveaway winners easily. Just add participant names, shuffle them, and pick a winner at random. It's perfect for content creators running giveaways and makes selecting a fair winner quick and simple.`,
+        description: `Easily pick a random giveaway winner by shuffling participant names or spinning the wheel. Customize the experience with a variety of settings and shuffle/spin controls.`,
+        full_description: {
+            intro: `Pick and Win is a fun and interactive tool for running giveaways. It allows users to input participant names, shuffle them with suspense, and pick a winner using various animated selection modes. Ideal for content creators and online communities, the app ensures fairness and excitement in every draw.`,
+
+            features: [
+                {
+                    title: "Participant Management",
+                    detail: "Add names one by one, in bulk (comma-separated or line-by-line), remove specific entries, or reset the list in one click."
+                },
+                {
+                    title: "Interactive Shuffle System",
+                    detail: "Highlight participants in real-time during a suspenseful shuffle animation. Fully customizable shuffle duration."
+                },
+                {
+                    title: "Flexible Settings",
+                    detail: "Easily adjust shuffle timers and highlight colors via a built-in settings panel."
+                },
+                {
+                    title: "Winner Selection Modes",
+                    detail: "Choose from 'Last One Standing', 'Random Winner', 'Shuffle Mode', or 'Wheel Mode' for unique ways to pick a winner."
+                },
+                {
+                    title: "Winner Announcement",
+                    detail: "Displays the winner prominently with a redirect to a dedicated page. Auto-handles final round behavior when only two participants remain."
+                },
+                {
+                    title: "Seamless Navigation",
+                    detail: "After winner declaration, easily return to the home screen to manage participants or start a new round."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "TailwindCSS",
+                "tailwind-scrollbar"
+            ],
+
+            usage_examples: [
+                "Host Instagram or YouTube giveaways and select a winner fairly.",
+                "Run fun mini-games in classrooms or team meetings using the Wheel mode.",
+                "Customize the shuffle time to build suspense for important prize draws.",
+                "Easily reset and rerun draws for multiple winners or rounds.",
+                "Use the app during livestreams or Discord events to engage your audience."
+            ]
+        },
         tags: [`/next.js`, `/typescript`, `/tailwind-css`],
         links: {
             live: { url: `https://pickandwin-iota.vercel.app/`, enabled: true },
@@ -75,8 +245,54 @@ export const majorProjects: Project[] = [
     {
         id: `online-sales-admin-portal`,
         name: `Online Sales Admin Portal`,
-        breif_description: `The online sales admin portal efficiently collects and stores customer purchase information.`,
-        full_description: `The online sales admin portal, built with ExpressJS, EJS, and MongoDB, efficiently collects and stores customer purchase information. Admins can view and edit purchase details, including date, cost, payment status, purchase status, and items purchased.`,
+        description: `The online sales admin portal efficiently collects and stores customer purchase information.`,
+        full_description: {
+            intro: `The Online Sales Admin Portal, built with Express.js, EJS, and MongoDB, efficiently collects and stores customer purchase information. Admins can view and manage all order records, making sales tracking smooth and organized.`,
+
+            features: [
+                {
+                    title: "Purchase Management",
+                    detail: "Admins can view, edit, and track purchase details including buyer name, purchase date, item list, cost, and current status."
+                },
+                {
+                    title: "MongoDB Integration",
+                    detail: "Customer and purchase data are stored securely in a MongoDB database with a clear schema structure for easy querying."
+                },
+                {
+                    title: "Admin Dashboard with EJS",
+                    detail: "Renders dynamic admin views using EJS templates to provide a clean and intuitive UI for managing records."
+                },
+                {
+                    title: "Status Indicators",
+                    detail: "Each purchase includes editable fields for payment status and delivery status, allowing real-time updates."
+                },
+                {
+                    title: "Environment-Based Config",
+                    detail: "Utilizes environment variables via dotenv to keep sensitive configuration like DB URI and admin credentials secure."
+                },
+                {
+                    title: "Local Development Support",
+                    detail: "Nodemon is included to auto-reload the server during development for rapid testing and updates."
+                }
+            ],
+
+            dependencies: [
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "EJS",
+                "dotenv",
+                "nodemon"
+            ],
+
+            usage_examples: [
+                "Manage shop orders in a single interface.",
+                "Track customer purchases with status flags like 'Paid' or 'Not Paid'.",
+                "Edit orders directly in the admin portal using intuitive EJS-rendered forms.",
+                "Use it as a backend skeleton for any e-commerce or custom store-like system.",
+                "Run it locally or deploy it to manage sales from your gaming community or small business."
+            ]
+        },
         tags: [`/node.js`, `/express.js`, `/ejs`, `/mongo-db`],
         links: {
             live: { url: ``, enabled: false },
@@ -88,8 +304,52 @@ export const majorProjects: Project[] = [
     {
         id: `prince-kun`,
         name: `Prince-kun Discord Bot`,
-        breif_description: `Prince-kun is a custom-built Discord bot developed with TypeScript to serve as the all-in-one solution for managing my personal Discord server.`,
-        full_description: `Prince-kun is a custom-built Discord bot developed with TypeScript to serve as the all-in-one solution for managing my personal Discord server.\n\nDesigned with both automation and interactivity in mind, the bot handles essential server moderation, user management, and provides a fully integrated backend for ItsMe Prince Shop powered by a MySQL database.\n\nFrom banning users and sending automated updates to distributing giveaway codes and managing a shop leaderboard, Prince-kun blends practical utility with personal touches. It supports both slash commands and prefix-based commands, and includes rich support for accessing social links, game items, livestream codes, and purchase profiles — making it an essential hub for both server members and clients.`,
+        description: `Prince-kun is a custom-built Discord bot developed with TypeScript to serve as the all-in-one solution for managing my personal Discord server.`,
+        full_description: {
+            intro: `Prince-kun is a custom TypeScript-based Discord bot developed for managing and enhancing the experience on the ItsMe Prince Discord server. It supports powerful moderation tools, integrates deeply with the ItsMe Prince Shop backend (MySQL), and offers a variety of fun and personal utility commands for server members.`,
+
+            features: [
+                {
+                    title: "Server Management",
+                    detail: "Moderate your server with ease using features like ban/kick, bulk delete (purge), automated update announcements, donation notifications, redeem code sharing, and role assignments."
+                },
+                {
+                    title: "ItsMe Prince Shop Integration",
+                    detail: "Fully integrated with the ItsMe Prince Shop’s MySQL backend to manage users, track purchases, edit data, maintain a leaderboard, and let users register, view, and update their purchase profiles."
+                },
+                {
+                    title: "User Roles",
+                    detail: "Assign and manage server roles such as Leaker, Mod, Bot Tester, Client, Code Poster, and Shop Manager with precise control."
+                },
+                {
+                    title: "Slash & Prefix Commands",
+                    detail: "Supports both slash commands (`/`) and traditional prefix-based commands (`!`, `?`, etc.) for flexible and efficient interactions."
+                },
+                {
+                    title: "Utility & Fun Features",
+                    detail: "Packed with interactive commands like avatar display, game ID retrieval, device/PC specs, math operations, and access to personal social links like GitHub, Ko-fi, Instagram, YouTube, WhatsApp, and more."
+                }
+            ],
+
+            dependencies: [
+                "Node.js",
+                "Typescript",
+                "discord.js",
+                "MySQL",
+                "dotenv",
+                "nodemon"
+            ],
+
+            usage_examples: [
+                "Moderate Discord servers with ban/kick and purge commands.",
+                "Manage and display purchase history from ItsMe Prince Shop via the MySQL database.",
+                "Automatically share livestream redeem codes and YouTube promo codes.",
+                "Let users check their own shop profile using slash commands.",
+                "Access game IDs, device specs, social links, and donation options directly through bot commands.",
+                "Assign and manage server roles to users through automated commands.",
+                "Use SQL-specific commands to execute MySQL queries through the bot’s CLI."
+            ]
+        },
         tags: [`/typescript`, `/my-sql`, `/discord.js`],
         links: {
             live: { url: `https://prince-kun-website.vercel.app/`, enabled: true },
@@ -101,8 +361,32 @@ export const majorProjects: Project[] = [
     {
         id: `e-drive`,
         name: `E-Drive`,
-        breif_description: `A collection of academic resources and self-written notes for Bachelor's of Computer Application's IVth Semester.`,
-        full_description: `This platform offers a sophisticated collection of resources tailored to support your academic journey. You'll find self-written notes of BCA IVth Semester as well as the notes that are being taught in the institute that I'm currently studying in!`,
+        description: `A collection of academic resources and self-written notes for Bachelor's of Computer Application's IVth Semester.`,
+        full_description: {
+            intro: `E-DRIVE is a centralized educational resource hub designed to help BCA students—especially those in the IVth semester—access well-organized, self-written notes. This platform also includes notes directly from the institute where I currently study, making it a reliable and updated academic companion.`,
+
+            features: [
+                {
+                    title: "Institute-Taught Notes",
+                    detail: "Includes notes directly based on what is being taught in the classroom at my institute, ensuring real-time relevance for students studying alongside me."
+                },
+                {
+                    title: "Minimal UI",
+                    detail: "A clean, distraction-free layout focused on the content, designed for quick access and better reading comfort."
+                },
+                {
+                    title: "Open Access",
+                    detail: "The platform is hosted freely and publicly on GitHub Pages so that anyone can browse and benefit from the notes anytime, anywhere."
+                }
+            ],
+
+            usage_examples: [
+                "Visit the platform to study BCA IV semester subjects like Operating Systems, DBMS, and Web Technology.",
+                "Use the notes during revision sessions, assignments, or pre-exam preparation.",
+                "Share the URL with classmates who missed lectures or need simplified notes.",
+                "Bookmark specific sections or notes for repeated study."
+            ]
+        },
         tags: [`/html`, `/css`, `/javascript`],
         links: {
             live: { url: `https://itsmeprinceyt.github.io/e-drive/index.html`, enabled: true },
@@ -114,8 +398,42 @@ export const majorProjects: Project[] = [
     {
         id: `statistics-mean-calculator`,
         name: `Statistics Mean Calculator`,
-        breif_description: `An online calculator that computes means for individual, discrete, and continuous data sets.`,
-        full_description: `The online statistics mean calculator, built with HTML, CSS, and JavaScript, efficiently calculates means for individual, discrete, and continuous data sets. It features a user-friendly interface designed for quick and precise calculations.`,
+        description: `An online calculator that computes means for individual, discrete, and continuous data sets.`,
+        full_description: {
+            intro: `The Statistics Mean Calculator is a web application designed to calculate the mean (average) for various types of statistical data. Whether you're a student or a teacher, this tool simplifies complex mean calculations across different data formats.`,
+
+            features: [
+                {
+                    title: "Individual Data Mean Calculation",
+                    detail: "Quickly compute the arithmetic mean of simple, ungrouped individual data values."
+                },
+                {
+                    title: "Discrete Data Mean Calculation",
+                    detail: "Enter discrete data with frequencies to get accurate mean results using standard statistical formulas."
+                },
+                {
+                    title: "Continuous Data Mean Calculation",
+                    detail: "Supports grouped continuous data inputs with class intervals and frequencies to calculate the mean accurately."
+                },
+                {
+                    title: "Easy-to-Use Interface",
+                    detail: "Minimal and clean layout allowing quick input and instant results—great for both beginners and experienced users."
+                },
+                {
+                    title: "Open Source & Transparent",
+                    detail: "The underlying logic of the calculator is also available as a C++ implementation for better learning and contribution."
+                }
+            ],
+
+
+            usage_examples: [
+                "Calculate the mean of a list of individual scores: e.g., [10, 15, 20, 25].",
+                "Input frequency tables for discrete data and get the mean.",
+                "Provide class intervals and frequencies for continuous grouped data to get the exact mean.",
+                "Use in classrooms, homework help, or for quick statistical analysis on-the-go.",
+                "Refer to the C++ source code for learning how statistical mean is implemented programmatically."
+            ]
+        },
         tags: [`/html`, `/css`, `/javascript`],
         links: {
             live: { url: `https://itsmeprinceyt.github.io/StatisticsCalculator/index.html`, enabled: true },
@@ -127,8 +445,51 @@ export const majorProjects: Project[] = [
     {
         id: `karuta-work-discord-bot`,
         name: `Karuta Work Discord Bot`,
-        breif_description: `A helpful utility bot built for the Karuta card game on Discord. It simplifies card management, saves time, and helps players stay efficient — with style!`,
-        full_description: `Karuta Work comes with a very time saving feature to simplify and enhance your gameplay experience. The kkhelp command provides all available commands, making it easy for users to understand how the bot works. With kkinvite, you can instantly get a shareable link to invite the bot to any Discord server.\n\nThe kkscan command intelligently analyzes your job board and highlights which cards are healthy or injured, saving you time and effort. kkwork takes over by giving you cards which you can assign to job board slots, streamlining your card management routine.\n\nIf you're curious about the bot itself, the kkabout command offers insights into its purpose and development background.`,
+        description: `A helpful utility bot built for the Karuta card game on Discord. It simplifies card management, saves time, and helps players stay efficient — with style!`,
+        full_description: {
+            intro: `Karuta Work is a Discord bot built to enhance the Karuta card game experience by automating and simplifying job board management. Originally designed for personal use, it has evolved into a powerful public tool used by many to save time, increase efficiency, and manage cards with ease.`,
+
+            features: [
+                {
+                    title: "kkhelp",
+                    detail: "Displays a complete list of available commands and a guide on how to use the bot effectively."
+                },
+                {
+                    title: "kkinvite",
+                    detail: "Generates an invite link to add Karuta Work to your own Discord server with the required permissions."
+                },
+                {
+                    title: "kkscan",
+                    detail: "Analyzes your Karuta job board and highlights which cards are healthy or injured, helping you make quick decisions."
+                },
+                {
+                    title: "kkwork",
+                    detail: "Automatically assigns your available cards to the Karuta job board slots, reducing manual labor."
+                },
+                {
+                    title: "kkabout",
+                    detail: "Provides information about the bot, its creator, and how you can support the project."
+                },
+                {
+                    title: "Anti-Spam Cooldown",
+                    detail: "Implements intelligent cooldown timers to prevent command spamming and ensure fair use."
+                }
+            ],
+
+            dependencies: [
+                "Typescript",
+                "Discord.js",
+                "Node.js",
+            ],
+
+            usage_examples: [
+                "Type `kkwork` to assign all your eligible cards to jobs instantly.",
+                "Use `kkscan` to check your job board and identify which cards need replacement.",
+                "Run `kkhelp` to get a full list of commands and usage info.",
+                "Share `kkinvite` with your friends to let them add the bot to their server.",
+                "Execute `kkabout` to understand the purpose of the bot and ways to support its development."
+            ]
+        },
         tags: [`/discord.js`, `/typescript`],
         links: {
             live: { url: ``, enabled: false },
@@ -140,8 +501,34 @@ export const majorProjects: Project[] = [
     {
         id: `itsme-prince-discord-bot`,
         name: `ItsMe Prince Discord Bot (old)`,
-        breif_description: `A Discord utility bot for the server that enables seamless interaction and simple math calculations and various commands.`,
-        full_description: `The Discord bot, built with Node.js and discord.js library, enables seamless interaction within the Discord application. Users can execute commands to perform simple mathematical calculations, making the workspace more productive and stress-free for the server and server owner!.`,
+        description: `A Discord utility bot for the server that enables seamless interaction and simple math calculations and various commands.`,
+        full_description: {
+            intro: `The ItsMe Prince Discord Bot is a basic utility bot designed for personal server use. Developed with Node.js and the discord.js library, it offers a collection of interactive commands that improve server functionality and user engagement.`,
+
+            features: [
+                {
+                    title: "Basic Math Commands",
+                    detail: "Perform simple mathematical operations directly in Discord using slash or prefix commands."
+                },
+                {
+                    title: "Utility Tools",
+                    detail: "Includes small but useful utilities such as ping checks, server stats, and more to aid server members."
+                },
+                {
+                    title: "Command Handling",
+                    detail: "Built with a clean command handler structure, making it easy to maintain and extend."
+                },
+                {
+                    title: "Custom Server Integration",
+                    detail: "Tailored specifically to match the needs of the ItsMe Prince Discord server community."
+                }
+            ],
+
+            dependencies: [
+                "Node.js",
+                "discord.js"
+            ],
+        },
         tags: [`/node.js`],
         links: {
             live: { url: ``, enabled: false },
@@ -152,8 +539,46 @@ export const majorProjects: Project[] = [
     {
         id: `sofi-guild-manager`,
         name: `SOFI Guild Manager`,
-        breif_description: `A Python project for tracking raid activities and member rewards within a Sofi Guild.`,
-        full_description: `The Sofi Guild Manager, developed using Python, streamlines guild management by tracking raid activities and earned rewards for members. It securely monitors withdrawals and elixir balances through encrypted data, ensuring protection and smooth operation within the guild environment.`,
+        description: `A Python project for tracking raid activities and member rewards within a Sofi Guild.`,
+        full_description: {
+            intro: `The SOFI Guild Manager, developed using Python, is a private utility designed to simplify and secure the management of raid activities and reward tracking in a SOFI guild environment. It offers an encrypted system for handling elixir balances and withdrawal tracking.`,
+
+            features: [
+                {
+                    title: "Raid Tracking",
+                    detail: "Monitor and log all raid activity per guild member to ensure active participation and fair reward distribution."
+                },
+                {
+                    title: "Reward Distribution",
+                    detail: "Track and manage earned rewards, elixirs, and points accumulated by members over time."
+                },
+                {
+                    title: "Encrypted Withdraw Logs",
+                    detail: "Handles member withdrawals securely using encrypted data to prevent tampering and maintain transparency."
+                },
+                {
+                    title: "Balance Management",
+                    detail: "Keep track of individual elixir balances for each member, updated dynamically after rewards or withdrawals."
+                },
+                {
+                    title: "Python-based CLI",
+                    detail: "A clean and efficient command-line interface built in Python for managing all data and operations."
+                }
+            ],
+
+            dependencies: [
+                "Python 3.x",
+                "json (for data storage)",
+                "cryptography (for secure encryption)"
+            ],
+
+            usage_examples: [
+                "Run the script to view current raid contributions and total rewards per member.",
+                "Use the encrypted withdraw command to securely deduct elixir from a user’s balance.",
+                "Add new raid logs manually or via automation to update guild member activity.",
+                "Export and back up encrypted logs for audit or reset purposes."
+            ]
+        },
         tags: [`/python`],
         links: {
             live: { url: ``, enabled: false },
@@ -164,8 +589,41 @@ export const majorProjects: Project[] = [
     {
         id: `currency-exchange`,
         name: `Currency Exchange`,
-        breif_description: `A Next.js app that allows real-time currency conversions using FreeCurrencyAPI.`,
-        full_description: `The Currency Exchange application, developed with Next.js, allows users to convert currencies using real-time exchange rates from an API. Key features include live currency conversion and dynamic rate fetching via the FreeCurrencyAPI.`,
+        description: `A Next.js app that allows real-time currency conversions using FreeCurrencyAPI.`,
+        full_description: {
+            intro: `Currency Exchange by ItsMe Prince is a real-time currency conversion tool built using Next.js. It allows users to convert between various currencies using the latest exchange rates fetched live from the FreeCurrencyAPI. Designed with a responsive layout and smooth UI, this tool ensures a seamless experience across all devices.`,
+
+            features: [
+                {
+                    title: "Real-time Currency Conversion",
+                    detail: "Users can convert between global currencies using accurate and up-to-date exchange rates fetched from an external API."
+                },
+                {
+                    title: "Live Rate Fetching",
+                    detail: "The application uses FreeCurrencyAPI to dynamically fetch the most current exchange rates whenever the user performs a conversion."
+                },
+                {
+                    title: "Responsive Design",
+                    detail: "Designed using Tailwind CSS, the application adjusts smoothly across mobile, tablet, and desktop devices."
+                },
+                {
+                    title: "Simple User Interface",
+                    detail: "The clean and intuitive interface allows users to choose base and target currencies, input the amount, and view conversion results instantly."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "Tailwind CSS",
+                "@everapi/freecurrencyapi-js"
+            ],
+
+            usage_examples: [
+                "Select USD as base currency and INR as target currency, enter 100, and view the converted value instantly.",
+                "Change base or target currency to explore different currency pairs.",
+                "Input any amount to get updated conversion based on current market rates."
+            ]
+        },
         tags: [`/next.js`, `/tailwind-css`, `/free-currency-api`],
         links: {
             live: { url: `https://currency-exchange-lemon-ten.vercel.app/`, enabled: true },
@@ -182,8 +640,40 @@ export const miniProjects: Project[] = [
     {
         id: `yt-thumbnail-downloader`,
         name: `YouTube Thumbnail Downloader`,
-        breif_description: `A sleek web app built with Next.js and Tailwind CSS that allows users to instantly preview and download high-resolution thumbnails from any YouTube video.`,
-        full_description: `This project is a responsive web application developed using Next.js and styled with Tailwind CSS.\n\nIt enables users to paste or enter a YouTube video URL and automatically fetches the highest quality thumbnail available.\n\nFeatures include real-time URL detection, auto-pasting from clipboard, and direct image download functionality without opening a new tab.\n\nThe app fetches the max resolution thumbnail using YouTube's image CDN and allows clean one-click downloads through Blob URLs. It is designed with accessibility, performance, and UX in mind for fast and frictionless usage.`,
+        description: `A sleek web app built with Next.js and Tailwind CSS that allows users to instantly preview and download high-resolution thumbnails from any YouTube video.`,
+        full_description: {
+            intro: `YouTube Thumbnail Downloader is a simple and efficient web app that allows users to fetch and download high-resolution thumbnails from any valid YouTube video URL. Built with Next.js, React, and Tailwind CSS, it ensures smooth performance and a responsive user experience.`,
+
+            features: [
+                {
+                    title: "Thumbnail Extraction",
+                    detail: "Automatically extract thumbnails from any valid YouTube video link by simply pasting the URL."
+                },
+                {
+                    title: "High-Resolution Support",
+                    detail: "Offers high-quality thumbnails including max resolution (maxresdefault) when available."
+                },
+                {
+                    title: "One-Click Download",
+                    detail: "Users can directly download thumbnails in one click without any extra steps."
+                },
+                {
+                    title: "Clean UI",
+                    detail: "User-friendly and responsive design powered by Tailwind CSS for optimal viewing across all devices."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "Tailwind CSS"
+            ],
+
+            usage_examples: [
+                "Paste any YouTube video URL into the input field to preview its thumbnail.",
+                "Choose from the available resolutions like maxresdefault, hqdefault, or mqdefault.",
+                "Click the download button to save the selected thumbnail locally."
+            ]
+        },
         tags: [`/next.js`, `/tailwind.css`, `/typescript`],
         links: {
             live: {
@@ -202,31 +692,49 @@ export const miniProjects: Project[] = [
         banner: `/projects/yt-thumbnail-downloader/1.png`,
     },
     {
-        id: `file-encrypt-decrypter`,
-        name: `File Encrypter / Decrypter Tool`,
-        breif_description: `A small python and node program which I use to encrypt .env file in my public repo to avoid losing them forever if my computer explodes.`,
-        full_description: `This project is a simple command-line tool for encrypting and decrypting files using a symmetric key derived from a user-provided password.\n File Encryption: Securely encrypts files using a password.\n File Decryption: Decrypts previously encrypted files using the correct password.\n Password-Derived Key: Generates a strong encryption key from the password using SHA-256 hashing.`,
-        tags: [`/python`, '/node.js'],
-        links: {
-            live: {
-                url: ``,
-                enabled: false
-            },
-            github: {
-                url: `https://github.com/itsmeprinceyt/file-encrypt-decrypter`,
-                enabled: true
-            },
-            youtube: {
-                url: ``,
-                enabled: false
-            }
-        },
-    },
-    {
         id: `base64-converter`,
         name: `Image to Base64 Converter Tool`,
-        breif_description: `A web tool built with Next.js to convert images to Base64 strings, with image compression and download functionality.`,
-        full_description: `This project is a responsive image-to-Base64 converter built with Next.js. Users can upload images, convert them to Base64, compress the image using a slider, and download the compressed image in PNG format. The tool offers a clean and mobile-friendly UI for seamless interaction.`,
+        description: `A web tool built with Next.js to convert images to Base64 strings, with image compression and download functionality.`,
+        full_description: {
+            intro: `This project is a responsive image-to-Base64 converter built with Next.js. Users can upload images, convert them to Base64, compress the image using a slider, and download the compressed image in PNG format. The tool offers a clean and mobile-friendly UI for seamless interaction.`,
+
+            features: [
+                {
+                    title: "Image Upload",
+                    detail: "Users can upload PNG, JPG, or JPEG images directly from their device to begin conversion."
+                },
+                {
+                    title: "Base64 Conversion",
+                    detail: "Converts uploaded images into Base64-encoded strings that can be copied or used in development."
+                },
+                {
+                    title: "Compression Slider",
+                    detail: "Adjustable slider lets users compress images before downloading to reduce file size."
+                },
+                {
+                    title: "Download Compressed Image",
+                    detail: "Download the optimized image in PNG format after compression."
+                },
+                {
+                    title: "Responsive Design",
+                    detail: "Mobile-friendly layout ensures the tool works flawlessly on both desktop and mobile devices."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "Tailwind CSS",
+                "html-to-image",
+                "browser-image-compression"
+            ],
+
+            usage_examples: [
+                "Upload an image from your device to view its Base64 representation.",
+                "Use the compression slider to reduce image quality before downloading.",
+                "Copy the Base64 string to use directly in your CSS or HTML.",
+                "Download the compressed version of the image in one click."
+            ]
+        },
         tags: [`/next.js`, `/tailwind-css`],
         links: {
             live: {
@@ -242,12 +750,51 @@ export const miniProjects: Project[] = [
                 enabled: false
             }
         },
+        banner: `/projects/base64-converter/1.png`,
     },
     {
         id: `registration-form`,
         name: `Registration Form`,
-        breif_description: `A user registration form landing page built with Next.js, React Hook Form, and Tailwind CSS.`,
-        full_description: `This project is a responsive user registration form built with Next.js. It uses React Hook Form for form handling and validation, and Tailwind CSS for styling. It's designed to be clean, modern, and mobile-friendly.`,
+        description: `A user registration form landing page built with Next.js, React Hook Form, and Tailwind CSS.`,
+        full_description: {
+            intro: `This is a clean and responsive user registration landing page built with Next.js. It includes form validation, modern styling, and an intuitive layout for capturing user data efficiently. The form demonstrates a real-world example of client-side validation and UI/UX best practices.`,
+
+            features: [
+                {
+                    title: "User Registration",
+                    detail: "Allows users to input details like name, email, and password to simulate account creation."
+                },
+                {
+                    title: "Form Validation",
+                    detail: "Utilizes React Hook Form to provide seamless client-side validation and error handling."
+                },
+                {
+                    title: "Responsive Design",
+                    detail: "Fully responsive layout optimized for mobile, tablet, and desktop devices using Tailwind CSS."
+                },
+                {
+                    title: "Real-Time Feedback",
+                    detail: "Displays validation errors and highlights incorrect fields immediately as users type."
+                },
+                {
+                    title: "Submission Console Output",
+                    detail: "On successful form submission, user input data is logged to the browser's console for debugging and preview purposes."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "Tailwind CSS",
+                "React Hook Form"
+            ],
+
+            usage_examples: [
+                "Open the app at https://registration-form-nextjs.vercel.app/",
+                "Fill out your name, email, and password in the registration form.",
+                "Try submitting with invalid fields to see validation errors in action.",
+                "Open your browser console to inspect the form data after a successful submission."
+            ]
+        },
         tags: [`/next.js`, `/tailwind-css`, `/react-hook-form`],
         links: {
             live: {
@@ -268,8 +815,41 @@ export const miniProjects: Project[] = [
     {
         id: `product-landing-page`,
         name: `Product Landing Page`,
-        breif_description: `A responsive product landing page built with Next.js and Tailwind CSS.`,
-        full_description: `This project showcases a fictional product through a sleek, responsive landing page. Built using Next.js and Tailwind CSS, it highlights product features and includes call-to-action sections optimized for user engagement. For this example, I've taken Kreo Mouse as the main product example. `,
+        description: `A responsive product landing page built with Next.js and Tailwind CSS.`,
+        full_description: {
+            intro: `This is a sleek and responsive product landing page built using Next.js and Tailwind CSS. It showcases a fictional product with a focus on clean design, usability, and effective user engagement. The layout includes a feature-rich overview, call-to-action, and a contact form.`,
+
+            features: [
+                {
+                    title: "Hero Section",
+                    detail: "A bold, visually engaging introduction with a headline, subtext, and prominent call-to-action button to immediately capture user attention."
+                },
+                {
+                    title: "Product Features",
+                    detail: "Detailed visual sections to highlight key features and benefits, structured for readability and impact."
+                },
+                {
+                    title: "Responsive Design",
+                    detail: "Optimized layout for mobile, tablet, and desktop devices using Tailwind CSS."
+                },
+                {
+                    title: "Contact Form",
+                    detail: "An easy-to-use form for users to send inquiries, feedback, or requests about the product."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "Tailwind CSS"
+            ],
+
+            usage_examples: [
+                "Visit the live page: https://kreomouse-nextjs.vercel.app/",
+                "Read through the hero section and explore the product features.",
+                "Use the contact form to simulate sending a message or inquiry.",
+                "Customize the page for your own product by editing content and styles."
+            ]
+        },
         tags: [`/next.js`, `/tailwind-css`],
         links: {
             live: {
@@ -290,8 +870,37 @@ export const miniProjects: Project[] = [
     {
         id: `food-shop-landing`,
         name: `Food Shop Landing Page`,
-        breif_description: `A clean, responsive food shop landing page with product listings and category filters.`,
-        full_description: `This modern food shop landing page was created using Next.js and styled with Tailwind CSS. It presents a clean layout for showcasing food items, including descriptions, categories, and pricing, making it ideal for small online food businesses.`,
+        description: `A clean, responsive food shop landing page with product listings and category filters.`,
+        full_description: {
+            intro: `This is a modern, responsive food shop website built using Next.js and Tailwind CSS. It displays a variety of food items neatly organized into categories like appetizers, main courses, and desserts. The project features a clean design with smooth responsiveness across devices, perfect for showcasing a restaurant or food business online.`,
+
+            features: [
+                {
+                    title: "Food Menu",
+                    detail: "Showcases an array of food items with high-quality images, names, descriptions, and prices categorized into sections such as appetizers, main courses, and desserts."
+                },
+                {
+                    title: "Responsive Design",
+                    detail: "Built using Tailwind CSS to ensure the layout is visually appealing and functional across all screen sizes including mobile, tablet, and desktop."
+                },
+                {
+                    title: "Contact and About Us Sections",
+                    detail: "Includes informational pages about the food shop’s background, mission, and ways for customers to get in touch easily."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "Tailwind CSS"
+            ],
+
+            usage_examples: [
+                "Open the live site: https://food-shop-nextjs.vercel.app/",
+                "Browse the food menu to see categorized dishes with prices and descriptions.",
+                "Read the About Us and Contact pages to simulate a real-world food business presence.",
+                "Run locally using `npm install` and `npm run dev` to explore and modify the project for your needs."
+            ]
+        },
         tags: [`/next.js`, `/tailwind-css`],
         links: {
             live: {
@@ -316,8 +925,38 @@ export const playgroundProjects: Project[] = [
     {
         id: `reflex-time`,
         name: `Reflex Time`,
-        breif_description: `A fast-paced game where players hit numbers as quickly as possible within 60 seconds in the race to make the highest score possible.`,
-        full_description: `Reflex Time is a fast-paced, interactive game where your goal is to hit the random numbers displayed on the screen within 60 seconds. Try to achieve the highest score possible by clicking on the correct numbers as quickly as you can!`,
+        description: `A fast-paced game where players hit numbers as quickly as possible within 60 seconds in the race to make the highest score possible.`,
+        full_description: {
+            intro: `Reflex Time is a fast-paced, interactive reflex game built with Next.js and Tailwind CSS. The objective is to click the correct random number displayed within a limited time to earn points. It challenges your reflexes and attention to detail, offering a simple yet addictive gameplay experience.`,
+
+            features: [
+                {
+                    title: "Random Number Display",
+                    detail: "A number appears on the screen, and players must quickly click the matching number from a grid of randomized options."
+                },
+                {
+                    title: "60-Second Timer",
+                    detail: "Each session lasts 60 seconds, encouraging fast-paced interaction and rapid decision-making."
+                },
+                {
+                    title: "High Score Tracking",
+                    detail: "Track and improve your performance by aiming to beat your highest score each time you play."
+                }
+            ],
+
+            dependencies: [
+                "Next.js",
+                "Tailwind CSS"
+            ],
+
+            usage_examples: [
+                "Visit the live game: https://reflex-time.vercel.app/",
+                "Click 'Start' to begin your 60-second challenge.",
+                "Click the number that matches the one displayed at the top.",
+                "Try to hit as many correct numbers as possible before time runs out.",
+                "Monitor your high score and aim to beat it in the next session."
+            ]
+        },
         tags: [`/next.js`, `/tailwind-css`],
         links: {
             live: { url: `https://reflex-time.vercel.app/`, enabled: true },
@@ -326,4 +965,11 @@ export const playgroundProjects: Project[] = [
         },
         banner: `/projects/reflex-time/1.png`,
     },
+];
+/* ============================================================================= */
+/* ============================================================================= */
+export const bestProjects: Project[] = [
+    majorProjects[0],
+    majorProjects[1],
+    majorProjects[4]
 ];
