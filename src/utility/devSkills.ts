@@ -15,6 +15,7 @@ const devSkills = [
   { name: "/tailwind-css", file: "14.tailwind.svg", fullName: "Tailwind CSS" },
   { name: "/next.js", file: "15.next.svg", fullName: "Next.js" },
   { name: "/typescript", file: "16.typescript.svg", fullName: "TypeScript" },
+  { name: "/electron.js", file: "17.electron.svg", fullName: "Electron.js"}
 ];
 
 export default devSkills;
