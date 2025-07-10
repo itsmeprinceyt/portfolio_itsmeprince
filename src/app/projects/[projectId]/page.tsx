@@ -6,7 +6,6 @@ import PageWrapper from "../../(components)/PageWrapper";
 import MainWindow from '../../(components)/MainWindow';
 import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '../../../utility/ProjectData';
 import LinkShow from '../../(components)/LinkShow';
-import DevSkills from '../../../utility/devSkills';
 import devSkills from '../../../utility/devSkills';
 
 const getProjectById = (id: string) => {
