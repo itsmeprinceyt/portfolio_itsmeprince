@@ -33,10 +33,6 @@ export const majorProjects: Project[] = [
             ],
 
             dependencies: [
-                "Electron.js",
-                "Node.js",
-                "Typescript",
-                "TailwindCSS",
                 "Node.js Script: [crypto inbuilt module]",
                 "Python Script: [cryptography / hashlib]",
             ],
@@ -64,6 +60,66 @@ export const majorProjects: Project[] = [
             }
         },
         banner: `/projects/file-encrypt-decrypter/1.png`,
+    },
+    {
+        id: "crafti-nagma",
+        name: "Crafti Nagma E-Store",
+        description: "A beautifully semi-dynamic e-commerce website designed to elevate experience for crochet, embroidery, and customized crafts using Next.js, TypeScript, and modern frontend tools.",
+        full_description: {
+            intro:
+                "Crafti Nagma is a semi-dynamic e-commerce website designed to showcase and sell crochet, embroidery, and customized crafts with elegance and ease. Built with Next.js, TypeScript, and TailwindCSS, it offers a smooth, responsive shopping experience with seamless WhatsApp checkout integration.",
+            features: [
+                {
+                    title: "Product Listings & Detail Pages",
+                    detail: "Showcases products with high-quality images, clear titles, and custom features, variations, and care instructions.",
+                },
+                {
+                    title: "Image Gallery with Fullscreen Support",
+                    detail: "Utilizes Swiper.js to provide a modern, responsive carousel and fullscreen preview for product images.",
+                },
+                {
+                    title: "Cart System with WhatsApp Checkout",
+                    detail: "Allows users to add products to a cart and checkout directly via WhatsApp with pre-filled cart data.",
+                },
+                {
+                    title: "Persistent Cart via localStorage",
+                    detail: "Cart data is saved in localStorage, ensuring it remains even after a page refresh or browser restart.",
+                },
+                {
+                    title: "Discount Feature",
+                    detail: "Supports showing discounted prices for select products, encouraging conversions.",
+                },
+                {
+                    title: "Product Search",
+                    detail: "Fast, dynamic product search module helps customers find items instantly.",
+                },
+                {
+                    title: "SEO-Friendly",
+                    detail: "Clean URLs, dynamic metadata, and well-structured pages for better search engine indexing.",
+                },
+                {
+                    title: "Mobile Responsive",
+                    detail: "Optimized layout and interaction patterns for smooth mobile and desktop experiences.",
+                },
+            ],
+            dependencies: [
+                "Swiper.js",
+                "React Hot Toast",
+                "WhatsApp API",
+            ],
+            usage_examples: [
+                "Users can visit the page and browse different products and add them to the cart.",
+                "View fullscreen product images using the gallery carousel.",
+                "Add products to cart and click 'Checkout' to open WhatsApp with a pre-filled message and talk to the business owner to buy those items.",
+            ],
+        },
+        tags: [`/next.js`, `/tailwind-css`, `/typescript`],
+        links: {
+            live: { url: `https://crafti-nagma.vercel.app/`, enabled: true },
+            github: { url: `https://github.com/itsmeprinceyt/crafti-nagma`, enabled: true },
+            youtube: { url: ``, enabled: false },
+        },
+        banner: "/projects/crafti-nagma/1.png",
     },
     {
         id: `shareaway`,
@@ -104,12 +160,7 @@ export const majorProjects: Project[] = [
             ],
 
             dependencies: [
-                "Next.js",
-                "Typescript",
-                "TailwindCSS",
                 "React Query",
-                "Express.js",
-                "MySQL",
                 "bcrypt.js",
                 "JWT"
             ],
@@ -122,7 +173,7 @@ export const majorProjects: Project[] = [
             ]
         }
         ,
-        tags: [`/next.js`, `/express.js`, `/my-sql`, `/tailwind-css`],
+        tags: [`/next.js`, `/express.js`, `/my-sql`, `/tailwind-css`, `/typescript`],
         links: {
             live: { url: `https://share-away-prince.vercel.app/`, enabled: true },
             github: { url: `https://share-away-showcase.vercel.app/`, enabled: true },
@@ -162,11 +213,6 @@ export const majorProjects: Project[] = [
                     title: "Optimized Performance",
                     detail: "Fast and efficient front-end built with Next.js for a smooth user experience."
                 }
-            ],
-
-            dependencies: [
-                "Next.js",
-                "TailwindCSS"
             ],
 
             usage_examples: [
@@ -220,8 +266,6 @@ export const majorProjects: Project[] = [
             ],
 
             dependencies: [
-                "Next.js",
-                "TailwindCSS",
                 "tailwind-scrollbar"
             ],
 
@@ -277,10 +321,7 @@ export const majorProjects: Project[] = [
             ],
 
             dependencies: [
-                "Node.js",
-                "Express.js",
-                "MongoDB",
-                "EJS",
+                "ejs.js",
                 "dotenv",
                 "nodemon"
             ],
@@ -293,7 +334,7 @@ export const majorProjects: Project[] = [
                 "Run it locally or deploy it to manage sales from your gaming community or small business."
             ]
         },
-        tags: [`/node.js`, `/express.js`, `/ejs`, `/mongo-db`],
+        tags: [`/node.js`, `/express.js`, `/mongo-db`],
         links: {
             live: { url: ``, enabled: false },
             github: { url: `https://github.com/itsmeprinceyt/itsmeprince-shop-with-db`, enabled: true },
@@ -332,10 +373,7 @@ export const majorProjects: Project[] = [
             ],
 
             dependencies: [
-                "Node.js",
-                "Typescript",
                 "discord.js",
-                "MySQL",
                 "dotenv",
                 "nodemon"
             ],
@@ -350,7 +388,7 @@ export const majorProjects: Project[] = [
                 "Use SQL-specific commands to execute MySQL queries through the bot’s CLI."
             ]
         },
-        tags: [`/typescript`, `/my-sql`, `/discord.js`],
+        tags: [`/node.js`, `/typescript`, `/my-sql`],
         links: {
             live: { url: `https://prince-kun-website.vercel.app/`, enabled: true },
             github: { url: `https://prince-kun.vercel.app/`, enabled: true },
@@ -425,7 +463,6 @@ export const majorProjects: Project[] = [
                 }
             ],
 
-
             usage_examples: [
                 "Calculate the mean of a list of individual scores: e.g., [10, 15, 20, 25].",
                 "Input frequency tables for discrete data and get the mean.",
@@ -475,13 +512,9 @@ export const majorProjects: Project[] = [
                     detail: "Implements intelligent cooldown timers to prevent command spamming and ensure fair use."
                 }
             ],
-
             dependencies: [
-                "Typescript",
-                "Discord.js",
-                "Node.js",
+                "discord.js"
             ],
-
             usage_examples: [
                 "Type `kkwork` to assign all your eligible cards to jobs instantly.",
                 "Use `kkscan` to check your job board and identify which cards need replacement.",
@@ -490,7 +523,7 @@ export const majorProjects: Project[] = [
                 "Execute `kkabout` to understand the purpose of the bot and ways to support its development."
             ]
         },
-        tags: [`/discord.js`, `/typescript`],
+        tags: [`/node.js`, `/typescript`],
         links: {
             live: { url: ``, enabled: false },
             github: { url: `https://github.com/itsmeprinceyt/karuta-work`, enabled: true },
@@ -525,7 +558,6 @@ export const majorProjects: Project[] = [
             ],
 
             dependencies: [
-                "Node.js",
                 "discord.js"
             ],
         },
@@ -567,8 +599,6 @@ export const majorProjects: Project[] = [
             ],
 
             dependencies: [
-                "Python 3.x",
-                "json (for data storage)",
                 "cryptography (for secure encryption)"
             ],
 
@@ -613,8 +643,6 @@ export const majorProjects: Project[] = [
             ],
 
             dependencies: [
-                "Next.js",
-                "Tailwind CSS",
                 "@everapi/freecurrencyapi-js"
             ],
 
@@ -624,7 +652,7 @@ export const majorProjects: Project[] = [
                 "Input any amount to get updated conversion based on current market rates."
             ]
         },
-        tags: [`/next.js`, `/tailwind-css`, `/free-currency-api`],
+        tags: [`/next.js`, `/tailwind-css`],
         links: {
             live: { url: `https://currency-exchange-lemon-ten.vercel.app/`, enabled: true },
             github: { url: `https://github.com/itsmeprinceyt/currency_exchange`, enabled: true },
@@ -661,11 +689,6 @@ export const miniProjects: Project[] = [
                     title: "Clean UI",
                     detail: "User-friendly and responsive design powered by Tailwind CSS for optimal viewing across all devices."
                 }
-            ],
-
-            dependencies: [
-                "Next.js",
-                "Tailwind CSS"
             ],
 
             usage_examples: [
@@ -722,8 +745,6 @@ export const miniProjects: Project[] = [
             ],
 
             dependencies: [
-                "Next.js",
-                "Tailwind CSS",
                 "html-to-image",
                 "browser-image-compression"
             ],
@@ -783,8 +804,6 @@ export const miniProjects: Project[] = [
             ],
 
             dependencies: [
-                "Next.js",
-                "Tailwind CSS",
                 "React Hook Form"
             ],
 
@@ -795,7 +814,7 @@ export const miniProjects: Project[] = [
                 "Open your browser console to inspect the form data after a successful submission."
             ]
         },
-        tags: [`/next.js`, `/tailwind-css`, `/react-hook-form`],
+        tags: [`/next.js`, `/tailwind-css`],
         links: {
             live: {
                 url: `https://registration-form-nextjs.vercel.app/`,
@@ -836,11 +855,6 @@ export const miniProjects: Project[] = [
                     title: "Contact Form",
                     detail: "An easy-to-use form for users to send inquiries, feedback, or requests about the product."
                 }
-            ],
-
-            dependencies: [
-                "Next.js",
-                "Tailwind CSS"
             ],
 
             usage_examples: [
@@ -887,11 +901,6 @@ export const miniProjects: Project[] = [
                     title: "Contact and About Us Sections",
                     detail: "Includes informational pages about the food shop’s background, mission, and ways for customers to get in touch easily."
                 }
-            ],
-
-            dependencies: [
-                "Next.js",
-                "Tailwind CSS"
             ],
 
             usage_examples: [
@@ -944,11 +953,6 @@ export const playgroundProjects: Project[] = [
                 }
             ],
 
-            dependencies: [
-                "Next.js",
-                "Tailwind CSS"
-            ],
-
             usage_examples: [
                 "Visit the live game: https://reflex-time.vercel.app/",
                 "Click 'Start' to begin your 60-second challenge.",
@@ -970,6 +974,6 @@ export const playgroundProjects: Project[] = [
 /* ============================================================================= */
 export const bestProjects: Project[] = [
     majorProjects[0],
-    majorProjects[1],
-    majorProjects[4]
+    majorProjects[2],
+    majorProjects[5]
 ];
