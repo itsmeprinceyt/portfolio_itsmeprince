@@ -1,3 +1,4 @@
-export default interface ResponsiveLinkProps {
+export interface ResponsiveLinkProps {
     url: string;
-}
+    color: 'blue' | 'purple' | 'rose';
+};

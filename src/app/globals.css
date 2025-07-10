@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Google Sans';
-  src: url('/fonts/GoogleSans-Regular.ttf') format('truetype');
+    font-family: 'Google Sans';
+    src: url('/fonts/GoogleSans-Regular.ttf') format('truetype');
 }
 
 * {
