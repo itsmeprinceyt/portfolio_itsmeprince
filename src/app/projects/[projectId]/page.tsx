@@ -6,6 +6,7 @@ import PageWrapper from "../../(components)/PageWrapper";
 import MainWindow from '../../(components)/MainWindow';
 import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '../../../utility/ProjectData';
 import LinkShow from '../../(components)/LinkShow';
+import devSkills from '../../../utility/devSkills';
 
 const getProjectById = (id: string) => {
     const allProjects = [...bestProjects, ...majorProjects, ...miniProjects, ...playgroundProjects];
@@ -79,10 +80,17 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                             {/* Tech Tags Section */}
                             <div className="pl-1">
                                 <div className={`${baseDescriptionHeading}`}>🔮 Tech stack:</div>
-                                <ul className="list-disc pl-8 space-y-3">
-                                    {project.tags.map((tag, index) => (
-                                        <li key={index}>{tag}</li>
-                                    ))}
+                                <ul className="list-disc pl-8 space-y-3 text-white">
+                                    {project.tags.map((tag, index) => {
+                                        const matchedSkill = devSkills.find(skill => skill.name === tag);
+                                        return (
+                                            <li key={index}>
+                                                <span className="bg-gradient-to-b from-purple-700 via-purple-400 to-purple-300 bg-clip-text text-transparent font-semibold">
+                                                    {matchedSkill ? matchedSkill.fullName : tag}
+                                                </span>
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </div>
 
@@ -112,7 +120,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                         </div>
 
                         {/* Links Section */}
-                        <hr className="opacity-30"/>
+                        <hr className="opacity-30" />
                         <div className="flex flex-col gap-2 justify-center border border-black/10 bg-white/5 rounded-md shadow-lg/10 p-4 space-y-2 shadow-md shadow-white/50 overflow-hidden">
                             {/* Live Link if exists */}
                             {project.links.live.enabled && (
@@ -160,7 +168,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                 </div>
                             )}
                         </div>
-                        
+
                         {/* Image Slider Section */}
                         {images.length > 0 && (
                             <div className="mt-10 flex flex-col items-center gap-4">

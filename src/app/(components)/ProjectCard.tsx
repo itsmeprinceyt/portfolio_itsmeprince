@@ -24,7 +24,7 @@ export default function ProjectCard({ project, index }: ProjectCard) {
             </Link>
 
             {/* Project Index */}
-            <p className="absolute top-1 left-1 text-[10px] text-gray-600/50">#{index}</p>
+            <p className="absolute top-1 left-1 text-[10px] text-gray-600/50">#{index+1}</p>
             {/* Content area */}
             <div className="flex flex-col justify-between flex-grow p-4 text-black gap-2">
                 {/* Top content */}
