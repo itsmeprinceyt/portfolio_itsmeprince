@@ -35,21 +35,21 @@ export default function ProjectCard({ project, index }: ProjectCard) {
                     {/* Links */}
                     <div className="flex flex-col gap-3 justify-center border border-black/10 bg-black/5 rounded-md shadow-lg/10 p-2">
                         {project.links.live.enabled && (
-                            <div className="flex text-xs items-center gap-2 w-full">
+                            <div className={`${baseURLcss}`}>
                                 <Image src="/icons/web.svg" width={20} height={20} alt="Web" loading="lazy" />
                                 <span className="text-blue-400 shrink-0 min-w-[67px]">/live:</span>
                                 <LinkShow url={project.links.live.url} color="blue" />
                             </div>
                         )}
                         {project.links.github.enabled && (
-                            <div className="flex text-xs items-center gap-2 w-full">
+                            <div className={`${baseURLcss}`}>
                                 <Image src="/logo/dev-tools/2.github.svg" width={20} height={20} alt="GitHub" loading="lazy" />
                                 <span className="text-purple-400 shrink-0 min-w-[67px]">/github:</span>
                                 <LinkShow url={project.links.github.url} color="purple" />
                             </div>
                         )}
                         {project.links.youtube.enabled && (
-                            <div className="flex text-xs items-center gap-2 w-full">
+                            <div className={`${baseURLcss}`}>
                                 <Image src="/icons/youtube.svg" width={20} height={20} alt="YouTube" loading="lazy" />
                                 <span className="text-rose-400 shrink-0 min-w-[67px]">/youtube:</span>
                                 <LinkShow url={project.links.youtube.url} color="rose" />
