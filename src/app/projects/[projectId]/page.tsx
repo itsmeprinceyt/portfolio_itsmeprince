@@ -126,7 +126,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                         className="invert"
                                     />
                                     <span className="text-blue-400 shrink-0 min-w-[67px]">/live:</span>
-                                    <LinkShow url={project.links.live.url} />
+                                    <LinkShow url={project.links.live.url} color="blue" />
                                 </div>
                             )}
                             {/* GitHub Link if exists */}
@@ -141,7 +141,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                         className="invert"
                                     />
                                     <span className="text-purple-400 shrink-0 min-w-[67px]">/github:</span>
-                                    <LinkShow url={project.links.github.url} />
+                                    <LinkShow url={project.links.github.url} color="purple" />
                                 </div>
                             )}
                             {/* YouTube Link if exists */}
@@ -156,7 +156,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                         className="invert"
                                     />
                                     <span className="text-rose-400 shrink-0 min-w-[67px]">/youtube:</span>
-                                    <LinkShow url={project.links.youtube.url} />
+                                    <LinkShow url={project.links.youtube.url} color="rose" />
                                 </div>
                             )}
                         </div>
