@@ -47,16 +47,16 @@ export const majorProjects: Project[] = [
         tags: [`/electron.js`, `/node.js`, `/typescript`, `/next.js`, `/tailwind-css`, `/python`],
         links: {
             live: {
-                url: ``,
-                enabled: false
+                url: `https://www.dropbox.com/home/File%20Encrypter%20Decrypter%20by%20ItsMe%20Prince`,
+                enabled: true
             },
             github: {
                 url: `https://github.com/itsmeprinceyt/file-encrypt-decrypter`,
                 enabled: true
             },
             youtube: {
-                url: ``,
-                enabled: false
+                url: `https://www.youtube.com/watch?v=e7MSCbvnSZs`,
+                enabled: true
             }
         },
         banner: `/projects/file-encrypt-decrypter/1.png`,
