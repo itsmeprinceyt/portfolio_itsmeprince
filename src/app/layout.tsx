@@ -1,19 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Geist, Geist_Mono } from "next/font/google";
 import Loader from './(components)/Loader';
-import DynamicIsland from "./(components)/DynamicIsland";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Mohd Uvaish - Portfolio | ItsMe Prince",
@@ -30,11 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,80,80,0.4),rgba(0,0,0,0))]">
         <Suspense fallback={<Loader />}>
-          <DynamicIsland />
           {children}
-          <div className="fixed text-white text-[10px] left-1/2 bottom-1 transform -translate-x-[50%] -translate-y-[50%] text-center">© 2025 ItsMe Prince.</div>
         </Suspense>
       </body>
     </html>
