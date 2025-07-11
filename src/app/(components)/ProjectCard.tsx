@@ -12,19 +12,20 @@ export default function ProjectCard({ project, index }: ProjectCard) {
             className="bg-white relative mb-5 break-inside-avoid rounded-md shadow-xl/10 hover:shadow-xl/20 shadow-white transition-transform hover:scale-105 w-full flex flex-col"
         >
             {/* Open project */}
-            <Link href={`/projects/${project.id}`}>
+            <Link href={`/projects/${project.id}`} className="absolute top-0 right-0 transition-transform hover:invert bg-white text-gray-600 rounded-sm p-0.5 px-2  flex items-center gap-2">
+                <div className="text-xs ">Learn More</div>
                 <Image
                     src="/icons/open.png"
                     width={10}
                     height={10}
                     alt="View"
                     loading="lazy"
-                    className="absolute top-2 right-2 transition-transform hover:scale-125"
+                    className=""
                 />
             </Link>
 
             {/* Project Index */}
-            <p className="absolute top-1 left-1 text-[10px] text-gray-600/50">#{index+1}</p>
+            <p className="absolute top-1 left-1 text-[10px] text-gray-600/50">#{index + 1}</p>
             {/* Content area */}
             <div className="flex flex-col justify-between flex-grow p-4 text-black gap-2">
                 {/* Top content */}
