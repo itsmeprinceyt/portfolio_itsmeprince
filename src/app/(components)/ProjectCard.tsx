@@ -1,90 +1,70 @@
-import Link from "next/link";
 import Image from "next/image";
-import type { ProjectCard } from '../../types/Project.type';
+import type { ProjectCard } from "../../types/Project.type";
 import LinkShow from "./LinkShow";
 
 export default function ProjectCard({ project, index }: ProjectCard) {
-    const baseURLcss: string = "flex text-xs items-center gap-2 w-full";
+    const tagStyle: string = "text-white border border-stone-500 bg-black shadow-lg shadow-black/20 hover:shadow-black/40 hover:scale-105 transition-all ease-in-out duration-300 px-2 py-1 rounded-md tracking-widest h-[30px]";
 
     return (
-        <div
-            key={project.id}
-            className="bg-white relative mb-5 break-inside-avoid rounded-md shadow-xl/10 hover:shadow-xl/20 shadow-white transition-transform hover:scale-105 w-full flex flex-col"
-        >
-            {/* Open project */}
-            <Link href={`/projects/${project.id}`} className="absolute top-0 right-0 transition-transform hover:invert bg-white text-gray-600 rounded-sm p-0.5 px-2  flex items-center gap-2">
-                <div className="text-xs ">Learn More</div>
-                <Image
-                    src="/icons/open.png"
-                    width={10}
-                    height={10}
-                    alt="View"
-                    loading="lazy"
-                    className=""
-                />
-            </Link>
+        <div key={project.id} className="w-full max-w-lg mx-auto flex flex-col bg-white relative mb-5 break-inside-avoid rounded-md shadow-xl/10 hover:shadow-xl/20 shadow-white transition-transform">
+            {/* Project #Index */}
+            <span className="text-[10px] text-gray-600/50 absolute top-1 left-1/2 -translate-x-1/2">
+                Project #{index + 1}
+            </span>
 
-            {/* Project Index */}
-            <p className="absolute top-1 left-1 text-[10px] text-gray-600/50">#{index + 1}</p>
-            {/* Content area */}
-            <div className="flex flex-col justify-between flex-grow p-4 text-black gap-2">
-                {/* Top content */}
-                <div className="flex flex-col gap-5">
-                    <div className="text-4xl font-semibold tracking-widest">{project.name}</div>
-                    <div className="text-xs font-extralight tracking-widest">{project.description}</div>
+            <div className="flex flex-col justify-between flex-grow p-4 gap-4 text-black">
 
-                    {/* Links */}
-                    <div className="flex flex-col gap-3 justify-center border border-black/10 bg-black/5 rounded-md shadow-lg/10 p-2">
-                        {project.links.live.enabled && (
-                            <div className={`${baseURLcss}`}>
-                                <Image src="/icons/web.svg" width={20} height={20} alt="Web" loading="lazy" />
-                                <span className="text-blue-400 shrink-0 min-w-[67px]">/live:</span>
-                                <LinkShow url={project.links.live.url} color="blue" />
-                            </div>
-                        )}
-                        {project.links.github.enabled && (
-                            <div className={`${baseURLcss}`}>
-                                <Image src="/logo/dev-tools/2.github.svg" width={20} height={20} alt="GitHub" loading="lazy" />
-                                <span className="text-purple-400 shrink-0 min-w-[67px]">/github:</span>
-                                <LinkShow url={project.links.github.url} color="purple" />
-                            </div>
-                        )}
-                        {project.links.youtube.enabled && (
-                            <div className={`${baseURLcss}`}>
-                                <Image src="/icons/youtube.svg" width={20} height={20} alt="YouTube" loading="lazy" />
-                                <span className="text-rose-400 shrink-0 min-w-[67px]">/youtube:</span>
-                                <LinkShow url={project.links.youtube.url} color="rose" />
-                            </div>
-                        )}
-                    </div>
+                {/* Title & description */}
+                <div className="flex flex-col gap-2 relative text-center">
+                    <h2 className="text-[clamp(1.5rem,4vw,2.25rem)] font-semibold tracking-widest">
+                        {project.name}
+                    </h2>
+                    <p className="text-[clamp(0.7rem,1.5vw,0.875rem)] font-extralight tracking-widest">
+                        {project.description}
+                    </p>
+                </div>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-5">
-                        {project.tags.map((tag: string, idx: number) => (
-                            <span
-                                key={idx}
-                                className="text-black border border-black/10 bg-black/5 hover:bg-black shadow-lg/10 hover:shadow-lg/20 hover:text-white px-2 py-1 rounded-md tracking-widest text-xs"
-                            >
+                {/* Links */}
+                <div className="flex flex-wrap gap-3 justify-start items-center ">
+                    {project.links.live.enabled && (
+                        <LinkShow url={project.links.live.url} color="blue" />
+                    )}
+                    {project.links.github.enabled && (
+                        <LinkShow url={project.links.github.url} color="purple" />
+                    )}
+                    {project.links.youtube.enabled && (
+                        <LinkShow url={project.links.youtube.url} color="rose" />
+                    )}
+                    <LinkShow url={`/projects/${project.id}`} color="orange" />
+                </div>
+
+                {/* Tags */}
+                <div className="text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-white p-1 bg-black rounded-md shadow-lg/30 shadow-black">🔮 Tech stack:
+                    <div className="flex flex-wrap gap-2 sm:gap-3 text-[12px] bg-white p-2 rounded-sm border-gray-600/20 border">
+                        {project.tags.map((tag, idx) => (
+                            <span key={idx} className={tagStyle}>
                                 {tag}
                             </span>
                         ))}
                     </div>
                 </div>
 
-                {/* Banner image - takes all remaining space */}
+                {/* Banner image (if available) */}
                 {project.banner && (
-                    <div className="w-full min-h-[200px] flex-grow overflow-hidden relative border border-black/10 rounded-md shadow-lg/20 hover:scale-105 transition-transform mt-4">
-                        <Image
-                            src={project.banner}
-                            fill
-                            style={{ objectFit: "cover", objectPosition: "top" }}
-                            alt="Banner"
-                            loading="lazy"
-                        />
+                    <div className="text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-white p-1 bg-black rounded-md shadow-lg/30 shadow-black hover:scale-105">🖼️ Sneak Peak:
+                        <div className="relative w-full aspect-[16/9] overflow-hidden rounded-sm">
+                            <Image
+                                src={project.banner}
+                                alt="Banner"
+                                fill
+                                loading="lazy"
+                                style={{ objectFit: "cover", objectPosition: "top" }}
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 50vw"
+                            />
+                        </div>
                     </div>
                 )}
             </div>
         </div>
-
     );
 }

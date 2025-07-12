@@ -50,8 +50,8 @@ export default function BirthdayCounter() {
     }, []);
 
     return (
-        <div className="text-center p-4 rounded-xl text-white shadow-md tracking-widest leading-7">
-            <h2 className="text-2xl font-bold mb-2">{age}🍰</h2>
+        <div className="text-center text-white tracking-widest leading-7">
+            <h2 className="text-2xl font-bold">{age}🎂</h2>
             <p className="text-lg">{countdown}</p>
         </div>
     );

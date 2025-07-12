@@ -1,4 +1,4 @@
 export interface ResponsiveLinkProps {
     url: string;
-    color: 'blue' | 'purple' | 'rose';
+    color: 'blue' | 'purple' | 'rose' | 'orange';
 };
