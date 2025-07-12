@@ -10,7 +10,7 @@ import SkillIcon from '../SkillIcon';
 export default function SkillsPage() {
     return (
         <PageWrapper>
-            <div className="flex flex-col items-center justify-start mt-16 mb-16">
+            <div className="flex flex-col items-center justify-start mt-16 mb-16 select-none">
 
                 <div className="m-5 max-w-4xl mx-auto">
                     <h2

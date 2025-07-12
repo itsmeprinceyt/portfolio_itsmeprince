@@ -7,23 +7,22 @@ import KofiWidget from '../KofiWidget';
 import dynamic from 'next/dynamic';
 import DynamicIslandProps from '../../../types/DynamicIsland.type';
 
-export default function AboutPage({scrollTo, refs}: DynamicIslandProps) {
+export default function AboutPage({ scrollTo, refs }: DynamicIslandProps) {
     const BirthdayCounter = dynamic(() => import('../BirthdayCounter'), { ssr: false });
 
     return (
         <PageWrapper>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center px-4 mt-20 md:mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center px-4 mt-20 md:mt-0 select-none">
                 {/* Profile Image */}
-                <div className="flex justify-center">
-                    <Image
-                        className="w-[340px] max-w-full rounded-md md:rounded-full transition-transform duration-300 ease-in-out hover:scale-105 shadow-xl/20 hover:shadow-xl/40 shadow-neutral-700"
-                        src={"/profile-picture/pfp1.jpg"}
-                        width={3000}
-                        height={3000}
-                        loading="lazy"
-                        alt="Profile"
-                    />
-                </div>
+                <Image
+                    className="w-[340px] max-w-full rounded-md md:rounded-full transition-transform duration-300 ease-in-out hover:scale-105 shadow-xl/20 hover:shadow-xl/40 shadow-neutral-700"
+                    src={"/profile-picture/pfp1.jpg"}
+                    width={3000}
+                    height={3000}
+                    alt="Profile"
+                    priority
+                    draggable={false}
+                />
 
                 {/* About Text */}
                 <div className="flex flex-col items-center justify-center gap-2 text-center text-white">
@@ -48,16 +47,16 @@ export default function AboutPage({scrollTo, refs}: DynamicIslandProps) {
                             .
                         </p>
                         <p>
-                            I&apos;m always honing my {''}
+                            I&apos;m always honing my{' '}
                             <button onClick={() => scrollTo(refs.skillsRef!)}>
-                            <TextHighlighter text="/skills" /></button> in tech and staying eager to learn and grow while helping others and staying humble!
+                                <TextHighlighter text="/skills" /></button> in tech and staying eager to learn and grow while helping others and staying humble!
                         </p>
                     </div>
                 </div>
             </div>
 
             {/* Location & Birthday Cards */}
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 px-4 select-none">
 
                 {/* Location Card with Emoji */}
                 <div className="relative group z-1">
@@ -70,7 +69,7 @@ export default function AboutPage({scrollTo, refs}: DynamicIslandProps) {
 
                     {/* Card */}
                     <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-stone-500/20 shadow-stone-500/10 animate-fade-in-up text-center border border-neutral-700">
-                        <h2 className="text-sm mb-1 tracking-widest leading-7">📍 I'm from India</h2>
+                        <h2 className="text-sm mb-1 tracking-widest leading-7">📍 I&apos;m from India</h2>
                         <p className="text-2xl font-semibold text-white/90 tracking-widest leading-7">Kanpur, Uttar Pradesh</p>
                     </div>
                 </div>

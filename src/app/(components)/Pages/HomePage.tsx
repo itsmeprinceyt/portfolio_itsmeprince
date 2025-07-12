@@ -35,7 +35,7 @@ export default function HomePage() {
             {showDownloadMenu && (
                 <div className="fixed z-20 top-0 left-0 w-screen h-screen bg-black/80 flex items-center justify-center">
                     <div ref={downloadMenuRef} className="relative bg-white rounded-md p-5 flex flex-col gap-5 max-h-[80vh] overflow-y-auto">
-                        <p className="text-xs tracking-widest p-2 rounded-md hover:scale-105 animate-pulse">/download-cv-in . . .</p>
+                        <p className="text-xs tracking-widest p-2 rounded-md hover:scale-105 animate-pulse select-none">/download-cv-in . . .</p>
                         <button
                             className="absolute top-2 right-2 hover:scale-125"
                             onClick={handleDownloadMenu}>
@@ -62,7 +62,7 @@ export default function HomePage() {
             )}
 
             {/* Text Main Container */}
-            <div className="flex flex-col justify-center items-center gap-5">
+            <div className="flex flex-col justify-center items-center gap-5 select-none">
                 {/* Text */}
                 <div className="flex flex-col  justify-end items-center text-center h-[100px] border-white/50">
                     <p className="shine-effect text-8xl max-[780px]:text-6xl max-[600px]:text-5xl max-[420px]:text-4xl text-center font-bold bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-shadow-lg/10 text-shadow-white hover:text-shadow-lg/20">
