@@ -39,7 +39,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
 
     const openFullscreen = () => setIsFullscreen(true);
     const closeFullscreen = () => setIsFullscreen(false);
-    const baseDescriptionHeading: string = "px-2 py-0.5 text-base tracking-widest font-bold font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-md mb-2 shadow-md/20 shadow-white";
+    const baseDescriptionHeading: string = "px-2 py-0.5 text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-md mb-2 shadow-md/20 shadow-white";
     const baseURLcss = "flex items-center gap-2 text-xs w-full min-w-0 overflow-hidden";
 
 

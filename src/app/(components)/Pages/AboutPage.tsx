@@ -8,7 +8,14 @@ import dynamic from 'next/dynamic';
 import DynamicIslandProps from '../../../types/DynamicIsland.type';
 
 export default function AboutPage({ scrollTo, refs }: DynamicIslandProps) {
-    const BirthdayCounter = dynamic(() => import('../BirthdayCounter'), { ssr: false });
+    const BirthdayCounter = dynamic(() => import('../BirthdayCounter'), {
+        ssr: false,
+        loading: () => (
+            <div className="h-[60px] flex items-center justify-center text-white text-lg animate-pulse">
+                Loading the magic... 🎉
+            </div>
+        )
+    });
 
     return (
         <PageWrapper>
@@ -68,7 +75,7 @@ export default function AboutPage({ scrollTo, refs }: DynamicIslandProps) {
                     </div>
 
                     {/* Card */}
-                    <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-stone-500/20 shadow-stone-500/10 animate-fade-in-up text-center border border-neutral-700">
+                    <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white p-6 rounded-2xl border border-neutral-700 shadow-xl transition-all duration-300  hover:shadow-2xl hover:shadow-stone-500/20 shadow-stone-500/10 animate-fade-in-up text-center hover:scale-105">
                         <h2 className="text-sm mb-1 tracking-widest leading-7">📍 I&apos;m from India</h2>
                         <p className="text-2xl font-semibold text-white/90 tracking-widest leading-7">Kanpur, Uttar Pradesh</p>
                     </div>
