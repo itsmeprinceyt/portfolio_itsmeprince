@@ -37,7 +37,7 @@ export default function LinkShow({ url, color }: ResponsiveLinkProps) {
     return (
         <Link
             href={url}
-            target="_blank"
+            target={color === 'orange' ? '' : '_blank'}
             rel="noopener noreferrer"
         >
             <div className={`${containerClass} ${meta.bg}`}>

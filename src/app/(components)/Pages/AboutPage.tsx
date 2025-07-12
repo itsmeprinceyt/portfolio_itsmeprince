@@ -18,7 +18,7 @@ export default function AboutPage({ scrollTo, refs }: DynamicIslandProps) {
     });
 
     return (
-        <PageWrapper>
+        <PageWrapper DivID="about">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center px-4 mt-20 md:mt-0 select-none">
                 {/* Profile Image */}
                 <Image
@@ -55,7 +55,7 @@ export default function AboutPage({ scrollTo, refs }: DynamicIslandProps) {
                         </p>
                         <p>
                             I&apos;m always honing my{' '}
-                            <button onClick={() => scrollTo(refs.skillsRef!)}>
+                            <button onClick={() => scrollTo!(refs!.skillsRef!)}>
                                 <TextHighlighter text="/skills" /></button> in tech and staying eager to learn and grow while helping others and staying humble!
                         </p>
                     </div>

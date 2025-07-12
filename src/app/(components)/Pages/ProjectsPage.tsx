@@ -9,46 +9,48 @@ export default function Skills() {
     const ProductGridCSS = "flex flex-col gap-5 sm:gap-6";
 
     return (
-        <PageWrapper>
+        <PageWrapper DivID="projects">
             <div className="flex flex-col gap-10 px-4 sm:px-6 md:px-10 mt-16 mb-16 select-none">
                 {/* Best Projects */}
                 <div className={mainProjectDiv}>
                     <p className={mainHeadText}>Best Projects</p>
-                    <div className={ProductGridCSS}>
-                        {bestProjects.map((project, index) => (
+                    {bestProjects.map((project, index) => (
+                        <div className={ProductGridCSS} id={project.id} key={index}>
                             <ProjectCard key={index} project={project} index={index} />
-                        ))}
-                    </div>
+                        </div>
+                    ))}
+
                 </div>
 
                 {/* Major Projects */}
                 <div className={mainProjectDiv}>
                     <p className={mainHeadText}>Major Projects</p>
-                    <div className={ProductGridCSS}>
-                        {majorProjects.map((project, index) => (
+
+                    {majorProjects.map((project, index) => (
+                        <div className={ProductGridCSS} id={project.id} key={index}>
                             <ProjectCard key={index} project={project} index={index} />
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
 
                 {/* Mini Projects */}
                 <div className={mainProjectDiv}>
                     <p className={mainHeadText}>Mini Projects</p>
-                    <div className={ProductGridCSS}>
-                        {miniProjects.map((project, index) => (
+                    {miniProjects.map((project, index) => (
+                        <div className={ProductGridCSS} id={project.id} key={index}>
                             <ProjectCard key={index} project={project} index={index} />
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
 
                 {/* Playground Projects */}
                 <div className={mainProjectDiv}>
                     <p className={mainHeadText}>Playground Projects</p>
-                    <div className={ProductGridCSS}>
-                        {playgroundProjects.map((project, index) => (
+                    {playgroundProjects.map((project, index) => (
+                        <div className={ProductGridCSS} id={project.id} key={index}>
                             <ProjectCard key={index} project={project} index={index} />
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </PageWrapper>
