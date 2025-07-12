@@ -14,64 +14,15 @@ export default function MainHomePage() {
   const skillsRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
 
-  const [activeSection, setActiveSection] = useState<Section>('home');
-
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
-  useEffect(() => {
-    const sectionMap: Record<Section, React.RefObject<HTMLDivElement | null>> = {
-      home: homeRef,
-      about: aboutRef,
-      skills: skillsRef,
-      projects: projectsRef,
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let maxRatio = 0;
-        let mostVisibleSection: Section | null = null;
-
-        entries.forEach((entry) => {
-          for (const key in sectionMap) {
-            if (
-              entry.target === sectionMap[key as Section].current &&
-              entry.intersectionRatio > maxRatio
-            ) {
-              maxRatio = entry.intersectionRatio;
-              mostVisibleSection = key as Section;
-            }
-          }
-        });
-
-        if (mostVisibleSection && mostVisibleSection !== activeSection) {
-          setActiveSection(mostVisibleSection);
-        }
-      },
-      {
-        threshold: Array.from({ length: 11 }, (_, i) => i / 10),
-        rootMargin: '-20% 0px -20% 0px',
-      }
-    );
-
-    Object.values(sectionMap).forEach((ref) => {
-      if (ref.current) observer.observe(ref.current);
-    });
-
-    return () => {
-      Object.values(sectionMap).forEach((ref) => {
-        if (ref.current) observer.unobserve(ref.current);
-      });
-    };
-  }, [activeSection]);
 
   return (
     <>
       <DynamicIsland
         scrollTo={scrollTo}
         refs={{ homeRef, aboutRef, skillsRef, projectsRef }}
-        activeSection={activeSection}
       />
       <div ref={homeRef}><HomePage /></div>
       <div ref={aboutRef}>
@@ -80,7 +31,7 @@ export default function MainHomePage() {
       </div>
       <div ref={skillsRef}><SkillsPage /></div>
       <div ref={projectsRef}><ProjectsPage /></div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

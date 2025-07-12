@@ -3,7 +3,7 @@ import type { ProjectCard } from "../../types/Project.type";
 import LinkShow from "./LinkShow";
 
 export default function ProjectCard({ project, index }: ProjectCard) {
-    const tagStyle: string = "text-white border border-stone-500 bg-black shadow-lg shadow-black/20 hover:shadow-black/40 hover:scale-105 transition-all ease-in-out duration-300 px-2 py-1 rounded-md tracking-widest h-[30px]";
+    const tagStyle: string = "text-white border border-stone-500 bg-black shadow-lg shadow-black/20 hover:shadow-black/40 hover:scale-105 transition-all ease-in-out duration-300 px-2 py-1 rounded-md tracking-widest h-[30px] flex items-center";
 
     return (
         <div key={project.id} className="w-full max-w-lg mx-auto flex flex-col bg-white relative mb-5 break-inside-avoid rounded-md shadow-xl/10 hover:shadow-xl/20 shadow-white transition-transform">
