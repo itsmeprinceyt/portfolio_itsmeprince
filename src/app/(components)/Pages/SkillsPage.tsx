@@ -54,7 +54,7 @@ export default function SkillsPage() {
                                 <ol className="list-disc pl-4 space-y-1 text-rose-100">
                                     <li>Pick the right model</li>
                                     <li>Optimizing sort & search</li>
-                                    <li>Ensuring data for date 🍷</li>
+                                    <li>Preparing data for date 🍷</li>
                                 </ol>
                             </div>
                         </div>
