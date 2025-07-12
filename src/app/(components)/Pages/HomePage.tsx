@@ -8,7 +8,7 @@ import AnimatedText from '../AnimatedText';
 import { fileIcons } from "../../../utility/resumeFiles";
 
 export default function HomePage() {
-    const [showDownloadMenu, setShowDownloadMenu] = useState(false);
+    const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
     const downloadMenuRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {

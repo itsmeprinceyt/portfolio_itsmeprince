@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ResponsiveLinkProps } from '../../types/ResponsiveLink.type';
 
-const linkMetaMap = {
+const LinksMapping = {
     blue: {
         icon: '/icons/web.svg',
         label: '/live',
@@ -31,8 +31,8 @@ const linkMetaMap = {
 } as const;
 
 export default function LinkShow({ url, color }: ResponsiveLinkProps) {
-    const meta = linkMetaMap[color];
-    const containerClass = `flex items-center gap-2 text-white hover:scale-105 transition-all ease-in-out duration-300 px-2 py-1 rounded-md tracking-widest text-[12px] h-[30px] font-bold`
+    const LinkItem = LinksMapping[color];
+    const mainContainerCSS: string = `flex items-center gap-2 text-white hover:scale-105 transition-all ease-in-out duration-300 px-2 py-1 rounded-md tracking-widest text-[12px] h-[30px] font-bold`
 
     return (
         <Link
@@ -40,17 +40,17 @@ export default function LinkShow({ url, color }: ResponsiveLinkProps) {
             target={color === 'orange' ? '' : '_blank'}
             rel="noopener noreferrer"
         >
-            <div className={`${containerClass} ${meta.bg}`}>
+            <div className={`${mainContainerCSS} ${LinkItem.bg}`}>
                 <Image
-                    src={meta.icon}
+                    src={LinkItem.icon}
                     width={20}
                     height={20}
-                    alt={meta.label}
+                    alt={LinkItem.label}
                     loading="lazy"
                     className="invert"
                 />
-                <span className={`${meta.textColor}`}>
-                    {meta.label}
+                <span className={`${LinkItem.textColor}`}>
+                    {LinkItem.label}
                 </span>
             </div>
         </Link>

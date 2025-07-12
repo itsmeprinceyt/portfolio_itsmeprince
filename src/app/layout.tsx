@@ -6,7 +6,7 @@ import Loader from './(components)/Loader';
 
 export const metadata: Metadata = {
   title: "Mohd Uvaish - Portfolio | ItsMe Prince",
-  description: "Welcome to my personal portfolio! Explore my diverse skills ranging from programming and technical expertise to soft skills. Check out my meticulously crafted projects and get a glimpse of what I can offer.",
+  description: "Welcome to my personal portfolio! Explore my diverse skills ranging from programming and technical expertise to soft skills. Check out my meticulously crafted projects and get an idea of what I can offer.",
   icons: {
     icon: "/profile-picture/pfp1.jpg",
   },

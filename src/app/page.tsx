@@ -6,6 +6,7 @@ import SkillsPage from './(components)/Pages/SkillsPage';
 import ProjectsPage from './(components)/Pages/ProjectsPage';
 import DynamicIsland from './(components)/DynamicIsland';
 import type Section from '../types/Pages.type.ts';
+import Footer from './(components)/Footer';
 
 export default function MainHomePage() {
   const homeRef = useRef<HTMLDivElement | null>(null);
@@ -79,6 +80,7 @@ export default function MainHomePage() {
       </div>
       <div ref={skillsRef}><SkillsPage /></div>
       <div ref={projectsRef}><ProjectsPage /></div>
+      <Footer/>
     </>
   );
 }

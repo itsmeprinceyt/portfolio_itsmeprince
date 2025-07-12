@@ -1,0 +1,1 @@
+export const REMOVEHASH_TIMEOUT: number = 10000;

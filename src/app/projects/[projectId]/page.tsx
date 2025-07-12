@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useState } from 'react';
+import { use, useCallback, useEffect, useState } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import PageWrapper from "../../(components)/PageWrapper";
@@ -8,6 +8,7 @@ import LinkShow from '../../(components)/LinkShow';
 import devSkills from '../../../utility/devSkills';
 import DynamicIsland from '../../(components)/DynamicIsland';
 import { useRouter } from 'next/navigation';
+import { REMOVEHASH_TIMEOUT } from '../../../utility/utils';
 
 
 const getProjectById = (id: string) => {
@@ -21,8 +22,8 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
     const project = getProjectById(projectId);
 
     const [images, setImages] = useState<string[]>([]);
-    const [index, setIndex] = useState(0);
-    const [fullscreen, setFullscreen] = useState(false);
+    const [index, setIndex] = useState<number>(0);
+    const [fullscreen, setFullscreen] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -37,6 +38,17 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
         fetchImages();
     }, [project?.id]);
 
+    const handleRoute = useCallback((hash?: string) => {
+        const base = "/";
+        const fullPath = hash ? `${base}#${hash}` : base;
+        router.push(fullPath);
+
+        if (hash) {
+            setTimeout(() => {
+                window.history.replaceState(null, "", base);
+            }, REMOVEHASH_TIMEOUT);
+        }
+    }, [router]);
 
     if (!project) return notFound();
 
@@ -44,35 +56,14 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
     const prevImage = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
     const navButtons = [
-        { label: "/", onClick: () => router.push("/") },
-        {
-            label: "/about",
-            onClick: () => {
-                router.push("/#about");
-                setTimeout(() => window.history.replaceState(null, "", "/"), 500);
-            },
-        },
-        {
-            label: "/skills",
-            onClick: () => {
-                router.push("/#skills");
-                setTimeout(() => window.history.replaceState(null, "", "/"), 500);
-            },
-        },
-        {
-            label: "/back",
-            onClick: () => {
-                router.push(`/#${project.id}`);
-                setTimeout(() => window.history.replaceState(null, "", "/"), 500);
-            },
-        },
+        { label: "/", onClick: () => handleRoute() },
+        { label: "/about", onClick: () => handleRoute("about") },
+        { label: "/skills", onClick: () => handleRoute("skills") },
+        { label: "/back", onClick: () => handleRoute(`${project.id}`) },
     ];
 
-    const buttonClass =
-        "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-md w-[100px] text-neutral-300 border border-neutral-800 hover:border-neutral-700 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs";
-
-    const baseHeading =
-        "px-2 py-0.5 text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-md mb-2 shadow-md/20 shadow-white";
+    const buttonClass: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-md w-[100px] text-neutral-300 border border-neutral-800 hover:border-neutral-700 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs";
+    const baseHeading: string = "px-2 py-0.5 text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-md mb-2 shadow-md/20 shadow-white";
 
     return (
         <>

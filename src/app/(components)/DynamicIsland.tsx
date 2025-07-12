@@ -2,8 +2,7 @@
 import type DynamicIslandProps from '../../types/DynamicIsland.type';
 
 export default function DynamicIsland({ scrollTo, refs, activeSection, buttons }: DynamicIslandProps) {
-    const baseBtn =
-        "border border-neutral-900 py-2 px-5 rounded-full transition-colors";
+    const baseBtn: string = "border border-neutral-900 py-2 px-5 rounded-full transition-colors";
 
     const getBtnStyle = (section: string) =>
         `${baseBtn} ${activeSection === section
