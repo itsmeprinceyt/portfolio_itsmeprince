@@ -1,7 +1,8 @@
 **Mohd Uvaish**  
 *Full Stack Developer*  
 Kanpur, Uttar Pradesh, India  
-[mohammadbadshah92@gmail.com](mailto:mohammadbadshah92@gmail.com) • [LinkedIn](https://www.linkedin.com/in/mohduvaish/) • [Portfolio](https://portfolio-itsmeprince.vercel.app/)  
+[mohammadbadshah92@gmail.com](mailto:mohammadbadshah92@gmail.com)   
+• [https://www.linkedin.com/in/mohduvaish/](https://www.linkedin.com/in/mohduvaish/) • [https://portfolio-itsmeprince.vercel.app/](https://portfolio-itsmeprince.vercel.app/)  
 ---
 
 Work Experience  
