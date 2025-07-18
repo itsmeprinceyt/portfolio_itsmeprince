@@ -30,7 +30,6 @@ export default function HomePage() {
         fetch('/api/mail')
             .then(res => res.json())
             .then(data => setEmail(data.email));
-        console.log(email);
     }, []);
 
     const handleDownloadMenu = () => {
