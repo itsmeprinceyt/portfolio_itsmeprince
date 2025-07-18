@@ -23,7 +23,7 @@ function getNextBirthday(birthDate: Date): Date {
 
 function getCountdown(targetDate: Date): string {
     const diff: number = targetDate.getTime() - new Date().getTime();
-    if (diff <= 0) return '🎉 Happy Birthday!';
+    if (diff <= 0) return '🎉 Happy Birthday to me!';
     const days: number = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours: number = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes: number = Math.floor((diff / (1000 * 60)) % 60);
