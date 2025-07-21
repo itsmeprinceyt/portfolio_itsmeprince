@@ -10,6 +10,7 @@ import {
     FaHtml5,
 } from "react-icons/fa";
 import { ResumeFile } from "../../types/ResumeFile.type";
+import Spinner from "./Spinner";
 
 const iconMap: Record<string, React.JSX.Element> = {
     ".pdf": <FaFilePdf />,
@@ -22,11 +23,13 @@ const iconMap: Record<string, React.JSX.Element> = {
 
 export default function FileList() {
     const [files, setFiles] = useState<ResumeFile[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch("/api/resume")
             .then((res) => res.json())
-            .then((data) => setFiles(data));
+            .then((data) => setFiles(data))
+            .finally(() => setLoading(false));
     }, []);
 
     const colorMap: Record<string, string> = {
@@ -37,6 +40,14 @@ export default function FileList() {
         ".txt": "text-stone-600",
         ".html": "text-orange-600",
     };
+
+    if (loading) {
+        return (
+            <div className="flex flex-col items-center py-8">
+                <Spinner />
+            </div>
+        );
+    }
 
     return (
         <ul className="space-y-5">
