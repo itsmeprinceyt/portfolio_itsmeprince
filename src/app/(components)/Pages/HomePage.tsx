@@ -1,11 +1,10 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import PageWrapper from '../PageWrapper';
 import SocialMediaIcons from '../SocialMediaIcons';
 import AnimatedText from '../AnimatedText';
-import { fileIcons } from "../../../utility/resumeFiles";
+import FileList from "../../(components)/ResumeFileIcons";
 
 export default function HomePage() {
     const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
@@ -54,16 +53,8 @@ export default function HomePage() {
                                 alt="cross"
                             />
                         </button>
-                        {fileIcons.map((file) => (
-                            <Link
-                                key={file.fileTypeName}
-                                href={file.href}
-                                download
-                                className="flex items-center gap-5 text-black border border-black/10 bg-black/5 hover:bg-black shadow-lg/10 hover:shadow-lg/20 hover:text-white px-4 py-2 rounded-md tracking-widest">
-                                {file.icon}
-                                <span>{file.label}</span>
-                            </Link>
-                        ))}
+                        {/* Resume Download List */}
+                        <FileList />
                     </div>
                 </div>
             )}
@@ -86,12 +77,12 @@ export default function HomePage() {
                 </div>
 
                 {/* Download CV Button & Mail*/}
-                <div className="flex items-center justify-between gap-5">
-                    <button onClick={handleDownloadMenu} className="pulse-slow bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-full text-neutral-300 border border-neutral-200 hover:border-neutral-100 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs">
+                <div className="flex items-center justify-between gap-5 pulse-slow">
+                    <button onClick={handleDownloadMenu} className=" bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-full text-neutral-300 border border-neutral-200 hover:border-neutral-100 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs">
                         /download-cv
                     </button>
 
-                    <div className="pulse-slow hover:scale-105 relative p-[2px] rounded-full bg-gradient-to-tr from-stone-500 via-stone-400 to-stone-300 w-[50px] h-[50px]">
+                    <div className=" hover:scale-105 relative p-[2px] rounded-full bg-gradient-to-tr from-stone-500 via-stone-400 to-stone-300 w-[50px] h-[50px]">
                         {!email && (
                             <span className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-xs text-gray-300">
                                 Loading email...

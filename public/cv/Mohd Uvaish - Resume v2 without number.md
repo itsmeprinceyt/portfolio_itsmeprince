@@ -1,13 +1,27 @@
 **Mohd Uvaish**  
-*Full Stack Developer*  
-Kanpur, Uttar Pradesh, India  
-[mohammadbadshah92@gmail.com](mailto:mohammadbadshah92@gmail.com)   
-• [https://www.linkedin.com/in/mohduvaish/](https://www.linkedin.com/in/mohduvaish/) • [https://portfolio-itsmeprince.vercel.app/](https://portfolio-itsmeprince.vercel.app/)  
+*Full Stack Developer*
+
+[mohammadbadshah92@gmail.com](mailto:mohammadbadshah92@gmail.com)  
+[https://www.linkedin.com/in/mohduvaish/](https://www.linkedin.com/in/mohduvaish/)  
+[https://portfolio-itsmeprince.vercel.app/](https://portfolio-itsmeprince.vercel.app/)  
+Kanpur, Uttar Pradesh, India
+
+---
+
+Education
+
+| Degree/Certificate | Institute/Board | CGPA/Percentage | Year |
+| :---- | :---- | :---- | :---- |
+| BCA | Signa Institute Of Professional Studies | 7.80 | 2022-2025 |
+| Senior Secondary | UP Board | 62% | 2022 |
+| Secondary | UP Board | 78% | 2020 |
+
 ---
 
 Work Experience  
-**Nezuware • Project-Based-Internship** • [(Link)](https://share-away-showcase.vercel.app/)	Nodia, Uttar Pradesh, India  
-	April-2025 \- May-2025
+**Nezuware • Project-Based-Internship** •	Nodia, Uttar Pradesh, India  
+[https://share-away-showcase.vercel.app/](https://share-away-showcase.vercel.app/)	April-2025 \- May-2025  
+	
 
 * Conceptualized and developed **Share Away**, an anonymous blogging platform for sharing personal thoughts without judgment, as part of the internship project.  
 * Built core features like **user registration, post creation, sharing**, **editing profile,** and **hearts (likes)** system using a full-stack approach.  
@@ -24,31 +38,22 @@ Work Experience
 * Transitioned to handling the backend, ensuring seamless integration with the front end and smooth functionality.  
 * Awarded a Certificate of Completion for completing the internship program.
 
-**GrapplTech • Project-Based-Internship** • [(Link)](https://food-shop-nextjs.vercel.app/)	Bengaluru, Karnataka, India  
-	Sep-2024 \- Oct-2024
+**GrapplTech • Project-Based-Internship** • 	Bengaluru, Karnataka, India  
+[https://food-shop-nextjs.vercel.app/](https://food-shop-nextjs.vercel.app/)	Sep-2024 \- Oct-2024	
 
 * Developed innovative web components, such as **Hero Sections**, using modern frameworks like **Next.js** and **Tailwind CSS** to create visually engaging and responsive user interfaces.  
-* Awarded a **Certificate of Completion** for completing the internship program.
+* Awarded a **Certificate of Completion** for completing the internship program.  
+    
+  
 
 
-**TechnoHacks EduTech Pvt. Ltd • Project-Based-Internship** • [(Link)](https://technohacksinternship.vercel.app/)	Nasik, Maharashtra, India  
-	Aug-2024 \- Sep-2024
+**TechnoHacks EduTech Pvt. Ltd • Project-Based-Internship** •	Nasik, Maharashtra, India  
+[https://technohacksinternship.vercel.app/](https://technohacksinternship.vercel.app/)	Aug-2024 \- Sep-2024	
 
 * Developed innovative web applications using modern frameworks like **Next.js** and **Tailwind CSS**.  
 * Built and deployed **API-based web applications**, integrating various data sources and backend services.  
 * Extensively used **Tailwind CSS** to create visually appealing, responsive, and highly customizable web designs  
 * Awarded a **Certificate of Completion** for completing the internship program.
-
----
-
-Education  
-**Signa Institue Of Professional Studies**	Dharmangadpur, Kanpur  
-**Bachelor in Computer Application (BCA)**	2022-2025
-
-* Learned about **Computer Applications** & **Programming.**  
-* Learned about Business & Financial Management.  
-* Learned about business work ethics and communication.  
-* Awarded a certificate & a medal for good performance in academics. (Only given to 5\)
 
 ---
 
@@ -89,52 +94,15 @@ Projects
 
 * The Discord bot, built with **Node.js** and **discord.js** library, enables seamless interaction within the Discord application. Users can execute commands to perform simple mathematical calculations, making the workspace more productive and stress-free.
 
-
 ---
 
 Skills  
-**Programming Languages**
-
-* C Language  
-* C++  
-* Python  
-* Javascript & Typescript
-
-
-**Front-End Development** 
-
-* HTML, CSS & Bootstrap  
-* Tailwind CSS  
-* React, Redux, and React-Hook-Forms  
-* Figma
-
-**Back-End & Framework Development**
-
-* Node.js  
-* Django \- **Basics**  
-* Express.js  
-* Next.js
-
-**Database**
-
-* MySQL  
-* MongoDB
-
-**Problem-Solving Skills**
-
-* Data Structures & Algorithms **(DSA)**  
-* Search Engine Optimization **(SEO)**
-
-**Technical-Skills**
-
-* Dev Ops **\- Moderate**  
-* OOMD (Object Oriented Modeling and Design) \- **Basics**  
-* Adobe Photoshop & Lightroom \- **Photo Editing**  
-* Adobe Premiere Pro & After Effects \- **Video Editing**  
-* Postman \- **API Testing**  
-* Git \- **Version Control**  
-* Vs Code \- **IDE**
-
+**Programming Languages:** C, C++, Javascript, Typescript  
+**Front-End Development:** HTML, CSS, Bootstrap, Tailwind CSS, React  
+**Back-End & Framework Development:** Node.js, Express.js, Next.js  
+**Database:** MySQL, MongoDB  
+**Problem-Solving Skills:** Data Structures & Algorithms, Search Engine Optimization  
+**Technical-Skills:** Dev Ops, Adobe Photoshop, Adobe Premiere Pro, After Effects, Figma, Postman, Git, Vs Code  
 ---
 
 Mini-Projects  
