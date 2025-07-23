@@ -70,6 +70,10 @@ export const majorProjects: Project[] = [
                 "Crafti Nagma is a semi-dynamic e-commerce website designed to showcase and sell crochet, embroidery, and customized crafts with elegance and ease. Built with Next.js, TypeScript, and TailwindCSS, it offers a smooth, responsive shopping experience with seamless WhatsApp checkout integration.",
             features: [
                 {
+                    title: "Chatbot Support",
+                    detail: "The chatbot is available to assist users with a wide range of needs, including product information, checkout, website navigation, order status, and contact support. It provides help in both Hindi and English, ensuring a seamless experience for all users."
+                },
+                {
                     title: "Product Listings & Detail Pages",
                     detail: "Showcases products with high-quality images, clear titles, and custom features, variations, and care instructions.",
                 },
