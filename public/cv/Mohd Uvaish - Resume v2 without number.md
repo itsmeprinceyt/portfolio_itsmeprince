@@ -60,7 +60,7 @@ Work Experience
 Projects  
 **Share Away •** [(Github)](https://share-away-showcase.vercel.app/) • [(Live)](https://share-away-prince.vercel.app/)
 
-* Built using **NodeJS**, **ExpressJS**, **EJS**, and **MongoDB**.  
+* Built using **NodeJS**, **ExpressJS**, **EJS**, and **MySQL**.  
 * Developed a blogging platform allowing users to share their feelings without fear of judgment.  
 * Implemented **user authentication** and **session management** using **JWT Token** for secure access.  
 * Enabled users to **create, edit, and delete posts** with a clean, responsive UI built using **Tailwind CSS**.  
