@@ -3,10 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from "react";
 import PageWrapper from "./(components)/PageWrapper";
-import ProfilePic from "../assets/pfp1.jpg";
 import ProfileInfoTag from './(components)/ProfileRelated/ProfileInfoTag';
-import { ProfileInfoTag_Button_CSS } from "./(components)/ProfileRelated/ProfileInfoTag";
-import { CodingProjectsLink, GitHubLink, LinkedInLink, YouTubeLink } from '../utility/utils';
+import { ProfileInfoTag_Button_CSS } from "./(components)/ProfileRelated/ButtonCSS";
+import { CodingProjectsLink, GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from '../utility/utils';
 import ProfileSkillInfo from './(components)/ProfileRelated/ProfileSkillInfoTag';
 import Divider from './(components)/Components/Divider';
 import SectionTitle from './(components)/ProfileRelated/SectionTitle';
@@ -74,7 +73,7 @@ export default function AboutPage() {
             {/* Image*/}
             <Image
               className="max-w-45 rounded-full hover:scale-105 shadow-xl/20 hover:shadow-xl/40 shadow-neutral-700"
-              src={ProfilePic}
+              src={ProfilePicture}
               width={3000}
               height={3000}
               alt="Profile"
@@ -104,7 +103,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-center justify-center gap-5 pulse-slow">
 
             {/* Download CV */}
-            <button onClick={handleDownloadMenu} className={`${ProfileInfoTag_Button_CSS} relative flex items-center gap-2`}>
+            <button onClick={handleDownloadMenu} className={`${ProfileInfoTag_Button_CSS} h-9 relative flex items-center gap-2`}>
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75 animate-ping"></span>
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-lime-500 shadow-[0_0_8px_rgba(16,185,129,0.9)]"></span>
@@ -124,7 +123,7 @@ export default function AboutPage() {
                   }
                 }}
                 disabled={!email}
-                className={`${ProfileInfoTag_Button_CSS} ${email ? `opacity-100` : `opacity-20`}`}>
+                className={`${ProfileInfoTag_Button_CSS} h-9 ${email ? `opacity-100` : `opacity-20`}`}>
                 <MailSVG />
                 Mail
               </button>
@@ -137,8 +136,9 @@ export default function AboutPage() {
             {/* About Section */}
             <div className="flex flex-col md:flex-row relative">
               <SectionTitle title="About" href="/about" />
-              <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
-                <p>{`I'm Mohd Uvaish, a passionate MERN Full Stack Dev & Software Developer`}</p>
+              <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-8">
+                <p>{`I'm Mohd Uvaish, a passionate MERN Full Stack & Software Developer.`}</p>
+                <Divider />
                 <p>{`I also run a `}
                   <Link href={YouTubeLink} target="_blank" rel="noopener noreferrer">
                     YouTube channel
@@ -152,12 +152,15 @@ export default function AboutPage() {
               </div>
             </div>
             {/* Experience Section */}
-            <div className="flex flex-col md:flex-row relative">
-              <SectionTitle title="Experience" href="/experience" />
-              <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
-                {`This section is yet to be updated...`}
+            {false && (
+              <div className="flex flex-col md:flex-row relative">
+                <SectionTitle title="Experience" href="/experience" />
+                <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-8">
+                  {`This section is yet to be updated...`}
+                </div>
               </div>
-            </div>
+            )}
+
             {/* Education Section */}
             <div className="flex flex-col md:flex-row relative">
               <SectionTitle title="Education" href="/education" />
@@ -165,11 +168,11 @@ export default function AboutPage() {
                 <h1 className="text-base font-semibold">{`B.C.A ( Bachelor's Of Computer Applcation`}</h1>
                 <p className="select-text">{`Signa Institute Of Professional Studies - Uttar Pradesh, Kanpur`}</p>
                 <p className="">{`CGPA - 7.80`}</p>
-                <ul className="list-disc pl-5 py-2">
+                <ul className="list-disc pl-5 py-2 space-y-3">
                   <li>Developed a Online Sales Adminstrator Portal with CRUD Operations.</li>
                   <li>Developed a full-stack web application using Express.js, MongoDB, and EJS.js</li>
                   <li>Designed UI/UX and implementented a RESTful API for the application.</li>
-                  <li>Conducted manual and automated testing to identify and resolve defects.</li>
+                  <li>Conducted manual to identify and resolve bugs and improved the application.</li>
                 </ul>
               </div>
             </div>

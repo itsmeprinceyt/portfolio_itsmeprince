@@ -16,8 +16,8 @@ import {
     DollarSign
 } from "lucide-react";
 import { SidebarItem } from "../../types/Sidebar.type";
-import ProfilePic from "../../assets/pfp1.jpg";
 import AnimatedMultilingualText from "./AnimatedText";
+import { ProfilePicture } from "../../utility/utils";
 
 const SIDEBAR_ITEMS: SidebarItem[] = [
     { icon: Home, label: "Home", href: "/" },
@@ -74,7 +74,7 @@ export default function Sidebar() {
                 )}
                 <div className="flex items-center justify-start px-4 space-x-4">
                     <Image
-                        src={ProfilePic}
+                        src={ProfilePicture}
                         height={50}
                         width={50}
                         alt="profile pic"

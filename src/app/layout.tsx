@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Loader from './(components)/Loader';
+import Loader from './(components)/Components/Loader';
 import Sidebar from "./(components)/Sidebar";
 
 export const metadata: Metadata = {

@@ -1,4 +1,5 @@
 export const REMOVEHASH_TIMEOUT: number = 3500;
+export const ProfilePicture: string = "/profile-picture/pfp1.jpg";
 export const GitHubLink: string = "https://github.com/itsmeprinceyt";
 export const YouTubeLink: string = "https://www.youtube.com/@itsmeprinceyt";
 export const LinkedInLink: string = "www.linkedin.com/in/mohduvaish";

@@ -10,7 +10,7 @@ import {
     FaHtml5,
 } from "react-icons/fa";
 import { ResumeFile } from "../../types/ResumeFile.type";
-import Spinner from "./Spinner";
+import Spinner from "./Components/Spinner";
 
 const iconMap: Record<string, React.JSX.Element> = {
     ".pdf": <FaFilePdf />,
