@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PageWrapper from "../PageWrapper";
 import TextHighlighter from '../textHighlighter';
-import KofiWidget from '../KofiWidget';
 import dynamic from 'next/dynamic';
 import DynamicIslandProps from '../../../types/DynamicIsland.type';
 
@@ -98,7 +97,6 @@ export default function AboutPage({ scrollTo, refs }: DynamicIslandProps) {
 
             </div>
 
-            <KofiWidget />
         </PageWrapper>
     );
 }

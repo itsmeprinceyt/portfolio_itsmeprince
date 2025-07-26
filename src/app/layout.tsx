@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Loader from './(components)/Loader';
+import Sidebar from "./(components)/Sidebar";
 
 
 export const metadata: Metadata = {
@@ -21,7 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,80,80,0.4),rgba(0,0,0,0))]">
         <Suspense fallback={<Loader />}>
-          {children}
+          <div className="flex h-screen">
+            <Sidebar />
+            <main className="flex-1">
+              {children}
+            </main>
+          </div>
         </Suspense>
       </body>
     </html>

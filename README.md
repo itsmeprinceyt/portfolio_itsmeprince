@@ -1,4 +1,4 @@
-# ⚡ ItsMe Prince Portfolio — Version 2
+# ⚡ ItsMe Prince Portfolio — Version 3
 
 A fully revamped personal portfolio website built with **Next.js** and **TypeScript**, showcasing my skills, projects, and experiences in a polished, interactive, and responsive design. This is **Version 2**, a major upgrade from the original portfolio with dynamic routing, image sliders, and a more scalable project display system.
 
