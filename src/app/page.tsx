@@ -101,9 +101,17 @@ export default function AboutPage() {
           </div>
 
           {/* Download CV & Mail */}
-          <div className="flex flex-wrap gap-5 pulse-slow">
+          <div className="flex flex-wrap items-center justify-center gap-5 pulse-slow">
+            
             {/* Download CV */}
-            <button onClick={handleDownloadMenu} className={ProfileInfoTag_Button_CSS}>Download CV</button>
+            <button onClick={handleDownloadMenu} className={`${ProfileInfoTag_Button_CSS} relative flex items-center gap-2`}>
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75 animate-ping"></span>
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-lime-500 shadow-[0_0_8px_rgba(16,185,129,0.9)]"></span>
+              </span>
+              Download CV
+            </button>
+
             {/* Mail */}
             <div className="hover:scale-105 relative">
               <button
@@ -113,10 +121,11 @@ export default function AboutPage() {
                       emailURL,
                       '_blank'
                     );
-                  }}}
+                  }
+                }}
                 disabled={!email}
-                className={`${ProfileInfoTag_Button_CSS} ${email ? `opacity-100`: `opacity-20`}`}> 
-                <MailSVG/>
+                className={`${ProfileInfoTag_Button_CSS} ${email ? `opacity-100` : `opacity-20`}`}>
+                <MailSVG />
                 Mail
               </button>
             </div>
