@@ -1,33 +1,73 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState, useRef } from "react";
 import PageWrapper from "./(components)/PageWrapper";
 import ProfilePic from "../assets/pfp1.jpg";
 import ProfileInfoTag from './(components)/ProfileRelated/ProfileInfoTag';
+import { ProfileInfoTag_Button_CSS } from "./(components)/ProfileRelated/ProfileInfoTag";
 import { CodingProjectsLink, GitHubLink, LinkedInLink, YouTubeLink } from '../utility/utils';
 import ProfileSkillInfo from './(components)/ProfileRelated/ProfileSkillInfoTag';
 import Divider from './(components)/Components/Divider';
+import SectionTitle from './(components)/ProfileRelated/SectionTitle';
+import FileList from './(components)/ResumeFileIcons';
+import MailSVG from './(components)/SVG/Mail';
 
 export default function AboutPage() {
-  const Title = ({ title, href }: { title: string, href: string }) => {
-    return (
-      <div className=" text-xl w-full max-w-40 flex gap-2 p-2">
-        {title}
-        <Link href={href} className="invert">
-          <Image
-            src="/icons/open.svg"
-            height={15}
-            width={15}
-            alt="Open"
-          />
-        </Link>
-      </div>
-    )
+  const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>('');
+  const downloadMenuRef = useRef<HTMLDivElement | null>(null);
+  const emailURL: string = "https://mail.google.com/mail/u/0/?tf=cm&fs=1&to=${encodeURIComponent(email)}";
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (downloadMenuRef.current && !downloadMenuRef.current.contains(target)) {
+        setShowDownloadMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    fetch('/api/mail')
+      .then(res => res.json())
+      .then(data => setEmail(data.email));
+  }, []);
+
+  const handleDownloadMenu = () => {
+    setShowDownloadMenu(!showDownloadMenu);
   };
 
   return (
     <>
       <PageWrapper>
+        {/* Download CV Menu */}
+        {showDownloadMenu && (
+          <div className="fixed z-20 top-0 left-0 w-screen h-screen bg-black/80 flex items-center justify-center">
+            <div ref={downloadMenuRef} className="relative bg-white rounded-md p-5 flex flex-col gap-5 max-h-[80vh] overflow-y-auto">
+              <p className="text-xs tracking-widest p-2 rounded-md hover:scale-105 animate-pulse select-none">/download-cv-in . . .</p>
+              <button
+                className="absolute top-2 right-2 hover:scale-125"
+                onClick={handleDownloadMenu}>
+                <Image
+                  className="invert w-[10px]"
+                  src={'/icons/cross.png'}
+                  width={50}
+                  height={50}
+                  alt="cross"
+                />
+              </button>
+              {/* Resume Download List */}
+              <FileList />
+            </div>
+          </div>
+        )}
+
+
         {/* Main Div */}
         <div className="flex flex-col items-center justify-center gap-5">
           <div className="flex flex-col items-center gap-2">
@@ -60,11 +100,34 @@ export default function AboutPage() {
             <ProfileInfoTag text="YouTube" name="YouTube" href={YouTubeLink} />
           </div>
 
+          {/* Download CV & Mail */}
+          <div className="flex flex-wrap gap-5 pulse-slow">
+            {/* Download CV */}
+            <button onClick={handleDownloadMenu} className={ProfileInfoTag_Button_CSS}>Download CV</button>
+            {/* Mail */}
+            <div className="hover:scale-105 relative">
+              <button
+                onClick={() => {
+                  if (email) {
+                    window.open(
+                      emailURL,
+                      '_blank'
+                    );
+                  }}}
+                disabled={!email}
+                className={`${ProfileInfoTag_Button_CSS} ${email ? `opacity-100`: `opacity-20`}`}> 
+                <MailSVG/>
+                Mail
+              </button>
+            </div>
+
+          </div>
+
 
           <div className="grid grid-cols-1 gap-5 p-5 text-stone-300 font-extralight">
             {/* About Section */}
             <div className="flex relative">
-              <Title title="About" href="/about" />
+              <SectionTitle title="About" href="/about" />
               <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
                 <p>{`I'm Mohd Uvaish, a passionate MERN Full Stack Dev & Software Developer`}</p>
                 <p>{`I also run a `}
@@ -81,7 +144,7 @@ export default function AboutPage() {
             </div>
             {/* Experience Section */}
             <div className="flex relative">
-              <Title title="Experience" href="/experience" />
+              <SectionTitle title="Experience" href="/experience" />
               <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
                 <p>{`I'm Mohd Uvaish, a passionate MERN Full Stack Dev & Software Developer`}</p>
                 <p>{`I also run a `}
@@ -98,7 +161,7 @@ export default function AboutPage() {
             </div>
             {/* Education Section */}
             <div className="flex relative">
-              <Title title="Education" href="/education" />
+              <SectionTitle title="Education" href="/education" />
               <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
                 <h1 className="text-base font-semibold">{`B.C.A ( Bachelor's Of Computer Applcation`}</h1>
                 <p className="select-text">{`Signa Institute Of Professional Studies - Uttar Pradesh, Kanpur`}</p>
@@ -114,7 +177,7 @@ export default function AboutPage() {
 
             {/* Skills Section */}
             <div className="flex relative">
-              <Title title="Skills" href="/skills" />
+              <SectionTitle title="Skills" href="/skills" />
               <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5 space-y-3">
                 <div className="font-bold flex flex-wrap items-center gap-2">
                   <span >Language:</span>
