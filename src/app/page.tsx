@@ -102,7 +102,7 @@ export default function AboutPage() {
 
           {/* Download CV & Mail */}
           <div className="flex flex-wrap items-center justify-center gap-5 pulse-slow">
-            
+
             {/* Download CV */}
             <button onClick={handleDownloadMenu} className={`${ProfileInfoTag_Button_CSS} relative flex items-center gap-2`}>
               <span className="relative flex h-2.5 w-2.5">
@@ -133,9 +133,9 @@ export default function AboutPage() {
           </div>
 
 
-          <div className="grid grid-cols-1 gap-5 p-5 text-stone-300 font-extralight">
+          <div className="grid grid-cols-1 gap-10 p-5 text-stone-300 font-extralight">
             {/* About Section */}
-            <div className="flex relative">
+            <div className="flex flex-col md:flex-row relative">
               <SectionTitle title="About" href="/about" />
               <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
                 <p>{`I'm Mohd Uvaish, a passionate MERN Full Stack Dev & Software Developer`}</p>
@@ -152,24 +152,14 @@ export default function AboutPage() {
               </div>
             </div>
             {/* Experience Section */}
-            <div className="flex relative">
+            <div className="flex flex-col md:flex-row relative">
               <SectionTitle title="Experience" href="/experience" />
               <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
-                <p>{`I'm Mohd Uvaish, a passionate MERN Full Stack Dev & Software Developer`}</p>
-                <p>{`I also run a `}
-                  <Link href={YouTubeLink} target="_blank" rel="noopener noreferrer">
-                    YouTube channel
-                  </Link>
-                  {` where I showcase all kinds of content, from `}
-                  <Link href={CodingProjectsLink} target="_blank" rel="noopener noreferrer">
-                    Coding
-                  </Link>
-                  {` to Gaming.`}
-                </p>
+                {`This section is yet to be updated...`}
               </div>
             </div>
             {/* Education Section */}
-            <div className="flex relative">
+            <div className="flex flex-col md:flex-row relative">
               <SectionTitle title="Education" href="/education" />
               <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
                 <h1 className="text-base font-semibold">{`B.C.A ( Bachelor's Of Computer Applcation`}</h1>
@@ -185,7 +175,7 @@ export default function AboutPage() {
             </div>
 
             {/* Skills Section */}
-            <div className="flex relative">
+            <div className="flex flex-col md:flex-row relative">
               <SectionTitle title="Skills" href="/skills" />
               <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5 space-y-3">
                 <div className="font-bold flex flex-wrap items-center gap-2">
