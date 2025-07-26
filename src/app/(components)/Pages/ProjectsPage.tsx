@@ -9,7 +9,7 @@ export default function Skills() {
     const ProductGridCSS: string = "flex flex-col gap-5 sm:gap-6";
 
     return (
-        <PageWrapper DivID="projects">
+        <PageWrapper>
             <div className="flex flex-col gap-10 px-4 sm:px-6 md:px-10 mt-16 mb-16 select-none">
                 {/* Best Projects */}
                 <div className={mainProjectDiv}>

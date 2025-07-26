@@ -27,7 +27,7 @@ export default function Loader() {
                     LOADING
                 </h1>
             </div>
-            <p className="text-xs text-gray-400">Reload if it’s taking too long</p>
+            <p className="text-xs text-gray-400">Reload if it’s taking too long :3</p>
         </div>
     );
 }

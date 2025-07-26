@@ -1,0 +1,3 @@
+export const ProfileInfoTag_Button_CSS: string = "bg-black text-stone-200 hover:text-stone-100 shadow-lg shadow-stone-400/10 border border-stone-400/20 p-1.5 px-3 h-9 rounded-lg text-xs flex items-center gap-2 hover:scale-105";
+export const ProfileInfoTag_Button_CSS_WHITE: string = "bg-white text-stone-700 hover:text-stone-800 shadow-lg shadow-stone-400/10 border border-stone-400/20 p-1.5 px-3 rounded-lg text-base flex items-center gap-2 hover:scale-105";
+export const BUTTON_CSS_ORANGE: string = "bg-purple-500 text-purple-100 hover:text-purple-200 shadow-lg shadow-purple-400/10 border border-purple-400/20 p-1.5 px-3 rounded-lg text-base flex items-center gap-2 hover:scale-105";

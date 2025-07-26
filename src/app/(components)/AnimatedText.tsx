@@ -29,35 +29,34 @@ const translations: Record<string, string[]> = {
     ],
 };
 
-export default function AnimatedMultilingualText({
-    text
-}: AnimatedText) {
+export default function AnimatedMultilingualText({ text }: AnimatedText) {
     const langs: string[] = useMemo(() => translations[text] || [text], [text]);
     const [current, setCurrent] = useState<string>(langs[0]);
 
-    const prevRef = useRef(current);
+    const [animationStarted, setAnimationStarted] = useState(false);
+    const showOriginalRef = useRef(false);
 
     useEffect(() => {
-        let showOriginal: boolean = false;
+        setAnimationStarted(true);
+
         const interval = setInterval(() => {
             let next: string;
-            if (showOriginal || langs.length === 1) {
+            if (showOriginalRef.current || langs.length === 1) {
                 next = langs[0];
             } else {
                 const withoutOriginal: string[] = langs.slice(1);
                 next = withoutOriginal[Math.floor(Math.random() * withoutOriginal.length)];
             }
-            prevRef.current = next;
+            showOriginalRef.current = !showOriginalRef.current;
             setCurrent(next);
-            showOriginal = !showOriginal;
-        }, 1500);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, [langs]);
 
     return (
-        <span className={`transition-all duration-500 ease-in-out`}>
-            {current}
+        <span className="transition-all duration-500 ease-in-out text-glow-white">
+            {animationStarted ? current : langs[0]}
         </span>
     );
 }

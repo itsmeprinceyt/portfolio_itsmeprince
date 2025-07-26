@@ -36,7 +36,7 @@ export default function HomePage() {
     };
 
     return (
-        <PageWrapper DivID="home">
+        <PageWrapper>
             {/* Download CV Menu */}
             {showDownloadMenu && (
                 <div className="fixed z-20 top-0 left-0 w-screen h-screen bg-black/80 flex items-center justify-center">
