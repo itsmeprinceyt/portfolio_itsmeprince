@@ -98,3 +98,7 @@
 .animate-spin-slow {
     animation: spin 10s linear infinite;
 }
+
+.text-glow-white {
+    @apply text-shadow-lg/30 text-shadow-white;
+}

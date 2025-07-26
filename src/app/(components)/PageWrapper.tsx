@@ -1,13 +1,11 @@
 "use client";
-import React from 'react';
 import PageWrapper from '../../types/PageWrapper.type';
 
 export default function PageWrapperNormal({
-    children,
-    DivID
+    children
 }: PageWrapper) {
     return (
-        <div id={DivID} className="min-h-screen flex flex-col justify-center items-center">
+        <div className="min-h-screen flex flex-col justify-center items-center my-10 ">
             {children}
         </div>
     );

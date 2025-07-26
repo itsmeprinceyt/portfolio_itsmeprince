@@ -22,8 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,80,80,0.4),rgba(0,0,0,0))] select-none">
         <Suspense fallback={<Loader />}>
-          <div className="flex h-screen">
-            <Sidebar />
+          <div className="flex min-h-screen">
+            <div className="min-h-screen">
+              <Sidebar />
+            </div>
             <main className="flex-1">
               {children}
             </main>

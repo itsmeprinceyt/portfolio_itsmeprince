@@ -57,12 +57,18 @@ export default function Sidebar() {
                     } ${!isMobileOpen && isExpanded ? "w-60" : ""} ${!isMobileOpen && !isExpanded ? "w-16" : ""
                     } h-full relative`}
                 style={{
-                    position: isMobileOpen ? "fixed" : "relative",
+                    position: isMobileOpen ? "fixed" :"relative",
                 }}
             >
-                {/* Mobile Close */}
+                {/* Close button in the top-right corner */}
                 {isMobileOpen && (
-                    <button onClick={() => setIsMobileOpen(false)} className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-stone-950 border border-stone-600/50 rounded-full h-8 w-8 flex items-center justify-center">
+                    <button onClick={() => setIsMobileOpen(false)} className="fixed top-4 right-4">
+                        <X size={iconSize - 2} />
+                    </button>
+                )}
+                {/* Close button in Sidebar */}
+                {isMobileOpen && (
+                    <button onClick={() => setIsMobileOpen(false)} className="absolute -right-10 top-5 bg-stone-950 border border-stone-600/50 rounded-full h-8 w-8 flex items-center justify-center">
                         <X size={iconSize - 2} />
                     </button>
                 )}
@@ -130,7 +136,7 @@ export default function Sidebar() {
                 {/* Expand/Collapse button desktop only */}
                 {!isMobileOpen && (
                     <button
-                        className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-stone-950 border border-stone-600/50 rounded-full h-8 w-8 flex items-center justify-center"
+                        className="absolute -right-10 top-5 bg-stone-950 border border-stone-600/50 rounded-full h-8 w-8 flex items-center justify-center"
                         onClick={() => setIsExpanded(!isExpanded)}
                         aria-label="Expand sidebar"
                     >
