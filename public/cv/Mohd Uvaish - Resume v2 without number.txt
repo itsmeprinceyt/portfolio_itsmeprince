@@ -77,7 +77,7 @@ ________________
 
 Projects
 Share Away • (Github) • (Live)
-* Built using NodeJS, ExpressJS, EJS, and MongoDB.
+* Built using NodeJS, ExpressJS, EJS, and MySQL.
 * Developed a blogging platform allowing users to share their feelings without fear of judgment.
 * Implemented user authentication and session management using JWT Token for secure access.
 * Enabled users to create, edit, and delete posts with a clean, responsive UI built using Tailwind CSS.
