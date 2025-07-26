@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState, useRef } from "react";
 import { ContactIcon } from 'lucide-react';
 import PageWrapper from "../(components)/PageWrapper";
-import { BUTTON_CSS_ORANGE, ProfileInfoTag_Button_CSS, ProfileInfoTag_Button_CSS_WHITE } from "../(components)/ProfileRelated/ButtonCSS";
+import { BUTTON_CSS_ORANGE, ProfileInfoTag_Button_CSS } from "../(components)/ProfileRelated/ButtonCSS";
 import { CodingProjectsLink, ProfilePicture, YouTubeLink } from '../../utility/utils';
 import FileList from '../(components)/ResumeFileIcons';
 import MailSVG from '../(components)/SVG/Mail';
