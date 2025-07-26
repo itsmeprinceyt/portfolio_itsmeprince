@@ -55,7 +55,7 @@ export default function AnimatedMultilingualText({ text }: AnimatedText) {
     }, [langs]);
 
     return (
-        <span className="transition-all duration-500 ease-in-out">
+        <span className="transition-all duration-500 ease-in-out text-shadow-lg/30 text-shadow-white">
             {animationStarted ? current : langs[0]}
         </span>
     );

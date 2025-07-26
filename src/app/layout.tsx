@@ -4,8 +4,8 @@ import { Suspense } from "react";
 import Loader from './(components)/Loader';
 import Sidebar from "./(components)/Sidebar";
 
-
 export const metadata: Metadata = {
+  metadataBase: new URL('https://portfolio-itsmeprince.vercel.app/'),
   title: "Mohd Uvaish - Portfolio | ItsMe Prince",
   description: "Welcome to my personal portfolio! Explore my diverse skills ranging from programming and technical expertise to soft skills. Check out my meticulously crafted projects and get an idea of what I can offer.",
   icons: {
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,80,80,0.4),rgba(0,0,0,0))]">
+      <body className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,80,80,0.4),rgba(0,0,0,0))] select-none">
         <Suspense fallback={<Loader />}>
           <div className="flex h-screen">
             <Sidebar />
