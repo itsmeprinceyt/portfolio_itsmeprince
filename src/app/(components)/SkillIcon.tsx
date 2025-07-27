@@ -1,48 +1,35 @@
 "use client";
 import Image from "next/image";
 import { SkillIconProps } from "../../types/SkillIcon.type";
-import { useEffect, useRef, useState } from "react";
 
-export default function SkillIcon({ name, file }: SkillIconProps) {
-    const tooltipRef = useRef<HTMLSpanElement>(null);
-    const [align, setAlign] = useState<"center" | "left" | "right">("center");
-
-    useEffect(() => {
-        const checkPosition = () => {
-            if (!tooltipRef.current) return;
-            const rect = tooltipRef.current.getBoundingClientRect();
-            if (rect.left < 0) setAlign("left");
-            else if (rect.right > window.innerWidth) setAlign("right");
-            else setAlign("center");
-        };
-        checkPosition();
-        window.addEventListener("resize", checkPosition);
-        return () => window.removeEventListener("resize", checkPosition);
-    }, []);
-
+export default function SkillIconTag({ name, file }: SkillIconProps) {
     return (
-        <div
-            className="relative group w-full h-full flex items-center justify-center select-none"
-            aria-label={name}
-        >
-            <Image
-                src={`/logo/${file}`}
-                alt={name}
-                fill
-                className="object-contain p-1.5"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-
-            {/* Tooltip */}
-            <span
-                ref={tooltipRef}
-                className={`pointer-events-none absolute -top-8 whitespace-nowrap rounded bg-white text-black border border-stone-50/20 shadow-lg shadow-white/50 text-xs px-2 py-1 opacity-0 group-hover:opacity-100 transition-all duration-150 animate-bounce
-                ${align === "center" ? "left-1/2 -translate-x-1/2" : ""}
-                ${align === "left" ? "left-0 translate-x-0" : ""}
-                ${align === "right" ? "right-0 translate-x-0" : ""}`}
-            >
-                {name}
+        <div className="relative inline-flex items-center gap-2 rounded-md border border-neutral-700/20 bg-white p-2 text-sm text-stone-700 shadow-lg shadow-white/20 transition-all ease-in-out duration-150 group">
+            {/* Small logo inside the tag */}
+            <span className="relative shrink-0 w-6 h-6">
+                <Image
+                    src={`/logo/${file}`}
+                    alt={name}
+                    fill
+                    className="object-contain"
+                    sizes="20px"
+                />
             </span>
+
+            <span className="whitespace-nowrap">{name}</span>
+
+            {/* Big logo on hover */}
+            <div className="pointer-events-none bg-white border border-neutral-700/20 p-2 rounded-lg absolute left-1/2 -translate-x-1/2 -top-2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-150 shadow-lg shadow-white/20 animate-bounce">
+                <div className="relative w-12 h-12">
+                    <Image
+                        src={`/logo/${file}`}
+                        alt={name}
+                        fill
+                        className="object-contain"
+                        sizes="64px"
+                    />
+                </div>
+            </div>
         </div>
     );
 }

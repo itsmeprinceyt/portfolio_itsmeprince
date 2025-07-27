@@ -10,7 +10,6 @@ import personalSoftSkills from "../../utility/personalSoftSkills";
 import SkillIcon from "../(components)/SkillIcon";
 
 export default function Skills() {
-    const SKILL_BOX_CLASS: string = "relative bg-white h-12 w-12 rounded-lg shadow-lg shadow-white/10 hover:shadow-white/20 transition-transform duration-150 hover:scale-105";
     const WRAP_CLASS: string = "flex flex-wrap items-center justify-center gap-5";
     const sections = [
         { title: "Development Skills", data: devSkills, prefix: "dev-skills" },
@@ -104,7 +103,6 @@ export default function Skills() {
                                     <Link
                                         key={i}
                                         href={`/skills/${encodeURIComponent(skill.name)}`}
-                                        className={SKILL_BOX_CLASS}
                                     >
                                         <SkillIcon name={skill.name} file={`${prefix}/${skill.file}`} />
                                     </Link>
