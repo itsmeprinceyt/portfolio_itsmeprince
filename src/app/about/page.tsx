@@ -76,31 +76,12 @@ export default function About() {
 
                 {/* Main Div */}
                 <div className="flex flex-col items-center justify-center gap-5">
-                    <div className="flex flex-col items-center gap-2">
-                        {/* Image*/}
-                        <Image
-                            className="max-w-45 rounded-full hover:scale-105 shadow-xl/20 hover:shadow-xl/40 shadow-neutral-700"
-                            src={ProfilePicture}
-                            width={3000}
-                            height={3000}
-                            alt="Profile"
-                            priority
-                            draggable={false}
-                        />
-
-                        {/* Names */}
-                        <div className="flex-col flex items-center text-white font-extralight">
-                            <span className="text-4xl text-glow-white">Mohd Uvaish</span>
-                            <div>
-                                <span className="text-[10px] animate-pulse text-glow-white">A.K.A</span>
-                                <span className="pl-4 text-glow-white">ItsMe Prince</span>
-                            </div>
-                        </div>
-
+                    <div className="flex flex-col items-start md:items-center gap-2 px-5  text-4xl text-glow-white text-stone-300 w-full">About
+                        <Divider />
                     </div>
 
                     {/* Download CV & Mail */}
-                    <div className="flex flex-wrap items-center justify-center gap-5 pulse-slow">
+                    <div className="flex flex-wrap items-start md:items-center justify-center gap-5 px-5 pulse-slow">
                         {/* Download CV */}
                         <button onClick={handleDownloadMenu} className={`${ProfileInfoTag_Button_CSS} relative flex items-center gap-2 h-9`}>
                             <span className="relative flex h-2.5 w-2.5">
@@ -136,17 +117,16 @@ export default function About() {
 
                     </div>
 
-
                     {/* About Section */}
-                    <div className="flex flex-col relative text-stone-300 text-center">
-                        <div className="text-xs max-w-[500px] p-5 tracking-widest leading-8">
+                    <div className="flex flex-col relative text-stone-300 text-start md:text-center">
+                        <div className="text-xs max-w-[500px] px-5 pb-5 tracking-widest leading-8">
                             <Divider />
                             <p>{`I'm Mohd Uvaish, a passionate MERN Full Stack & Software Developer.`}</p>
                             <p>{`I also run a `}
                                 <Link href={YouTubeLink} target="_blank" rel="noopener noreferrer">
                                     YouTube channel
                                 </Link>
-                                {` where I showcase all kinds of content, from `}
+                                {` where I'm known as ItsMe Prince where I showcase all kinds of content, from `}
                                 <Link href={CodingProjectsLink} target="_blank" rel="noopener noreferrer">
                                     Coding
                                 </Link>
@@ -181,7 +161,7 @@ export default function About() {
 
                     <Divider />
                     {/* Location & Birthday Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-5">
 
                         {/* Location Card with Emoji */}
                         <div className="relative group z-1">

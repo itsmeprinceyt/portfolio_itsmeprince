@@ -98,7 +98,7 @@ export default function AboutPage() {
             <ProfileInfoTag text="GitHub" name="GitHub" href={GitHubLink} />
             <ProfileInfoTag text="YouTube" name="YouTube" href={YouTubeLink} />
           </div>
-
+          <Divider />
           {/* Download CV & Mail */}
           <div className="flex flex-wrap items-center justify-center gap-5 pulse-slow">
 
@@ -131,6 +131,7 @@ export default function AboutPage() {
 
           </div>
 
+          <Divider />
 
           <div className="grid grid-cols-1 gap-10 p-5 text-stone-300 font-extralight">
             {/* About Section */}
@@ -155,7 +156,7 @@ export default function AboutPage() {
             {false && (
               <div className="flex flex-col md:flex-row relative">
                 <SectionTitle title="Experience" href="/experience" />
-                <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-8">
+                <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-8">
                   {`This section is yet to be updated...`}
                 </div>
               </div>
@@ -164,7 +165,7 @@ export default function AboutPage() {
             {/* Education Section */}
             <div className="flex flex-col md:flex-row relative">
               <SectionTitle title="Education" href="/education" />
-              <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
+              <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5">
                 <h1 className="text-base font-semibold">{`B.C.A ( Bachelor's Of Computer Applcation`}</h1>
                 <p className="select-text">{`Signa Institute Of Professional Studies - Uttar Pradesh, Kanpur`}</p>
                 <p className="">{`CGPA - 7.80`}</p>
@@ -180,7 +181,7 @@ export default function AboutPage() {
             {/* Skills Section */}
             <div className="flex flex-col md:flex-row relative">
               <SectionTitle title="Skills" href="/skills" />
-              <div className="text-xs w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5 space-y-3">
+              <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-5 space-y-3">
                 <div className="font-bold flex flex-wrap items-center gap-2">
                   <span >Language:</span>
                   <ProfileSkillInfo text="C" />
