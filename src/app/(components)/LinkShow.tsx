@@ -24,7 +24,7 @@ const LinksMapping = {
     },
     orange: {
         icon: '/icons/open.svg',
-        label: '/learn-more',
+        label: '/open',
         textColor: 'text-orange-100',
         bg: `bg-orange-500 border border-orange-600 shadow-lg shadow-orange-600/20 hover:shadow-orange-600/40`,
     }

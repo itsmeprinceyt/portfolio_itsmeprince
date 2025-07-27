@@ -1,11 +1,12 @@
 "use client";
-import { use, useEffect, useState } from 'react';
+import { use, useEffect, useRef, useState } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import PageWrapper from "../../(components)/PageWrapper";
 import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '../../../utility/ProjectData';
 import LinkShow from '../../(components)/LinkShow';
 import devSkills from '../../../utility/devSkills';
+import Divider from '../../(components)/Components/Divider';
 
 
 const getProjectById = (id: string) => {
@@ -41,89 +42,116 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
     const prevImage = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
 
-    const buttonClass: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-md w-[100px] text-neutral-300 border border-neutral-800 hover:border-neutral-700 shadow-xl shadow-neutral-700/10 hover:scale-105 hover:shadow-neutral-700/20 text-xs";
+    const buttonClass: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-lg w-[100px] text-stone-300 border border-stone-600/40 hover:border-stone-700 shadow-xl shadow-stone-700/10 hover:scale-105 hover:shadow-stone-700/20 text-xs";
+    const buttonClass2: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-lg  text-stone-300 border border-stone-600/40 hover:border-stone-700 shadow-xl shadow-stone-700/10 hover:scale-105 hover:shadow-stone-700/20 text-xs";
     const baseHeading: string = "px-2 py-0.5 text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-md mb-2 shadow-md/20 shadow-white";
+
+    const ZOOM_MIN: number = 1;
+    const ZOOM_MAX: number = 12;
+    const ZOOM_STEP: number = 0.5;
+
+    const [zoom, setZoom] = useState<number>(1);
+    const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+    const [isDragging, setIsDragging] = useState<boolean>(false);
+    const dragStart = useRef<{ x: number; y: number; ox: number; oy: number } | null>(null);
+    const transformRef = useRef<HTMLDivElement>(null);
+
+    const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
+    const applyTransform = (z: number, o: { x: number; y: number }) => {
+        const el = transformRef.current;
+        if (!el) return;
+        el.style.transform = `translate(${o.x}px, ${o.y}px) scale(${z})`;
+        el.style.transformOrigin = "center center";
+    };
+
+    const zoomIn = () =>
+        setZoom((z) => {
+            const nz = clamp(z + ZOOM_STEP, ZOOM_MIN, ZOOM_MAX);
+            applyTransform(nz, offset);
+            return nz;
+        });
+
+    const zoomOut = () =>
+        setZoom((z) => {
+            const nz = clamp(z - ZOOM_STEP, ZOOM_MIN, ZOOM_MAX);
+            applyTransform(nz, offset);
+            return nz;
+        });
+
+    const resetZoom = () => {
+        const nz = 1;
+        const no = { x: 0, y: 0 };
+        setZoom(nz);
+        setOffset(no);
+        applyTransform(nz, no);
+    };
+
+    const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        const dir = e.deltaY > 0 ? -1 : 1;
+        const nz = clamp(zoom + dir * ZOOM_STEP, ZOOM_MIN, ZOOM_MAX);
+        setZoom(nz);
+        applyTransform(nz, offset);
+    };
+
+    const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+        setIsDragging(true);
+        dragStart.current = { x: e.clientX, y: e.clientY, ox: offset.x, oy: offset.y };
+    };
+
+    const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isDragging || !dragStart.current) return;
+        const { x, y, ox, oy } = dragStart.current;
+        const no = { x: ox + (e.clientX - x), y: oy + (e.clientY - y) };
+        setOffset(no);
+        applyTransform(zoom, no);
+    };
+
+    const onMouseUp = () => {
+        setIsDragging(false);
+        dragStart.current = null;
+    };
+
+    const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        if (e.touches.length !== 1) return;
+        const t = e.touches[0];
+        dragStart.current = { x: t.clientX, y: t.clientY, ox: offset.x, oy: offset.y };
+    };
+
+    const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+        if (!dragStart.current || e.touches.length !== 1) return;
+        const t = e.touches[0];
+        const { x, y, ox, oy } = dragStart.current;
+        const no = { x: ox + (t.clientX - x), y: oy + (t.clientY - y) };
+        setOffset(no);
+        applyTransform(zoom, no);
+    };
+
+    const onTouchEnd = () => {
+        dragStart.current = null;
+    };
+
+    useEffect(() => {
+        if (!fullscreen) return;
+        applyTransform(zoom, offset);
+    }, [fullscreen]);
 
     return (
 
         <PageWrapper>
-            <div className="bg-gradient-to-r from-neutral-900 to-neutral-950 shadow-xl/10 hover:shadow-xl/20 border border-neutral-700 rounded-md m-5 mt-20 mb-20 p-5 flex flex-col gap-10 text-white tracking-widest max-w-[80vw] md:max-w-[1000px] select-none">
-                <div className="flex flex-col gap-6">
-                    <h1 className="text-3xl max-[400px]:text-2xl font-extrabold animate-pulse bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 text-transparent bg-clip-text text-center">
+            <div className="p-5 text-stone-300 tracking-widest">
+                <div className="flex flex-col max-w-4xl space-y-5">
+                    {/* Project Name */}
+                    <h1 className="text-2xl sm:text-3xl tracking-widest text-center text-glow-white text-stone-300">
                         {project.name}
                     </h1>
-
-                    <div className="flex flex-col gap-6 text-xs font-extralight tracking-widest">
-                        {project.full_description.intro && <p className="text-center">{project.full_description.intro}</p>}
-
-                        {project.full_description.features && project.full_description.features?.length > 0 && (
-                            <div>
-                                <div className={baseHeading}>🔥 Features:</div>
-                                <ul className="list-decimal pl-8 space-y-3">
-                                    {project.full_description.features.map((f, i) => (
-                                        <li key={i}>
-                                            <span className="bg-gradient-to-b from-orange-600 via-orange-400 to-yellow-400 text-transparent bg-clip-text font-semibold">
-                                                <strong>{f.title}:</strong>
-                                            </span>
-                                            <br />
-                                            {f.detail}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        <div>
-                            <div className={baseHeading}>🔮 Tech stack:</div>
-                            <ul className="list-disc pl-8 space-y-3">
-                                {project.tags.map((tag, i) => {
-                                    const matched = devSkills.find((s) => s.name === tag);
-                                    return (
-                                        <li key={i}>
-                                            <span className="bg-gradient-to-b from-purple-700 via-purple-400 to-purple-300 bg-clip-text text-transparent font-semibold">
-                                                {matched?.fullName || tag}
-                                            </span>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
-
-                        {project.full_description.dependencies && project.full_description.dependencies?.length > 0 && (
-                            <div>
-                                <div className={baseHeading}>🔑 Dependencies:</div>
-                                <ul className="list-disc pl-8 space-y-3">
-                                    {project.full_description.dependencies.map((dep, i) => (
-                                        <li key={i}>{dep}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        {project.full_description.usage_examples && project.full_description.usage_examples?.length > 0 && (
-                            <div>
-                                <div className={baseHeading}>🤔 Use Cases:</div>
-                                <ul className="list-disc pl-8 space-y-3">
-                                    {project.full_description.usage_examples.map((example, i) => (
-                                        <li key={i}>{example}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </div>
-
-                    {/* Links */}
-                    <hr className="opacity-30" />
-                    <div className="flex flex-wrap gap-4">
-                        {project.links.live.enabled && <LinkShow url={project.links.live.url} color="blue" />}
-                        {project.links.github.enabled && <LinkShow url={project.links.github.url} color="purple" />}
-                        {project.links.youtube.enabled && <LinkShow url={project.links.youtube.url} color="rose" />}
-                    </div>
+                    <Divider />
 
                     {/* Image Slider */}
                     {images.length > 0 && (
-                        <div className="mt-10 flex flex-col items-center gap-4">
-                            <div className="relative w-full max-w-[600px] h-[350px] overflow-hidden rounded-md shadow-lg">
+                        <div className="flex flex-col items-center gap-5">
+                            <div className="relative w-full aspect-[16/9] overflow-hidden rounded-md">
                                 <button onClick={() => setFullscreen(true)} className="w-full h-full">
                                     <Image
                                         src={images[index]}
@@ -136,47 +164,148 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                 </button>
                             </div>
 
-                            <div className="flex max-[500px]:flex-col max-[500px]:gap-2 gap-5">
+                            {/* Navigation Buttons Slider */}
+                            <div className="flex flex-wrap items-center justify-center gap-2">
                                 <button onClick={prevImage} className={buttonClass}>Previous</button>
                                 <button onClick={nextImage} className={buttonClass}>Next</button>
                             </div>
 
-                            <div className="text-xs text-neutral-400">Image {index + 1} of {images.length}</div>
+                            <div className="text-xs text-stone-300">{index + 1} / {images.length}</div>
                         </div>
                     )}
+
+                    <Divider />
+                    <div className="flex flex-col gap-6 text-xs font-extralight tracking-widest">
+
+                        {/* Description */}
+                        {project.full_description.intro && <p className="text-start">{project.full_description.intro}</p>}
+
+                        {/* Features */}
+                        {project.full_description.features && project.full_description.features?.length > 0 && (
+                            <div>
+                                <div className={baseHeading}>🔥 Features:</div>
+                                <ul className="list-decimal pl-8 space-y-3">
+                                    {project.full_description.features.map((f, i) => (
+                                        <li key={i}>
+                                            <span className="text-orange-400 font-semibold">
+                                                <strong>{f.title}:</strong>
+                                            </span>
+                                            <br />
+                                            {f.detail}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {/* Tech Stack */}
+                        <div>
+                            <div className={baseHeading}>🔮 Tech stack:</div>
+                            <ul className="list-disc pl-8 space-y-3">
+                                {project.tags.map((tag, i) => {
+                                    const matched = devSkills.find((s) => s.name === tag);
+                                    return (
+                                        <li key={i}>
+                                            <span className="text-purple-400 font-semibold">
+                                                {matched?.fullName || tag}
+                                            </span>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+
+                        {/* Dependencies */}
+                        {project.full_description.dependencies && project.full_description.dependencies?.length > 0 && (
+                            <div>
+                                <div className={baseHeading}>🔑 Dependencies:</div>
+                                <ul className="list-disc pl-8 space-y-3">
+                                    {project.full_description.dependencies.map((dep, i) => (
+                                        <li key={i}>{dep}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {/* Use Case */}
+                        {project.full_description.usage_examples && project.full_description.usage_examples?.length > 0 && (
+                            <div>
+                                <div className={baseHeading}>🤔 Use Cases:</div>
+                                <ul className="list-disc pl-8 space-y-3">
+                                    {project.full_description.usage_examples.map((example, i) => (
+                                        <li key={i}>{example}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                    </div>
+
+                    <Divider />
+                    {/* Links */}
+                    <div className="flex flex-wrap items-center justify-center gap-4">
+                        <LinkShow url={project.links.live.url} color="blue" disabled={!project.links.live.enabled} />
+                        <LinkShow url={project.links.github.url} color="purple" disabled={!project.links.github.enabled} />
+                        <LinkShow url={project.links.youtube.url} color="rose" disabled={!project.links.youtube.enabled} />
+                    </div>
                 </div>
             </div>
 
             {/* Fullscreen Mode */}
             {fullscreen && (
-                <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col items-center justify-center p-4">
+                <div className="fixed inset-0 z-50 bg-black/95 bg-opacity-90 flex flex-col items-center justify-center space-y-5">
                     <button
-                        onClick={() => setFullscreen(false)}
-                        className="absolute top-5 right-5 text-white text-3xl font-bold z-10 hover:scale-110 transition-transform"
+                        onClick={() => {
+                            setFullscreen(false);
+                            resetZoom();
+                        }}
+                        className="absolute top-5 right-5 text-white text-3xl font-bold z-10 hover:scale-105 transition-transform"
                     >
                         ✕
                     </button>
 
-                    <div className="relative w-full max-w-[90vw] h-[70vh] mb-6">
-                        <Image
-                            src={images[index]}
-                            alt={`${project.name} fullscreen`}
-                            fill
-                            className="object-contain rounded-md"
-                            draggable={false}
-                        />
+                    <div
+                        className={`relative w-full max-w-6xl aspect-[16/9] max-h-[80vh] overflow-hidden ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+                        onWheel={handleWheel}
+                        onMouseDown={onMouseDown}
+                        onMouseMove={onMouseMove}
+                        onMouseUp={onMouseUp}
+                        onMouseLeave={onMouseUp}
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
+                    >
+                        <div ref={transformRef} className="absolute inset-0 will-change-transform">
+                            <Image
+                                src={images[index]}
+                                alt={`${project.name} fullscreen`}
+                                fill
+                                className="object-contain rounded-md select-none pointer-events-none"
+                                draggable={false}
+                            />
+                        </div>
                     </div>
 
-                    <div className="flex max-[500px]:flex-col max-[500px]:gap-2 gap-5">
+                    <Divider />
+
+                    {/* Prev / Next */}
+                    <div className="flex flex-wrap items-center justify-center gap-2 z-1">
                         <button onClick={prevImage} className={buttonClass}>Previous</button>
                         <button onClick={nextImage} className={buttonClass}>Next</button>
                     </div>
 
-                    <div className="text-xs text-neutral-400 mt-4">
-                        Image {index + 1} of {images.length}
+                    <div className="flex flex-wrap items-center justify-center gap-2 z-1">
+                        <button onClick={zoomOut} className={buttonClass2}>-</button>
+                        <button onClick={resetZoom} className={buttonClass2}>Reset [{zoom.toFixed(1)}x]</button>
+                        <button onClick={zoomIn} className={buttonClass2}>+</button>
+                    </div>
+
+                    <div className="text-xs text-stone-300 z-1">
+                        {index + 1} / {images.length}
                     </div>
                 </div>
             )}
+
         </PageWrapper>
 
     );
