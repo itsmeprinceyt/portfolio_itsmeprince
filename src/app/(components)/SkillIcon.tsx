@@ -1,35 +1,34 @@
 "use client";
 import Image from "next/image";
-import { SkillIconProps } from '../../types/SkillIcon.type';
+import { SkillIconProps } from "../../types/SkillIcon.type";
 
-export default function SkillIcon({ name, file }: SkillIconProps) {
+export default function SkillIconTag({ name, file }: SkillIconProps) {
     return (
-        <div className="relative group w-full h-full flex items-center justify-center select-none">
-            {/* Default Icon */}
-            <div className="absolute inset-0 group-hover:opacity-0 transition-opacity duration-200">
+        <div className="relative inline-flex items-center gap-2 rounded-md border border-neutral-700/20 bg-white p-2 text-sm text-stone-700 shadow-lg shadow-white/20 transition-all ease-in-out duration-150 group">
+            {/* Small logo inside the tag */}
+            <span className="relative shrink-0 w-6 h-6">
                 <Image
                     src={`/logo/${file}`}
                     alt={name}
                     fill
-                    className="object-contain p-1.5"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-contain"
+                    sizes="20px"
                 />
-            </div>
+            </span>
 
-            {/* Hover Overlay */}
-            <div className="bg-white rounded-md p-2 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center text-center gap-2 z-10">
-                <div className="relative w-14 h-14 sm:w-16 sm:h-16">
+            <span className="whitespace-nowrap">{name}</span>
+
+            {/* Big logo on hover */}
+            <div className="pointer-events-none bg-white border border-neutral-700/20 p-2 rounded-lg absolute left-1/2 -translate-x-1/2 -top-2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-150 shadow-lg shadow-white/20 animate-bounce">
+                <div className="relative w-12 h-12">
                     <Image
                         src={`/logo/${file}`}
                         alt={name}
-                        width={64}
-                        height={64}
-                        className="object-contain w-full h-full"
+                        fill
+                        className="object-contain"
+                        sizes="64px"
                     />
                 </div>
-                <p className="mt-1 text-[12px] text-black font-medium break-words w-full px-1">
-                    {name}
-                </p>
             </div>
         </div>
     );

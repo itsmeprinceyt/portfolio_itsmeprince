@@ -1,3 +1,4 @@
+import { DiscordServer_Link, GitHubLink, InstagramLink, LinkedInLink, X_Link, YouTubeLink } from "@/utility/utils";
 import Link from "next/link";
 
 export default function SocialMediaIcons() {
@@ -8,7 +9,7 @@ export default function SocialMediaIcons() {
             <div className="relative p-[2px] rounded-full bg-gradient-to-tr from-red-700 via-red-500 to-red-400 w-[50px] h-[50px]">
                 <Link
                     className="transition-all ease-in-out flex justify-center items-center w-full h-full rounded-full bg-black text-white shadow-[0_0_6px_rgba(239,68,68,0.3),0_0_20px_rgba(220,38,38,0.3),0_0_30px_rgba(252,165,165,0.2)] hover:shadow-[0_0_20px_rgba(239,68,68,0.8),0_0_30px_rgba(220,38,38,0.7),0_0_40px_rgba(252,165,165,0.6)] hover:animate-pulse"
-                    href="https://www.youtube.com/@itsmeprinceyt"
+                    href={YouTubeLink}
                     target="_blank"
                 ><span className="[&>svg]:h-5 [&>svg]:w-5">
                         <svg
@@ -26,7 +27,7 @@ export default function SocialMediaIcons() {
             <div className="relative p-[2px] rounded-full bg-gradient-to-tr from-blue-700 via-blue-500 to-blue-300 w-[50px] h-[50px]">
                 <Link
                     className="transition-all ease-in-out flex justify-center items-center w-full h-full rounded-full bg-black text-white shadow-[0_0_6px_rgba(59,130,246,0.3),0_0_20px_rgba(37,99,235,0.2),0_0_30px_rgba(147,197,253,0.25)] hover:shadow-[0_0_20px_rgba(59,130,246,0.8),0_0_30px_rgba(37,99,235,0.7),0_0_40px_rgba(147,197,253,0.6)] hover:animate-pulse"
-                    href="https://www.linkedin.com/in/mohduvaish"
+                    href={LinkedInLink}
                     target="_blank"
                 ><span className="[&>svg]:h-5 [&>svg]:w-5">
                         <svg
@@ -44,7 +45,7 @@ export default function SocialMediaIcons() {
             <div className="relative p-[2px] rounded-full bg-gradient-to-tr from-stone-500 via-stone-400 to-stone-300 w-[50px] h-[50px]">
                 <Link
                     className="transition-all ease-in-out flex justify-center items-center w-full h-full rounded-full bg-black text-white shadow-[0_0_6px_rgba(120,113,108,0.3),0_0_20px_rgba(168,162,158,0.2),0_0_30px_rgba(214,211,209,0.25)] hover:shadow-[0_0_20px_rgba(120,113,108,0.8),0_0_30px_rgba(168,162,158,0.7),0_0_40px_rgba(214,211,209,0.6)] hover:animate-pulse"
-                    href="https://github.com/itsmeprinceyt"
+                    href={GitHubLink}
                     target="_blank"
                 ><span className="[&>svg]:h-5 [&>svg]:w-5">
                         <svg
@@ -62,7 +63,7 @@ export default function SocialMediaIcons() {
             <div className="relative p-[2px] rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-indigo-400 w-[50px] h-[50px]">
                 <Link
                     className="transition-all ease-in-out flex justify-center items-center w-full h-full rounded-full bg-black text-white shadow-[0_0_6px_rgba(99,102,241,0.3),0_0_20px_rgba(139,92,246,0.4),0_0_30px_rgba(129,140,248,0.3)] hover:shadow-[0_0_20px_rgba(99,102,241,0.8),0_0_30px_rgba(139,92,246,0.7),0_0_40px_rgba(129,140,248,0.6)] hover:animate-pulse"
-                    href="https://discord.gg/HgXNs4p5cx"
+                    href={DiscordServer_Link}
                     target="_blank"
                 >
                     <span className="[&>svg]:h-5 [&>svg]:w-5">
@@ -81,7 +82,7 @@ export default function SocialMediaIcons() {
             <div className="relative p-[2px] rounded-full bg-white w-[50px] h-[50px]">
                 <Link
                     className="transition-all ease-in-out flex justify-center items-center w-full h-full rounded-full bg-black text-white shadow-[0_0_6px_rgba(255,255,255,0.3),0_0_20px_rgba(255,255,255,0.2),0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_10px_rgba(255,255,255,0.8),0_0_25px_rgba(255,255,255,0.7),0_0_40px_rgba(255,255,255,0.6)] hover:animate-pulse"
-                    href="https://twitter.com/itsmeprinceyt"
+                    href={X_Link}
                     target="_blank"
                 >
                     <span className="[&>svg]:h-5 [&>svg]:w-5">
@@ -100,7 +101,7 @@ export default function SocialMediaIcons() {
             <div className="relative p-[2px] rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-yellow-400 w-[50px] h-[50px]">
                 <Link
                     className="transition-all ease-in-out flex justify-center items-center w-full h-full rounded-full bg-black text-white shadow-[0_0_6px_rgba(168,85,247,0.3),0_0_20px_rgba(236,72,153,0.2),0_0_30px_rgba(253,224,71,0.25)] hover:shadow-[0_0_20px_rgba(168,85,247,0.8),0_0_30px_rgba(236,72,153,0.7),0_0_40px_rgba(253,224,71,0.6)] hover:animate-pulse"
-                    href="https://www.instagram.com/itsmeprinceyt"
+                    href={InstagramLink}
                     target="_blank"
                 >
                     <span className="[&>svg]:h-5 [&>svg]:w-5">
