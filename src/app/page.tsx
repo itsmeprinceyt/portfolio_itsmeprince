@@ -193,7 +193,7 @@ export default function AboutPage() {
                 <div className="font-bold flex flex-wrap items-center gap-2">
                   <span >Frontend:</span>
 
-                  <ProfileSkillInfo text="React" />
+                  <ProfileSkillInfo text="React.js" />
                   <ProfileSkillInfo text="Bootstrap" />
                   <ProfileSkillInfo text="TailwindCSS" />
                 </div>

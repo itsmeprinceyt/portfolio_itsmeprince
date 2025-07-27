@@ -30,17 +30,20 @@ const LinksMapping = {
     }
 } as const;
 
-export default function LinkShow({ url, color }: ResponsiveLinkProps) {
+export default function LinkShow({ url, color, disabled = false }: ResponsiveLinkProps & { disabled?: boolean }) {
     const LinkItem = LinksMapping[color];
-    const mainContainerCSS: string = `flex items-center gap-2 text-white hover:scale-105 transition-all ease-in-out duration-300 px-2 py-1 rounded-md tracking-widest text-[12px] h-[30px] font-bold`
+    const mainContainerCSS = `flex items-center gap-2 text-white transition-all ease-in-out duration-300 px-2 py-1 rounded-md tracking-widest text-[12px] h-[30px] font-bold`;
+    const disabledStyles = disabled
+        ? "opacity-50 grayscale cursor-not-allowed hover:scale-100 hover:shadow-none"
+        : "hover:scale-105";
 
     return (
         <Link
-            href={url}
-            target={color === 'orange' ? '' : '_blank'}
+            href={disabled ? "" : url}
+            target={(color === 'orange' || disabled) ? '' : '_blank'}
             rel="noopener noreferrer"
         >
-            <div className={`${mainContainerCSS} ${LinkItem.bg}`}>
+            <div className={`${mainContainerCSS} ${LinkItem.bg} ${disabledStyles}`}>
                 <Image
                     src={LinkItem.icon}
                     width={20}

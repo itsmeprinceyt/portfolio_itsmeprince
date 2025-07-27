@@ -102,7 +102,7 @@ export default function Skills() {
                                 {data.map((skill, i) => (
                                     <Link
                                         key={i}
-                                        href={`/skills/${encodeURIComponent(skill.name)}`}
+                                        href={`/skills/${skill.fullName}`}
                                     >
                                         <SkillIcon name={skill.name} file={`${prefix}/${skill.file}`} />
                                     </Link>

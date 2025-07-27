@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { ProjectCard } from "../../types/Project.type";
 import LinkShow from "./LinkShow";
@@ -40,7 +42,7 @@ export default function ProjectCard({ project, index }: ProjectCard) {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             onMouseMove={handleMouseMove}
-            className="w-full max-w-lg mx-auto flex flex-col bg-white relative mb-5 break-inside-avoid rounded-md shadow-xl/10 hover:shadow-xl/20 shadow-white transition-transform overflow-visible">
+            className="w-full max-w-lg border-1 border-white bg-white relative break-inside-avoid rounded-md shadow-xl/10 hover:shadow-xl/20 shadow-white transition-transform overflow-visible">
             {/* Hover Card */}
             {project.banner &&
                 <FloatingImagePortal
@@ -56,40 +58,66 @@ export default function ProjectCard({ project, index }: ProjectCard) {
                 />
             }
 
-            {/* Project #Index */}
-            <span className="text-[10px] text-gray-600/50 absolute top-1 left-1/2 -translate-x-1/2">Project #{index + 1}</span>
+            {/* Image */}
+            {(() => {
+                const bannerSrc = Array.isArray(project.banner)
+                    ? project.banner[0]
+                    : project.banner;
 
-            <div className="flex flex-col justify-between flex-grow p-4 gap-4 text-black">
+                return bannerSrc ? (
+                    <div className="relative w-full h-56 rounded-tr-md rounded-tl-md overflow-hidden">
+                        <Image
+                            src={bannerSrc}
+                            alt={`${project.name} banner`}
+                            fill
+                            className="object-cover object-top"
+                            sizes="(max-width: 768px) 100vw, 600px"
+                        />
+                    </div>
+                ) : <div className="relative w-full h-56 rounded-tr-md rounded-tl-md overflow-hidden">
+                    <Image
+                        src={"/projects/default-project-img.png"}
+                        alt={`${project.name} banner`}
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 100vw, 600px"
+                    />
+                </div>;
+            })()}
+
+            <div className="relative flex flex-col justify-between flex-grow p-4 gap-4 text-black">
+
+                {/* Project #Index */}
+                <span className="text-[8px] text-gray-600/50 absolute left-4 top-1">Project #{index + 1}</span>
+
                 {/* Title & description */}
-                <div className="flex flex-col gap-2 relative text-center">
-                    <h2 className="text-[clamp(1.5rem,4vw,2.25rem)] font-semibold tracking-widest">{project.name}</h2>
-                    <p className="text-[clamp(0.7rem,1.5vw,0.875rem)] font-extralight tracking-widest">{project.description}</p>
+                <div className="flex flex-col items-start gap-2 relative">
+                    <h2 className="text-lg font-semibold tracking-widest">
+                        <Link href={`/projects/${project.id}`}>{project.name}</Link>
+                        <Link href={`/projects/${project.id}`} className="absolute h-5 w-5 z-1 bg-white p-1 rounded-md  ">
+                            <Image
+                                src={"/icons/open.png"}
+                                height={12}
+                                width={12}
+                                alt="open"
+                            />
+                        </Link>
+                    </h2>
+
+                    <p
+                        className="text-[clamp(0.7rem,1.5vw,0.875rem)] font-extralight tracking-widest line-clamp-2 min-h-[2.5em] text-stone-700/70"
+                    >
+                        {project.description}
+                    </p>
+
                 </div>
 
                 {/* Links */}
                 <div className="flex flex-wrap gap-3 justify-start items-center">
-                    {project.links.live.enabled && (
-                        <LinkShow url={project.links.live.url} color="blue" />
-                    )}
-                    {project.links.github.enabled && (
-                        <LinkShow url={project.links.github.url} color="purple" />
-                    )}
-                    {project.links.youtube.enabled && (
-                        <LinkShow url={project.links.youtube.url} color="rose" />
-                    )}
+                    <LinkShow url={project.links.live.url} color="blue" disabled={!project.links.live.enabled} />
+                    <LinkShow url={project.links.github.url} color="purple" disabled={!project.links.github.enabled} />
+                    <LinkShow url={project.links.youtube.url} color="rose" disabled={!project.links.youtube.enabled} />
                     <LinkShow url={`/projects/${project.id}`} color="orange" />
-                </div>
-
-                {/* Tags */}
-                <div className="text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-white p-1 bg-black rounded-md shadow-lg/30 shadow-black">
-                    🔮 Tech stack:
-                    <div className="flex flex-wrap gap-2 sm:gap-3 text-[12px] bg-white p-2 rounded-sm border-gray-600/20 border">
-                        {project.tags.map((tag, idx) => (
-                            <span key={idx} className={tagStyle}>
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
                 </div>
             </div>
         </div>
