@@ -1,5 +1,5 @@
 "use client";
-import { use, useCallback, useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import PageWrapper from "../../(components)/PageWrapper";
