@@ -6,7 +6,6 @@ import PageWrapper from "../../(components)/PageWrapper";
 import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '../../../utility/ProjectData';
 import LinkShow from '../../(components)/LinkShow';
 import devSkills from '../../../utility/devSkills';
-import { useRouter } from 'next/navigation';
 
 
 const getProjectById = (id: string) => {
@@ -15,7 +14,6 @@ const getProjectById = (id: string) => {
 };
 
 export default function ProjectPage({ params }: { params: Promise<{ projectId: string }> }) {
-    const router = useRouter();
     const { projectId } = use(params);
     const project = getProjectById(projectId);
 

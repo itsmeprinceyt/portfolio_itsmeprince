@@ -12,8 +12,6 @@ export default function ProjectCard({ project, index }: ProjectCard) {
     const imageRef = useRef<HTMLDivElement>(null);
     const mousePos = useRef({ x: 0, y: 0 });
 
-    const tagStyle = "text-white border border-stone-500 bg-black shadow-lg shadow-black/20 hover:shadow-black/40 hover:scale-105 transition-all ease-in-out duration-300 px-2 py-1 rounded-md tracking-widest h-[30px] flex items-center";
-
     const handleMouseMove = (e: React.MouseEvent) => {
         const bounds = cardRef.current?.getBoundingClientRect();
         if (!bounds) return;

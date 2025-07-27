@@ -14,7 +14,8 @@ import {
     Menu,
     X,
     DollarSign,
-    Star
+    Star,
+    IdCard
 } from "lucide-react";
 import { SidebarItem } from "../../types/Sidebar.type";
 import AnimatedMultilingualText from "./AnimatedText";
@@ -28,6 +29,7 @@ const SIDEBAR_ITEMS: SidebarItem[] = [
     { icon: Code, label: "Skills", href: "/skills" },
     { icon: Folder, label: "Projects", href: "/projects" },
     { icon: Mail, label: "Contact", href: "/contact" },
+    { icon: IdCard, label: "Card", href: "/card"},
     { icon: DollarSign, label: "Support", href: "/support" },
     { icon: Star, label: "Surprise", href: "/quote"}
 ];
