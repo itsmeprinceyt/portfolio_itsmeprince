@@ -1,4 +1,4 @@
-export type IconName = "Location" | "LinkedIn" | "GitHub" | "YouTube";
+export type IconName = "Location" | "LinkedIn" | "GitHub" | "YouTube" | "Other";
 
 export interface ProfileInfoTagProps {
     text: string;

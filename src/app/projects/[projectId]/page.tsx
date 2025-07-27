@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useRef, useState } from 'react';
+import { use, useCallback, useEffect, useRef, useState } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import PageWrapper from "../../(components)/PageWrapper";
@@ -17,10 +17,29 @@ const getProjectById = (id: string) => {
 export default function ProjectPage({ params }: { params: Promise<{ projectId: string }> }) {
     const { projectId } = use(params);
     const project = getProjectById(projectId);
-
     const [images, setImages] = useState<string[]>([]);
     const [index, setIndex] = useState<number>(0);
     const [fullscreen, setFullscreen] = useState<boolean>(false);
+    const [zoom, setZoom] = useState<number>(1);
+    const [offset, setOffset] = useState({ x: 0, y: 0 });
+    const [isDragging, setIsDragging] = useState<boolean>(false);
+    const dragStart = useRef<{ x: number; y: number; ox: number; oy: number } | null>(null);
+    const transformRef = useRef<HTMLDivElement>(null);
+
+    const buttonClass: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-lg w-[100px] text-stone-300 border border-stone-600/40 hover:border-stone-700 shadow-xl shadow-stone-700/10 hover:scale-105 hover:shadow-stone-700/20 text-xs";
+    const buttonClass2: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-lg  text-stone-300 border border-stone-600/40 hover:border-stone-700 shadow-xl shadow-stone-700/10 hover:scale-105 hover:shadow-stone-700/20 text-xs";
+    const baseHeading: string = "px-2 py-0.5 text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-md mb-2 shadow-md/20 shadow-white";
+
+    const ZOOM_MIN: number = 1;
+    const ZOOM_MAX: number = 12;
+    const ZOOM_STEP: number = 0.5;
+
+    const applyTransform = useCallback((z: number, o: { x: number; y: number }) => {
+        const el = transformRef.current;
+        if (!el) return;
+        el.style.transform = `translate(${o.x}px, ${o.y}px) scale(${z})`;
+        el.style.transformOrigin = "center center";
+    }, []);
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -35,35 +54,17 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
         fetchImages();
     }, [project?.id]);
 
+    useEffect(() => {
+        if (!fullscreen) return;
+        applyTransform(zoom, offset);
+    }, [fullscreen, zoom, offset, applyTransform]);
 
     if (!project) return notFound();
 
     const nextImage = () => setIndex((prev) => (prev + 1) % images.length);
     const prevImage = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
-
-    const buttonClass: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-lg w-[100px] text-stone-300 border border-stone-600/40 hover:border-stone-700 shadow-xl shadow-stone-700/10 hover:scale-105 hover:shadow-stone-700/20 text-xs";
-    const buttonClass2: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-lg  text-stone-300 border border-stone-600/40 hover:border-stone-700 shadow-xl shadow-stone-700/10 hover:scale-105 hover:shadow-stone-700/20 text-xs";
-    const baseHeading: string = "px-2 py-0.5 text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-md mb-2 shadow-md/20 shadow-white";
-
-    const ZOOM_MIN: number = 1;
-    const ZOOM_MAX: number = 12;
-    const ZOOM_STEP: number = 0.5;
-
-    const [zoom, setZoom] = useState<number>(1);
-    const [offset, setOffset] = useState({ x: 0, y: 0 });
-
-    const [isDragging, setIsDragging] = useState<boolean>(false);
-    const dragStart = useRef<{ x: number; y: number; ox: number; oy: number } | null>(null);
-    const transformRef = useRef<HTMLDivElement>(null);
-
     const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
-    const applyTransform = (z: number, o: { x: number; y: number }) => {
-        const el = transformRef.current;
-        if (!el) return;
-        el.style.transform = `translate(${o.x}px, ${o.y}px) scale(${z})`;
-        el.style.transformOrigin = "center center";
-    };
 
     const zoomIn = () =>
         setZoom((z) => {
@@ -131,11 +132,6 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
     const onTouchEnd = () => {
         dragStart.current = null;
     };
-
-    useEffect(() => {
-        if (!fullscreen) return;
-        applyTransform(zoom, offset);
-    }, [fullscreen]);
 
     return (
 

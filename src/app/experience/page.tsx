@@ -1,10 +1,11 @@
-"use client";
 import PageWrapperNormal from "../(components)/PageWrapper";
 
-export default function Experience() {
-    return (
+export default function Page() {
+    return(
         <PageWrapperNormal>
-            Hello
+            <div className="text-stone-300">
+                Cooking 🍳
+            </div>
         </PageWrapperNormal>
-    );
+    )
 }

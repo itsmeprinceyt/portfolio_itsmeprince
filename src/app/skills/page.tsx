@@ -23,11 +23,10 @@ export default function Skills() {
         <PageWrapper>
             {/* Main Div */}
             <div className="flex flex-col items-center justify-center gap-5">
-                <div className="flex flex-col items-center gap-2 px-5">
-                    {/* Names */}
-                    <div className="text-4xl text-glow-white text-stone-300">Skills</div>
-                    <Divider />
+                <div className="flex flex-col items-center gap-2 px-5 text-4xl text-glow-white text-stone-300">
+                    Skills
                 </div>
+                <Divider />
 
                 <div className="flex flex-col items-center justify-start space-y-5">
                     {/* Top 3 cards */}
