@@ -7,7 +7,7 @@ import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '.
 import LinkShow from '../../(components)/LinkShow';
 import devSkills from '../../../utility/devSkills';
 import Divider from '../../(components)/Components/Divider';
-import {SpinnerWhite} from '../../(components)/Components/Spinner';
+import { SpinnerWhite } from '../../(components)/Components/Spinner';
 
 
 const getProjectById = (id: string) => {
@@ -148,7 +148,19 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                     <Divider />
 
                     {/* Image Slider */}
-                    {!loading && images.length > 0 ? (
+                    {loading ? (
+                        <div className="flex flex-col gap-5 items-center justify-center">
+                            <div className="flex gap-2 items-center justify-center">
+                                <SpinnerWhite />
+                                <span className="w-1/2 md:w-full text-center text-xs">
+                                    Loading screenshots if available ...
+                                </span>
+                            </div>
+                            <Divider />
+                        </div>
+                    ) : images.length === 0 ? (
+                        <></>
+                    ) : (
                         <div className="flex flex-col items-center gap-5">
                             <div className="relative w-full aspect-[16/9] overflow-hidden rounded-md">
                                 <button onClick={() => setFullscreen(true)} className="w-full h-full">
@@ -169,18 +181,12 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                 <button onClick={nextImage} className={buttonClass}>Next</button>
                             </div>
 
-                            <div className="text-xs text-stone-300">{index + 1} / {images.length}</div>
+                            <div className="text-xs text-stone-300">
+                                {index + 1} / {images.length}
+                            </div>
                             <Divider />
                         </div>
-
-                    ) :
-                        <div className="flex flex-col gap-5 items-center justify-center">
-                            <div className="flex gap-2 items-center justify-center">
-                                <SpinnerWhite /> <span className="w-1/2 md:w-full text-center text-xs">Screenshots are being loaded ... </span>
-                            </div>
-                            <Divider/>
-                        </div>
-                    }
+                    )}
 
                     <div className="flex flex-col gap-6 text-xs font-extralight tracking-widest">
 
