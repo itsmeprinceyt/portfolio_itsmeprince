@@ -8,3 +8,4 @@ export const CodingProjectsLink: string = "https://www.youtube.com/playlist?list
 export const DiscordServer_Link: string = "https://discord.gg/HgXNs4p5cx";
 export const InstagramLink: string = "https://www.instagram.com/itsmeprinceyt";
 export const NOT_WATCHED_ANY_COURSE: string = "I never really followed a full course for this — I mostly relied on Google and watched a few YouTube tutorials whenever I got stuck or wasn’t sure what to do next.";
+export const SKILL_PAGE_LOCKDOWN: boolean = true;

@@ -38,7 +38,7 @@ const creativeTools: SkillInterface[] = [
     fullName: "Adobe Premiere Pro",
     SkillInfo: [
       {
-        description: "Adobe Premiere Pro is a professional video editing application for film, TV, and the web.",
+        description: "I started out with Sony Vegas Pro, mainly because my earlier PC setup couldn't handle the heavier Adobe Premiere Pro. Vegas Pro served me well and was my go-to editing tool up until around 2021–2022. Eventually, I switched to Premiere Pro, and since it offered everything I was used to (and more), the transition was smooth without any issues.",
         Links: [
           {
             linkName: NOT_WATCHED_ANY_COURSE
@@ -53,7 +53,7 @@ const creativeTools: SkillInterface[] = [
     fullName: "Adobe After Effects",
     SkillInfo: [
       {
-        description: "Adobe After Effects is used for motion graphics, visual effects, and compositing for video.",
+        description: "Adobe After Effects is obviously essential for tasks that go beyond what Premiere Pro can handle. However, I haven’t had the chance to fully dive into it yet. I’ll update this once I get the time to explore it properly through some tutorials or a crash course.",
         Links: [
           {
             linkName: NOT_WATCHED_ANY_COURSE
