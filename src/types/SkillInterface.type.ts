@@ -13,4 +13,5 @@ export interface SkillInterface {
     file: string;
     fullName: string;
     SkillInfo?: SkillInfoItem[];
+    date?: string;
 }
