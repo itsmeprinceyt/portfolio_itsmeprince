@@ -27,6 +27,7 @@ export type Project = {
         youtube: ProjectLink;
     };
     banner?: string;
+    date?: string;
 };
 
 export interface ProjectCard {

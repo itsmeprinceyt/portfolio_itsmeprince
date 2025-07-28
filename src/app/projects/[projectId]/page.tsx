@@ -254,8 +254,12 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                 </ul>
                             </div>
                         )}
-
                     </div>
+
+                    {project.date && (
+                        <div className="text-white/20 text-center text-xs"> Last Updated: {project.date}
+                        </div>
+                    )}
 
                     <Divider />
                     {/* Links */}

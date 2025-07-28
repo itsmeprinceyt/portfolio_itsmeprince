@@ -15,7 +15,8 @@ const creativeTools: SkillInterface[] = [
           }
         ]
       }
-    ]
+    ],
+    date: "28-07-2025"
   },
   {
     name: "/figma",
@@ -27,10 +28,15 @@ const creativeTools: SkillInterface[] = [
         Links: [
           {
             linkName: NOT_WATCHED_ANY_COURSE
+          },
+          {
+            linkName: "🌻 The Easy Way to Design Top Tier Websites",
+            linkURL: "https://www.youtube.com/watch?v=qyomWr_C_jA"
           }
         ]
       }
-    ]
+    ],
+    date: "29-07-2025"
   },
   {
     name: "/adobe-preimere-pro",
@@ -45,7 +51,8 @@ const creativeTools: SkillInterface[] = [
           }
         ]
       }
-    ]
+    ],
+    date: "28-07-2025"
   },
   {
     name: "/adobe-after-effects",
@@ -60,7 +67,8 @@ const creativeTools: SkillInterface[] = [
           }
         ]
       }
-    ]
+    ],
+    date: "28-07-2025"
   }
 ];
 

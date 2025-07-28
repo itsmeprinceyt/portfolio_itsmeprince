@@ -60,6 +60,7 @@ export const majorProjects: Project[] = [
             }
         },
         banner: `/projects/file-encrypt-decrypter/1.png`,
+        date: "29-07-2025"
     },
     {
         id: "crafti-nagma",
@@ -124,6 +125,7 @@ export const majorProjects: Project[] = [
             youtube: { url: ``, enabled: false },
         },
         banner: "/projects/crafti-nagma/1.png",
+        date: "29-07-2025"
     },
     {
         id: `shareaway`,
@@ -184,6 +186,7 @@ export const majorProjects: Project[] = [
             youtube: { url: `https://youtube.com/playlist?list=PLiFooJ43_R5SK0wE1LnaBlyWw-B1Uqpwj&si=nro67NPo5rZt-4bF`, enabled: true },
         },
         banner: `/projects/shareaway/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `paypal-sofi-wists-calculator`,
@@ -234,6 +237,7 @@ export const majorProjects: Project[] = [
             youtube: { url: `https://youtu.be/TmGlgE4iUN4`, enabled: true },
         },
         banner: `/projects/paypal-sofi-wists-calculator/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `pick-and-win`,
@@ -288,8 +292,8 @@ export const majorProjects: Project[] = [
             youtube: { url: `https://www.youtube.com/watch?v=gBu9qU5doiw`, enabled: true },
         },
         banner: `/projects/pick-and-win/banner.png`,
+        date: "29-07-2025"
     },
-
     {
         id: `online-sales-admin-portal`,
         name: `Online Sales Admin Portal`,
@@ -345,6 +349,7 @@ export const majorProjects: Project[] = [
             youtube: { url: ``, enabled: false },
         },
         banner: `/projects/online-sales-admin-portal/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `prince-kun`,
@@ -399,6 +404,7 @@ export const majorProjects: Project[] = [
             youtube: { url: ``, enabled: false },
         },
         banner: `/projects/prince-kun/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `e-drive`,
@@ -436,6 +442,7 @@ export const majorProjects: Project[] = [
             youtube: { url: ``, enabled: false },
         },
         banner: `/projects/e-drive/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `statistics-mean-calculator`,
@@ -482,6 +489,7 @@ export const majorProjects: Project[] = [
             youtube: { url: ``, enabled: false },
         },
         banner: `/projects/statistics-mean-calculator/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `karuta-work-discord-bot`,
@@ -534,6 +542,7 @@ export const majorProjects: Project[] = [
             youtube: { url: ``, enabled: false },
         },
         banner: `/projects/karuta-work-discord-bot/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `itsme-prince-discord-bot`,
@@ -571,6 +580,7 @@ export const majorProjects: Project[] = [
             github: { url: `https://github.com/itsmeprinceyt/itsmeprince-discord-bot`, enabled: true },
             youtube: { url: ``, enabled: false },
         },
+        date: "29-07-2025"
     },
     {
         id: `sofi-guild-manager`,
@@ -619,6 +629,7 @@ export const majorProjects: Project[] = [
             github: { url: `https://github.com/itsmeprinceyt/Sofi_Guild_Manager_Private`, enabled: true },
             youtube: { url: ``, enabled: false },
         },
+        date: "29-07-2025"
     },
     {
         id: `currency-exchange`,
@@ -663,6 +674,7 @@ export const majorProjects: Project[] = [
             youtube: { url: `https://www.youtube.com/watch?v=hXyu8DO7SQ8`, enabled: true },
         },
         banner: `/projects/currency-exchange/1.png`,
+        date: "29-07-2025"
     },
 
 ];
@@ -717,6 +729,7 @@ export const miniProjects: Project[] = [
             }
         },
         banner: `/projects/yt-thumbnail-downloader/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `base64-converter`,
@@ -776,6 +789,7 @@ export const miniProjects: Project[] = [
             }
         },
         banner: `/projects/base64-converter/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `registration-form`,
@@ -834,6 +848,7 @@ export const miniProjects: Project[] = [
             }
         },
         banner: `/projects/registration-form/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `product-landing-page`,
@@ -884,6 +899,7 @@ export const miniProjects: Project[] = [
             }
         },
         banner: `/projects/product-landing-page/1.png`,
+        date: "29-07-2025"
     },
     {
         id: `food-shop-landing`,
@@ -930,6 +946,7 @@ export const miniProjects: Project[] = [
             }
         },
         banner: `/projects/food-shop-landing/1.png`,
+        date: "29-07-2025"
     }
 ];
 /* ============================================================================= */
@@ -972,6 +989,7 @@ export const playgroundProjects: Project[] = [
             youtube: { url: ``, enabled: false },
         },
         banner: `/projects/reflex-time/1.png`,
+        date: "29-07-2025"
     },
 ];
 /* ============================================================================= */

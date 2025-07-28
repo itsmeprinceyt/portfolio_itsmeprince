@@ -32,7 +32,7 @@ export default function Skills() {
                     {/* Top 3 cards */}
                     <div className="flex flex-wrap items-center justify-center gap-5 px-5">
                         {/* MERN Stack Card */}
-                        <div className="relative group max-w-[280px] w-full">
+                        <div className="relative group max-w-[280px] w-full hover:scale-105">
                             <div className="z-2 absolute -rotate-25 -top-5 -left-2 text-6xl opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 group-hover:-translate-3 transition-all duration-1000 ease-out">
                                 🧑‍💻
                             </div>
@@ -51,7 +51,7 @@ export default function Skills() {
                         </div>
 
                         {/* Data Structures Card */}
-                        <div className="relative group max-w-[280px] w-full">
+                        <div className="relative group max-w-[280px] w-full hover:scale-105">
                             <div className="z-2 absolute -rotate-25 -top-2 -left-2 text-6xl opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 group-hover:-translate-3 transition-all duration-1000 ease-out">
                                 🧮
                             </div>
@@ -70,7 +70,7 @@ export default function Skills() {
                         </div>
 
                         {/* Software Dev Card */}
-                        <div className="relative group max-w-[280px] w-full">
+                        <div className="relative group max-w-[280px] w-full hover:scale-105">
                             <div className="z-2 absolute -rotate-25 -top-2 -left-2 text-6xl opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 group-hover:-translate-3 transition-all duration-1000 ease-out">
                                 🛠️
                             </div>

@@ -1,5 +1,5 @@
 import { SkillInterface } from "../types/SkillInterface.type";
-import { NOT_WATCHED_ANY_COURSE } from "./utils";
+import { GOOGLE_REMINDER, NOT_WATCHED_ANY_COURSE } from "./utils";
 
 const devSkills: SkillInterface[] = [
   {
@@ -105,6 +105,9 @@ const devSkills: SkillInterface[] = [
         description: "I had a lot of ideas brewing in my mind and started thinking about how I could bring them to life — that’s when I decided to dive into the world of development. I began with HTML, and to my surprise, it wasn’t too difficult. Once you understand the difference between semantic and non-semantic tags, you’re pretty much good to go!",
         Links: [
           {
+            linkName: "You can host your HTML Project on GitHub Pages",
+          },
+          {
             linkName: "🌻 HTML & CSS Full Course - Beginner to Pro",
             linkURL: "https://www.youtube.com/watch?v=G3e-cpL7ofc"
           }
@@ -173,6 +176,9 @@ const devSkills: SkillInterface[] = [
         description: "At this point, I was ready to dive into real backend development — something that could handle requests, return data, and connect to a database. It was finally time to build my first full-stack web application. And to make that happen, the next step was clear: I needed to learn Express.js.",
         Links: [
           {
+            linkName: "You can host your backend using Render",
+          },
+          {
             linkName: "🌻 Sigma Web Development Course ( I followed this course up to the part where Express.js was covered )",
             linkURL: "https://www.youtube.com/watch?v=R11tvGM3nDY&list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&index=88"
           },
@@ -198,11 +204,18 @@ const devSkills: SkillInterface[] = [
         description: "I initially had no intention of learning React.js, but two key realizations completely changed my perspective and pushed me to dive deep into it. First, mastering React significantly levels up your capabilities in Next.js. Since React is primarily a UI library, learning it lays the foundation for working with Next.js, which adds powerful backend features on top—making the transition much smoother and more efficient. Second, React opens the door to app development with React Native. The concepts of state management and component logic are largely shared between the two, making it much easier to switch gears when you're ready to build mobile apps—which is something I’m actively looking forward to.",
         Links: [
           {
+            linkName: "You can deploy React.js Projects with Netlify",
+          },
+          {
             linkName: "🌻 React Full Course for free (2024)",
             linkURL: "https://www.youtube.com/watch?v=CgkZ7MvWUAA"
           },
           {
-            linkName: "🌻 Sigma Web Development Course – (After watching the video linked above, I came here to watch his final explanation of React.js to ensure I didn’t miss any important details.)",
+            linkName: "\"Introduction to React Js + Installation | Complete React Course in Hindi #1\" - It was too old so only watched like 20-25 videos from the start",
+            linkURL: "https://www.youtube.com/watch?v=-mJFZp84TIY&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=1"
+          },
+          {
+            linkName: "🌻 Sigma Web Development Course – (After watching the stuff above, I came here to watch his final explanation of React.js to ensure I didn’t miss any important details.)",
             linkURL: "https://www.youtube.com/watch?v=nhSZ4LhIii8&list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&index=105"
           },
           {
@@ -228,15 +241,10 @@ const devSkills: SkillInterface[] = [
     fullName: "Redux",
     SkillInfo: [
       {
-        description: "Add a lockdown feature which will not let anyone access any /skill/skillPage if its turned on in the uhhh utils.ts",
-        Links: [
-          {
-            linkName: "Learn Redux",
-            linkURL: "https://redux.js.org/"
-          }
-        ]
+        description: NOT_WATCHED_ANY_COURSE,
       }
-    ]
+    ],
+    date: "29-07-2025"
   },
   {
     name: "/my-sql",
@@ -244,15 +252,15 @@ const devSkills: SkillInterface[] = [
     fullName: "MySQL",
     SkillInfo: [
       {
-        description: "MySQL is an open-source relational database system for structured data storage.",
+        description: "MySQL was the first database I learned. I got hands-on with creating schemas, building tables, and performing basic data manipulation — all of which I later integrated into my projects.",
         Links: [
           {
-            linkName: "Learn MySQL",
-            linkURL: "https://www.mysql.com/"
+            linkName: "I learned MySQL from a free platform, but I’ve forgotten the name. I’ll update this if I remember it."
           }
         ]
       }
-    ]
+    ],
+    date: "29-07-2025"
   },
   {
     name: "/mongo-db",
@@ -260,15 +268,43 @@ const devSkills: SkillInterface[] = [
     fullName: "MongoDB",
     SkillInfo: [
       {
-        description: "MongoDB is a NoSQL document-based database for scalable and flexible data storage.",
+        description: "MongoDB is a NoSQL, document-based database known for its scalability and flexible data structure. I used it in my very first project, which also happened to be my college project. While MongoDB is great for quick development and handling unstructured data, its lack of strict relationships between data can sometimes be a drawback. Personally, I prefer MySQL for its relational structure — but both databases have their strengths, so it really depends on the use case. No hard feelings!",
         Links: [
           {
-            linkName: "Learn MongoDB",
-            linkURL: "https://www.mongodb.com/"
+            linkName: "You can use MongoDB Atlas Free 500MB Cluster for your projects!",
+          },
+          {
+            linkName: "🌻 Learn MongoDB in 1 Hour 🍃",
+            linkURL: "https://www.youtube.com/watch?v=c2M-rlkkT5o"
+          },
+          {
+            linkName: "🌻 Install mongoDB and MongoDB Compass and MongoDB Shell (mongosh) on Windows",
+            linkURL: "https://www.youtube.com/watch?v=jvaBaxlTqU8"
+          },
+          {
+            linkName: "🌻 Let solve this error together. [connect ECONNREFUSED 127.0.0.1:27017]",
+            linkURL: "https://www.youtube.com/watch?v=y1l1UI_UdQI"
+          },
+          {
+            linkName: "🌻 Connecting MongoDB Atlas to Next.js: A Quick Tutorial | 2024",
+            linkURL: "https://www.youtube.com/watch?v=FQeKzno-8mU"
+          },
+          {
+            linkName: "🌻 Setup MongoDB on cloud with MongoDB Atlas",
+            linkURL: "https://www.youtube.com/watch?v=qXEmKQsD6qA"
+          },
+          {
+            linkName: "🌻 Complete MongoDB Tutorial #25 - MongoDB Atlas",
+            linkURL: "https://www.youtube.com/watch?v=084rmLU1UgA"
+          },
+          {
+            linkName: "🌻 Connecting to a Database (Discord.js v14)",
+            linkURL: "https://www.youtube.com/watch?v=edeNqzKvj0g"
           }
         ]
       }
-    ]
+    ],
+    date: "29-07-2025"
   },
   {
     name: "/bootstrap",
@@ -276,15 +312,10 @@ const devSkills: SkillInterface[] = [
     fullName: "Bootstrap",
     SkillInfo: [
       {
-        description: "Bootstrap is a popular CSS framework for responsive and mobile-first design.",
-        Links: [
-          {
-            linkName: "Learn Bootstrap",
-            linkURL: "https://getbootstrap.com/"
-          }
-        ]
+        description: "Bootstrap is a great choice if you want to save time on writing custom CSS — it helps you build clean, responsive layouts quickly. I tried it once or twice, but eventually stuck with writing my own CSS and using TailwindCSS. In the end, it all comes down to personal preference and what fits your workflow best.",
       }
-    ]
+    ],
+    date: "29-07-2025"
   },
   {
     name: "/tailwind-css",
@@ -292,15 +323,63 @@ const devSkills: SkillInterface[] = [
     fullName: "TailwindCSS",
     SkillInfo: [
       {
-        description: "Tailwind CSS is a utility-first framework for rapidly building custom designs.",
+        description: "Tailwind CSS is hands down my favorite way to write CSS — I absolutely love working with it. With Version 4 out, it’s even more powerful and flexible. Since I already had a solid understanding of CSS, picking up Tailwind was pretty straightforward. That said, its utility-first syntax can be a bit tricky to remember at first, since everything is so concise. In the beginning, I used to Google classes I forgot — but with consistent use, they’ve pretty much become second nature now. After a while, I felt like I was missing out on some stuff, so I watched a lot of Tailwind CSS tutorials to learn cool tips and tricks from experienced developers. Remember, any CSS tech stack is like an art form — and like all art, there are endless ways to approach it. So don’t feel discouraged if you don’t master it right away; it’s all part of the creative journey.",
         Links: [
           {
-            linkName: "Learn TailwindCSS",
-            linkURL: "https://tailwindcss.com/"
+            linkName: GOOGLE_REMINDER,
+          },
+          {
+            linkName: "🌻 Learn Tailwind CSS – Course for Beginners",
+            linkURL: "https://www.youtube.com/watch?v=ft30zcMlFao"
+          },
+          {
+            linkName: "🌻 I WISH I Knew These Tailwind Tips Earlier",
+            linkURL: "https://www.youtube.com/watch?v=QBajvZaWLXs"
+          },
+          {
+            linkName: "🌻 10 Tailwind Tricks You NEED To Know!",
+            linkURL: "https://www.youtube.com/watch?v=aSlK3GhRuXA"
+          },
+          {
+            linkName: "🌻 Tailwind CSS Full Course 2024 in Hindi | Build and Deploy This Modern Website",
+            linkURL: "https://www.youtube.com/watch?v=mGN9-FPsX9o"
+          },
+          {
+            linkName: "🌻 TailwindCSS Animated Border Gradient (MIND BLOWING!)",
+            linkURL: "https://www.youtube.com/watch?v=fdLh5pg0nG0"
+          },
+          {
+            linkName: "🌻 Glowing Background Gradient Effects with Tailwind CSS",
+            linkURL: "https://www.youtube.com/watch?v=5W6kEP65AH4"
+          },
+          {
+            linkName: "🌻 How to Add Gradient, Grid and Dots Background using Tailwind CSS",
+            linkURL: "https://www.youtube.com/watch?v=QeaeACHoReI"
+          },
+          {
+            linkName: "🌻 Bento Grid Layouts with Tailwind CSS | Easy",
+            linkURL: "https://www.youtube.com/watch?v=LJuM_Rqdd8o"
+          },
+          {
+            linkName: "🌻 Awesome Border Animation Effect in Tailwind CSS",
+            linkURL: "https://www.youtube.com/watch?v=LnwhhIqnimc"
+          },
+          {
+            linkName: "🌻 How to Build (Good) Admin Dashboards || React & TailwindCSS",
+            linkURL: "https://www.youtube.com/watch?v=vdxnBKRD7kU"
+          },
+          {
+            linkName: "🌻 Tailwind Css Tutorial | Gradient - Backdrop",
+            linkURL: "https://www.youtube.com/watch?v=DnRbljF2sWA"
+          },
+          {
+            linkName: "🌻 Tailwind CSS 4.0 is finally here - The NEW way to install with Vite + React (2025)",
+            linkURL: "https://www.youtube.com/watch?v=sHnG8tIYMB4"
           }
         ]
       }
-    ]
+    ],
+    date: "29-07-2025"
   },
   {
     name: "/next.js",
@@ -308,15 +387,43 @@ const devSkills: SkillInterface[] = [
     fullName: "Next.js",
     SkillInfo: [
       {
-        description: "Next.js is a full-stack React framework with features like SSR and static site generation.",
+        description: "Next.js is a powerful full-stack framework built on top of React, offering features like server-side rendering (SSR), static site generation, API routes, middleware, and built-in SEO support. It allows you to manage both the front-end and back-end within a single project, making development seamless. I started using Next.js in all of my projects because it truly delivers — it’s efficient, modern, and incredibly developer-friendly. Since it’s built on React, I didn’t have to spend too much time learning it and was able to pick it up quickly. It’s a good idea to watch tutorials where the developer builds an entire full-stack app — it teaches you how they think, how they structure things, and you might learn some neat tricks in the process too!",
         Links: [
           {
-            linkName: "Learn Next.js",
-            linkURL: "https://nextjs.org/"
+            linkName: "You can deploy Next.js Projects with Vercel",
+          },
+          {
+            linkName: "🌻 Next.js 13 Authentication: Custom Email/Password with NextAuth.js & MongoDB",
+            linkURL: "https://www.youtube.com/watch?v=PEMfsqZ2-As"
+          },
+          {
+            linkName: "🌻 Next.js, Tailwind CSS, and MongoDB Project Tutorial – Ticketing App",
+            linkURL: "https://www.youtube.com/watch?v=H0vhkoXljq0"
+          },
+          {
+            linkName: "🌻 Next JS tutorial in Hindi # Upload Image in next js 13.4",
+            linkURL: "https://www.youtube.com/watch?v=d_N0_i1IvCI"
+          },
+          {
+            linkName: "🌻 Next.js 14 Login Register MongoDB Next-Auth Login Authentication Daisyui Tailwind",
+            linkURL: "https://www.youtube.com/watch?v=nfSmzGmiejI"
+          },
+          {
+            linkName: "🌻 Next.js 14 Tutorial - 35 - Handling POST Request",
+            linkURL: "https://www.youtube.com/watch?v=pzPS7Fn-8tE"
+          },
+          {
+            linkName: "🌻 Next.js Pass Data From One Page to Another Page",
+            linkURL: "https://www.youtube.com/watch?v=o87z9bK7olE"
+          },
+          {
+            linkName: "🌻 Next Auth with MongoDB | chai aur NextJS",
+            linkURL: "https://www.youtube.com/watch?v=3BEn2E9PvBM&list=PLu71SKxNbfoCXO80Z4miZHTL5GxfFbz7A&index=1"
           }
         ]
       }
-    ]
+    ],
+    date: "29-07-2025"
   },
   {
     name: "/typescript",
@@ -324,15 +431,19 @@ const devSkills: SkillInterface[] = [
     fullName: "Typescript",
     SkillInfo: [
       {
-        description: "TypeScript is a typed superset of JavaScript that helps with tooling and type safety.",
+        description: "TypeScript is a typed superset of JavaScript that adds tooling support and type safety, making development more reliable and easier to manage at scale. I noticed that many companies were adopting TypeScript, so I decided to learn it. In a way, it felt like working with C++ — you simply define the type of a variable (like a string), and it sticks to that definition. Since I already had a solid background in C and C++, picking up TypeScript wasn’t too difficult.",
         Links: [
           {
-            linkName: "Learn TypeScript",
-            linkURL: "https://www.typescriptlang.org/"
+            linkName: GOOGLE_REMINDER
+          },
+          {
+            linkName: "🌻 Learn TypeScript - Full Tutorial",
+            linkURL: "https://www.youtube.com/watch?v=30LWjhZzg50"
           }
         ]
       }
-    ]
+    ],
+    date: "29-07-2025"
   },
   {
     name: "/electron.js",
@@ -340,15 +451,23 @@ const devSkills: SkillInterface[] = [
     fullName: "Electron.js",
     SkillInfo: [
       {
-        description: "Electron.js is a framework for building cross-platform desktop apps with web technologies.",
+        description: "Electron.js is a framework that lets you build cross-platform desktop applications using web technologies like HTML, CSS, and JavaScript. I first came across it through a short reel where someone was creating a desktop app — it looked so simple and fun, it instantly sparked my interest. That moment kicked off my journey into desktop app development, and it turned out to be a really enjoyable experience. I'm still new to this",
         Links: [
           {
-            linkName: "Learn Electron.js",
-            linkURL: "https://www.electronjs.org/"
+            linkName: GOOGLE_REMINDER
+          },
+          {
+            linkName: "🌻 Electron Course - Code Desktop Applications (inc. React and Typescript)",
+            linkURL: "https://www.youtube.com/watch?v=fP-371MN0Ck"
+          },
+          {
+            linkName: "🌻 Electron.js Documentation",
+            linkURL: "https://www.electronjs.org/docs/latest/tutorial/tutorial-prerequisites"
           }
         ]
       }
-    ]
+    ],
+    date: "29-07-2025"
   }
 ];
 
