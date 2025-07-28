@@ -10,7 +10,7 @@ import {
     FaHtml5,
 } from "react-icons/fa";
 import { ResumeFile } from "../../types/ResumeFile.type";
-import Spinner from "./Components/Spinner";
+import {SpinnerStone} from "./Components/Spinner";
 
 const iconMap: Record<string, React.JSX.Element> = {
     ".pdf": <FaFilePdf />,
@@ -44,7 +44,7 @@ export default function FileList() {
     if (loading) {
         return (
             <div className="flex flex-col items-center py-8">
-                <Spinner />
+                <SpinnerStone />
             </div>
         );
     }

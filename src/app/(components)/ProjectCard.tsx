@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ProjectCard } from "../../types/Project.type";
 import LinkShow from "./LinkShow";
 import FloatingImagePortal from "./FloatingImagePortal";
+import BannerImage from "./ProjectBannerImage";
 
 export default function ProjectCard({ project, index }: ProjectCard) {
     const [isHovering, setIsHovering] = useState<boolean>(false);
@@ -57,34 +58,9 @@ export default function ProjectCard({ project, index }: ProjectCard) {
             }
 
             {/* Image */}
-            {(() => {
-                const bannerSrc = Array.isArray(project.banner)
-                    ? project.banner[0]
-                    : project.banner;
-
-                return bannerSrc ? (
-                    <div className="relative w-full h-56 rounded-tr-md rounded-tl-md overflow-hidden">
-                        <Image
-                            src={bannerSrc}
-                            alt={`${project.name} banner`}
-                            fill
-                            className="object-cover object-top"
-                            sizes="(max-width: 768px) 100vw, 600px"
-                        />
-                    </div>
-                ) : <div className="relative w-full h-56 rounded-tr-md rounded-tl-md overflow-hidden">
-                    <Image
-                        src={"/projects/default-project-img.png"}
-                        alt={`${project.name} banner`}
-                        fill
-                        className="object-cover object-center"
-                        sizes="(max-width: 768px) 100vw, 600px"
-                    />
-                </div>;
-            })()}
+            <BannerImage src={project.banner} alt={`${project.name} banner`}/>
 
             <div className="relative flex flex-col justify-between flex-grow p-4 gap-4 text-black">
-
                 {/* Project #Index */}
                 <span className="text-[8px] text-gray-600/50 absolute left-4 top-1">Project #{index + 1}</span>
 

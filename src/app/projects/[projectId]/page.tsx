@@ -7,6 +7,7 @@ import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '.
 import LinkShow from '../../(components)/LinkShow';
 import devSkills from '../../../utility/devSkills';
 import Divider from '../../(components)/Components/Divider';
+import {SpinnerWhite} from '../../(components)/Components/Spinner';
 
 
 const getProjectById = (id: string) => {
@@ -20,6 +21,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
     const [images, setImages] = useState<string[]>([]);
     const [index, setIndex] = useState<number>(0);
     const [fullscreen, setFullscreen] = useState<boolean>(false);
+    const [loading, setLoader] = useState<boolean>(true);
     const [zoom, setZoom] = useState<number>(1);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
     const [isDragging, setIsDragging] = useState<boolean>(false);
@@ -52,6 +54,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
             }
         };
         fetchImages();
+        setLoader(false);
     }, [project?.id]);
 
     useEffect(() => {
@@ -145,7 +148,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                     <Divider />
 
                     {/* Image Slider */}
-                    {images.length > 0 && (
+                    {!loading && images.length > 0 ? (
                         <div className="flex flex-col items-center gap-5">
                             <div className="relative w-full aspect-[16/9] overflow-hidden rounded-md">
                                 <button onClick={() => setFullscreen(true)} className="w-full h-full">
@@ -167,10 +170,18 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                             </div>
 
                             <div className="text-xs text-stone-300">{index + 1} / {images.length}</div>
+                            <Divider />
                         </div>
-                    )}
 
-                    <Divider />
+                    ) :
+                        <div className="flex flex-col gap-5 items-center justify-center">
+                            <div className="flex gap-2 items-center justify-center">
+                                <SpinnerWhite /> <span className="w-1/2 md:w-full text-center text-xs">Screenshots are being loaded ... </span>
+                            </div>
+                            <Divider/>
+                        </div>
+                    }
+
                     <div className="flex flex-col gap-6 text-xs font-extralight tracking-widest">
 
                         {/* Description */}
@@ -275,8 +286,9 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                             <Image
                                 src={images[index]}
                                 alt={`${project.name} fullscreen`}
-                                fill
-                                className="object-contain rounded-md select-none pointer-events-none"
+                                width={3000}
+                                height={2000}
+                                className="object-contain w-full h-full rounded-md select-none pointer-events-none"
                                 draggable={false}
                             />
                         </div>
