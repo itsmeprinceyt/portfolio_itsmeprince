@@ -9,13 +9,15 @@ import { GrClearOption } from "react-icons/gr";
 export default function Projects() {
     const [query, setQuery] = useState("");
 
-    const allProjects = [...majorProjects, ...miniProjects, ...playgroundProjects];
+    const allProjects = useMemo(() => {
+        return [...majorProjects, ...miniProjects, ...playgroundProjects];
+    }, []);
 
     const filtered = useMemo(() => {
         if (!query.trim()) return null;
         const q = query.toLowerCase();
         return allProjects.filter(project => project.name.toLowerCase().includes(q));
-    }, [query]);
+    }, [query, allProjects]);
 
     const mainProjectDiv: string = "flex flex-wrap items-start justify-center  gap-5 p-5";
     const mainHeadText: string = "text-2xl sm:text-3xl tracking-widest text-center text-glow-white text-stone-300";
