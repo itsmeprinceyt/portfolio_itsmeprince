@@ -76,7 +76,7 @@ export default function Sidebar() {
                         <X size={iconSize - 2} />
                     </button>
                 )}
-                <div className="flex items-center justify-start px-4 space-x-4">
+                <Link href="/" className="flex items-center justify-start px-4 space-x-4">
                     <Image
                         src={ProfilePicture}
                         height={50}
@@ -91,7 +91,7 @@ export default function Sidebar() {
                             <AnimatedMultilingualText text="ItsMe Prince" />
                         )
                     )}
-                </div>
+                </Link>
                 {/* Sidebar Contents */}
                 <div className="flex-1 space-y-2">
                     {SIDEBAR_ITEMS.map((item) => {
