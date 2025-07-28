@@ -161,14 +161,18 @@ export default function SkillPage({ params }: { params: Promise<{ skill: string 
                         ))}
                     </div>
                 </div>
-                <Divider />
-                <div className="p-5 flex flex-col text-stone-400 bg-stone-900/40 border-l-3 border-yellow-500 rounded-tr-lg rounded-br-lg text-xs select-none">
-                    {`Pro Tip: Never limit yourself to a single course, platform, or creator. Exploring a variety of resources exposes you to different teaching approaches and ways of thinking — and that can make all the difference in how well you learn.`}
-                </div>
-                <Divider />
-                <div className="p-5 flex flex-col text-stone-400 bg-stone-900/40 border-l-3 border-red-500 rounded-tr-lg rounded-br-lg text-xs select-none">
-                    {`Disclaimer: Most of these resources are ones I’ve personally learned from — whether it’s YouTube videos, books, or courses I found helpful along the way. Some may also come from friends or peers who found something awesome and insisted I include it here. I’m just sharing what worked for us, in case it helps you too!`}
-                </div>
+                {matched.category !== 'hobbies-interests' && matched.category !== 'personal-soft-skills' && (
+                    <>
+                        <Divider />
+                        <div className="p-5 flex flex-col text-stone-400 bg-stone-900/40 border-l-3 border-yellow-500 rounded-tr-lg rounded-br-lg text-xs select-none">
+                            {`Pro Tip: Never limit yourself to a single course, platform, or creator. Exploring a variety of resources exposes you to different teaching approaches and ways of thinking — and that can make all the difference in how well you learn.`}
+                        </div>
+                        <Divider />
+                        <div className="p-5 flex flex-col text-stone-400 bg-stone-900/40 border-l-3 border-red-500 rounded-tr-lg rounded-br-lg text-xs select-none">
+                            {`Disclaimer: Most of these resources are ones I’ve personally learned from — whether it’s YouTube videos, books, or courses I found helpful along the way. Some may also come from friends or peers who found something awesome and insisted I include it here. I’m just sharing what worked for us, in case it helps you too!`}
+                        </div>
+                    </>
+                )}
 
             </div>
         </PageWrapperNormal>
