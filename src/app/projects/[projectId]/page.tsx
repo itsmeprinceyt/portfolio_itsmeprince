@@ -2,6 +2,7 @@
 import { use, useCallback, useEffect, useRef, useState } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import PageWrapper from "../../(components)/PageWrapper";
 import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '../../../utility/ProjectData';
 import LinkShow from '../../(components)/LinkShow';
@@ -219,9 +220,11 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                                     const matched = devSkills.find((s) => s.name === tag);
                                     return (
                                         <li key={i}>
-                                            <span className="text-purple-400 font-semibold">
-                                                {matched?.fullName || tag}
-                                            </span>
+                                            <Link href={`/skills/${matched?.fullName || tag}`}>
+                                                <span className="text-purple-400 font-semibold">
+                                                    {matched?.fullName || tag}
+                                                </span>
+                                            </Link>
                                         </li>
                                     );
                                 })}
