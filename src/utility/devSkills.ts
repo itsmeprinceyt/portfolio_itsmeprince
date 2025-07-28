@@ -211,7 +211,7 @@ const devSkills: SkillInterface[] = [
             linkURL: "https://www.youtube.com/watch?v=CgkZ7MvWUAA"
           },
           {
-            linkName: "\"Introduction to React Js + Installation | Complete React Course in Hindi #1\" - It was too old so only watched like 20-25 videos from the start",
+            linkName: "🌻 \"Introduction to React Js + Installation | Complete React Course in Hindi #1\" - It was too old so only watched like 20-25 videos from the start",
             linkURL: "https://www.youtube.com/watch?v=-mJFZp84TIY&list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt&index=1"
           },
           {
