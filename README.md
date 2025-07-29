@@ -1,38 +1,42 @@
 # ⚡ ItsMe Prince Portfolio — Version 3
 
-A fully revamped personal portfolio website built with **Next.js** and **TypeScript**, showcasing my skills, projects, and experiences in a polished, interactive, and responsive design. This is **Version 2**, a major upgrade from the original portfolio with dynamic routing, image sliders, and a more scalable project display system.
+A fully revamped personal portfolio website built with **Next.js** and **TypeScript**, showcasing my skills, projects, and experiences in a polished, interactive, and responsive design. This is **Version 3**, a major upgrade from the original portfolio with dynamic routing, image sliders, and a more scalable project display system.
 
-## 🚀 What's New in Version 2
+## 🚀 What's New in Version 3
 
 - ✅ **Modern, Clean UI** with smooth gradients and refined typography
+- 📍 **Side bar** with multiple options to navigate through portfolio
 - 📄 **Dedicated Project Pages** — each project now has its own unique route with:
+  - Screenshots of the project ( if any )
   - Full description
   - Tech stack tags
-  - Image slider
+  - Dependencies
+  - Last updated note
   - Live/GitHub/YouTube links
 - 🧠 **Better Data Structure** for scalable project listings and categories
 - 📱 **Improved Responsive Design** for mobile and tablets
-- 🖼️ **Dynamic Image Gallery** for each project using `/api/getProjectImages`
-- 🧩 **Adaptive Grid Layouts** for tags and cards
+- 🧩 **Personal Skill Resources** allows you to click on any tech stack and it will reveal all the resources which I've used.
 
 ---
 
 ## ✨ Features
 
-- **About Me**: Short intro, background, and core philosophy
-- **Projects Section**: Interactive and categorized project previews
+- **Home Page**: A concised resume like information about me.
+- **About**: My intro, my journey and what I can offer.
+- **Experience**: Showing you all the work experience and their impact and projects.
+- **Skills**: Showcasing what I know and also sharing resources to learn the way I did when you click on any tech stack.
+- **Projects**: Interactive and categorized project previews with search bar.
 - **Project Details Pages**: Deep dive into each project with visuals and links
-- **Skills**: Dynamic grid showing technologies and tools
-- **Contact Info**: (Planned) Add a message/contact form in the next release
+- **Contact**: All my social media links can be found here.
+- **Card**: A digital card which showcase what I do along with my social media links. User can also download this as an image.
+- **Support**: A support page where the user can support me through Paypal, KoFi, or UPI.
+- **Surprise Page**: [Click to know!](https://portfolio-itsmeprince.vercel.app/quote)
 
 ---
 
 ## 🛠 Tech Stack
-
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Image Optimization**: [next/image](https://nextjs.org/docs/api-reference/next/image)
+- Next.js
+- Tailwind CSS
 
 ---
 
@@ -60,9 +64,7 @@ Visit: http://localhost:3000
 
 Want to personalize it?
 
-- Replace content in `utility/ProjectData.ts` with your own project data
-- Update global styles or components under `(components)/`
-- Extend the design with custom Tailwind classes or animations
+- Explore the utils folder to know how the stuff works and change accordingly.
 
 ---
 
