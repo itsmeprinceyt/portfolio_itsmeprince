@@ -6,7 +6,7 @@ import { ResponsiveLinkProps } from '../../types/ResponsiveLink.type';
 const LinksMapping = {
     blue: {
         icon: '/icons/web.svg',
-        label: '/live',
+        label: '/demo',
         textColor: 'text-blue-100',
         bg: `bg-blue-500 border border-blue-600 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40`,
     },
