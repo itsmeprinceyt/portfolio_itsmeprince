@@ -8,7 +8,7 @@ export default function SocialMediaIcons() {
             {/* YouTube */}
             <div className="relative p-0.5 rounded-lg bg-gradient-to-tr from-red-700 via-red-500 to-red-400 hover:scale-105 w-[120px]">
                 <Link
-                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(239,68,68,0.3),0_0_20px_rgba(220,38,38,0.3),0_0_30px_rgba(252,165,165,0.2)] hover:shadow-[0_0_20px_rgba(239,68,68,0.8),0_0_30px_rgba(220,38,38,0.7),0_0_40px_rgba(252,165,165,0.6)] hover:animate-pulse"
+                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(239,68,68,0.3),0_0_20px_rgba(220,38,38,0),0_0_30px_rgba(252,165,165,0.2)] hover:shadow-[0_0_20px_rgba(239,68,68,0.2),0_0_30px_rgba(220,38,38,0.3),0_0_40px_rgba(252,165,165,0.4)] hover:animate-pulse"
                     href={YouTubeLink}
                     target="_blank"
                 ><span className="[&>svg]:h-5 [&>svg]:w-5">
@@ -27,7 +27,7 @@ export default function SocialMediaIcons() {
             {/* LinkedIn */}
             <div className="relative p-0.5 rounded-lg bg-gradient-to-tr from-blue-700 via-blue-500 to-blue-300 hover:scale-105 w-[120px]">
                 <Link
-                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(59,130,246,0.3),0_0_20px_rgba(37,99,235,0.2),0_0_30px_rgba(147,197,253,0.25)] hover:shadow-[0_0_20px_rgba(59,130,246,0.8),0_0_30px_rgba(37,99,235,0.7),0_0_40px_rgba(147,197,253,0.6)] hover:animate-pulse"
+                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(59,130,246,0.3),0_0_20px_rgba(37,99,235,0),0_0_30px_rgba(147,197,253,0.25)] hover:shadow-[0_0_20px_rgba(59,130,246,0.2),0_0_30px_rgba(37,99,235,0.2),0_0_40px_rgba(147,197,253,0.4)] hover:animate-pulse"
                     href={LinkedInLink}
                     target="_blank"
                 ><span className="[&>svg]:h-5 [&>svg]:w-5">
@@ -46,7 +46,7 @@ export default function SocialMediaIcons() {
             {/* GitHub */}
             <div className="relative p-0.5 rounded-lg bg-gradient-to-tr from-stone-500 via-stone-400 to-stone-300 hover:scale-105 w-[120px]">
                 <Link
-                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(120,113,108,0.3),0_0_20px_rgba(168,162,158,0.2),0_0_30px_rgba(214,211,209,0.25)] hover:shadow-[0_0_20px_rgba(120,113,108,0.8),0_0_30px_rgba(168,162,158,0.7),0_0_40px_rgba(214,211,209,0.6)] hover:animate-pulse"
+                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(120,113,108,0.3),0_0_20px_rgba(168,162,158,0),0_0_30px_rgba(214,211,209,0.25)] hover:shadow-[0_0_20px_rgba(120,113,108,0.2),0_0_30px_rgba(168,162,158,0.2),0_0_40px_rgba(214,211,209,0.4)] hover:animate-pulse"
                     href={GitHubLink}
                     target="_blank"
                 ><span className="[&>svg]:h-5 [&>svg]:w-5">
@@ -65,7 +65,7 @@ export default function SocialMediaIcons() {
             {/* Discord */}
             <div className="relative p-0.5 rounded-lg bg-gradient-to-tr from-indigo-500 via-purple-500 to-indigo-400  hover:scale-105 w-[120px]">
                 <Link
-                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(99,102,241,0.3),0_0_20px_rgba(139,92,246,0.4),0_0_30px_rgba(129,140,248,0.3)] hover:shadow-[0_0_20px_rgba(99,102,241,0.8),0_0_30px_rgba(139,92,246,0.7),0_0_40px_rgba(129,140,248,0.6)] hover:animate-pulse"
+                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(99,102,241,0.3),0_0_20px_rgba(139,92,246,0),0_0_30px_rgba(129,140,248,0.3)] hover:shadow-[0_0_20px_rgba(99,102,241,0.2),0_0_30px_rgba(139,92,246,0.2),0_0_40px_rgba(129,140,248,0.4)] hover:animate-pulse"
                     href={DiscordServer_Link}
                     target="_blank"
                 >
@@ -85,7 +85,7 @@ export default function SocialMediaIcons() {
             {/* X */}
             <div className="relative p-0.5 rounded-lg bg-white  hover:scale-105 w-[120px]">
                 <Link
-                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(255,255,255,0.3),0_0_20px_rgba(255,255,255,0.2),0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_10px_rgba(255,255,255,0.8),0_0_25px_rgba(255,255,255,0.7),0_0_40px_rgba(255,255,255,0.6)] hover:animate-pulse"
+                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(255,255,255,0.3),0_0_20px_rgba(255,255,255,0),0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_10px_rgba(255,255,255,0.1),0_0_25px_rgba(255,255,255,0.2),0_0_40px_rgba(255,255,255,0.4)] hover:animate-pulse"
                     href={X_Link}
                     target="_blank"
                 >
@@ -105,7 +105,7 @@ export default function SocialMediaIcons() {
             {/* Instagram */}
             <div className="relative p-0.5 rounded-lg bg-gradient-to-tr from-purple-500 via-pink-500 to-yellow-400  hover:scale-105 w-[120px]">
                 <Link
-                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(168,85,247,0.3),0_0_20px_rgba(236,72,153,0.2),0_0_30px_rgba(253,224,71,0.25)] hover:shadow-[0_0_20px_rgba(168,85,247,0.8),0_0_30px_rgba(236,72,153,0.7),0_0_40px_rgba(253,224,71,0.6)] hover:animate-pulse"
+                    className="transition-all ease-in-out flex justify-center items-center gap-2 p-2 px-3 text-xs w-full h-full rounded-md bg-black text-white shadow-[0_0_6px_rgba(168,85,247,0.3),0_0_20px_rgba(236,72,153,0),0_0_30px_rgba(253,224,71,0.25)] hover:shadow-[0_0_20px_rgba(168,85,247,0.2),0_0_30px_rgba(236,72,153,0.2),0_0_40px_rgba(253,224,71,0.4)] hover:animate-pulse"
                     href={InstagramLink}
                     target="_blank"
                 >
