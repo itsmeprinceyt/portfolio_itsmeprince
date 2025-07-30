@@ -47,7 +47,7 @@ export const majorProjects: Project[] = [
         tags: [`/electron.js`, `/node.js`, `/typescript`, `/next.js`, `/tailwind-css`, `/python`],
         links: {
             live: {
-                url: `https://www.dropbox.com/home/File%20Encrypter%20Decrypter%20by%20ItsMe%20Prince`,
+                url: `https://file-encrypt-decrypter-website.vercel.app/`,
                 enabled: true
             },
             github: {
@@ -60,7 +60,7 @@ export const majorProjects: Project[] = [
             }
         },
         banner: `/projects/file-encrypt-decrypter/1.png`,
-        date: "29-07-2025"
+        date: "30-07-2025"
     },
     {
         id: "crafti-nagma",
