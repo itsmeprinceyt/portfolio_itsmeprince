@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Copy } from "lucide-react";
 import Divider from "../(components)/Components/Divider";
 import PageWrapperNormal from "../(components)/PageWrapper";
+import { UPI_ID } from "../../utility/utils";
 
 export default function Support() {
     const [showUpi, setShowUpi] = useState<boolean>(false);
@@ -15,7 +16,7 @@ export default function Support() {
 
     const copyUPI = async () => {
         try {
-            await navigator.clipboard.writeText('itsmeprinceyt@slc');
+            await navigator.clipboard.writeText(UPI_ID);
             setCopied(true);
             setTimeout(() => setCopied(false), 1500);
         } catch { }
@@ -49,7 +50,7 @@ export default function Support() {
                                     <Copy />
                                 </button>
                                 <div>
-                                </div>itsmeprinceyt@slc</div>
+                                </div>{UPI_ID}</div>
                         </div>
                     </>
                 )}
