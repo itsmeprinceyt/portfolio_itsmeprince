@@ -31,7 +31,8 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
 
     const buttonClass: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-lg w-[100px] text-stone-300 border border-stone-600/40 hover:border-stone-700 shadow-xl shadow-stone-700/10 hover:scale-105 hover:shadow-stone-700/20 text-xs";
     const buttonClass2: string = "bg-gradient-to-r from-neutral-900 to-neutral-950 px-6 py-3 rounded-lg  text-stone-300 border border-stone-600/40 hover:border-stone-700 shadow-xl shadow-stone-700/10 hover:scale-105 hover:shadow-stone-700/20 text-xs";
-    const baseHeading: string = "px-2 py-0.5 text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-md mb-2 shadow-md/20 shadow-white";
+    const baseHeadingBorder: string = "border border-white/10 pb-2 rounded-lg";
+    const baseHeading: string = "px-2 py-0.5 text-base tracking-widest font-bold text-shadow-lg/10 text-shadow-black text-black hover:text-shadow-lg/20 bg-white rounded-tr-md rounded-tl-md mb-2 shadow-md/20 shadow-white";
 
     const ZOOM_MIN: number = 1;
     const ZOOM_MAX: number = 12;
@@ -196,7 +197,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
 
                         {/* Features */}
                         {project.full_description.features && project.full_description.features?.length > 0 && (
-                            <div>
+                            <div className={baseHeadingBorder}>
                                 <div className={baseHeading}>🔥 Features:</div>
                                 <ul className="list-decimal pl-8 space-y-3">
                                     {project.full_description.features.map((f, i) => (
@@ -213,7 +214,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
                         )}
 
                         {/* Tech Stack */}
-                        <div>
+                        <div className={baseHeadingBorder}>
                             <div className={baseHeading}>🔮 Tech stack:</div>
                             <ul className="list-disc pl-8 space-y-3">
                                 {project.tags.map((tag, i) => {
@@ -233,7 +234,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
 
                         {/* Dependencies */}
                         {project.full_description.dependencies && project.full_description.dependencies?.length > 0 && (
-                            <div>
+                            <div className={baseHeadingBorder}>
                                 <div className={baseHeading}>🔑 Dependencies:</div>
                                 <ul className="list-disc pl-8 space-y-3">
                                     {project.full_description.dependencies.map((dep, i) => (
@@ -245,7 +246,7 @@ export default function ProjectPage({ params }: { params: Promise<{ projectId: s
 
                         {/* Use Case */}
                         {project.full_description.usage_examples && project.full_description.usage_examples?.length > 0 && (
-                            <div>
+                            <div className={baseHeadingBorder}>
                                 <div className={baseHeading}>🤔 Use Cases:</div>
                                 <ul className="list-disc pl-8 space-y-3">
                                     {project.full_description.usage_examples.map((example, i) => (
