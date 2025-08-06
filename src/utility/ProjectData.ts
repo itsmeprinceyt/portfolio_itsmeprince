@@ -125,7 +125,7 @@ export const majorProjects: Project[] = [
             youtube: { url: ``, enabled: false },
         },
         banner: "/projects/crafti-nagma/1.png",
-        date: "29-07-2025"
+        date: "06-08-2025"
     },
     {
         id: `shareaway`,
