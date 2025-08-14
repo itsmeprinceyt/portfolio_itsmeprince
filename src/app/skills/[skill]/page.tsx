@@ -113,10 +113,23 @@ export default function SkillPage({ params }: { params: Promise<{ skill: string 
                     <div className="flex flex-col text-stone-300">
                         {matched.skill.SkillInfo?.map((infoItem, index) => (
                             <div key={index} className="flex flex-col gap-5 border border-stone-50/20 rounded-bl-lg rounded-br-lg p-5 shadow-2xl shadow-white/10 tracking-widest leading-8">
+
                                 {infoItem.description && (
                                     <div>
                                         <p className="text-[20px] font-bold">Description | My Story</p>
-                                        <p className="text-stone-400 text-xs font-extralight">{infoItem.description}</p>
+                                        <p className="text-stone-400 text-xs font-extralight leading-8">
+                                            {infoItem.description.map((line, i) => (
+                                                <span key={i}>
+                                                    {line}
+                                                    {i !== infoItem.description!.length - 1 && (
+                                                        <>
+                                                            <br />
+                                                            <br />
+                                                        </>
+                                                    )}
+                                                </span>
+                                            ))}
+                                        </p>
                                     </div>
                                 )}
 
@@ -133,11 +146,11 @@ export default function SkillPage({ params }: { params: Promise<{ skill: string 
                                                 {infoItem.Links.map((link, linkIndex) => (
                                                     <li
                                                         key={linkIndex}
-                                                        className="text-xs text-stone-400 border border-white/10 p-2 rounded-lg my-2 shadow-lg shadow-stone-500/10 hover:shadow-stone-500/20"
+                                                        className="text-xs text-stone-400 border border-white/10 px-4 py-3 rounded-lg my-2 shadow-lg shadow-stone-500/10 hover:shadow-stone-500/20 leading-6"
                                                     >
                                                         {link.linkURL ? (
                                                             <>
-                                                                <span>{link.linkName}:</span>{' '}
+                                                                <span>{link.linkName}:</span><br />
                                                                 <Link
                                                                     href={link.linkURL}
                                                                     target="_blank"

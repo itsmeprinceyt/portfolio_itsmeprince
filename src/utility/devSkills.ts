@@ -8,7 +8,7 @@ const devSkills: SkillInterface[] = [
     fullName: "C",
     SkillInfo: [
       {
-        description: "C was the first programming language I ever learned, and it felt incredible — I still remember the excitement of seeing my name printed on the screen for the first time! From simple print statements to writing functions, it laid the foundation for everything that followed.",
+        description: ["C was the first programming language I ever learned, and it felt incredible — I still remember the excitement of seeing my name printed on the screen for the first time! From simple print statements to writing functions, it laid the foundation for everything that followed."],
         Links: [
           {
             linkName: "🌻 C Programming Tutorial for Beginners",
@@ -32,7 +32,7 @@ const devSkills: SkillInterface[] = [
     fullName: "C++",
     SkillInfo: [
       {
-        description: "I learned C++ in the second semester of my college. Having already worked with C and explored various algorithms and sorting techniques, I often felt like something was missing. That gap was filled when I discovered C++ and its Object-Oriented Programming (OOP) concepts—I instantly connected with it. I just knew this was what I had been looking for, and it truly solved the limitations I faced in C. Being a superset of C, C++ made coding feel much more intuitive and efficient.",
+        description: ["I learned C++ in the second semester of my college. Having already worked with C and explored various algorithms and sorting techniques, I often felt like something was missing.","That gap was filled when I discovered C++ and its Object-Oriented Programming (OOP) concepts—I instantly connected with it. I just knew this was what I had been looking for, and it truly solved the limitations I faced in C. Being a superset of C, C++ made coding feel much more intuitive and efficient."],
         Links: [
           {
             linkName: "🌻 C++ by Saurabh Shukla Sir",
@@ -56,7 +56,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Python",
     SkillInfo: [
       {
-        description: "I was drawn to Python for its simplicity and powerful capabilities. Over time, I built several projects with it and found the experience quite enjoyable. Later, I also explored its frameworks, which opened up even more possibilities.",
+        description: ["I was drawn to Python for its simplicity and powerful capabilities. Over time, I built several projects with it and found the experience quite enjoyable. Later, I also explored its frameworks, which opened up even more possibilities."],
         Links: [
           {
             linkName: "🌻 Python for Beginners (Full Course)",
@@ -77,7 +77,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Django",
     SkillInfo: [
       {
-        description: "Django is a high-level Python framework designed for building secure, scalable web applications. It was the first framework I learned, and it made a strong impression on me. Django follows the MVT (Model-View-Template) architecture and offers a great developer experience. If you're planning to go all-in with Python, Django is definitely worth learning.",
+        description: ["Django is a high-level Python framework designed for building secure, scalable web applications. It was the first framework I learned, and it made a strong impression on me.","Django follows the MVT (Model-View-Template) architecture and offers a great developer experience. If you're planning to go all-in with Python, Django is definitely worth learning."],
 
         Links: [
           {
@@ -102,7 +102,7 @@ const devSkills: SkillInterface[] = [
     fullName: "HTML",
     SkillInfo: [
       {
-        description: "I had a lot of ideas brewing in my mind and started thinking about how I could bring them to life — that’s when I decided to dive into the world of development. I began with HTML, and to my surprise, it wasn’t too difficult. Once you understand the difference between semantic and non-semantic tags, you’re pretty much good to go!",
+        description: ["I had a lot of ideas brewing in my mind and started thinking about how I could bring them to life — that’s when I decided to dive into the world of development.","I began with HTML, and to my surprise, it wasn’t too difficult. Once you understand the difference between semantic and non-semantic tags, you’re pretty much good to go!"],
         Links: [
           {
             linkName: "You can host your HTML Project on GitHub Pages",
@@ -122,7 +122,7 @@ const devSkills: SkillInterface[] = [
     fullName: "CSS",
     SkillInfo: [
       {
-        description: "CSS gave the website its soul, and I dove deep into it early on — especially after realizing that mastering Tailwind CSS requires a solid understanding of plain CSS. So I took it seriously, and oh boy, those Flexbox and Grid layouts really gave me a headache at first! But after all the trial and error… I can finally say: \"I know how to center a div.\"",
+        description: ["CSS gave the website its soul, and I dove deep into it early on — especially after realizing that mastering Tailwind CSS requires a solid understanding of plain CSS.","So I took it seriously, and oh boy, those Flexbox and Grid layouts really gave me a headache at first! But after all the trial and error… I can finally say: \"I know how to center a div.\""],
         Links: [
           {
             linkName: "🌻 HTML & CSS Full Course - Beginner to Pro",
@@ -139,7 +139,7 @@ const devSkills: SkillInterface[] = [
     fullName: "JavaScript",
     SkillInfo: [
       {
-        description: "At first, my website looked great — but none of the buttons worked, and it couldn’t actually do anything. That’s when I stumbled into JavaScript. I quickly realized that if I learned it well, I could build real interactivity into my projects and wouldn’t need to dive too deep into Node.js right away. So I rolled up my sleeves, learned the fundamentals, and before long, I was building fully functional projects I could actually host online!",
+        description: ["At first, my website looked great — but none of the buttons worked, and it couldn’t actually do anything. That’s when I stumbled into JavaScript. I quickly realized that if I learned it well, I could build real interactivity into my projects and wouldn’t need to dive too deep into Node.js right away.","So I rolled up my sleeves, learned the fundamentals, and before long, I was building fully functional projects I could actually host online!"],
         Links: [
           {
             linkName: "🌻 JavaScript Tutorial Full Course - Beginner to Pro",
@@ -156,7 +156,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Node.js",
     SkillInfo: [
       {
-        description: NOT_WATCHED_ANY_COURSE,
+        description: [NOT_WATCHED_ANY_COURSE],
         Links: [
           {
             linkName: "🌼 Sigma Web Development Course",
@@ -173,7 +173,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Express.js",
     SkillInfo: [
       {
-        description: "At this point, I was ready to dive into real backend development — something that could handle requests, return data, and connect to a database. It was finally time to build my first full-stack web application. And to make that happen, the next step was clear: I needed to learn Express.js.",
+        description: ["At this point, I was ready to dive into real backend development — something that could handle requests, return data, and connect to a database. It was finally time to build my first full-stack web application. And to make that happen, the next step was clear: I needed to learn Express.js"],
         Links: [
           {
             linkName: "You can host your backend using Render",
@@ -201,7 +201,7 @@ const devSkills: SkillInterface[] = [
     fullName: "React.js",
     SkillInfo: [
       {
-        description: "I initially had no intention of learning React.js, but two key realizations completely changed my perspective and pushed me to dive deep into it. First, mastering React significantly levels up your capabilities in Next.js. Since React is primarily a UI library, learning it lays the foundation for working with Next.js, which adds powerful backend features on top—making the transition much smoother and more efficient. Second, React opens the door to app development with React Native. The concepts of state management and component logic are largely shared between the two, making it much easier to switch gears when you're ready to build mobile apps—which is something I’m actively looking forward to.",
+        description: ["I initially had no intention of learning React.js, but two key realizations completely changed my perspective and pushed me to dive deep into it.","First, mastering React significantly levels up your capabilities in Next.js. Since React is primarily a UI library, learning it lays the foundation for working with Next.js, which adds powerful backend features on top—making the transition much smoother and more efficient.","Second, React opens the door to app development with React Native. The concepts of state management and component logic are largely shared between the two, making it much easier to switch gears when you're ready to build mobile apps—which is something I’m actively looking forward to."],
         Links: [
           {
             linkName: "You can deploy React.js Projects with Netlify",
@@ -241,7 +241,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Redux",
     SkillInfo: [
       {
-        description: NOT_WATCHED_ANY_COURSE,
+        description: [NOT_WATCHED_ANY_COURSE],
       }
     ],
     date: "29-07-2025"
@@ -252,7 +252,7 @@ const devSkills: SkillInterface[] = [
     fullName: "MySQL",
     SkillInfo: [
       {
-        description: "MySQL was the first database I learned. I got hands-on with creating schemas, building tables, and performing basic data manipulation — all of which I later integrated into my projects.",
+        description: ["MySQL was the first database I learned. I got hands-on with creating schemas, building tables, and performing basic data manipulation — all of which I later integrated into my projects."],
         Links: [
           {
             linkName: "I learned MySQL from a free platform, but I’ve forgotten the name. I’ll update this if I remember it."
@@ -268,7 +268,7 @@ const devSkills: SkillInterface[] = [
     fullName: "MongoDB",
     SkillInfo: [
       {
-        description: "MongoDB is a NoSQL, document-based database known for its scalability and flexible data structure. I used it in my very first project, which also happened to be my college project. While MongoDB is great for quick development and handling unstructured data, its lack of strict relationships between data can sometimes be a drawback. Personally, I prefer MySQL for its relational structure — but both databases have their strengths, so it really depends on the use case. No hard feelings!",
+        description: ["MongoDB is a NoSQL, document-based database known for its scalability and flexible data structure. I used it in my very first project, which also happened to be my college project.","While MongoDB is great for quick development and handling unstructured data, its lack of strict relationships between data can sometimes be a drawback. Personally, I prefer MySQL for its relational structure — but both databases have their strengths, so it really depends on the use case. No hard feelings!"],
         Links: [
           {
             linkName: "You can use MongoDB Atlas Free 500MB Cluster for your projects!",
@@ -312,7 +312,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Bootstrap",
     SkillInfo: [
       {
-        description: "Bootstrap is a great choice if you want to save time on writing custom CSS — it helps you build clean, responsive layouts quickly. I tried it once or twice, but eventually stuck with writing my own CSS and using TailwindCSS. In the end, it all comes down to personal preference and what fits your workflow best.",
+        description: ["Bootstrap is a great choice if you want to save time on writing custom CSS — it helps you build clean, responsive layouts quickly.","I tried it once or twice, but eventually stuck with writing my own CSS and using TailwindCSS. In the end, it all comes down to personal preference and what fits your workflow best."],
       }
     ],
     date: "29-07-2025"
@@ -323,7 +323,9 @@ const devSkills: SkillInterface[] = [
     fullName: "TailwindCSS",
     SkillInfo: [
       {
-        description: "Tailwind CSS is hands down my favorite way to write CSS — I absolutely love working with it. With Version 4 out, it’s even more powerful and flexible. Since I already had a solid understanding of CSS, picking up Tailwind was pretty straightforward. That said, its utility-first syntax can be a bit tricky to remember at first, since everything is so concise. In the beginning, I used to Google classes I forgot — but with consistent use, they’ve pretty much become second nature now. After a while, I felt like I was missing out on some stuff, so I watched a lot of Tailwind CSS tutorials to learn cool tips and tricks from experienced developers. Remember, any CSS tech stack is like an art form — and like all art, there are endless ways to approach it. So don’t feel discouraged if you don’t master it right away; it’s all part of the creative journey.",
+        description: [
+          "Tailwind CSS is hands down my favorite way to write CSS — I absolutely love working with it. With Version 4 out, it’s even more powerful and flexible.","Since I already had a solid understanding of CSS, picking up Tailwind was pretty straightforward. That said, its utility-first syntax can be a bit tricky to remember at first, since everything is so concise. In the beginning, I used to Google classes I forgot — but with consistent use, they’ve pretty much become second nature now.","After a while, I felt like I was missing out on some stuff, so I watched a lot of Tailwind CSS tutorials to learn cool tips and tricks from experienced developers.","Remember, any CSS tech stack is like an art form — and like all art, there are endless ways to approach it. So don’t feel discouraged if you don’t master it right away; it’s all part of the creative journey."
+        ],
         Links: [
           {
             linkName: GOOGLE_REMINDER,
@@ -375,11 +377,15 @@ const devSkills: SkillInterface[] = [
           {
             linkName: "🌻 Tailwind CSS 4.0 is finally here - The NEW way to install with Vite + React (2025)",
             linkURL: "https://www.youtube.com/watch?v=sHnG8tIYMB4"
+          },
+          {
+            linkName: "🌻 The Ultimate Tailwind CSS Series 2025 | Dark Mode",
+            linkURL: "https://www.youtube.com/watch?v=ROA8PE0WPLk"
           }
         ]
       }
     ],
-    date: "29-07-2025"
+    date: "14-08-2025"
   },
   {
     name: "/next.js",
@@ -387,7 +393,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Next.js",
     SkillInfo: [
       {
-        description: "Next.js is a powerful full-stack framework built on top of React, offering features like server-side rendering (SSR), static site generation, API routes, middleware, and built-in SEO support. It allows you to manage both the front-end and back-end within a single project, making development seamless. I started using Next.js in all of my projects because it truly delivers — it’s efficient, modern, and incredibly developer-friendly. Since it’s built on React, I didn’t have to spend too much time learning it and was able to pick it up quickly. It’s a good idea to watch tutorials where the developer builds an entire full-stack app — it teaches you how they think, how they structure things, and you might learn some neat tricks in the process too!",
+        description: ["Next.js is a powerful full-stack framework built on top of React, offering features like server-side rendering (SSR), static site generation, API routes, middleware, and built-in SEO support.","It allows you to manage both the front-end and back-end within a single project, making development seamless. I started using Next.js in all of my projects because it truly delivers it’s efficient, modern, and incredibly developer-friendly. Since it’s built on React, I didn’t have to spend too much time learning it and was able to pick it up quickly.","It’s a good idea to watch tutorials where the developer builds an entire full-stack app, it teaches you how they think, how they structure things, and you might learn some neat tricks in the process too!"],
         Links: [
           {
             linkName: "You can deploy Next.js Projects with Vercel",
@@ -431,7 +437,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Typescript",
     SkillInfo: [
       {
-        description: "TypeScript is a typed superset of JavaScript that adds tooling support and type safety, making development more reliable and easier to manage at scale. I noticed that many companies were adopting TypeScript, so I decided to learn it. In a way, it felt like working with C++ — you simply define the type of a variable (like a string), and it sticks to that definition. Since I already had a solid background in C and C++, picking up TypeScript wasn’t too difficult.",
+        description: ["TypeScript is a typed superset of JavaScript that adds tooling support and type safety, making development more reliable and easier to manage at scale.","I noticed that many companies were adopting TypeScript, so I decided to learn it. In a way, it felt like working with C++ — you simply define the type of a variable (like a string), and it sticks to that definition. Since I already had a solid background in C and C++, picking up TypeScript wasn’t too difficult."],
         Links: [
           {
             linkName: GOOGLE_REMINDER
@@ -451,7 +457,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Electron.js",
     SkillInfo: [
       {
-        description: "Electron.js is a framework that lets you build cross-platform desktop applications using web technologies like HTML, CSS, and JavaScript. I first came across it through a short reel where someone was creating a desktop app — it looked so simple and fun, it instantly sparked my interest. That moment kicked off my journey into desktop app development, and it turned out to be a really enjoyable experience. I'm still new to this",
+        description: ["Electron.js is a framework that lets you build cross-platform desktop applications using web technologies like HTML, CSS, and JavaScript. I first came across it through a short reel where someone was creating a desktop app, it looked so simple and fun, it instantly sparked my interest.","That moment kicked off my journey into desktop app development, and it turned out to be a really enjoyable experience. I'm still new to this"],
         Links: [
           {
             linkName: GOOGLE_REMINDER

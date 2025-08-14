@@ -4,7 +4,7 @@ interface SkillLink {
 }
 
 interface SkillInfoItem {
-    description?: string;
+    description?: string[];
     Links?: SkillLink[];
 }
 
