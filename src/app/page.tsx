@@ -153,7 +153,7 @@ export default function AboutPage() {
               </div>
             </div>
             {/* Experience Section */}
-            {false && (
+            {true && (
               <div className="flex flex-col md:flex-row relative">
                 <SectionTitle title="Experience" href="/experience" />
                 <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-8">

@@ -16,7 +16,7 @@ import {
     Star,
     IdCard
 } from "lucide-react";
-//import { Briefcase } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { SidebarItem } from "../../types/Sidebar.type";
 import AnimatedMultilingualText from "./AnimatedText";
 import { ProfilePicture } from "../../utility/utils";
@@ -24,7 +24,7 @@ import { ProfilePicture } from "../../utility/utils";
 const SIDEBAR_ITEMS: SidebarItem[] = [
     { icon: Home, label: "Home", href: "/" },
     { icon: User, label: "About", href: "/about" },
-    //{ icon: Briefcase, label: "Experience", href: "/experience" },
+    { icon: Briefcase, label: "Experience", href: "/experience" },
     { icon: BookOpen, label: "Education", href: "/education" },
     { icon: Code, label: "Skills", href: "/skills" },
     { icon: Folder, label: "Projects", href: "/projects" },
