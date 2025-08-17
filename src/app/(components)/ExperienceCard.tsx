@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Divider from "../(components)/Components/Divider";
-import { ExperienceCardProps } from "../../types/Experience.type";
+import { Experience } from "../../types/Experience.type"
 
 
 export default function ExperienceCard({
@@ -14,7 +14,7 @@ export default function ExperienceCard({
     tagStyle,
     description,
     links,
-}: ExperienceCardProps) {
+}: Experience) {
     return (
         <div
             className={`border ${colorClass} p-5 rounded-lg tracking-wide leading-6 flex flex-col gap-3 text-sm`}
