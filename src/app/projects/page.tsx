@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import PageWrapper from "../(components)/PageWrapper";
-import { bestProjects, majorProjects, miniProjects, playgroundProjects } from "../../utility/ProjectData";
+import { bestProjects, majorProjects, miniProjects, playgroundProjects } from "../../utility/ProjectData.util";
 import ProjectCard from "../(components)/ProjectCard";
 import Divider from "../(components)/Components/Divider";
 import { GrClearOption } from "react-icons/gr";

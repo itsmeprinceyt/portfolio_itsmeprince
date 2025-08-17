@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Copy } from "lucide-react";
 import Divider from "../(components)/Components/Divider";
 import PageWrapperNormal from "../(components)/PageWrapper";
-import { UPI_ID } from "../../utility/utils";
+import { UPI_ID } from "../../utility/main.util";
 
 export default function Support() {
     const [showUpi, setShowUpi] = useState<boolean>(false);

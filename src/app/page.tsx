@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import PageWrapper from "./(components)/PageWrapper";
 import ProfileInfoTag from './(components)/ProfileRelated/ProfileInfoTag';
 import { ProfileInfoTag_Button_CSS } from "./(components)/ProfileRelated/ButtonCSS";
-import { CodingProjectsLink, GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from '../utility/utils';
+import { CodingProjectsLink, GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from '../utility/main.util';
 import ProfileSkillInfo from './(components)/ProfileRelated/ProfileSkillInfoTag';
 import Divider from './(components)/Components/Divider';
 import SectionTitle from './(components)/ProfileRelated/SectionTitle';

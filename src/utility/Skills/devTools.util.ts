@@ -1,5 +1,5 @@
-import { SkillInterface } from "../types/SkillInterface.type";
-import { NOT_WATCHED_ANY_COURSE } from "./utils";
+import { SkillInterface } from "../../types/SkillInterface.type";
+import { NOT_WATCHED_ANY_COURSE } from "../main.util";
 
 const devTools: SkillInterface[] = [
   {

@@ -2,11 +2,11 @@
 import Link from "next/link";
 import PageWrapper from "../(components)/PageWrapper";
 import Divider from "../(components)/Components/Divider";
-import devSkills from "../../utility/devSkills";
-import creativeTools from "../../utility/creative-tools";
-import devTools from "../../utility/devTools";
-import hobbiesInterests from "../../utility/hobbiesInterests";
-import personalSoftSkills from "../../utility/personalSoftSkills";
+import devSkills from "../../utility/Skills/devSkills.util";
+import creativeTools from "../../utility/Skills/creative-tools.util";
+import devTools from "../../utility/Skills/devTools.util";
+import hobbiesInterests from "../../utility/Skills/hobbiesInterests.util";
+import personalSoftSkills from "../../utility/Skills/personalSoftSkills.util";
 import SkillIcon from "../(components)/SkillIcon";
 
 export default function Skills() {

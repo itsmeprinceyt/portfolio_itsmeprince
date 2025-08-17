@@ -1,4 +1,4 @@
-import { SkillInterface } from "../types/SkillInterface.type";
+import { SkillInterface } from "../../types/SkillInterface.type";
 
 const hobbiesInterests: SkillInterface[] = [
   {

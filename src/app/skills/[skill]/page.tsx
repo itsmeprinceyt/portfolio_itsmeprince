@@ -7,15 +7,15 @@ import { notFound } from "next/navigation";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import PageWrapperNormal from "../../(components)/PageWrapper";
 
-import devSkills from "../../../utility/devSkills";
-import creativeTools from "../../../utility/creative-tools";
-import devTools from "../../../utility/devTools";
-import hobbiesInterests from "../../../utility/hobbiesInterests";
-import personalSoftSkills from "../../../utility/personalSoftSkills";
+import devSkills from "../../../utility/Skills/devSkills.util";
+import creativeTools from "../../../utility/Skills/creative-tools.util";
+import devTools from "../../../utility/Skills/devTools.util";
+import hobbiesInterests from "../../../utility/Skills/hobbiesInterests.util";
+import personalSoftSkills from "../../../utility/Skills/personalSoftSkills.util";
 import { SkillInterface } from "../../../types/SkillInterface.type";
 import { SpinnerWhite } from "../../(components)/Components/Spinner";
 import Divider from "../../(components)/Components/Divider";
-import { SKILL_PAGE_LOCKDOWN } from "@/utility/utils";
+import { SKILL_PAGE_LOCKDOWN } from "@/utility/main.util";
 
 const skillCategories = [
     { name: "dev-skills", data: devSkills },

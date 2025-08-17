@@ -19,7 +19,7 @@ import {
 import { Briefcase } from "lucide-react";
 import { SidebarItem } from "../../types/Sidebar.type";
 import AnimatedMultilingualText from "./AnimatedText";
-import { ProfilePicture } from "../../utility/utils";
+import { ProfilePicture } from "../../utility/main.util";
 
 const SIDEBAR_ITEMS: SidebarItem[] = [
     { icon: Home, label: "Home", href: "/" },
