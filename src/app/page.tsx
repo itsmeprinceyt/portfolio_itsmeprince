@@ -11,12 +11,14 @@ import Divider from './(components)/Components/Divider';
 import SectionTitle from './(components)/ProfileRelated/SectionTitle';
 import FileList from './(components)/ResumeFileIcons';
 import MailSVG from './(components)/SVG/Mail';
+import { experiences } from "../utility/Experience.util";
 
 export default function AboutPage() {
   const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const downloadMenuRef = useRef<HTMLDivElement | null>(null);
   const emailURL: string = "https://mail.google.com/mail/u/0/?tf=cm&fs=1&to=${encodeURIComponent(email)}";
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -154,13 +156,30 @@ export default function AboutPage() {
             </div>
             {/* Experience Section */}
             {true && (
-              <div className="flex flex-col md:flex-row relative">
+              <div className="flex flex-col md:flex-row relative ">
                 <SectionTitle title="Experience" href="/experience" />
-                <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-8">
-                  {`This section is yet to be updated...`}
+
+                <div className="flex flex-col p-5 gap-5 w-full border rounded-lg border-stone-50/20">
+                  {experiences.slice(0, 3).map((exp, idx) => (
+                    <Link
+                      key={idx}
+                      href="/experience"
+                      className="flex justify-between items-start text-stone-300"
+                    >
+                      {/* Left Side: Company + Mode */}
+                      <div>
+                        <h3 className="text-sm">{exp.company} - {exp.role}</h3>
+                        <p className="text-stone-500 text-xs font-extralight">{exp.mode}</p>
+                      </div>
+
+                      {/* Right Side: Period */}
+                      <span className="text-stone-400 text-xs">{exp.period}</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
             )}
+
 
             {/* Education Section */}
             <div className="flex flex-col md:flex-row relative">

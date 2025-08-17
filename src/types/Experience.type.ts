@@ -1,11 +1,11 @@
-export interface ExperienceCardProps {
+export interface Experience {
   company: string;
   role: string;
   period: string;
-  mode: string; // Job Mode
-  colorClass: string; // Border CSS
-  titleColor: string; // title CSS
+  mode: string;
+  colorClass: string;
+  titleColor: string;
   tagStyle: string;
-  description: string[]; 
+  description: string[];
   links?: { label: string; href: string }[];
 }
