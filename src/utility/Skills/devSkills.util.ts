@@ -142,13 +142,17 @@ const devSkills: SkillInterface[] = [
         description: ["At first, my website looked great — but none of the buttons worked, and it couldn’t actually do anything. That’s when I stumbled into JavaScript. I quickly realized that if I learned it well, I could build real interactivity into my projects and wouldn’t need to dive too deep into Node.js right away.","So I rolled up my sleeves, learned the fundamentals, and before long, I was building fully functional projects I could actually host online!"],
         Links: [
           {
-            linkName: "🌻 JavaScript Tutorial Full Course - Beginner to Pro",
+            linkName: "🌼 JavaScript Documentation",
             linkURL: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+          },
+          {
+            linkName: "🌻 JavaScript Tutorial Full Course - Beginner to Pro",
+            linkURL: "https://www.youtube.com/watch?v=EerdGm-ehJQ"
           }
         ]
       }
     ],
-    date: "29-07-2025"
+    date: "31-08-2025"
   },
   {
     name: "/node.js",
