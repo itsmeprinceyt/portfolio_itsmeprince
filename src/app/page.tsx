@@ -5,18 +5,20 @@ import { useEffect, useState, useRef } from "react";
 import PageWrapper from "./(components)/PageWrapper";
 import ProfileInfoTag from './(components)/ProfileRelated/ProfileInfoTag';
 import { ProfileInfoTag_Button_CSS } from "./(components)/ProfileRelated/ButtonCSS";
-import { CodingProjectsLink, GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from '../utility/utils';
+import { CodingProjectsLink, GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from '../utility/main.util';
 import ProfileSkillInfo from './(components)/ProfileRelated/ProfileSkillInfoTag';
 import Divider from './(components)/Components/Divider';
 import SectionTitle from './(components)/ProfileRelated/SectionTitle';
 import FileList from './(components)/ResumeFileIcons';
 import MailSVG from './(components)/SVG/Mail';
+import { experiences } from "../utility/Experience.util";
 
 export default function AboutPage() {
   const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const downloadMenuRef = useRef<HTMLDivElement | null>(null);
   const emailURL: string = "https://mail.google.com/mail/u/0/?tf=cm&fs=1&to=${encodeURIComponent(email)}";
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -152,12 +154,46 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+
             {/* Experience Section */}
-            {false && (
+            {true && (
               <div className="flex flex-col md:flex-row relative">
                 <SectionTitle title="Experience" href="/experience" />
-                <div className="text-xs max-w-[500px] p-3 border border-stone-50/20 rounded-lg tracking-widest leading-8">
-                  {`This section is yet to be updated...`}
+
+                <div className="flex flex-col p-5 gap-5 w-full border rounded-lg border-stone-50/20">
+                  {experiences.slice(0, 3).map((exp, idx) => (
+                    <Link
+                      key={idx}
+                      href="/experience"
+                      className="flex justify-between items-start text-stone-300"
+                    >
+                      {/* Left Side: Company + Role */}
+                      <div className="flex flex-col flex-1 min-w-0">
+                        <h3 className="text-sm truncate">
+                          {exp.company} - {exp.role}
+                        </h3>
+                        <p className="text-stone-500 text-xs font-extralight">{exp.mode}</p>
+                      </div>
+
+                      {/* Right Side: Period */}
+                      <span className="text-stone-400 text-xs whitespace-nowrap ml-2">
+                        {exp.period}
+                      </span>
+                    </Link>
+                  ))}
+
+                  {experiences && experiences.length > 3 ? (
+                    <div className="text-xs">
+                      <Link
+                        href="/experience"
+                        className="text-cyan-500 hover:text-cyan-700 transition"
+                        aria-label={`View the remaining ${experiences.length - 3} experiences`}
+                      >
+                        View the remaining {experiences.length - 3} experiences &raquo;
+                      </Link>
+                    </div>
+                  ) : null}
+
                 </div>
               </div>
             )}
