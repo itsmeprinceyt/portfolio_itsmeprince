@@ -89,10 +89,13 @@ export default function Skills() {
                         </div>
                     </div>
 
+                    <Divider/>
+                    <div className="animate-bounce text-xs text-stone-100 hover:text-white hover:scale-105 transition-all ease-in-out duration-300">Click a tag to explore my resources</div>
+                    
                     {sections.map(({ title, data, prefix }) => (
                         <section
                             key={title}
-                            className="w-full max-w-5xl text-stone-300 space-y-5 p-5"
+                            className="w-full max-w-5xl text-stone-300 space-y-5 px-5"
                         >
                             <Divider />
                             <p className="text-xl text-center text-glow-white">{title}</p>
