@@ -88,8 +88,16 @@ export default function SkillPage({ params }: { params: Promise<{ skill: string 
             startY: 25,
             styles: { fontSize: 10, cellPadding: 2 },
             headStyles: { fillColor: [40, 40, 40] },
-            theme: "grid"
+            theme: "grid",
+            tableWidth: 'wrap',
+            columnStyles: {
+                0: { cellWidth: 15, halign: 'center' },
+                1: { cellWidth: (doc.internal.pageSize.getWidth() - 40 - 15) / 2 },
+                2: { cellWidth: (doc.internal.pageSize.getWidth() - 40 - 15) / 2 },
+            },
+            margin: { left: 20, right: 20 }, // keep some breathing space
         });
+
 
         doc.save(`${matched!.skill.fullName}_resources_itsme_prince.pdf`);
     };
