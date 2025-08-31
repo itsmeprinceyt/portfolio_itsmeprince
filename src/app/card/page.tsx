@@ -93,13 +93,13 @@ export default function Card() {
                 <Divider />
                 <div className="flex items-center justify-center flex-wrap gap-5 text-stone-900">
                     {/* Share Button */}
-                    <button onClick={handleShare} aria-label="Share" className="hover:scale-110 transition flex gap-2 p-2 px-4 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 border border-amber-300">
+                    <button onClick={handleShare} aria-label="Share" className="hover:scale-110 transition flex gap-2 p-2 px-4 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 border border-amber-600">
                         <LucideShare /> Share
                     </button>
                     {/* Download Button */}
                     <button
                         onClick={handleDownload}
-                        className="hover:scale-110 transition flex gap-2 p-2 px-4 rounded-lg bg-gradient-to-r from-lime-500 to-lime-600 shadow-lg shadow-lime-500/10 hover:shadow-lime-500/20 border border-lime-300"
+                        className="hover:scale-110 transition flex gap-2 p-2 px-4 rounded-lg bg-gradient-to-r from-lime-500 to-lime-600 shadow-lg shadow-lime-500/10 hover:shadow-lime-500/20 border border-lime-500"
                     >
                         <LucideDownload /> Download
                     </button>

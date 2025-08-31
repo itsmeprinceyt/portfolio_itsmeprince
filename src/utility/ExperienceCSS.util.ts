@@ -1,14 +1,14 @@
-const base: string = "px-3 py-1 text-xs rounded-full shadow-md/10 hover:text-black hover:shadow-md/20";
+const base: string = "px-4 py-2 text-xs rounded-lg shadow-lg/10 hover:shadow-md/20 hover:scale-x-105";
 
 const colors: Record<string, string> = {
   yellow:
-    "bg-yellow-800/10 border border-yellow-500 text-yellow-500 shadow-yellow-500 hover:bg-yellow-500",
+    "border border-yellow-500/20 text-yellow-400 shadow-yellow-500",
   blue:
-    "bg-blue-800/10 border border-blue-500 text-blue-500 shadow-blue-500 hover:bg-blue-500",
-  green:
-    "bg-green-800/10 border border-green-500 text-green-500 shadow-green-500 hover:bg-green-500",
+    "border border-blue-500/20 text-blue-400 shadow-blue-500",
+  emerald:
+    "border border-emerald-500/20 text-emerald-400 shadow-emerald-500",
 };
 
-export function getTagStyle(color: "yellow" | "blue" | "green") {
+export function getTagStyle(color: "yellow" | "blue" | "emerald") {
   return `${base} ${colors[color]}`;
 }

@@ -8,7 +8,7 @@ export default function Experience() {
   return (
     <PageWrapper>
       <div className="flex flex-col items-center justify-center gap-8 text-stone-300 p-5">
-        <h2 className="text-4xl text-glow-white text-stone-300 font-bold">
+        <h2 className="text-4xl text-glow-white text-stone-300">
           Experience
         </h2>
         <Divider />

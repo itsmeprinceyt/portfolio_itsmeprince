@@ -154,9 +154,10 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+
             {/* Experience Section */}
             {true && (
-              <div className="flex flex-col md:flex-row relative ">
+              <div className="flex flex-col md:flex-row relative">
                 <SectionTitle title="Experience" href="/experience" />
 
                 <div className="flex flex-col p-5 gap-5 w-full border rounded-lg border-stone-50/20">
@@ -166,20 +167,36 @@ export default function AboutPage() {
                       href="/experience"
                       className="flex justify-between items-start text-stone-300"
                     >
-                      {/* Left Side: Company + Mode */}
-                      <div>
-                        <h3 className="text-sm">{exp.company} - {exp.role}</h3>
+                      {/* Left Side: Company + Role */}
+                      <div className="flex flex-col flex-1 min-w-0">
+                        <h3 className="text-sm truncate">
+                          {exp.company} - {exp.role}
+                        </h3>
                         <p className="text-stone-500 text-xs font-extralight">{exp.mode}</p>
                       </div>
 
                       {/* Right Side: Period */}
-                      <span className="text-stone-400 text-xs">{exp.period}</span>
+                      <span className="text-stone-400 text-xs whitespace-nowrap ml-2">
+                        {exp.period}
+                      </span>
                     </Link>
                   ))}
+
+                  {experiences && experiences.length > 3 ? (
+                    <div className="text-xs">
+                      <Link
+                        href="/experience"
+                        className="text-cyan-500 hover:text-cyan-700 transition"
+                        aria-label={`View the remaining ${experiences.length - 3} experiences`}
+                      >
+                        View the remaining {experiences.length - 3} experiences &raquo;
+                      </Link>
+                    </div>
+                  ) : null}
+
                 </div>
               </div>
             )}
-
 
             {/* Education Section */}
             <div className="flex flex-col md:flex-row relative">
