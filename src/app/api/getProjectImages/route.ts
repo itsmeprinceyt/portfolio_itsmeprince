@@ -21,7 +21,7 @@ export async function GET(request: Request) {
             .map(file => `/projects/${projectId}/${file}`);
 
         return NextResponse.json({ images });
-    } catch (error) {
+    } catch (error: unknown) {
         console.error('Error reading project images:', error);
         return NextResponse.json({ images: [] });
     }

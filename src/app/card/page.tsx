@@ -8,7 +8,7 @@ import PageWrapperNormal from "../(components)/PageWrapper";
 import YouTubeSVG from "../(components)/SVG/YouTube";
 import GitHub from "../(components)/SVG/GitHub";
 import LinkedIn from "../(components)/SVG/LinkedIn";
-import { GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from "../../utility/main.util";
+import { GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from "../../utils/main.util";
 import Divider from "../(components)/Components/Divider";
 
 export default function Card() {

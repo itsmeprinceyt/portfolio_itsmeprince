@@ -1,4 +1,4 @@
-import { DiscordServer_Link, GitHubLink, InstagramLink, LinkedInLink, X_Link, YouTubeLink } from "@/utility/main.util";
+import { DiscordServer_Link, GitHubLink, InstagramLink, LinkedInLink, X_Link, YouTubeLink } from "@/utils/main.util";
 import Link from "next/link";
 
 export default function SocialMediaIcons() {

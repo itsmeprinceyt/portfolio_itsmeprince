@@ -5,13 +5,13 @@ import { useEffect, useState, useRef } from "react";
 import PageWrapper from "./(components)/PageWrapper";
 import ProfileInfoTag from './(components)/ProfileRelated/ProfileInfoTag';
 import { ProfileInfoTag_Button_CSS } from "./(components)/ProfileRelated/ButtonCSS";
-import { CodingProjectsLink, GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from '../utility/main.util';
+import { CodingProjectsLink, GitHubLink, LinkedInLink, ProfilePicture, YouTubeLink } from '../utils/main.util';
 import ProfileSkillInfo from './(components)/ProfileRelated/ProfileSkillInfoTag';
 import Divider from './(components)/Components/Divider';
 import SectionTitle from './(components)/ProfileRelated/SectionTitle';
 import FileList from './(components)/ResumeFileIcons';
 import MailSVG from './(components)/SVG/Mail';
-import { experiences } from "../utility/Experience.util";
+import { experiences } from "../utils/Experience.util";
 
 export default function AboutPage() {
   const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);

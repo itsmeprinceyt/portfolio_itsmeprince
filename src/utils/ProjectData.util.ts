@@ -682,6 +682,71 @@ export const majorProjects: Project[] = [
 /* ============================================================================= */
 export const miniProjects: Project[] = [
     {
+        id: `github-account-backup`,
+        name: `GitHub Account ZIP Backup`,
+        description: `A simple Python tool to backup every branch of every repository in your GitHub account as individual ZIP files.`,
+        full_description: {
+            intro: `GitHub Full-Branch ZIP Backup is a Python tool designed to back up every branch from all repositories in your GitHub account as individual ZIP files. It automatically retrieves repositories, clones each branch with depth=1 for efficiency, compresses them, and cleans up temporary files — providing a smooth, automated backup workflow.`,
+
+            features: [
+                {
+                    title: "Fetch All Repositories",
+                    detail: "Automatically retrieves all public and private repositories for the authenticated GitHub user."
+                },
+                {
+                    title: "Branch Detection",
+                    detail: "Lists every branch in each repository to ensure full coverage of your projects."
+                },
+                {
+                    title: "Per-Branch Cloning",
+                    detail: "Clones each branch into a dedicated folder named repo__branch with shallow depth for faster execution."
+                },
+                {
+                    title: "ZIP Packaging",
+                    detail: "Compresses each cloned branch folder into a clean repo__branch.zip file for efficient storage."
+                },
+                {
+                    title: "Cleanup",
+                    detail: "Automatically deletes temporary clone directories after zipping to free up disk space."
+                },
+                {
+                    title: "Progress Feedback",
+                    detail: "Displays real-time progress updates showing current repository and branch being processed."
+                },
+                {
+                    title: "Error Handling",
+                    detail: "Continues operations on failure, logs issues, and provides a summary at the end."
+                }
+            ],
+
+            dependencies: [
+                "Git installed and available in PATH",
+                "Python Libraries: [requests, gitpython, tqdm]"
+            ],
+
+            usage_examples: [
+                "Backup every branch from all your GitHub repositories into timestamped ZIP files.",
+                "Safely archive repositories from organizations and personal accounts with one command."
+            ]
+        },
+        tags: [`/python`],
+        links: {
+            live: {
+                url: ``,
+                enabled: false
+            },
+            github: {
+                url: `https://github.com/itsmeprinceyt/GitHub-Repo-Branch-Cloner`,
+                enabled: true
+            },
+            youtube: {
+                url: `https://youtu.be/vaCtJSONRQY`,
+                enabled: true
+            }
+        },
+        date: "16-10-2025"
+    },
+    {
         id: `yt-thumbnail-downloader`,
         name: `YouTube Thumbnail Downloader`,
         description: `A sleek web app built with Next.js and Tailwind CSS that allows users to instantly preview and download high-resolution thumbnails from any YouTube video.`,

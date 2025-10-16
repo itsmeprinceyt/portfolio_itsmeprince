@@ -4,9 +4,9 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageWrapper from "../../(components)/PageWrapper";
-import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '../../../utility/ProjectData.util';
+import { bestProjects, majorProjects, miniProjects, playgroundProjects } from '../../../utils/ProjectData.util';
 import LinkShow from '../../(components)/LinkShow';
-import devSkills from '../../../utility/Skills/devSkills.util';
+import devSkills from '../../../utils/Skills/devSkills.util';
 import Divider from '../../(components)/Components/Divider';
 import { SpinnerWhite } from '../../(components)/Components/Spinner';
 
