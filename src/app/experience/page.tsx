@@ -2,7 +2,7 @@
 import PageWrapper from "../(components)/PageWrapper";
 import Divider from "../(components)/Components/Divider";
 import ExperienceCard from "../(components)/ExperienceCard";
-import { experiences } from "../../utility/Experience.util";
+import { experiences } from "../../utils/Experience.util";
 
 export default function Experience() {
   return (

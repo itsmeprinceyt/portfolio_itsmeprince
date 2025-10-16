@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { SpinnerStone } from "./Components/Spinner";
-import { ProjectDefaultImage } from "../../utility/main.util";
+import { ProjectDefaultImage } from "../../utils/main.util";
 import { BannerImageProps } from "../../types/ProjectBannerImage.type";
 
 export default function BannerImage({

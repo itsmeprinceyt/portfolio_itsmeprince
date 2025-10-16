@@ -10,15 +10,15 @@ import { notFound } from "next/navigation";
 import { RiArrowGoBackFill } from "react-icons/ri";
 
 import PageWrapperNormal from "../../(components)/PageWrapper";
-import devSkills from "../../../utility/Skills/devSkills.util";
-import creativeTools from "../../../utility/Skills/creative-tools.util";
-import devTools from "../../../utility/Skills/devTools.util";
-import hobbiesInterests from "../../../utility/Skills/hobbiesInterests.util";
-import personalSoftSkills from "../../../utility/Skills/personalSoftSkills.util";
+import devSkills from "../../../utils/Skills/devSkills.util";
+import creativeTools from "../../../utils/Skills/creative-tools.util";
+import devTools from "../../../utils/Skills/devTools.util";
+import hobbiesInterests from "../../../utils/Skills/hobbiesInterests.util";
+import personalSoftSkills from "../../../utils/Skills/personalSoftSkills.util";
 import { SkillInterface } from "../../../types/SkillInterface.type";
 import { SpinnerWhite } from "../../(components)/Components/Spinner";
 import Divider from "../../(components)/Components/Divider";
-import { SKILL_PAGE_LOCKDOWN } from "@/utility/main.util";
+import { SKILL_PAGE_LOCKDOWN } from "@/utils/main.util";
 
 const skillCategories = [
     { name: "dev-skills", data: devSkills },

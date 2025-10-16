@@ -16,5 +16,12 @@ export async function GET() {
         name,
       }
     });
-  return Response.json(resumeFiles);
+  if (resumeFiles) {
+    return Response.json(resumeFiles);
+
+  }
+  return Response.json(
+    { error: "Internal Server Error" },
+    { status: 404 }
+  );
 }
