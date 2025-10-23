@@ -492,11 +492,11 @@ export const majorProjects: Project[] = [
         date: "29-07-2025"
     },
     {
-        id: `karuta-work-discord-bot`,
-        name: `Karuta Work Discord Bot`,
-        description: `A helpful utility bot built for the Karuta card game on Discord. It simplifies card management, saves time, and helps players stay efficient — with style!`,
+        id: "karuta-work-discord-bot",
+        name: "Karuta Work Discord Bot",
+        description: "A helpful utility bot built for the Karuta card game on Discord. It simplifies card management, saves time, and helps players stay efficient — with style!",
         full_description: {
-            intro: `Karuta Work is a Discord bot built to enhance the Karuta card game experience by automating and simplifying job board management. Originally designed for personal use, it has evolved into a powerful public tool used by many to save time, increase efficiency, and manage cards with ease.`,
+            intro: "Karuta Work is a Discord bot built to enhance the Karuta card game experience by automating and simplifying job board management. Originally designed for personal use, it has evolved into a powerful public tool used by many to save time, increase efficiency, and manage cards with ease.",
 
             features: [
                 {
@@ -516,6 +516,10 @@ export const majorProjects: Project[] = [
                     detail: "Automatically assigns your available cards to the Karuta job board slots, reducing manual labor."
                 },
                 {
+                    title: "kkbits",
+                    detail: "Calculates total bits or custom total bits with selling price. Can be used by replying to a kbi embed with 'kkbits 2300' (replace 2300 with desired price)."
+                },
+                {
                     title: "kkabout",
                     detail: "Provides information about the bot, its creator, and how you can support the project."
                 },
@@ -532,17 +536,18 @@ export const majorProjects: Project[] = [
                 "Use `kkscan` to check your job board and identify which cards need replacement.",
                 "Run `kkhelp` to get a full list of commands and usage info.",
                 "Share `kkinvite` with your friends to let them add the bot to their server.",
-                "Execute `kkabout` to understand the purpose of the bot and ways to support its development."
+                "Execute `kkabout` to understand the purpose of the bot and ways to support its development.",
+                "Reply to a kbi embed with `kkbits 2300` to calculate total bits based on a custom selling price."
             ]
         },
-        tags: [`/node.js`, `/typescript`],
+        tags: ["/typescript"],
         links: {
-            live: { url: ``, enabled: false },
-            github: { url: `https://github.com/itsmeprinceyt/karuta-work`, enabled: true },
-            youtube: { url: ``, enabled: false },
+            live: { "url": "", "enabled": false },
+            github: { "url": "https://github.com/itsmeprinceyt/karuta-work", "enabled": true },
+            youtube: { "url": "https://youtu.be/9maVcUToa8w", "enabled": true }
         },
-        banner: `/projects/karuta-work-discord-bot/1.png`,
-        date: "29-07-2025"
+        banner: "/projects/karuta-work-discord-bot/1.png",
+        date: "23-10-2025"
     },
     {
         id: `itsme-prince-discord-bot`,
