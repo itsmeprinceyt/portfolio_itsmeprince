@@ -1,11 +1,10 @@
 ﻿Mohd Uvaish
-Full Stack Developer
+Full Stack Software Engineer
 
 
 
 
-
-
++917271928996
 mohammadbadshah92@gmail.com
 https://www.linkedin.com/in/mohduvaish/
 https://portfolio-itsmeprince.vercel.app/
@@ -22,61 +21,64 @@ Degree/Certificate
 	Signa Institute Of Professional Studies
 	7.80
 	2022-2025
-	Senior Secondary
-	UP Board
-	62%
-	2022
-	Secondary
-	UP Board
-	78%
-	2020
 	
 
 ________________
 
 
 Work Experience
+Ragya Tech Pvt. Ltd. • Full Stack Software Engineer Onsite •        Kanpur, Uttar Pradesh, India
+https://ragyatech.in        August-2025 - Present
+        
+* Developed Apnii Car , a full-scale car rental platform with admin, owner, and user roles, wallet system, Razorpay integration, KYC & email OTP verification.
+* Built frontend (Next.js, Tailwind CSS) and backend (Express.js, MySQL) with secure auth, role-based access, and REST APIs.
+* Handled DevOps, VPS deployment, Linux server management, and load balancer setup for scalability and uptime.
+* Designed system architecture, optimized database indexing, and implemented audit logging & reports.
+* Created Dualleaf Mattress , an enquiry-based e-commerce site with product catalog, cart & admin dashboard, and ImageKit integration for optimized media handling.
+
+
 Nezuware • Project-Based-Internship •        Nodia, Uttar Pradesh, India
 https://share-away-showcase.vercel.app/        April-2025 - May-2025
         
-* Conceptualized and developed Share Away, an anonymous blogging platform for sharing personal thoughts without judgment, as part of the internship project.
-* Built core features like user registration, post creation, sharing, editing profile, and hearts (likes) system using a full-stack approach.
-* Developed the frontend using Next.js and Tailwind CSS, focusing on a clean, responsive, and accessible user interface.
-* Engineered the backend APIs using Express.js, MySQL, and RESTful principles, handling authentication, session management, JWT Token, and user role control.
-* Awarded a Certificate of Completion for completing the internship program.
+* Built Share Away, an anonymous blogging platform with user auth, posts, profiles, and like system.
+* Used Next.js, Tailwind CSS, Express.js, and MySQL for full-stack development and REST APIs.
 
 
-Apna Competitive Corner • Group-Project-Based-Internship        Raigad, Maharashtra, India
-        Nov-2024 - Dec-2024
-* Collaborated in a group project during an internship to develop a YouTube-like video platform with real-time features for inviting friends to watch videos together.
-* Designed the user interface and developed front-end components using modern frameworks like Next.js and Tailwind CSS.
-* Transitioned to handling the backend, ensuring seamless integration with the front end and smooth functionality.
-* Awarded a Certificate of Completion for completing the internship program.
+Apna Competitive Corner • Group-Project-Based-Internship        Raigad, Maharashtra, India        Nov-2024 - Dec-2024
+* Collaborated on a YouTube-like platform enabling real-time group video watching.
+* Designed frontend (Next.js, Tailwind CSS) and contributed to backend integration.
 
 
 GrapplTech • Project-Based-Internship •         Bengaluru, Karnataka, India
 https://food-shop-nextjs.vercel.app/        Sep-2024 - Oct-2024        
-* Developed innovative web components, such as Hero Sections, using modern frameworks like Next.js and Tailwind CSS to create visually engaging and responsive user interfaces.
-* Awarded a Certificate of Completion for completing the internship program.
-
-
-
-
+* Developed modern UI components (e.g., hero sections) using Next.js and Tailwind CSS for responsive design.
 
 
 TechnoHacks EduTech Pvt. Ltd • Project-Based-Internship •        Nasik, Maharashtra, India
 https://technohacksinternship.vercel.app/        Aug-2024 - Sep-2024        
-* Developed innovative web applications using modern frameworks like Next.js and Tailwind CSS.
-* Built and deployed API-based web applications, integrating various data sources and backend services.
-* Extensively used Tailwind CSS to create visually appealing, responsive, and highly customizable web designs
-* Awarded a Certificate of Completion for completing the internship program.
+* Built and deployed API-based web apps with Next.js and Tailwind CSS, integrating multiple data sources.
 
 
 ________________
 
 
 Projects
-Share Away • (Github) • (Live)
+Apnii Car • https://apniicar.in/
+* Developed a multi-role system (Admin, Vehicle Owner, User) enabling vehicle listings, bookings, wallet transactions, and withdrawals.
+* Implemented KYC verification, email OTP login, and Razorpay integration for secure payments and user trust.
+* Built with Next.js, MySQL, Tailwind CSS, and Zod, ensuring validation, responsiveness, and seamless UX.
+* Added audit logging, reports, and booking history for transparency and traceability.
+* Deployed on a Linux VPS using Docker & Nginx with load balancing for reliability and scalability.
+
+
+Dualleaf Mattress • https://dualleafmattress.com/
+* Built an enquiry-driven product catalogue where users can add items to cart and send enquiries instead of direct checkout
+* Developed admin dashboard to view, respond, and update enquiry statuses with email alerts and tracking.
+* Integrated ImageKit for optimized, high-quality product image delivery.
+* Implemented full-stack architecture using Next.js, MySQL, and Tailwind CSS for clean UI and robust backend management.
+
+
+Share Away • (Github) • https://share-away-prince.vercel.app/
 * Built using NodeJS, ExpressJS, EJS, and MySQL.
 * Developed a blogging platform allowing users to share their feelings without fear of judgment.
 * Implemented user authentication and session management using JWT Token for secure access.
@@ -91,21 +93,7 @@ Online Sales Administration Portal • (Github)
 * The online sales admin portal efficiently collects and stores customer purchase information. Admins can view and edit purchase details, including date, cost, payment status, purchase status, and items purchased. This system ensures seamless sales data management and easy updates.
 
 
-PayPal, Sofi, Karuta and Mazoku Fee Calculator • (Github) • (Live)
-* The PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone Fee Calculator simplify the process of calculating fees for transactions across multiple platforms. It provides accurate estimates for PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone fees, ensuring transparency and efficiency in financial calculations.
-
-
-E-Drive • (Github) • (Live)
-* Built using HTML, CSS, and Vanilla JavaScript.
-* E-Drive, or Education-Drive, is an intuitive academic website. It provides comprehensive self-written course notes, empowering students with flexible and accessible learning resources globally.
-
-
-Statistics Mean Calculator • (Github) • (Live)
-* Built with HTML, CSS, and Vanilla JavaScript. Initially written in C++ using Linked Lists.
-* The online statistics mean calculator, efficiently calculates means for individual, discrete, and continuous data sets. It features a user-friendly interface designed for quick and precise calculations, initially being migrated from C++ to JavaScript for seamless integration into webpages.
-
-
-ItsMe Prince Discord Bot • (Github) • (Live)
+ItsMe Prince Discord Bot • (Github) • https://discord.gg/HgXNs4p5cx
 * The Discord bot, built with Node.js and discord.js library, enables seamless interaction within the Discord application. Users can execute commands to perform simple mathematical calculations, making the workspace more productive and stress-free.
 
 
@@ -117,34 +105,28 @@ Programming Languages: C, C++, Javascript, Typescript
 Front-End Development: HTML, CSS, Bootstrap, Tailwind CSS, React
 Back-End & Framework Development: Node.js, Express.js, Next.js
 Database: MySQL, MongoDB
-Problem-Solving Skills: Data Structures & Algorithms, Search Engine Optimization
-Technical-Skills: Dev Ops, Adobe Photoshop, Adobe Premiere Pro, After Effects, Figma, Postman, Git, Vs Code
+Problem-Solving Skills: Data Structures & Algorithms, Search Engine Optimization, System Design
+Technical-Skills: Adobe Photoshop, Adobe Premiere Pro, After Effects, Figma, Postman, Git, Vs Code, ZOD
+Dev Ops: Docker, Nginx, Load Balancer algorithms
 ________________
 
 
 Mini-Projects
-Currency Exchange Web Application • (Github) • (Live)
+Currency Exchange Web Application • (Github) • https://currency-exchange-lemon-ten.vercel.app/
 * CurrencyExchange is a dynamic and user-friendly web application built with Next.js and TailwindCSS to provide real-time currency conversion and exchange rate information using FreeCurrencyAPI.
 
 
-Image to base64 Converter • (Github) • (Live)
-* Developed using Next.js, this tool allows users to upload images and instantly convert them to Base64 strings with easy copy functionality and also offers options to compress the image and download it in PNG format.
+PayPal, Sofi, Karuta and Mazoku Fee Calculator • (Github) • https://paypal-and-sofi-wist-fee-calculator.vercel.app/
+* The PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone Fee Calculator simplify the process of calculating fees for transactions across multiple platforms. It provides accurate estimates for PayPal, SoFi, Karuta Tickets, and Mazoku Bloodstone fees, ensuring transparency and efficiency in financial calculations.
 
 
-SOFI Guild Manager • (Github)
+E-Drive • (Github) • https://itsmeprinceyt.github.io/e-drive/
+* Built using HTML, CSS, and Vanilla JavaScript.
+* E-Drive, or Education-Drive, is an intuitive academic website. It provides comprehensive self-written course notes, empowering students with flexible and accessible learning resources globally.
+
+
+SOFI Guild Manager • https://github.com/itsmeprinceyt/Sofi_Guild_Manager_Private
 * The Sofi Guild Manager, developed using Python, streamlines guild management by tracking raid activities and earning rewards for members. It securely monitors withdrawals and elixir balances through encrypted data, ensuring protection and smooth operation within the guild environment.
-
-
-Reflex Time • (Github) • (Live)
-* Reflex Time built using NextJS, TailwindCSS is a fast-paced, interactive game where your goal is to hit the random numbers displayed on the screen within 60 seconds. Try to achieve the highest score possible by clicking on the correct numbers as quickly as you can!
-
-
-All Food Shop Website • (Github) • (Live)
-* A modern food shop website built with Next.js. This project showcases a variety of food items with categories, descriptions, and prices, all presented through a clean, responsive design powered by Tailwind CSS.
-
-
-Kreo Mouse Product Website • (Github) • (Live)
-* A modern, responsive product landing page built using Next.js and Tailwind CSS. This project highlights the key features, benefits, and call-to-action for a fictional product.
 ________________
 
 
