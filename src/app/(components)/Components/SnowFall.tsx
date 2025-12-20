@@ -28,5 +28,5 @@ export default function SnowFall() {
 
   if (!isWinterSeason) return null;
 
-  return <Snowfall speed={[0, 0.5]} wind={[0, 0.5]} radius={[1.0, 1.5]} />;
+  return <Snowfall speed={[0, 1.5]} wind={[0, 2.5]} radius={[1.5, 1]} />;
 }
