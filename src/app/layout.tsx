@@ -4,6 +4,8 @@ import { Suspense } from "react";
 import Loader from "./(components)/Components/Loader";
 import Sidebar from "./(components)/Sidebar";
 import SnowFall from "./(components)/Components/SnowFall";
+import AnnouncementBar from "./(components)/Components/AnnouncementBar";
+import { ANNOUNCEMENT_BAR_MESSAGE } from "../utils/main.util";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-itsmeprince.vercel.app/"),
@@ -25,6 +27,7 @@ export default function RootLayout({
       <body className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,80,80,0.4),rgba(0,0,0,0))] select-none">
         <Suspense fallback={<Loader />}>
           <SnowFall />
+          <AnnouncementBar text={ANNOUNCEMENT_BAR_MESSAGE} />
           <div className="flex min-h-screen">
             <div className="min-h-screen">
               <Sidebar />
