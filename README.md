@@ -1,87 +1,36 @@
-# ⚡ ItsMe Prince Portfolio — Version 3
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A fully revamped personal portfolio website built with **Next.js** and **TypeScript**, showcasing my skills, projects, and experiences in a polished, interactive, and responsive design. This is **Version 3**, a major upgrade from the original portfolio with dynamic routing, image sliders, and a more scalable project display system.
+## Getting Started
 
-## 🚀 What's New in Version 3
-
-- ✅ **Modern, Clean UI** with smooth gradients and refined typography
-- 📍 **Side bar** with multiple options to navigate through portfolio
-- 📄 **Dedicated Project Pages** — each project now has its own unique route with:
-  - Screenshots of the project ( if any )
-  - Full description
-  - Tech stack tags
-  - Dependencies
-  - Last updated note
-  - Live/GitHub/YouTube links
-- 🧠 **Better Data Structure** for scalable project listings and categories
-- 📱 **Improved Responsive Design** for mobile and tablets
-- 🧩 **Personal Skill Resources** allows you to click on any tech stack and it will reveal all the resources which I've used.
-
----
-
-## ✨ Features
-
-- **Home Page**: A concised resume like information about me.
-- **About**: My intro, my journey and what I can offer.
-- **Experience**: Showing you all the work experience and their impact and projects.
-- **Skills**: Showcasing what I know and also sharing resources to learn the way I did when you click on any tech stack.
-- **Projects**: Interactive and categorized project previews with search bar.
-- **Project Details Pages**: Deep dive into each project with visuals and links
-- **Contact**: All my social media links can be found here.
-- **Card**: A digital card which showcase what I do along with my social media links. User can also download this as an image.
-- **Support**: A support page where the user can support me through Paypal, KoFi, or UPI.
-- **Surprise Page**: [Click to know!](https://portfolio-itsmeprince.vercel.app/quote)
-
----
-
-## 🛠 Tech Stack
-- Next.js
-- Tailwind CSS
-
----
-
-## 📦 Installation
+First, run the development server:
 
 ```bash
-# Install dependencies
-npm install
-
-# Run the development server
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
-Visit: http://localhost:3000
 
-## 🧪 Usage
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Launch the app locally and browse your portfolio
-- Click on any project to visit its individual page
-- Use external links to explore live sites or source code
-- Responsive across all screen sizes
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
----
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🎨 Customization
+## Learn More
 
-Want to personalize it?
+To learn more about Next.js, take a look at the following resources:
 
-- Explore the utils folder to know how the stuff works and change accordingly.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
----
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 🤝 Contributing
+## Deploy on Vercel
 
-Contributions are welcome!  
-To contribute:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. Fork this repository  
-2. Create a new branch (`git checkout -b feature-branch`)  
-3. Commit your changes (`git commit -am 'Add new feature'`)  
-4. Push to your branch (`git push origin feature-branch`)  
-5. Open a Pull Request
-
----
-
-## 🌐 Live Demo
-
-👉 https://portfolio-itsmeprince.vercel.app/
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
