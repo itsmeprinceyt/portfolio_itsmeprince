@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Navbar from "./(components)/Navbar";
 
 const SITE_URL = "https://portfolio-itsmeprince.vercel.app";
 const SITE_NAME = "Mohd Uvaish a.k.a ItsMe Prince Portfolio";
@@ -84,7 +85,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="select-none">
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Navbar />
+          {children}
+        </Suspense>
       </body>
     </html>
   );

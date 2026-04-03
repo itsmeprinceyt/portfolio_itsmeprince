@@ -1,0 +1,7 @@
+{
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "typescript.suggest.paths": false,
+    "javascript.suggest.paths": false,
+    "markdown.validate.enabled": false
+}
