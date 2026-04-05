@@ -32,7 +32,7 @@ export default function Home() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-24 h-px bg-white/30 my-4"
+          className="w-24 h-px bg-stone-800 my-4"
         />
 
         {/* AKA */}
