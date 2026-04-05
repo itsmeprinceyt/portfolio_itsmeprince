@@ -3,6 +3,8 @@
 
 body {
     font-family: 'Raleway', serif;
+    scrollbar-width: thin;
+    scrollbar-color: #313131 #000000;
 }
 
 .crystal-ball {
@@ -67,4 +69,38 @@ body {
 
 .pulse-ring:nth-child(3) {
     animation-delay: 1.6s;
+}
+
+@keyframes hint-pulse {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-hint {
+    animation: hint-pulse 3s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #313131;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #313131;
 }

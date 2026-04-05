@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { NAV_ITEMS, STAGGER_DELAYS } from "../../utils/navbar.util";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function CrystalNavbar() {
   const [open, setOpen] = useState<boolean>(false);
@@ -35,11 +36,22 @@ export default function CrystalNavbar() {
               crystal-ball
               relative w-5 h-5 rounded-full overflow-hidden
               shadow-[0_0_8px_2px_rgba(255,255,255,0.08),0_0_20px_4px_rgba(0,0,0,0.9),inset_0_1px_2px_rgba(255,255,255,0.18),inset_0_-1px_2px_rgba(0,0,0,0.8)]
-              transition-[transform,box-shadow] duration-200 ease-out
+              transition-all duration-150 ease-in-out
               group-hover:scale-[1.15]
               group-hover:shadow-[0_0_12px_4px_rgba(255,255,255,0.12),0_0_30px_8px_rgba(80,80,80,0.3),inset_0_1px_2px_rgba(255,255,255,0.22),inset_0_-1px_2px_rgba(0,0,0,0.8)]
             "
           />
+
+          {/* Hint text */}
+          <div className="absolute -left-16 top-1 pointer-events-none">
+            <span
+              style={{ animation: "hint-pulse 3s ease-in-out infinite" }}
+              className="text-[9px] tracking-[0.3em] uppercase text-stone-500 whitespace-nowrap flex items-center justify-center"
+            >
+              {open ? "CLOSE" : "MENU"}{" "}
+              <ChevronRight className="mb-0.5 text-stone-700" size={14} />
+            </span>
+          </div>
         </button>
       </nav>
 
@@ -80,21 +92,25 @@ export default function CrystalNavbar() {
                 href={href}
                 onClick={() => setOpen(false)}
                 className="
+                group
+                relative overflow-hidden
                 flex items-center justify-center
                 w-full max-w-70 sm:max-w-[320px] md:max-w-50
                 px-4 sm:px-6 md:px-7
                 py-2.5 sm:py-4 md:py-5
-                rounded-md
-                bg-stone-950 hover:bg-white
-                border border-stone-900
-                text-white hover:text-black
-                text-xs sm:text-sm md:text-sm
+                bg-stone-950
+                border border-stone-900 hover:border-stone-800
+                text-white
+                 sm:text-sm md:text-sm
                 tracking-widest uppercase
                 cursor-pointer hover:scale-110
                 transition-all duration-150 ease-in-out
               "
               >
-                {label}
+                {/* shimmer streak */}
+                <span className="absolute inset-0 -skew-x-12 translate-x-[-150%] group-hover:translate-x-[250%] transition-transform duration-500 ease-in-out bg-linear-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+
+                <span className="relative text-[12px]">{label}</span>
               </Link>
             </div>
           ))}

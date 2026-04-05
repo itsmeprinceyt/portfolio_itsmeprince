@@ -5,7 +5,7 @@ import Navbar from "./(components)/Navbar";
 
 const SITE_URL = "https://portfolio-itsmeprince.vercel.app";
 const SITE_NAME = "Mohd Uvaish a.k.a ItsMe Prince Portfolio";
-const LOGO = "/photos-logos/square.jpg";
+const LOGO = "/photos-logos/circle.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
