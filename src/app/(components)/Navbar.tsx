@@ -1,9 +1,8 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { NAV_ITEMS, STAGGER_DELAYS } from "../../utils/navbar.util";
-import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import ShimmerLink from "./ShimmerLink";
 
 export default function CrystalNavbar() {
   const [open, setOpen] = useState<boolean>(false);
@@ -65,7 +64,7 @@ export default function CrystalNavbar() {
           fixed inset-0 z-9998
           flex flex-col items-center 
           transition-all duration-400 ease-in-out
-          overflow-y-auto
+          ${open ? "overflow-y-auto" : "overflow-hidden"}
           ${
             open
               ? "bg-black/60 backdrop-blur-md pointer-events-auto"
@@ -88,30 +87,13 @@ export default function CrystalNavbar() {
           }
         `}
             >
-              <Link
+              <ShimmerLink
                 href={href}
                 onClick={() => setOpen(false)}
-                className="
-                group
-                relative overflow-hidden
-                flex items-center justify-center
-                w-full max-w-70 sm:max-w-[320px] md:max-w-50
-                px-4 sm:px-6 md:px-7
-                py-2.5 sm:py-4 md:py-5
-                bg-stone-950
-                border border-stone-900 hover:border-stone-800
-                text-white
-                 sm:text-sm md:text-sm
-                tracking-widest uppercase
-                cursor-pointer hover:scale-110
-                transition-all duration-150 ease-in-out
-              "
+                className="w-full max-w-70 sm:max-w-[320px] md:max-w-50"
               >
-                {/* shimmer streak */}
-                <span className="absolute inset-0 -skew-x-12 translate-x-[-150%] group-hover:translate-x-[250%] transition-transform duration-500 ease-in-out bg-linear-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
-
-                <span className="relative text-[12px]">{label}</span>
-              </Link>
+                {label}
+              </ShimmerLink>
             </div>
           ))}
         </div>
