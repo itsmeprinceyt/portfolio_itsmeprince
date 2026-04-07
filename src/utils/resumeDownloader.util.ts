@@ -1,4 +1,4 @@
-export default function downloadResume() {
+export default function resumeDownloaderUtility() {
   const link = document.createElement("a");
   link.href = "/cv/Mohd_Uvaish_Resume.pdf";
   link.download = "Mohd_Uvaish_Resume.pdf";

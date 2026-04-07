@@ -1,9 +1,9 @@
 "use client";
 import { Download } from "lucide-react";
-import downloadResume from "../utils/downloadresume.util";
 import PageWrapper from "./(components)/PageWrapper";
 import { motion } from "framer-motion";
 import ShimmerButton from "./(components)/ShimmerButton";
+import resumeDownloaderUtility from "../utils/resumeDownloader.util";
 
 export default function Home() {
   return (
@@ -59,7 +59,7 @@ export default function Home() {
 
         <ShimmerButton
           animationDelay={0.8}
-          onClick={downloadResume}
+          onClick={resumeDownloaderUtility}
           className="mt-2"
         >
           <Download

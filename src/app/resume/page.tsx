@@ -1,15 +1,15 @@
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import downloadResume from "../../utils/downloadresume.util";
 import PageWrapper from "../(components)/PageWrapper";
 import { motion } from "framer-motion";
 import { Download, Home } from "lucide-react";
+import resumeDownloaderUtility from "../../utils/resumeDownloader.util";
 
 export default function ResumePage() {
   const router = useRouter();
   useEffect(() => {
-    downloadResume();
+    resumeDownloaderUtility();
   }, [router]);
 
   return (
@@ -52,7 +52,7 @@ export default function ResumePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          onClick={downloadResume}
+          onClick={resumeDownloaderUtility}
           className="group relative text-[12px] uppercase tracking-widest flex items-center justify-center w-50 mt-2 px-8 py-3 border border-stone-900 text-stone-300 hover:text-white hover:border-stone-800 overflow-hidden transition-colors duration-300 cursor-pointer"
         >
           {/* shimmer streak */}
