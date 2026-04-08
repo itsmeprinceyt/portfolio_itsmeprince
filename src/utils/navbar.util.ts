@@ -1,13 +1,13 @@
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "#" },
-  { label: "Skills", href: "#" },
-  { label: "Experience", href: "#" },
-  { label: "Projects", href: "#" },
-  { label: "Services", href: "#" },
-  { label: "Support", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "Skills", href: "/skills" },
+  { label: "Experience", href: "/experience" },
+  { label: "Projects", href: "/projects" },
+  { label: "Services", href: "/services" },
+  { label: "Support", href: "/support" },
   { label: "Surprise", href: "/surprise" },
-  { label: "Contact", href: "#" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 const STAGGER_DELAYS = [
