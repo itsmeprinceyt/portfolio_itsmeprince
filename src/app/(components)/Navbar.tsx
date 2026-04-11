@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { NAV_ITEMS, STAGGER_DELAYS } from "../../utils/navbar.util";
 import { ChevronRight } from "lucide-react";
-import ShimmerLink from "./ShimmerLink";
+import ShimmerLink from "./Utils/ShimmerLink";
 
 export default function CrystalNavbar() {
   const [open, setOpen] = useState<boolean>(false);

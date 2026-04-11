@@ -2,9 +2,9 @@
 import { Binary, Code2, Download } from "lucide-react";
 import PageWrapper from "./(components)/PageWrapper";
 import { motion } from "framer-motion";
-import ShimmerButton from "./(components)/ShimmerButton";
+import ShimmerButton from "./(components)/Utils/ShimmerButton";
 import resumeDownloaderUtility from "../utils/resumeDownloader.util";
-import ShimmerLinkNormal from "./(components)/ShimmerLinkNormal";
+import ShimmerLinkNormal from "./(components)/Utils/ShimmerLinkNormal";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import axios from "axios";
-import ShimmerButton from "../(components)/ShimmerButton";
+import ShimmerButton from "../(components)/Utils/ShimmerButton";
 import { FormErrors, Status } from "../../types/contact.type";
 
 import { SocialIcon } from "react-social-icons";
@@ -11,6 +11,7 @@ import {
   LinkedInLink,
   YouTubeLink,
 } from "../../utils/main.util";
+import PageWrapper from "../(components)/PageWrapper";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<Status>("idle");
@@ -113,62 +114,63 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black flex flex-col items-center justify-center px-6 py-20">
-      <div className="w-full max-w-md flex flex-col gap-8 ">
-        {/* ── TOP: Heading + Social Icons ── */}
-        <div className="flex flex-col items-center gap-6 text-center">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
-            contact
-          </p>
-          <h1 className="text-white text-xl font-light tracking-widest uppercase">
-            get in touch
-          </h1>
+    <PageWrapper>
+      <main className="min-h-screen bg-black flex flex-col items-center justify-center px-6 py-20">
+        <div className="w-full max-w-md flex flex-col gap-8 ">
+          {/* ── TOP: Heading + Social Icons ── */}
+          <div className="flex flex-col items-center gap-6 text-center">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
+              contact
+            </p>
+            <h1 className="text-white text-xl font-light tracking-widest uppercase">
+              get in touch
+            </h1>
 
-          {/* Divider with label */}
-          <div className="flex items-center gap-4 w-full">
+            {/* Divider with label */}
+            <div className="flex items-center gap-4 w-full">
+              <div className="flex-1 h-px bg-stone-800" />
+              <span className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
+                find me on
+              </span>
+              <div className="flex-1 h-px bg-stone-800" />
+            </div>
+
+            {/* Social Icons Row */}
+            <div className="flex items-center gap-2">
+              {socials.map(({ url, label }) => (
+                <SocialIcon
+                  key={label}
+                  url={url}
+                  target="_blank"
+                  style={{ height: 40, width: 40 }}
+                  bgColor="transparent"
+                  className="hover:scale-110 transition-all ease-in-out duration-300"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* ── DIVIDER ── */}
+          <div className="flex items-center gap-4">
             <div className="flex-1 h-px bg-stone-800" />
             <span className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
-              find me on
+              or send a message
             </span>
             <div className="flex-1 h-px bg-stone-800" />
           </div>
 
-          {/* Social Icons Row */}
-          <div className="flex items-center gap-2">
-            {socials.map(({ url, label }) => (
-              <SocialIcon
-                key={label}
-                url={url}
-                target="_blank"
-                style={{ height: 40, width: 40 }}
-                bgColor="transparent"
-                className="hover:scale-110 transition-all ease-in-out duration-300"
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* ── DIVIDER ── */}
-        <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-stone-800" />
-          <span className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
-            or send a message
-          </span>
-          <div className="flex-1 h-px bg-stone-800" />
-        </div>
-
-        {/* ── BOTTOM: Contact Form ── */}
-        <form onSubmit={onSubmit} className="flex flex-col gap-4">
-          {/* Name */}
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[9px] uppercase tracking-[0.3em] text-stone-400">
-              name
-            </label>
-            <input
-              type="text"
-              name="name"
-              disabled={status === "loading"}
-              className={`
+          {/* ── BOTTOM: Contact Form ── */}
+          <form onSubmit={onSubmit} className="flex flex-col gap-4">
+            {/* Name */}
+            <div className="flex flex-col gap-1.5">
+              <label className="text-[9px] uppercase tracking-[0.3em] text-stone-400">
+                name
+              </label>
+              <input
+                type="text"
+                name="name"
+                disabled={status === "loading"}
+                className={`
                 bg-transparent border
                 ${errors.name ? "border-red-600" : "border-stone-900"}
                 focus:border-stone-700
@@ -178,25 +180,25 @@ export default function ContactPage() {
                 placeholder:text-stone-500
                 disabled:opacity-40
               `}
-              placeholder="your name"
-            />
-            {errors.name && (
-              <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
-                {errors.name}
-              </p>
-            )}
-          </div>
+                placeholder="your name"
+              />
+              {errors.name && (
+                <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
+                  {errors.name}
+                </p>
+              )}
+            </div>
 
-          {/* Email */}
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[9px] uppercase tracking-[0.3em] text-stone-400">
-              email
-            </label>
-            <input
-              type="email"
-              name="email"
-              disabled={status === "loading"}
-              className={`
+            {/* Email */}
+            <div className="flex flex-col gap-1.5">
+              <label className="text-[9px] uppercase tracking-[0.3em] text-stone-400">
+                email
+              </label>
+              <input
+                type="email"
+                name="email"
+                disabled={status === "loading"}
+                className={`
                 bg-transparent border
                 ${errors.email ? "border-red-600" : "border-stone-900"}
                 focus:border-stone-700
@@ -206,25 +208,25 @@ export default function ContactPage() {
                 placeholder:text-stone-500
                 disabled:opacity-40
               `}
-              placeholder="your@email.com"
-            />
-            {errors.email && (
-              <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
-                {errors.email}
-              </p>
-            )}
-          </div>
+                placeholder="your@email.com"
+              />
+              {errors.email && (
+                <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
+                  {errors.email}
+                </p>
+              )}
+            </div>
 
-          {/* Message */}
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[9px] uppercase tracking-[0.3em] text-stone-400">
-              message
-            </label>
-            <textarea
-              name="message"
-              rows={5}
-              disabled={status === "loading"}
-              className={`
+            {/* Message */}
+            <div className="flex flex-col gap-1.5">
+              <label className="text-[9px] uppercase tracking-[0.3em] text-stone-400">
+                message
+              </label>
+              <textarea
+                name="message"
+                rows={5}
+                disabled={status === "loading"}
+                className={`
                 bg-transparent border
                 ${errors.message ? "border-red-600" : "border-stone-900"}
                 focus:border-stone-700
@@ -234,37 +236,38 @@ export default function ContactPage() {
                 placeholder:text-stone-500
                 disabled:opacity-40
               `}
-              placeholder="what's on your mind... how may I help you?"
-            />
-            {errors.message && (
-              <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
-                {errors.message}
+                placeholder="what's on your mind... how may I help you?"
+              />
+              {errors.message && (
+                <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
+                  {errors.message}
+                </p>
+              )}
+            </div>
+
+            {/* Submit */}
+            <ShimmerButton
+              type="submit"
+              disabled={status === "loading"}
+              className="mt-2 w-full disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              {status === "loading" ? "sending..." : "send message"}
+            </ShimmerButton>
+
+            {/* Feedback */}
+            {status === "success" && (
+              <p className="text-[10px] uppercase tracking-[0.25em] text-stone-400 text-center mt-1 animate-pulse">
+                message sent — i&apos;ll be in touch.
               </p>
             )}
-          </div>
-
-          {/* Submit */}
-          <ShimmerButton
-            type="submit"
-            disabled={status === "loading"}
-            className="mt-2 w-full disabled:opacity-40 disabled:cursor-not-allowed"
-          >
-            {status === "loading" ? "sending..." : "send message"}
-          </ShimmerButton>
-
-          {/* Feedback */}
-          {status === "success" && (
-            <p className="text-[10px] uppercase tracking-[0.25em] text-stone-400 text-center mt-1 animate-pulse">
-              message sent — i&apos;ll be in touch.
-            </p>
-          )}
-          {status === "error" && (
-            <p className="text-[10px] uppercase tracking-[0.25em] text-red-600 text-center mt-1">
-              {errorMsg}
-            </p>
-          )}
-        </form>
-      </div>
-    </main>
+            {status === "error" && (
+              <p className="text-[10px] uppercase tracking-[0.25em] text-red-600 text-center mt-1">
+                {errorMsg}
+              </p>
+            )}
+          </form>
+        </div>
+      </main>
+    </PageWrapper>
   );
 }

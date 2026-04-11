@@ -1,4 +1,5 @@
 import React from "react";
+import SnowFall from "./Components/SnowFall";
 
 export default function PageWrapper({
   children,
@@ -8,6 +9,7 @@ export default function PageWrapper({
   return (
     <div className="min-h-screen w-full bg-black relative overflow-hidden">
       {/* Top Spotlight Background */}
+      <SnowFall />
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
