@@ -4,6 +4,14 @@ import axios from "axios";
 import ShimmerButton from "../(components)/ShimmerButton";
 import { FormErrors, Status } from "../../types/contact.type";
 
+import { SocialIcon } from "react-social-icons";
+import {
+  GitHubLink,
+  InstagramLink,
+  LinkedInLink,
+  YouTubeLink,
+} from "../../utils/main.util";
+
 export default function ContactPage() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -97,17 +105,59 @@ export default function ContactPage() {
     }
   };
 
-  return (
-    <main className="min-h-screen bg-black flex flex-col items-center justify-center px-6">
-      <div className="w-full max-w-md">
-        {/* Heading */}
-        <p className="text-[9px] uppercase tracking-[0.3em] text-stone-400 mb-3">
-          contact
-        </p>
-        <h1 className="text-white text-xl font-light tracking-widest uppercase mb-10">
-          get in touch
-        </h1>
+  const socials = [
+    { url: GitHubLink, label: "github" },
+    { url: LinkedInLink, label: "linkedin" },
+    { url: YouTubeLink, label: "youtube" },
+    { url: InstagramLink, label: "instagram" },
+  ];
 
+  return (
+    <main className="min-h-screen bg-black flex flex-col items-center justify-center px-6 py-20">
+      <div className="w-full max-w-md flex flex-col gap-8 ">
+        {/* ── TOP: Heading + Social Icons ── */}
+        <div className="flex flex-col items-center gap-6 text-center">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
+            contact
+          </p>
+          <h1 className="text-white text-xl font-light tracking-widest uppercase">
+            get in touch
+          </h1>
+
+          {/* Divider with label */}
+          <div className="flex items-center gap-4 w-full">
+            <div className="flex-1 h-px bg-stone-800" />
+            <span className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
+              find me on
+            </span>
+            <div className="flex-1 h-px bg-stone-800" />
+          </div>
+
+          {/* Social Icons Row */}
+          <div className="flex items-center gap-2">
+            {socials.map(({ url, label }) => (
+              <SocialIcon
+                key={label}
+                url={url}
+                target="_blank"
+                style={{ height: 40, width: 40 }}
+                bgColor="transparent"
+                className="hover:scale-110 transition-all ease-in-out duration-300"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* ── DIVIDER ── */}
+        <div className="flex items-center gap-4">
+          <div className="flex-1 h-px bg-stone-800" />
+          <span className="text-[10px] uppercase tracking-[0.3em] text-stone-400">
+            or send a message
+          </span>
+          <div className="flex-1 h-px bg-stone-800" />
+        </div>
+
+        {/* ── BOTTOM: Contact Form ── */}
         <form onSubmit={onSubmit} className="flex flex-col gap-4">
           {/* Name */}
           <div className="flex flex-col gap-1.5">
@@ -120,7 +170,7 @@ export default function ContactPage() {
               disabled={status === "loading"}
               className={`
                 bg-transparent border
-                ${errors.name ? "border-red-900" : "border-stone-900"}
+                ${errors.name ? "border-red-600" : "border-stone-900"}
                 focus:border-stone-700
                 text-stone-300 text-[12px] tracking-widest
                 px-4 py-3 outline-none
@@ -131,7 +181,7 @@ export default function ContactPage() {
               placeholder="your name"
             />
             {errors.name && (
-              <p className="text-[9px] uppercase tracking-[0.2em] text-red-800">
+              <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
                 {errors.name}
               </p>
             )}
@@ -148,7 +198,7 @@ export default function ContactPage() {
               disabled={status === "loading"}
               className={`
                 bg-transparent border
-                ${errors.email ? "border-red-900" : "border-stone-900"}
+                ${errors.email ? "border-red-600" : "border-stone-900"}
                 focus:border-stone-700
                 text-stone-300 text-[12px] tracking-widest
                 px-4 py-3 outline-none
@@ -159,7 +209,7 @@ export default function ContactPage() {
               placeholder="your@email.com"
             />
             {errors.email && (
-              <p className="text-[9px] uppercase tracking-[0.2em] text-red-800">
+              <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
                 {errors.email}
               </p>
             )}
@@ -176,7 +226,7 @@ export default function ContactPage() {
               disabled={status === "loading"}
               className={`
                 bg-transparent border
-                ${errors.message ? "border-red-900" : "border-stone-900"}
+                ${errors.message ? "border-red-600" : "border-stone-900"}
                 focus:border-stone-700
                 text-stone-300 text-[12px] tracking-widest
                 px-4 py-3 outline-none resize-none
@@ -187,7 +237,7 @@ export default function ContactPage() {
               placeholder="what's on your mind... how may I help you?"
             />
             {errors.message && (
-              <p className="text-[9px] uppercase tracking-[0.2em] text-red-800">
+              <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
                 {errors.message}
               </p>
             )}
@@ -209,7 +259,7 @@ export default function ContactPage() {
             </p>
           )}
           {status === "error" && (
-            <p className="text-[10px] uppercase tracking-[0.25em] text-red-800 text-center mt-1">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-red-600 text-center mt-1">
               {errorMsg}
             </p>
           )}

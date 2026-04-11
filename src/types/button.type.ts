@@ -12,5 +12,6 @@ export interface ShimmerButtonProps
 export interface ShimmerLinkProps extends LinkProps {
   children: ReactNode;
   className?: string;
+  animationDelay?: number;
   onClick?: () => void;
 }

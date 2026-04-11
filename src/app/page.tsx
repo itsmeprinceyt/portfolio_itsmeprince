@@ -1,9 +1,10 @@
 "use client";
-import { Download } from "lucide-react";
+import { Binary, Code2, Download } from "lucide-react";
 import PageWrapper from "./(components)/PageWrapper";
 import { motion } from "framer-motion";
 import ShimmerButton from "./(components)/ShimmerButton";
 import resumeDownloaderUtility from "../utils/resumeDownloader.util";
+import ShimmerLinkNormal from "./(components)/ShimmerLinkNormal";
 
 export default function Home() {
   return (
@@ -57,19 +58,33 @@ export default function Home() {
           itsme prince
         </motion.h2>
 
-        <ShimmerButton
-          animationDelay={0.8}
-          onClick={resumeDownloaderUtility}
-          className="mt-2"
-        >
-          <Download
-            strokeWidth={1}
-            size={17}
-            className="group-hover:translate-y-0.5 transition-transform duration-300"
-          />
-          resume
-        </ShimmerButton>
+        <div className="flex flex-wrap gap-5 items-center justify-center">
+          <ShimmerLinkNormal animationDelay={0.8} href={"/projects"}>
+            <Code2
+              strokeWidth={1}
+              size={17}
+              className="group-hover:translate-y-0.5 transition-transform duration-300"
+            />
+            Projects
+          </ShimmerLinkNormal>
+          <ShimmerLinkNormal animationDelay={0.8} href={"/skills"}>
+            <Binary
+              strokeWidth={1}
+              size={17}
+              className="group-hover:translate-y-0.5 transition-transform duration-300"
+            />
+            Skills
+          </ShimmerLinkNormal>
 
+          <ShimmerButton animationDelay={0.8} onClick={resumeDownloaderUtility}>
+            <Download
+              strokeWidth={1}
+              size={17}
+              className="group-hover:translate-y-0.5 transition-transform duration-300"
+            />
+            resume
+          </ShimmerButton>
+        </div>
         {/* Subtle glow */}
         <div className="absolute w-75 h-75 bg-white/5 blur-3xl rounded-full -z-10" />
       </div>

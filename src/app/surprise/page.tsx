@@ -48,7 +48,7 @@ export default function SurprisePage() {
 
           {/* Author */}
           {quote.author && (
-            <p className="relative mt-6 text-[11px] uppercase tracking-[0.3em] text-stone-500">
+            <p className="relative mt-6 text-[11px] uppercase tracking-[0.3em] text-stone-400">
               — {quote.author}
             </p>
           )}
@@ -57,7 +57,7 @@ export default function SurprisePage() {
         {/* Click hint */}
         <p
           style={{ animation: "hint-pulse 3s ease-in-out infinite" }}
-          className="mt-5 text-[9px] uppercase tracking-[0.3em] text-stone-500"
+          className="mt-5 text-[8px] uppercase tracking-[0.3em] text-stone-400"
         >
           click to reveal next or wait.
         </p>

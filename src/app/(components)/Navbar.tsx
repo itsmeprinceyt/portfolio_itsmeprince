@@ -67,7 +67,7 @@ export default function CrystalNavbar() {
           ${open ? "overflow-y-auto" : "overflow-hidden"}
           ${
             open
-              ? "bg-black/60 backdrop-blur-md pointer-events-auto"
+              ? "bg-black/80 backdrop-blur-sm pointer-events-auto"
               : "bg-transparent pointer-events-none"
           }
         `}
