@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ShimmerButtonProps } from "../../types/button.type";
 
+// Shimmer Replacement for <button><button/>
 export default function ShimmerButton({
   children,
   animationDelay = 0,

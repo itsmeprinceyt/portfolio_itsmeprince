@@ -5,6 +5,7 @@ import { ShimmerLinkProps } from "../../types/button.type";
 
 const MotionLink = motion.create(Link);
 
+// Shimmer Replacement for <Link><Link/>
 export default function ShimmerLinkNormal({
   children,
   className = "",

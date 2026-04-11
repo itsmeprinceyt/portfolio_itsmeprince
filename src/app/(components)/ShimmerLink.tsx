@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ShimmerLinkProps } from "../../types/button.type";
 
+// Used for Navbar full screen
 export default function ShimmerLink({
   children,
   className = "",
