@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ShimmerLinkProps } from "../../types/button.type";
+import { ShimmerLinkProps } from "../../../types/button.type";
 
 // Used for Navbar full screen
 export default function ShimmerLink({
@@ -17,7 +17,7 @@ export default function ShimmerLink({
         relative overflow-hidden
         flex items-center justify-center
         px-4 sm:px-6 md:px-7
-        py-2.5 sm:py-4 md:py-5
+        py-4.5 sm:py-4 md:py-5
         bg-stone-950
         border border-stone-900 hover:border-stone-800
         text-white
