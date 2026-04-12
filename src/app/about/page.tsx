@@ -81,7 +81,7 @@ export default function About() {
           <div>
             <div className="relative aspect-square w-full border border-stone-800/60 bg-stone-950 overflow-hidden">
               <Image
-                src="/photos-logos/square.jpg"
+                src="/photos-logos/logo2_square.jpg"
                 alt="Mohd Uvaish"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 loading={"eager"}
@@ -260,7 +260,7 @@ export default function About() {
                   <Image
                     src={photos[current]}
                     alt={`Setup ${current + 1}`}
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     fill
                     loading="eager"
                     className="object-cover"

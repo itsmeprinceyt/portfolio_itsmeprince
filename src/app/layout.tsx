@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Navbar from "./(components)/Navbar";
 
-const SITE_URL = "https://portfolio-itsmeprince.vercel.app";
-const SITE_NAME = "Mohd Uvaish a.k.a ItsMe Prince Portfolio";
-const LOGO = "/photos-logos/circle.png";
+const SITE_URL: string = "https://portfolio-itsmeprince.vercel.app";
+const SITE_NAME: string = "Mohd Uvaish a.k.a ItsMe Prince Portfolio";
+const LOGO: string = "/photos-logos/logo2_circle.png";
+const LOGO_RECTANGLE: string = "/photos-logos/logo2_rectangle.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     images: [
       {
-        url: LOGO,
+        url: LOGO_RECTANGLE,
         width: 1200,
         height: 630,
         alt: "Mohd Uvaish Portfolio",
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
     title: "Mohd Uvaish | Full Stack Developer",
     description:
       "Portfolio of Mohd Uvaish (ItsMe Prince) — React, Next.js & Full Stack Developer.",
-    images: [LOGO],
+    images: [LOGO_RECTANGLE],
   },
 
   icons: {
