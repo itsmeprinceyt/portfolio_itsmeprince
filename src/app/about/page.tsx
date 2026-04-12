@@ -83,6 +83,8 @@ export default function About() {
               <Image
                 src="/photos-logos/square.jpg"
                 alt="Mohd Uvaish"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading={"eager"}
                 fill
                 className="object-cover"
               />
@@ -246,6 +248,7 @@ export default function About() {
                   <Image
                     src={photos[current]}
                     alt={`Setup ${current + 1}`}
+                    sizes="100vw"
                     fill
                     loading="eager"
                     className="object-cover"
@@ -272,26 +275,6 @@ export default function About() {
             </div>
           ) : (
             <div className="w-full aspect-video bg-stone-950 border border-stone-800/60 mb-4 animate-pulse" />
-          )}
-
-          {/* Dot indicators */}
-          {photos.length > 1 && (
-            <div className="flex gap-2 mb-6">
-              {photos.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    setDirection(i > current ? 1 : -1);
-                    setCurrent(i);
-                  }}
-                  className={`h-px transition-all duration-300 ${
-                    i === current
-                      ? "bg-stone-400 w-8"
-                      : "bg-stone-800 w-4 hover:bg-stone-600"
-                  }`}
-                />
-              ))}
-            </div>
           )}
         </motion.div>
         <div className="fixed w-96 h-96 bg-white/5 blur-3xl rounded-full -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
