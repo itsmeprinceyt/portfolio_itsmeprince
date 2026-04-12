@@ -5,6 +5,45 @@ import { Project } from "../../../types/projects.type";
 /* ============================================================================= */
 export const majorProjects: Project[] = [
   {
+    id: `discord-games-manager`,
+    name: `Games Manager Pro`,
+    description: `A comprehensive dashboard for managing Discord game accounts, balances, and cross-trade analytics.`,
+    full_description: {
+      intro: `Games Manager Pro is a comprehensive dashboard application for Discord game account management, built with Next.js. Create and manage bot accounts, track multiple currency balances (Tickets, Jade, Wist and more), analyze reports with interactive charts, and handle cross-trade entries all in one secure place.`,
+      dependencies: [
+        "axios.js",
+        "framer-motion",
+        "bcrypt.js",
+        "uuid",
+        "recharts.js",
+      ],
+      usage_examples: [
+        "Managing multiple Discord game bot accounts from a single dashboard",
+        "Tracking and editing balances across different in-game currencies",
+        "Analyzing transaction history and generating exportable reports",
+        "Handling cross-trade entries with secure authentication and rate limiting",
+      ],
+    },
+
+    tags: [`next.js`, `typescript`, `mysql`, `redis`],
+    links: {
+      live: {
+        url: `https://games-manager-pro.vercel.app/`,
+        enabled: true,
+      },
+      github: {
+        url: `https://github.com/itsmeprinceyt/discord-games-manager`,
+        enabled: true,
+      },
+      youtube: {
+        url: `https://youtu.be/eDXwfjrHNUI`,
+        enabled: true,
+      },
+    },
+    banner: `/projects/discord-games-manager/1.png`,
+    date: "12-04-2026",
+  },
+  {
     id: `file-encrypt-decrypter`,
     name: `File Encrypter / Decrypter Software`,
     description: `A secure and user-friendly file encryption & decryption software built with Electron, alongside CLI-based Python and Node.js script versions for developers.`,
@@ -792,6 +831,38 @@ export const majorProjects: Project[] = [
 /* ============================================================================= */
 export const miniProjects: Project[] = [
   {
+    id: `minus-plus-counter`,
+    name: `Minus Plus Counter`,
+    description: `A beautifully simple tally counter app with persistent local storage and smart number formatting.`,
+    full_description: {
+      intro: `Minus Plus Counter is a beautifully simple Flutter-based tally app designed for quick counting with persistent local storage and smart number formatting. Tap + to increment, − to decrement, and your count is automatically saved. Large numbers are intelligently formatted (K, M, B, etc.) while still showing the exact value.`,
+
+      usage_examples: [
+        "Counting inventory or stock items",
+        "Tracking reps during a workout",
+        "Keeping score for games",
+        "Tallying event attendees or votes",
+      ],
+    },
+    tags: [`flutter`, `next.js`, `tailwind-css`],
+    links: {
+      live: {
+        url: `https://minus-plus-flutter.vercel.app/`,
+        enabled: true,
+      },
+      github: {
+        url: `https://github.com/itsmeprinceyt/minus_plus_flutter`,
+        enabled: true,
+      },
+      youtube: {
+        url: ``,
+        enabled: false,
+      },
+    },
+    banner: `/projects/minus-plus-counter/1.png`,
+    date: "12-04-2026",
+  },
+  {
     id: `totp`,
     name: `TOTP Generator`,
     description: `Visual demonstration of how authenticator apps generate OTPs offline`,
@@ -1232,6 +1303,7 @@ export const playgroundProjects: Project[] = [
 /* ============================================================================= */
 export const bestProjects: Project[] = [
   majorProjects[0],
-  majorProjects[2],
-  majorProjects[5],
+  majorProjects[1],
+  majorProjects[3],
+  majorProjects[6],
 ];

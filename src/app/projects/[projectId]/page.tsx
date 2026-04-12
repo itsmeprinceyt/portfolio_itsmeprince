@@ -236,14 +236,15 @@ export default function ProjectPage({
 
               <button
                 onClick={() => setFullscreen(true)}
-                className="block w-full border border-stone-950 hover:border-stone-800 transition-colors duration-200 overflow-hidden cursor-pointer"
+                className="block w-full overflow-hidden cursor-pointer"
               >
                 <div className="relative w-full aspect-video">
                   <Image
                     src={images[index]}
                     alt={`${project.name} screenshot ${index + 1}`}
                     fill
-                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 768px"
+                    className="object-contain object-top"
                     priority
                     draggable={false}
                   />
@@ -445,7 +446,7 @@ export default function ProjectPage({
 
       {/* ── Fullscreen ── */}
       {fullscreen && (
-        <div className="fixed inset-0 z-50 bg-black/95 flex flex-col items-center justify-center gap-6">
+        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center gap-6">
           <div className="absolute top-6 right-6">
             <ShimmerButton
               onClick={() => {
