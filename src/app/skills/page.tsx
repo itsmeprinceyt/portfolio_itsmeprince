@@ -63,6 +63,7 @@ function SkillTag({
             <Image
               src={`/logo/${prefix}/${file}`}
               alt={name}
+              loading="eager"
               fill
               className="object-contain"
               sizes="40px"
@@ -78,6 +79,7 @@ function SkillTag({
           <Image
             src={`/logo/${prefix}/${file}`}
             alt={name}
+            loading="eager"
             fill
             className="object-contain"
             sizes="16px"

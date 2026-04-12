@@ -37,7 +37,16 @@ const devTools: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "3.postman.svg",
+    file: "3.git.svg",
+    fullName: "Git",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "4.postman.svg",
     fullName: "Postman",
     SkillInfo: [
       {
@@ -53,6 +62,15 @@ const devTools: SkillInterface[] = [
       },
     ],
     date: "29-07-2025",
+  },
+  {
+    file: "5.markdown.svg",
+    fullName: "Markdown",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
   },
 ];
 

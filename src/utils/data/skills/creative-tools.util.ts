@@ -47,6 +47,15 @@ const creativeTools: SkillInterface[] = [
       },
     ],
   },
+  {
+    file: "5.notion.svg",
+    fullName: "Notion",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
 ];
 
 export default creativeTools;
