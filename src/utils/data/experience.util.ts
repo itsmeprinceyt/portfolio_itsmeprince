@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
   {
     company: "Mazoku",
     role: "Discord Bot Backend Developer",
-    period: "Mar 2025 – Mar 2026",
+    period: "Mar 2025 – Sept 2025",
     mode: "Remote",
     description: [
       "Developed backend services, commands, and API integrations for Mazoku Bot.",

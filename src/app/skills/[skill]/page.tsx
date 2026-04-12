@@ -181,7 +181,7 @@ export default function SkillPage({
                         <span className="text-[10px] text-stone-400 mt-0.5 shrink-0 tabular-nums">
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <p className="text-sm text-stone-300 leading-snug font-medium">
+                        <p className="text-lg text-stone-300 leading-snug font-medium">
                           {link.linkName}
                         </p>
                       </div>
@@ -192,7 +192,7 @@ export default function SkillPage({
                           href={link.linkURL}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block text-[11px] tracking-widest text-blue-700 hover:text-blue-900 transition-colors duration-200 break-all mb-3 ml-7"
+                          className="block text-[11px] tracking-widest text-blue-700 hover:text-blue-900 transition-colors duration-200 break-all ml-7"
                         >
                           {link.linkURL}
                         </Link>
@@ -200,10 +200,8 @@ export default function SkillPage({
 
                       {/* Note */}
                       {link.note && (
-                        <div className="ml-7 mt-2 pl-3 border-l border-stone-700/60">
-                          <p className="text-sm text-stone-500 leading-relaxed italic">
-                            &quot;{link.note}&quot;
-                          </p>
+                        <div className="ml-7 mt-3 pl-3 border-l-2 border-stone-700/60 text-sm text-stone-500 leading-relaxed italic">
+                          &quot;{link.note}&quot;
                         </div>
                       )}
                     </div>
