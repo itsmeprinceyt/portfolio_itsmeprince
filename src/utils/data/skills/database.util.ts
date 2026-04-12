@@ -68,6 +68,15 @@ const database: SkillInterface[] = [
       },
     ],
   },
+  {
+    file: "4.redis.svg",
+    fullName: "Redis",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
 ];
 
 export default database;

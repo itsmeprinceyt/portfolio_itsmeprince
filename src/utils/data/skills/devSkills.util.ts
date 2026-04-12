@@ -459,16 +459,7 @@ const devSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "17.redis.svg",
-    fullName: "Redis",
-    SkillInfo: [
-      {
-        description: [""],
-      },
-    ],
-  },
-  {
-    file: "18.clerk.svg",
+    file: "17.clerk.svg",
     fullName: "Clerk",
     SkillInfo: [
       {
@@ -477,7 +468,7 @@ const devSkills: SkillInterface[] = [
     ],
   },
   {
-    file: "19.shadcnui.svg",
+    file: "18.shadcnui.svg",
     fullName: "Shade CN",
     SkillInfo: [
       {
@@ -486,7 +477,7 @@ const devSkills: SkillInterface[] = [
     ],
   },
   {
-    file: "20.zod.svg",
+    file: "19.zod.svg",
     fullName: "ZOD",
     SkillInfo: [
       {
@@ -495,7 +486,7 @@ const devSkills: SkillInterface[] = [
     ],
   },
   {
-    file: "21.dart.svg",
+    file: "20.dart.svg",
     fullName: "Dart",
     SkillInfo: [
       {
@@ -504,7 +495,7 @@ const devSkills: SkillInterface[] = [
     ],
   },
   {
-    file: "22.flutter.svg",
+    file: "21.flutter.svg",
     fullName: "Flutter",
     SkillInfo: [
       {
@@ -513,7 +504,7 @@ const devSkills: SkillInterface[] = [
     ],
   },
   {
-    file: "23.supabase.svg",
+    file: "22.supabase.svg",
     fullName: "SupaBase",
     SkillInfo: [
       {
