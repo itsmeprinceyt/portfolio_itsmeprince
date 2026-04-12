@@ -1,11 +1,5 @@
-import { Code2, Globe, Heart, LucideIcon } from "lucide-react";
-
-type Service = {
-  icon: LucideIcon;
-  label: string;
-  description: string;
-  note: string;
-};
+import { Code2, Globe, Heart } from "lucide-react";
+import { Service } from "../../types/services.type";
 
 const services: Service[] = [
   {

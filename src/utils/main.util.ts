@@ -4,3 +4,7 @@ export const LinkedInLink: string = "https://www.linkedin.com/in/mohduvaish";
 export const InstagramLink: string = "https://www.instagram.com/itsmeprinceyt";
 
 export const UPI_ID: string = "itsmeprincekotak@yespop";
+export const NOT_WATCHED_ANY_COURSE: string =
+  "I never really followed any course for this — I mostly relied on Google and watched a few YouTube tutorials whenever I got stuck or wasn’t sure what to do next.";
+export const GOOGLE_REMINDER: string =
+  "You’ll definitely forget things from time to time — and that’s okay. Just Google it when you need to, but try to recall it on your own first. The longer you can hold onto it before looking it up again, the better it’ll stick.";
