@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ShimmerLinkProps } from "../../types/button.type";
+import { ShimmerLinkProps } from "../../../types/button.type";
 
 const MotionLink = motion.create(Link);
 
