@@ -14,13 +14,19 @@ import devTools from "../../../utils/data/skills/devTools.util";
 import hobbiesInterests from "../../../utils/data/skills/hobbiesInterests.util";
 import personalSoftSkills from "../../../utils/data/skills/personalSoftSkills.util";
 import { SkillInterface } from "../../../types/skills.type";
+import database from "../../../utils/data/skills/database.util";
+import devOps from "../../../utils/data/skills/dev-ops.util";
+import aiTools from "../../../utils/data/skills/ai-tools.util";
 
 const skillCategories = [
   { name: "dev-skills", data: devSkills },
-  { name: "creative-tools", data: creativeTools },
+  { name: "database", data: database },
+  { name: "ai-tools", data: aiTools },
+  { name: "dev-ops", data: devOps },
   { name: "dev-tools", data: devTools },
+  { name: "creative-tools", data: creativeTools },
   { name: "hobbies-and-interests", data: hobbiesInterests },
-  { name: "personal-soft-skills", data: personalSoftSkills },
+  { name: "personal-skills", data: personalSoftSkills },
 ];
 
 const fadeUp = (delay = 0) => ({
@@ -135,20 +141,26 @@ export default function SkillPage({
         {matched.skill.SkillInfo?.map((infoItem, index) => (
           <div key={index} className="flex flex-col gap-12">
             {/* Description */}
-            {infoItem.description && (
-              <motion.div {...fadeUp(0.15)}>
-                <p className="text-[10px] tracking-[0.5em] uppercase text-stone-400 mb-6 pb-3 border-b border-stone-800/40">
-                  My story with this
-                </p>
-                <div className="space-y-4">
-                  {infoItem.description.map((line, i) => (
-                    <p key={i} className="text-sm text-stone-600 leading-loose">
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              </motion.div>
-            )}
+            {infoItem.description &&
+              infoItem.description.some((line) => line.trim() !== "") && (
+                <motion.div {...fadeUp(0.15)}>
+                  <p className="text-[10px] tracking-[0.5em] uppercase text-stone-400 mb-6 pb-3 border-b border-stone-800/40">
+                    My story with this
+                  </p>
+                  <div className="space-y-4">
+                    {infoItem.description
+                      .filter((line) => line.trim() !== "")
+                      .map((line, i) => (
+                        <p
+                          key={i}
+                          className="text-sm text-stone-600 leading-loose"
+                        >
+                          {line}
+                        </p>
+                      ))}
+                  </div>
+                </motion.div>
+              )}
 
             {/* Links */}
             <motion.div {...fadeUp(0.25)}>
@@ -182,7 +194,7 @@ export default function SkillPage({
                           href={link.linkURL}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block text-[11px] tracking-widest text-blue-600 hover:text-blue-900 transition-colors duration-200 break-all mb-3 ml-7"
+                          className="block text-[11px] tracking-widest text-blue-700 hover:text-blue-900 transition-colors duration-200 break-all mb-3 ml-7"
                         >
                           {link.linkURL}
                         </Link>

@@ -281,75 +281,7 @@ const devSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "12.mySQL.svg",
-    fullName: "MySQL",
-    SkillInfo: [
-      {
-        description: [
-          "MySQL was the first database I learned. I got hands-on with creating schemas, building tables, and performing basic data manipulation — all of which I later integrated into my projects.",
-        ],
-        Links: [
-          {
-            linkName:
-              "I learned MySQL from a free platform, but I’ve forgotten the name. I’ll update this if I remember it.",
-          },
-        ],
-      },
-    ],
-    date: "29-07-2025",
-  },
-  {
-    file: "13.mongo-db.png",
-    fullName: "MongoDB",
-    SkillInfo: [
-      {
-        description: [
-          "MongoDB is a NoSQL, document-based database known for its scalability and flexible data structure. I used it in my very first project, which also happened to be my college project.",
-          "While MongoDB is great for quick development and handling unstructured data, its lack of strict relationships between data can sometimes be a drawback. Personally, I prefer MySQL for its relational structure — but both databases have their strengths, so it really depends on the use case. No hard feelings!",
-        ],
-        Links: [
-          {
-            linkName:
-              "You can use MongoDB Atlas Free 500MB Cluster for your projects!",
-          },
-          {
-            linkName: "Learn MongoDB in 1 Hour 🍃",
-            linkURL: "https://www.youtube.com/watch?v=c2M-rlkkT5o",
-          },
-          {
-            linkName:
-              "Install mongoDB and MongoDB Compass and MongoDB Shell (mongosh) on Windows",
-            linkURL: "https://www.youtube.com/watch?v=jvaBaxlTqU8",
-          },
-          {
-            linkName:
-              "Let solve this error together. [connect ECONNREFUSED 127.0.0.1:27017]",
-            linkURL: "https://www.youtube.com/watch?v=y1l1UI_UdQI",
-          },
-          {
-            linkName:
-              "Connecting MongoDB Atlas to Next.js: A Quick Tutorial | 2024",
-            linkURL: "https://www.youtube.com/watch?v=FQeKzno-8mU",
-          },
-          {
-            linkName: "Setup MongoDB on cloud with MongoDB Atlas",
-            linkURL: "https://www.youtube.com/watch?v=qXEmKQsD6qA",
-          },
-          {
-            linkName: "Complete MongoDB Tutorial #25 - MongoDB Atlas",
-            linkURL: "https://www.youtube.com/watch?v=084rmLU1UgA",
-          },
-          {
-            linkName: "Connecting to a Database (Discord.js v14)",
-            linkURL: "https://www.youtube.com/watch?v=edeNqzKvj0g",
-          },
-        ],
-      },
-    ],
-    date: "29-07-2025",
-  },
-  {
-    file: "14.bootstrap.svg",
+    file: "12.bootstrap.svg",
     fullName: "Bootstrap",
     SkillInfo: [
       {
@@ -362,7 +294,7 @@ const devSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "15.tailwind.svg",
+    file: "13.tailwind.svg",
     fullName: "TailwindCSS",
     SkillInfo: [
       {
@@ -438,7 +370,7 @@ const devSkills: SkillInterface[] = [
     date: "14-08-2025",
   },
   {
-    file: "16.next.svg",
+    file: "14.next.svg",
     fullName: "Next.js",
     SkillInfo: [
       {
@@ -490,7 +422,7 @@ const devSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "17.typescript.svg",
+    file: "15.typescript.svg",
     fullName: "Typescript",
     SkillInfo: [
       {
@@ -512,7 +444,7 @@ const devSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "18.electron.svg",
+    file: "16.electron.svg",
     fullName: "Electron.js",
     SkillInfo: [
       {

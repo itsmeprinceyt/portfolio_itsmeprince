@@ -8,6 +8,9 @@ import creativeTools from "../../utils/data/skills/creative-tools.util";
 import devTools from "../../utils/data/skills/devTools.util";
 import personalSoftSkills from "../../utils/data/skills/personalSoftSkills.util";
 import hobbiesInterests from "../../utils/data/skills/hobbiesInterests.util";
+import database from "../../utils/data/skills/database.util";
+import aiTools from "../../utils/data/skills/ai-tools.util";
+import devOps from "../../utils/data/skills/dev-ops.util";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -23,12 +26,15 @@ const fadeIn = (delay = 0) => ({
 
 const sections = [
   { title: "Development Skills", data: devSkills, prefix: "dev-skills" },
-  { title: "Creative Tools", data: creativeTools, prefix: "creative-tools" },
+  { title: "Database", data: database, prefix: "database" },
+  { title: "AI Tools", data: aiTools, prefix: "ai-tools" },
+  { title: "DevOps", data: devOps, prefix: "dev-ops" },
   { title: "Development Tools", data: devTools, prefix: "dev-tools" },
+  { title: "Creative Tools", data: creativeTools, prefix: "creative-tools" },
   {
-    title: "Personal Soft Skills",
+    title: "Personal Skills",
     data: personalSoftSkills,
-    prefix: "personal-soft-skills",
+    prefix: "personal-skills",
   },
   {
     title: "Hobbies and Interests",
