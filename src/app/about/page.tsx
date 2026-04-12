@@ -1,203 +1,296 @@
 "use client";
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState, useRef } from "react";
-import { ContactIcon } from 'lucide-react';
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import PageWrapper from "../(components)/PageWrapper";
-import { BUTTON_CSS_ORANGE, ProfileInfoTag_Button_CSS } from "../(components)/ProfileRelated/ButtonCSS";
-import { CodingProjectsLink, YouTubeLink } from '../../utils/main.util';
-import FileList from '../(components)/ResumeFileIcons';
-import MailSVG from '../(components)/SVG/Mail';
-import dynamic from 'next/dynamic';
-import Divider from '../(components)/Components/Divider';
+import { useEffect, useState, useCallback } from "react";
+import axios from "axios";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const BirthdayCounter = dynamic(() => import("../(components)/BirthdayCounter"), {
-    ssr: false,
-    loading: () => (
-        <div className="h-[60px] flex items-center justify-center text-white text-lg animate-pulse">
-            Loading the magic... 🎉
-        </div>
-    ),
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, delay },
 });
+
+const fadeIn = (delay = 0) => ({
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.6, delay },
+});
+
 export default function About() {
-    const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false);
-    const [email, setEmail] = useState<string>('');
-    const downloadMenuRef = useRef<HTMLDivElement | null>(null);
-    const emailURL: string = "https://mail.google.com/mail/u/0/?tf=cm&fs=1&to=${encodeURIComponent(email)}";
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            const target = event.target as HTMLElement;
-            if (downloadMenuRef.current && !downloadMenuRef.current.contains(target)) {
-                setShowDownloadMenu(false);
-            }
-        };
+  const [photos, setPhotos] = useState<string[]>([]);
+  const [current, setCurrent] = useState<number>(0);
+  const [direction, setDirection] = useState<1 | -1>(1);
 
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
+  useEffect(() => {
+    axios
+      .get<{ photos: string[] }>("/api/setup-photos")
+      .then((res) => setPhotos(res.data.photos))
+      .catch(() => setPhotos([]));
+  }, []);
 
-    useEffect(() => {
-        fetch('/api/mail')
-            .then(res => res.json())
-            .then(data => setEmail(data.email));
-    }, []);
+  const prev = useCallback(() => {
+    setDirection(-1);
+    setCurrent((c) => (c - 1 + photos.length) % photos.length);
+  }, [photos.length]);
 
-    const handleDownloadMenu = () => {
-        setShowDownloadMenu(!showDownloadMenu);
-    };
+  const next = useCallback(() => {
+    setDirection(1);
+    setCurrent((c) => (c + 1) % photos.length);
+  }, [photos.length]);
 
-    return (
-        <>
-            <PageWrapper>
-                {/* Download CV Menu */}
-                {showDownloadMenu && (
-                    <div className="fixed z-20 top-0 left-0 w-screen h-screen bg-black/80 flex items-center justify-center">
-                        <div ref={downloadMenuRef} className="relative bg-white rounded-md p-5 flex flex-col gap-5 max-h-[80vh] overflow-y-auto">
-                            <p className="text-xs tracking-widest p-2 rounded-md hover:scale-105 animate-pulse select-none">/download-cv-in . . .</p>
-                            <button
-                                className="absolute top-2 right-2 hover:scale-125"
-                                onClick={handleDownloadMenu}>
-                                <Image
-                                    className="invert w-[10px]"
-                                    src={'/icons/cross.png'}
-                                    width={50}
-                                    height={50}
-                                    alt="cross"
-                                />
-                            </button>
-                            {/* Resume Download List */}
-                            <FileList />
-                        </div>
-                    </div>
-                )}
+  useEffect(() => {
+    if (photos.length <= 1) return;
+    const id = setInterval(next, 7000);
+    return () => clearInterval(id);
+  }, [photos.length, next]);
 
+  const slideVariants = {
+    enter: (dir: number) => ({ x: dir * 40, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir * -40, opacity: 0 }),
+  };
 
-                {/* Main Div */}
-                <div className="flex flex-col items-center justify-center gap-5">
-                    <div className="flex flex-col items-start md:items-center gap-2 px-5  text-4xl text-glow-white text-stone-300 w-full">About
-                        <Divider />
-                    </div>
+  return (
+    <PageWrapper>
+      <div className="text-white min-h-screen px-6 py-24 max-w-5xl mx-auto">
+        {/* ── Name header with left border accent ── */}
+        <motion.div
+          {...fadeIn(0)}
+          className="border-l border-stone-950 pl-6 mb-20"
+        >
+          <p className="text-[10px] tracking-[0.5em] text-stone-700 uppercase mb-3">
+            About me
+          </p>
+          <h1 className="text-5xl md:text-7xl font-cinzel tracking-wide uppercase leading-none">
+            Mohd Uvaish
+          </h1>
+          <p className="text-[10px] tracking-[0.4em] text-stone-700 uppercase mt-3">
+            Also known as itsme prince
+          </p>
+        </motion.div>
 
-                    {/* Download CV & Mail */}
-                    <div className="flex flex-wrap items-start md:items-center justify-center gap-5 px-5 pulse-slow">
-                        {/* Download CV */}
-                        <button onClick={handleDownloadMenu} className={`${ProfileInfoTag_Button_CSS} relative flex items-center gap-2 h-9`}>
-                            <span className="relative flex h-2.5 w-2.5">
-                                <span className="absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75 animate-ping"></span>
-                                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-lime-500 shadow-[0_0_8px_rgba(16,185,129,0.9)]"></span>
-                            </span>
-                            Download CV
-                        </button>
+        {/* ── Portrait + bio side by side ── */}
+        <motion.div
+          {...fadeUp(0.2)}
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24 items-start"
+        >
+          {/* Portrait */}
+          <div>
+            <div className="relative aspect-square w-full border border-stone-800/60 bg-stone-950 overflow-hidden">
+              <Image
+                src="/photos-logos/square.jpg"
+                alt="Mohd Uvaish"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading={"eager"}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="flex justify-center items-center mt-3 text-[10px] tracking-[0.3em] uppercase text-stone-600 text-center">
+              KANPUR, UTTAR PRADESH, INDIA &mdash; EARTH
+            </div>
+          </div>
 
-                        {/* Download CV */}
-                        <Link href="/contact" className={`${ProfileInfoTag_Button_CSS} h-9 relative flex items-center gap-2`}>
-                            <ContactIcon width={20} height={20} />
-                            Contact
-                        </Link>
+          {/* Bio */}
+          <div className="space-y-5 pt-2">
+            <p className="text-sm text-stone-500 leading-loose">
+              A developer who writes code that works on the first try &mdash;{" "}
+              <span className="text-stone-400 italic">just kidding. </span> But
+              when it ships, it&apos;s clean and it&apos;s intentional.
+            </p>
+            <p className="text-sm text-stone-500 leading-loose">
+              I&apos;m into building{" "}
+              <span className="text-stone-300">clean, fast, purposeful</span>{" "}
+              interfaces and backends &mdash; the kind where you feel the effort
+              without seeing the chaos. Both the user and whoever reads the code
+              later.
+            </p>
+            <p className="text-sm text-stone-500 leading-loose">
+              When I&apos;m not in a codebase, I&apos;m{" "}
+              <span className="text-stone-300">
+                obsessing over UI/UX details
+              </span>{" "}
+              or{" "}
+              <span className="text-stone-300">
+                overengineering the architecture
+              </span>{" "}
+              of a side project nobody asked for. Scalable, maintainable,
+              well-structured &mdash; even if it&apos;s just a todo app.
+            </p>
+            <p className="text-sm text-stone-500 leading-loose">
+              Yes, using an <span className="text-stone-300">em dash</span>{" "}
+              doesn&apos;t automatically mean I&apos;m using AI to write.
+            </p>
 
-                        {/* Mail */}
-                        <div className="hover:scale-105 relative">
-                            <button
-                                onClick={() => {
-                                    if (email) {
-                                        window.open(
-                                            emailURL,
-                                            '_blank'
-                                        );
-                                    }
-                                }}
-                                disabled={!email}
-                                className={`${ProfileInfoTag_Button_CSS} h-9 ${email ? `opacity-100` : `opacity-20`}`}>
-                                <MailSVG />
-                                Mail
-                            </button>
-                        </div>
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 pt-3">
+              {(
+                [
+                  { label: "Fullstack Software Engineer", href: "/skills" },
+                  { label: "Dev Ops", href: "/skills" },
+                  { label: "Cyber Security", href: "/skills" },
+                  { label: "Side-project paglu", href: "/projects" },
+                ] as { label: string; href?: string }[]
+              ).map((tag) =>
+                tag.href ? (
+                  <Link
+                    key={tag.label}
+                    href={tag.href}
+                    className="text-[10px] tracking-[0.3em] uppercase border border-stone-800 text-stone-600 px-3 py-1 hover:text-stone-400 hover:border-stone-700 transition-colors duration-200"
+                  >
+                    {tag.label}
+                  </Link>
+                ) : (
+                  <span
+                    key={tag.label}
+                    className="text-[10px] tracking-[0.3em] uppercase border border-stone-800 text-stone-600 px-3 py-1"
+                  >
+                    {tag.label}
+                  </span>
+                )
+              )}
+            </div>
 
-                    </div>
+            {/* Inline stats */}
+            <div className="grid grid-cols-3 border-t border-stone-950 mt-6 pt-6">
+              {[
+                { num: "4+", label: "Yrs coding", href: "/experience" },
+                { num: "20+", label: "Projects", href: "/projects" },
+                { num: "∞", label: "Bugs fixed" },
+              ].map((s, i) => {
+                const inner = (
+                  <>
+                    <span className="block font-cinzel text-2xl text-white">
+                      {s.num}
+                    </span>
+                    <span className="text-[9px] tracking-[0.25em] uppercase text-stone-600">
+                      {s.label}
+                    </span>
+                  </>
+                );
 
-                    {/* About Section */}
-                    <div className="flex flex-col relative text-stone-300 text-start md:text-center">
-                        <div className="text-xs max-w-[500px] px-5 pb-5 tracking-widest leading-8">
-                            <Divider />
-                            <p>{`I'm Mohd Uvaish, a passionate MERN Full Stack & Software Developer.`}</p>
-                            <p>{`I also run a `}
-                                <Link href={YouTubeLink} target="_blank" rel="noopener noreferrer">
-                                    YouTube channel
-                                </Link>
-                                {` where I'm known as ItsMe Prince where I showcase all kinds of content, from `}
-                                <Link href={CodingProjectsLink} target="_blank" rel="noopener noreferrer">
-                                    Coding
-                                </Link>
-                                {` to Gaming.`}
-                            </p>
-                            <p>{`I'm always honing and perfecting my skillsin tech and staying eager to learn and grow while helping others and staying humble!`}</p>
-                            <Divider />
-                        </div>
+                return (
+                  <div
+                    key={s.label}
+                    className={`${
+                      i < 2 ? "border-r border-stone-950 pr-4" : ""
+                    } ${i > 0 ? "pl-4" : ""}`}
+                  >
+                    {s.href ? (
+                      <Link
+                        href={s.href}
+                        className="block hover:opacity-70 transition-opacity duration-200"
+                      >
+                        {inner}
+                      </Link>
+                    ) : (
+                      inner
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
 
-                        <div className="text-xs max-w-[500px] p-5 tracking-widest leading-8">
-                            <Divider />
-                            <p>{`It all started with me spending hours on 'Plants vs Zombies' and 'GTA Vice City'. What began as gaming fun soon turned into curiosity about how these things were made.`}</p>
-                            <p>{`That curiosity evolved into designing websites, solving problems for myself and others, and creating projects I’m proud of.`}</p>
-                            <p>{` I’ve always loved learning—and maybe that curiosity is exactly what led me to where I am now.`}</p>
-                            <Divider />
-                        </div>
-                    </div>
+        {/* ── Bio columns ── */}
+        <motion.div {...fadeUp(0.35)} className="mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-stone-950">
+            <div className="py-8 md:border-r border-stone-950 md:pr-10">
+              <p className="text-[9px] tracking-[0.4em] uppercase text-stone-600 mb-4 pb-3 border-b border-stone-950">
+                How I got here
+              </p>
+              <p className="text-sm text-stone-500 leading-loose">
+                Started with &quot;how does a program even work&quot;, ended up
+                building full-stack web application and questioning my life
+                choices at 1:43am. No regrets. The curiosity never turned off
+                &mdash; it just got more expensive in terms of hardware.
+              </p>
+            </div>
+            <div className="py-8 md:pl-10">
+              <p className="text-[9px] tracking-[0.4em] uppercase text-stone-700 mb-4 pb-3 border-b border-stone-950">
+                What drives me
+              </p>
+              <p className="text-sm text-stone-500 leading-loose">
+                I can&apos;t stop at &quot;it works&quot;. Whether it&apos;s a
+                button&apos;s hover state or a full job queue architecture.
+                I&apos;m stuck until it actually feels{" "}
+                <span className="text-stone-300">right</span>. Most people move
+                on. I don&apos;t.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
-                    {/* Offer Section */}
-                    <div className="flex flex-col items-center relative text-stone-300 text-center">
-                        <span className={`${BUTTON_CSS_ORANGE}`}>{`Here’s what I can offer you`}</span>
-                        <div className="text-xs max-w-[500px] p-5 tracking-wide leading-7">
-                            <ul className="list-disc pl-5 space-y-1 text-left">
-                                <li>Full-Stack Web Development</li>
-                                <li>Virtual Assistance</li>
-                                <li>Software Engineering Guidance</li>
-                                <li>Photo & Video Editing</li>
-                                <li className="animate-pulse">More loading in future ...</li>
-                            </ul>
-                        </div>
-                    </div>
+        {/* ── Setup section ── */}
+        <motion.div {...fadeUp(0.45)} className="mb-20">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-[9px] tracking-[0.5em] uppercase text-stone-600 mb-1">
+                The battlefield
+              </p>
+              <h2 className="font-cinzel text-2xl tracking-widest uppercase">
+                My Setup
+              </h2>
+            </div>
+            {photos.length > 1 && (
+              <span className="text-[9px] tracking-[0.3em] uppercase text-stone-700">
+                {current + 1} / {photos.length}
+              </span>
+            )}
+          </div>
 
-                    <Divider />
-                    {/* Location & Birthday Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-5">
+          {/* Slider */}
+          {photos.length > 0 ? (
+            <div className="relative w-full aspect-video bg-stone-950 border border-stone-800/60 overflow-hidden mb-4 group">
+              <AnimatePresence custom={direction} mode="popLayout">
+                <motion.div
+                  key={photos[current]}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.55, ease: [0.32, 0.72, 0, 1] }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={photos[current]}
+                    alt={`Setup ${current + 1}`}
+                    sizes="100vw"
+                    fill
+                    loading="eager"
+                    className="object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
 
-                        {/* Location Card with Emoji */}
-                        <div className="relative group z-1">
-                            <div className="z-2 absolute -rotate-12 top-0 -left-4 text-6xl opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 group-hover:-translate-3 transition-all duration-1000 ease-out">
-                                🗺️
-                            </div>
-                            <div className="z-2 absolute rotate-12 -bottom-2 -right-4 text-6xl opacity-0 group-hover:opacity-100 group-hover:translate-x-2 group-hover:translate-y-3 transition-all duration-1000 ease-out">
-                                📌
-                            </div>
-
-                            {/* Card */}
-                            <div className="bg-gradient-to-br from-neutral-50 to-neutral-100 text-stone-900 p-6 rounded-2xl border border-neutral-700 shadow-xl transition-all duration-300  hover:shadow-2xl hover:shadow-white/20 shadow-white/10 animate-fade-in-up text-center hover:scale-105">
-                                <h2 className="text-sm mb-1 tracking-widest leading-7">📍 I&apos;m from India</h2>
-                                <p className="text-2xl font-semibold tracking-widest leading-7">Uttar Pradesh</p>
-                            </div>
-                        </div>
-
-                        {/* Birthday Card with 🍰 🎉 */}
-                        <div className="relative group z-1">
-                            <div className="z-2 absolute -rotate-12 top-0 left-2 text-6xl opacity-0 group-hover:opacity-100 group-hover:-translate-x-3 group-hover:-translate-3 transition-all duration-1000 ease-out">
-                                🍰
-                            </div>
-                            <div className="z-2 absolute rotate-12 bottom-0 right-0 text-6xl opacity-0 group-hover:opacity-100 group-hover:translate-x-2 group-hover:translate-y-3 transition-all duration-1000 ease-out">
-                                🎉
-                            </div>
-
-                            {/* Birthday Counter Card */}
-                            <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-2xl shadow-xl hover:shadow-orange-500/20 shadow-orange-500/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-fade-in-up text-center border border-orange-950">
-                                <BirthdayCounter />
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </PageWrapper>
-        </>
-    );
-} 
+              {photos.length > 1 && (
+                <>
+                  <button
+                    onClick={prev}
+                    className="absolute left-0 top-0 h-full px-4 z-10 text-stone-700 hover:text-stone-300 transition-colors duration-200 opacity-0 group-hover:opacity-100 cursor-pointer"
+                  >
+                    <ChevronLeft size={18} strokeWidth={1} />
+                  </button>
+                  <button
+                    onClick={next}
+                    className="absolute right-0 top-0 h-full px-4 z-10 text-stone-700 hover:text-stone-300 transition-colors duration-200 opacity-0 group-hover:opacity-100 cursor-pointer"
+                  >
+                    <ChevronRight size={18} strokeWidth={1} />
+                  </button>
+                </>
+              )}
+            </div>
+          ) : (
+            <div className="w-full aspect-video bg-stone-950 border border-stone-800/60 mb-4 animate-pulse" />
+          )}
+        </motion.div>
+        <div className="fixed w-96 h-96 bg-white/5 blur-3xl rounded-full -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      </div>
+    </PageWrapper>
+  );
+}

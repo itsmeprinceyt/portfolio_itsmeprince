@@ -1,104 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
 @import "tailwindcss";
 
-@font-face {
-    font-family: 'Google Sans';
-    src: url('/fonts/GoogleSans-Regular.ttf') format('truetype');
-}
-
-* {
-    transition: all 300ms ease-in-out;
+body {
+    font-family: 'Raleway', serif;
     scrollbar-width: thin;
-    scrollbar-color: #888 #f0f0f0;
-    font-family: 'Google Sans';
+    scrollbar-color: #313131 #000000;
 }
 
-@keyframes pulseSlow {
+.crystal-ball {
+    background: radial-gradient(circle at 35% 30%,
+            #6b6b6b 0%,
+            #2a2a2a 30%,
+            #111111 55%,
+            #000000 100%);
+}
+
+.crystal-ball::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 6px;
+    height: 4px;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.55) 0%, transparent 100%);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+.crystal-ball::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 3px;
+    height: 2px;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.18) 0%, transparent 100%);
+    border-radius: 50%;
+}
+
+@keyframes pulseRing {
+    0% {
+        width: 20px;
+        height: 20px;
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 52px;
+        height: 52px;
+        opacity: 0;
+    }
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(200, 200, 200, 0.25);
+    animation: pulseRing 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+.pulse-ring:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.pulse-ring:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+@keyframes hint-pulse {
 
     0%,
     100% {
-        transform: scale(1);
+        opacity: 0;
     }
 
     50% {
-        transform: scale(1.05);
+        opacity: 1;
     }
 }
 
-.pulse-slow {
-    animation: pulseSlow 3s ease-in-out infinite;
+.animate-hint {
+    animation: hint-pulse 3s ease-in-out infinite;
 }
 
-.pulse-slow:hover {
-    animation-play-state: paused;
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
 }
 
-*::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+::-webkit-scrollbar-track {
+    background: #000000;
 }
 
-*::-webkit-scrollbar-track {
-    background: #f0f0f0;
+::-webkit-scrollbar-thumb {
+    background: #313131;
+    border-radius: 10px;
 }
 
-*::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 8px;
-    border: 2px solid #f0f0f0;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
-
-
-.backface-hidden {
-    backface-visibility: hidden;
-}
-
-.rotate-y-180 {
-    transform: rotateY(180deg);
-}
-
-
-.button-3d:hover {
-    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.253);
-}
-
-.arrow-tooltip {
-    rotate: 180deg;
-}
-
-.arrow-tooltip path {
-    fill: white;
-}
-
-
-.button-3d:hover .arrow-tooltip {
-    width: 20px;
-    transition-duration: 0.3s;
-    transform: translateY(200%);
-}
-
-.button-3d::before {
-    position: absolute;
-    bottom: -20px;
-    content: "Back to Top";
-    color: black;
-    font-size: 0px;
-}
-
-.button-3d:hover::before {
-    font-size: 13px;
-    opacity: 1;
-    bottom: unset;
-    transition-duration: 0.3s;
-}
-
-.animate-spin-slow {
-    animation: spin 10s linear infinite;
-}
-
-.text-glow-white {
-    @apply text-shadow-lg/30 text-shadow-white;
+::-webkit-scrollbar-thumb:hover {
+    background: #313131;
 }

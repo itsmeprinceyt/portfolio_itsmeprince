@@ -1,39 +1,93 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Loader from "./(components)/Components/Loader";
-import Sidebar from "./(components)/Sidebar";
-import SnowFall from "./(components)/Components/SnowFall";
-import AnnouncementBar from "./(components)/Components/AnnouncementBar";
-import { ANNOUNCEMENT_BAR_MESSAGE } from "../utils/main.util";
+import Navbar from "./(components)/Navbar";
+
+const SITE_URL = "https://portfolio-itsmeprince.vercel.app";
+const SITE_NAME = "Mohd Uvaish a.k.a ItsMe Prince Portfolio";
+const LOGO = "/photos-logos/circle.png";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-itsmeprince.vercel.app/"),
-  title: "Mohd Uvaish - Portfolio | ItsMe Prince",
+  metadataBase: new URL(SITE_URL),
+
+  title: {
+    default: "Mohd Uvaish | ItsMe Prince - Portfolio",
+    template: `%s | Mohd Uvaish`,
+  },
+
   description:
-    "Welcome to my personal portfolio! Explore my diverse skills ranging from programming and technical expertise to soft skills. Check out my meticulously crafted projects and get an idea of what I can offer.",
+    "Mohd Uvaish (ItsMe Prince) is a Full Stack Developer skilled in Next.js, TypeScript, and modern web technologies. Explore projects, skills, and professional experience.",
+
+  keywords: [
+    "Mohd Uvaish",
+    "ItsMe Prince",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React Developer India",
+    "Portfolio Website",
+    "Web Developer Portfolio",
+    "JavaScript Developer",
+    "Frontend Developer",
+    "MERN Stack Developer",
+  ],
+
+  authors: [{ name: "Mohd Uvaish" }],
+  creator: "Mohd Uvaish",
+  publisher: "Mohd Uvaish",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Mohd Uvaish | Full Stack Developer Portfolio",
+    description:
+      "Explore the portfolio of Mohd Uvaish (ItsMe Prince) — Full Stack Developer specializing in Next.js, React, and modern web apps.",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    images: [
+      {
+        url: LOGO,
+        width: 1200,
+        height: 630,
+        alt: "Mohd Uvaish Portfolio",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Mohd Uvaish | Full Stack Developer",
+    description:
+      "Portfolio of Mohd Uvaish (ItsMe Prince) — React, Next.js & Full Stack Developer.",
+    images: [LOGO],
+  },
+
   icons: {
-    icon: "/profile-picture/pfp1.jpg",
+    icon: LOGO,
+    shortcut: LOGO,
+    apple: LOGO,
+  },
+
+  alternates: {
+    canonical: SITE_URL,
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,80,80,0.4),rgba(0,0,0,0))] select-none">
-        <Suspense fallback={<Loader />}>
-          <SnowFall />
-          <AnnouncementBar text={ANNOUNCEMENT_BAR_MESSAGE} />
-          <div className="flex min-h-screen">
-            <div className="min-h-screen">
-              <Sidebar />
-            </div>
-            <main className="flex-1">{children}</main>
-          </div>
+      <body className="select-none">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Navbar />
+          {children}
         </Suspense>
       </body>
     </html>

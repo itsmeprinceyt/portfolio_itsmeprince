@@ -28,5 +28,14 @@ export default function SnowFall() {
 
   if (!isWinterSeason) return null;
 
-  return <Snowfall speed={[0, 1.5]} wind={[0, 2.5]} radius={[1.5, 1]} />;
+  return (
+    <Snowfall
+      speed={[0.2, 0.8]}
+      wind={[-1, 0.5]}
+      radius={[0.3, 1.8]}
+      snowflakeCount={350}
+      opacity={[0.2, 0.7]}
+      rotationSpeed={[-0.5, 0.5]}
+    />
+  );
 }
