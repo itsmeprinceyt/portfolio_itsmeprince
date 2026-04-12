@@ -6,6 +6,8 @@ import PageWrapper from "../(components)/PageWrapper";
 import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import useBirthday from "../../hooks/useBirthdayCount";
+import { BIRTH_DATE } from "../../utils/main.util";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -20,6 +22,7 @@ const fadeIn = (delay = 0) => ({
 });
 
 export default function About() {
+  const { age, countdown } = useBirthday(BIRTH_DATE);
   const [photos, setPhotos] = useState<string[]>([]);
   const [current, setCurrent] = useState<number>(0);
   const [direction, setDirection] = useState<1 | -1>(1);
@@ -159,7 +162,7 @@ export default function About() {
               {[
                 { num: "4+", label: "Yrs coding", href: "/experience" },
                 { num: "20+", label: "Projects", href: "/projects" },
-                { num: "∞", label: "Bugs fixed" },
+                { num: `Age: ${age} `, label: countdown },
               ].map((s, i) => {
                 const inner = (
                   <>
