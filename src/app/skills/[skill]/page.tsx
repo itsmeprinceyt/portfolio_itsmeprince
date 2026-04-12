@@ -88,10 +88,6 @@ export default function SkillPage({
 
   if (!matched) return notFound();
 
-  const isInfoSection =
-    matched.category !== "hobbies-interests" &&
-    matched.category !== "personal-soft-skills";
-
   return (
     <PageWrapperNormal>
       <div className="text-white min-h-screen px-6 py-24 max-w-3xl mx-auto select-text">
@@ -117,16 +113,18 @@ export default function SkillPage({
 
           <div className="border-l border-stone-950 pl-6">
             <div className="flex items-center gap-3 mb-3">
-              <div className="relative w-8 h-8 shrink-0">
-                <Image
-                  src={`/logo/${matched.category}/${matched.skill.file}`}
-                  alt={matched.skill.fullName}
-                  fill
-                  loading="eager"
-                  className="object-contain"
-                  sizes="32px"
-                />
-              </div>
+              {matched.skill.file && (
+                <div className="relative w-8 h-8 shrink-0">
+                  <Image
+                    src={`/logo/${matched.category}/${matched.skill.file}`}
+                    alt={matched.skill.fullName}
+                    fill
+                    loading="eager"
+                    className="object-contain"
+                    sizes="32px"
+                  />
+                </div>
+              )}
               <p className="text-[10px] tracking-[0.4em] text-stone-400 uppercase">
                 {matched.category.replace(/-/g, " ")}
               </p>
@@ -203,8 +201,8 @@ export default function SkillPage({
                       {/* Note */}
                       {link.note && (
                         <div className="ml-7 mt-2 pl-3 border-l border-stone-700/60">
-                          <p className="text-[11px] text-stone-500 leading-relaxed italic">
-                            {link.note}
+                          <p className="text-sm text-stone-500 leading-relaxed italic">
+                            &quot;{link.note}&quot;
                           </p>
                         </div>
                       )}
@@ -221,32 +219,31 @@ export default function SkillPage({
         ))}
 
         {/* ── Tips & disclaimer ── */}
-        {isInfoSection && (
-          <motion.div {...fadeUp(0.35)} className="mt-16 space-y-4">
-            <div className="border-l border-stone-800 pl-4 py-2">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">
-                Disclaimer
-              </p>
-              <p className="text-sm text-stone-600 leading-loose">
-                Most of these resources are ones I&apos;ve personally learned
-                from — YouTube videos, books, or courses I found helpful. Some
-                come from friends who found something useful and insisted I
-                include it. Just sharing what worked for me.
-              </p>
-            </div>
-            <div className="border-l border-stone-800 pl-4 py-2">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">
-                Pro tip
-              </p>
-              <p className="text-sm text-stone-600 leading-loose">
-                Never limit yourself to a single course, platform, or creator.
-                Exploring a variety of resources exposes you to different
-                teaching approaches — and that can make all the difference in
-                how well you learn.
-              </p>
-            </div>
-          </motion.div>
-        )}
+
+        <motion.div {...fadeUp(0.35)} className="mt-16 space-y-4">
+          <div className="border-l border-stone-800 pl-4 py-2">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">
+              Disclaimer
+            </p>
+            <p className="text-sm text-stone-600 leading-loose">
+              Most of these resources are ones I&apos;ve personally learned from
+              — YouTube videos, books, or courses I found helpful. Some come
+              from friends who found something useful and insisted I include it.
+              Just sharing what worked for me.
+            </p>
+          </div>
+          <div className="border-l border-stone-800 pl-4 py-2">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">
+              Pro tip
+            </p>
+            <p className="text-sm text-stone-600 leading-loose">
+              Never limit yourself to a single course, platform, or creator.
+              Exploring a variety of resources exposes you to different teaching
+              approaches — and that can make all the difference in how well you
+              learn.
+            </p>
+          </div>
+        </motion.div>
 
         <div className="fixed w-96 h-96 bg-white/5 blur-3xl rounded-full -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       </div>

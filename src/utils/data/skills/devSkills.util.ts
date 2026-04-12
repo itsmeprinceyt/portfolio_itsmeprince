@@ -1,5 +1,4 @@
 import { SkillInterface } from "../../../types/skills.type";
-import { GOOGLE_REMINDER, NOT_WATCHED_ANY_COURSE } from "../../main.util";
 
 const devSkills: SkillInterface[] = [
   {
@@ -123,9 +122,6 @@ const devSkills: SkillInterface[] = [
         ],
         Links: [
           {
-            linkName: "You can host your HTML Project on GitHub Pages",
-          },
-          {
             linkName: "HTML & CSS Full Course - Beginner to Pro",
             linkURL: "https://www.youtube.com/watch?v=G3e-cpL7ofc",
           },
@@ -181,7 +177,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Node.js",
     SkillInfo: [
       {
-        description: [NOT_WATCHED_ANY_COURSE],
+        description: [""],
         Links: [
           {
             linkName: "Sigma Web Development Course",
@@ -206,10 +202,10 @@ const devSkills: SkillInterface[] = [
             linkName: "You can host your backend using Render",
           },
           {
-            linkName:
-              "Sigma Web Development Course ( I followed this course up to the part where Express.js was covered )",
+            linkName: "Sigma Web Development Course",
             linkURL:
               "https://www.youtube.com/watch?v=R11tvGM3nDY&list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&index=88",
+            note: "I followed this course up to the part where Express.js was covered",
           },
           {
             linkName: "Express Middleware",
@@ -247,10 +243,10 @@ const devSkills: SkillInterface[] = [
             note: "It was too old so only watched like 20-25 videos from the start",
           },
           {
-            linkName:
-              "Sigma Web Development Course – (After watching the stuff above, I came here to watch his final explanation of React.js to ensure I didn’t miss any important details.)",
+            linkName: "Sigma Web Development Course",
             linkURL:
               "https://www.youtube.com/watch?v=nhSZ4LhIii8&list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&index=105",
+            note: "After watching the stuff above, I came here to watch his final explanation of React.js to ensure I didn’t miss any important details.",
           },
           {
             linkName: "Every React Concept Explained in 12 Minutes",
@@ -275,7 +271,7 @@ const devSkills: SkillInterface[] = [
     fullName: "Redux",
     SkillInfo: [
       {
-        description: [NOT_WATCHED_ANY_COURSE],
+        description: [""],
       },
     ],
     date: "29-07-2025",
@@ -305,9 +301,6 @@ const devSkills: SkillInterface[] = [
           "Remember, any CSS tech stack is like an art form — and like all art, there are endless ways to approach it. So don’t feel discouraged if you don’t master it right away; it’s all part of the creative journey.",
         ],
         Links: [
-          {
-            linkName: GOOGLE_REMINDER,
-          },
           {
             linkName: "Learn Tailwind CSS – Course for Beginners",
             linkURL: "https://www.youtube.com/watch?v=ft30zcMlFao",
@@ -432,9 +425,6 @@ const devSkills: SkillInterface[] = [
         ],
         Links: [
           {
-            linkName: GOOGLE_REMINDER,
-          },
-          {
             linkName: "Learn TypeScript - Full Tutorial",
             linkURL: "https://www.youtube.com/watch?v=30LWjhZzg50",
           },
@@ -454,9 +444,6 @@ const devSkills: SkillInterface[] = [
         ],
         Links: [
           {
-            linkName: GOOGLE_REMINDER,
-          },
-          {
             linkName:
               "Electron Course - Code Desktop Applications (inc. React and Typescript)",
             linkURL: "https://www.youtube.com/watch?v=fP-371MN0Ck",
@@ -470,6 +457,69 @@ const devSkills: SkillInterface[] = [
       },
     ],
     date: "29-07-2025",
+  },
+  {
+    file: "17.redis.svg",
+    fullName: "Redis",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "18.clerk.svg",
+    fullName: "Clerk",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "19.shadcnui.svg",
+    fullName: "Shade CN",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "20.zod.svg",
+    fullName: "ZOD",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "21.dart.svg",
+    fullName: "Dart",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "22.flutter.svg",
+    fullName: "Flutter",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "23.supabase.svg",
+    fullName: "SupaBase",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
   },
 ];
 

@@ -10,7 +10,7 @@ interface SkillInfoItem {
 }
 
 export interface SkillInterface {
-  file: string;
+  file?: string;
   fullName: string;
   SkillInfo?: SkillInfoItem[];
   date?: string;

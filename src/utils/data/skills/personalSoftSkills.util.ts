@@ -2,7 +2,7 @@ import { SkillInterface } from "../../../types/skills.type";
 
 const personalSoftSkills: SkillInterface[] = [
   {
-    file: "1.communication.svg",
+    file: "",
     fullName: "Communication",
     SkillInfo: [
       {
@@ -15,7 +15,7 @@ const personalSoftSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "2.adaptibility.svg",
+    file: "",
     fullName: "Adaptability",
     SkillInfo: [
       {
@@ -28,7 +28,7 @@ const personalSoftSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "3.time-management.svg",
+    file: "",
     fullName: "Time Management",
     SkillInfo: [
       {
@@ -41,7 +41,7 @@ const personalSoftSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "4.emotions.svg",
+    file: "",
     fullName: "Emotional Intelligence",
     SkillInfo: [
       {
@@ -54,7 +54,7 @@ const personalSoftSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "5.self-motivation.svg",
+    file: "",
     fullName: "Self Motivation",
     SkillInfo: [
       {
@@ -68,7 +68,7 @@ const personalSoftSkills: SkillInterface[] = [
     date: "29-07-2025",
   },
   {
-    file: "6.conflict.svg",
+    file: "",
     fullName: "Conflict Resolution",
     SkillInfo: [
       {

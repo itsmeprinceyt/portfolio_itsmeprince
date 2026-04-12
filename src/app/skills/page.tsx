@@ -50,41 +50,45 @@ function SkillTag({
   prefix,
 }: {
   name: string;
-  file: string;
+  file: string | undefined;
   fullName: string;
   prefix: string;
 }) {
   return (
     <Link href={`/skills/${fullName}`} className="group relative">
       {/* Hover popup */}
-      <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
-        <div className="bg-stone-950 border border-stone-600 p-2">
-          <div className="relative w-15 h-15">
+      {file && (
+        <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
+          <div className="bg-stone-950 border border-stone-600 p-2">
+            <div className="relative w-15 h-15">
+              <Image
+                src={`/logo/${prefix}/${file}`}
+                alt={name}
+                loading="eager"
+                fill
+                className="object-contain"
+                sizes="40px"
+              />
+            </div>
+          </div>
+          <div className="w-px h-2 bg-stone-600 mx-auto" />
+        </div>
+      )}
+
+      {/* Tag itself */}
+      <div className="flex items-center gap-2 border border-stone-900 px-2 p-2 text-stone-400 hover:text-stone-300 hover:border-stone-600 transition-all duration-200">
+        {file && (
+          <span className="relative shrink-0 w-7 h-7">
             <Image
               src={`/logo/${prefix}/${file}`}
               alt={name}
               loading="eager"
               fill
               className="object-contain"
-              sizes="40px"
+              sizes="16px"
             />
-          </div>
-        </div>
-        <div className="w-px h-2 bg-stone-600 mx-auto" />
-      </div>
-
-      {/* Tag itself */}
-      <div className="flex items-center gap-2 border border-stone-900 px-2 p-2 text-stone-400 hover:text-stone-300 hover:border-stone-600 transition-all duration-200">
-        <span className="relative shrink-0 w-7 h-7">
-          <Image
-            src={`/logo/${prefix}/${file}`}
-            alt={name}
-            loading="eager"
-            fill
-            className="object-contain"
-            sizes="16px"
-          />
-        </span>
+          </span>
+        )}
         <span className="text-sm tracking-widest capitalize whitespace-nowrap">
           {name}
         </span>
@@ -190,7 +194,7 @@ export default function Skills() {
                   <SkillTag
                     key={i}
                     name={skill.fullName}
-                    file={skill.file}
+                    file={skill.file || undefined}
                     fullName={skill.fullName}
                     prefix={prefix}
                   />
