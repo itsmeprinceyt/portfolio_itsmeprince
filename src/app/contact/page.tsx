@@ -256,7 +256,7 @@ export default function ContactPage() {
 
             {/* Feedback */}
             {status === "success" && (
-              <p className="text-[10px] uppercase tracking-[0.25em] text-stone-400 text-center mt-1 animate-pulse">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-green-400 text-center mt-1 animate-pulse">
                 message sent — i&apos;ll be in touch.
               </p>
             )}
