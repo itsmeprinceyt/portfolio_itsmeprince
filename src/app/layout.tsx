@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Mohd Uvaish | Full Stack Developer Portfolio",
+    title: "Mohd Uvaish | ItsMe Prince - Portfolio",
     description:
-      "Explore the portfolio of Mohd Uvaish (ItsMe Prince) — Full Stack Developer specializing in Next.js, React, and modern web apps.",
+      "Explore Portfolio of Mohd Uvaish (ItsMe Prince) whose a Full Stack Developer skilled in Next.js, TypeScript, and modern web technologies. Visit to see projects, skills, and professional experience.",
     url: SITE_URL,
     siteName: SITE_NAME,
     images: [
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Mohd Uvaish | Full Stack Developer",
+    title: "Mohd Uvaish | ItsMe Prince - Portfolio",
     description:
-      "Portfolio of Mohd Uvaish (ItsMe Prince) — React, Next.js & Full Stack Developer.",
+      "Explore Portfolio of Mohd Uvaish (ItsMe Prince) whose a Full Stack Developer skilled in Next.js, TypeScript, and modern web technologies. Visit to see projects, skills, and professional experience.",
     images: [LOGO_RECTANGLE],
   },
 
