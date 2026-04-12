@@ -11,14 +11,16 @@ export default function ShimmerLinkNormal({
   className = "",
   onClick,
   animationDelay = 0,
+  external,
   ...linkProps
-}: ShimmerLinkProps) {
+}: ShimmerLinkProps & { external?: boolean }) {
   return (
     <MotionLink
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: animationDelay }}
       onClick={onClick}
+      {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
       className={`
         group relative
         text-[12px] uppercase tracking-widest
