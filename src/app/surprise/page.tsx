@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
-import { QUOTES } from "../../utils/quotes.util";
+import { QUOTES } from "../../utils/data/quotes.util";
 import PageWrapper from "../(components)/PageWrapper";
 
 export default function SurprisePage() {

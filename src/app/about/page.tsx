@@ -127,19 +127,31 @@ export default function About() {
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2 pt-3">
-              {[
-                "Fullstack Software Engineer",
-                "Dev Ops",
-                "Cyber Security",
-                "Side-project paglu",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[10px] tracking-[0.3em] uppercase border border-stone-800 text-stone-600 px-3 py-1"
-                >
-                  {tag}
-                </span>
-              ))}
+              {(
+                [
+                  { label: "Fullstack Software Engineer", href: "/skills" },
+                  { label: "Dev Ops", href: "/skills" },
+                  { label: "Cyber Security", href: "/skills" },
+                  { label: "Side-project paglu", href: "/projects" },
+                ] as { label: string; href?: string }[]
+              ).map((tag) =>
+                tag.href ? (
+                  <Link
+                    key={tag.label}
+                    href={tag.href}
+                    className="text-[10px] tracking-[0.3em] uppercase border border-stone-800 text-stone-600 px-3 py-1 hover:text-stone-400 hover:border-stone-700 transition-colors duration-200"
+                  >
+                    {tag.label}
+                  </Link>
+                ) : (
+                  <span
+                    key={tag.label}
+                    className="text-[10px] tracking-[0.3em] uppercase border border-stone-800 text-stone-600 px-3 py-1"
+                  >
+                    {tag.label}
+                  </span>
+                )
+              )}
             </div>
 
             {/* Inline stats */}

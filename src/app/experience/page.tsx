@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import PageWrapper from "../(components)/PageWrapper";
-import { experiences } from "../../utils/experience.util";
+import { experiences } from "../../utils/data/experience.util";
 import ShimmerLinkNormal from "../(components)/Utils/ShimmerLinkNormal";
 
 const fadeUp = (delay = 0) => ({
