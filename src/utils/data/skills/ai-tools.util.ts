@@ -36,7 +36,6 @@ const aiTools: SkillInterface[] = [
         description: [""],
       },
     ],
-    date: "12-04-2025",
   },
   {
     file: "4.claude-ai.svg",
@@ -46,7 +45,6 @@ const aiTools: SkillInterface[] = [
         description: [""],
       },
     ],
-    date: "12-04-2025",
   },
 ];
 

@@ -42,7 +42,7 @@ export default function CrystalNavbar() {
           />
 
           {/* Hint text */}
-          <div className="absolute -left-16 top-1 pointer-events-none">
+          <div className="absolute -left-16 top-1 cursor-pointer">
             <span
               style={{ animation: "hint-pulse 3s ease-in-out infinite" }}
               className="text-[9px] tracking-[0.3em] uppercase text-stone-500 whitespace-nowrap flex items-center justify-center"
