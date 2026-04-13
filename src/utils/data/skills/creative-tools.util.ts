@@ -25,7 +25,16 @@ const creativeTools: SkillInterface[] = [
     ],
   },
   {
-    file: "3.premiere-pro.svg",
+    file: "3.sony-vegas-pro.svg",
+    fullName: "Vegas Pro",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "4.premiere-pro.svg",
     fullName: "Adobe Premiere Pro",
     SkillInfo: [
       {
@@ -37,7 +46,7 @@ const creativeTools: SkillInterface[] = [
     ],
   },
   {
-    file: "4.after-effects.svg",
+    file: "5.after-effects.svg",
     fullName: "Adobe After Effects",
     SkillInfo: [
       {
@@ -48,7 +57,7 @@ const creativeTools: SkillInterface[] = [
     ],
   },
   {
-    file: "5.notion.svg",
+    file: "6.notion.svg",
     fullName: "Notion",
     SkillInfo: [
       {
