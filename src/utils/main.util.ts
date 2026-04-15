@@ -7,3 +7,5 @@ export const UPI_ID: string = "itsmeprincekotak@yespop";
 
 // YEAR | MONTH ( INDEX-WISE 0-11 ) | DAY
 export const BIRTH_DATE: Date = new Date(2005, 2, 10);
+// FOR ABOUT PAGE
+export const CODING_SINCE: number = 2022;
