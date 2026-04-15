@@ -7,7 +7,9 @@ import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useBirthday from "../../hooks/useBirthdayCount";
-import { BIRTH_DATE } from "../../utils/main.util";
+import { BIRTH_DATE, CODING_SINCE } from "../../utils/main.util";
+import useCodingSince from "../../hooks/useCodingSince";
+import useProjectCount from "../../hooks/useProjectCount";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -23,6 +25,7 @@ const fadeIn = (delay = 0) => ({
 
 export default function About() {
   const { age, countdown } = useBirthday(BIRTH_DATE);
+  const { total } = useProjectCount();
   const [photos, setPhotos] = useState<string[]>([]);
   const [current, setCurrent] = useState<number>(0);
   const [direction, setDirection] = useState<1 | -1>(1);
@@ -160,8 +163,16 @@ export default function About() {
             {/* Inline stats */}
             <div className="grid grid-cols-3 border-t border-stone-950 mt-6 pt-6">
               {[
-                { num: "4+", label: "Yrs coding", href: "/experience" },
-                { num: "20+", label: "Projects", href: "/projects" },
+                {
+                  num: `${useCodingSince(CODING_SINCE)}+`,
+                  label: "Yrs coding",
+                  href: "/experience",
+                },
+                {
+                  num: `${total}+`,
+                  label: "Projects built",
+                  href: "/projects",
+                },
                 { num: `Age: ${age} `, label: countdown },
               ].map((s, i) => {
                 const inner = (
@@ -207,9 +218,15 @@ export default function About() {
                 How I got here
               </p>
               <p className="text-sm text-stone-500 leading-loose">
-                Started with &quot;how does a program even work&quot;, ended up
-                building full-stack web application and questioning my life
-                choices at 1:43am. No regrets. The curiosity never turned off
+                Started with{" "}
+                <span className="text-stone-300">
+                  &quot;how does a program even work&quot;
+                </span>
+                , ended up building full-stack web application and questioning
+                my life choices at 1:43am. No regrets.{" "}
+                <span className="text-stone-300">
+                  The curiosity never turned off{" "}
+                </span>{" "}
                 &mdash; it just got more expensive in terms of hardware.
               </p>
             </div>
