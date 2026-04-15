@@ -84,7 +84,7 @@ export default function About() {
           <div>
             <div className="relative aspect-square w-full border border-stone-800/60 bg-stone-950 overflow-hidden">
               <Image
-                src="/photos-logos/logo2_square.jpg"
+                src="/photos-logos/square.jpg"
                 alt="Mohd Uvaish"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 loading={"eager"}
@@ -101,7 +101,7 @@ export default function About() {
           <div className="space-y-5 pt-2">
             <p className="text-sm text-stone-500 leading-loose">
               A developer who writes code that works on the first try &mdash;{" "}
-              <span className="text-stone-400 italic">just kidding. </span> But
+              <span className="text-stone-300 italic">just kidding. </span> But
               when it ships, it&apos;s clean and it&apos;s intentional.
             </p>
             <p className="text-sm text-stone-500 leading-loose">
