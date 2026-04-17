@@ -80,14 +80,14 @@ export default function ProjectPage({
       el.style.transform = `translate(${o.x}px, ${o.y}px) scale(${z})`;
       el.style.transformOrigin = "center center";
     },
-    []
+    [],
   );
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
         const res = await fetch(
-          `/api/getProjectImages?projectId=${project?.id}`
+          `/api/getProjectImages?projectId=${project?.id}`,
         );
         const data = await res.json();
         setImages(data.images);
@@ -134,7 +134,7 @@ export default function ProjectPage({
     const nz = clamp(
       zoom + (e.deltaY > 0 ? -1 : 1) * ZOOM_STEP,
       ZOOM_MIN,
-      ZOOM_MAX
+      ZOOM_MAX,
     );
     setZoom(nz);
     applyTransform(nz, offset);
@@ -282,7 +282,7 @@ export default function ProjectPage({
 
           <div className="flex flex-wrap gap-2">
             {project.links.live.enabled && (
-              <ShimmerLinkNormal href={project.links.live.url}>
+              <ShimmerLinkNormal external={true} href={project.links.live.url}>
                 Live
                 <ArrowUpRight
                   size={14}
@@ -291,7 +291,10 @@ export default function ProjectPage({
               </ShimmerLinkNormal>
             )}
             {project.links.github.enabled && (
-              <ShimmerLinkNormal href={project.links.github.url}>
+              <ShimmerLinkNormal
+                external={true}
+                href={project.links.github.url}
+              >
                 GitHub
                 <ArrowUpRight
                   size={14}
@@ -300,7 +303,10 @@ export default function ProjectPage({
               </ShimmerLinkNormal>
             )}
             {project.links.youtube.enabled && (
-              <ShimmerLinkNormal href={project.links.youtube.url}>
+              <ShimmerLinkNormal
+                external={true}
+                href={project.links.youtube.url}
+              >
                 YouTube
                 <ArrowUpRight
                   size={14}
