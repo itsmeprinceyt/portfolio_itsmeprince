@@ -80,14 +80,14 @@ export default function ProjectPage({
       el.style.transform = `translate(${o.x}px, ${o.y}px) scale(${z})`;
       el.style.transformOrigin = "center center";
     },
-    [],
+    []
   );
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
         const res = await fetch(
-          `/api/getProjectImages?projectId=${project?.id}`,
+          `/api/getProjectImages?projectId=${project?.id}`
         );
         const data = await res.json();
         setImages(data.images);
@@ -134,7 +134,7 @@ export default function ProjectPage({
     const nz = clamp(
       zoom + (e.deltaY > 0 ? -1 : 1) * ZOOM_STEP,
       ZOOM_MIN,
-      ZOOM_MAX,
+      ZOOM_MAX
     );
     setZoom(nz);
     applyTransform(nz, offset);
@@ -280,7 +280,7 @@ export default function ProjectPage({
             <div className="flex-1 h-px bg-stone-950" />
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-5">
             {project.links.live.enabled && (
               <ShimmerLinkNormal external={true} href={project.links.live.url}>
                 Live

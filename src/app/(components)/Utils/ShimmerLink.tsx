@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useRef } from "react";
 import { ShimmerLinkProps } from "../../../types/button.type";
 
 // Used for Navbar full screen
@@ -9,9 +10,33 @@ export default function ShimmerLink({
   onClick,
   ...linkProps
 }: ShimmerLinkProps) {
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const rotateX = ((y - cy) / cy) * -10;
+    const rotateY = ((x - cx) / cx) * 10;
+    el.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1)`;
+  };
+
+  const handleMouseLeave = () => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transform = `perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)`;
+  };
+
   return (
     <Link
+      ref={ref}
       onClick={onClick}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className={`
         group
         relative overflow-hidden
@@ -22,10 +47,11 @@ export default function ShimmerLink({
         border border-stone-900 hover:border-stone-800
         text-white
         tracking-widest uppercase
-        cursor-pointer hover:scale-110
-        transition-all duration-150 ease-in-out
+        cursor-pointer
+        transition-all duration-150 ease-out
         ${className}
       `}
+      style={{ transformStyle: "preserve-3d", willChange: "transform" }}
       {...linkProps}
     >
       {/* Shimmer streak */}
