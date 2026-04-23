@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import { ShimmerButtonProps } from "../../../types/button.type";
 
 // Shimmer Replacement for <button><button/>
@@ -9,11 +10,35 @@ export default function ShimmerButton({
   className = "",
   ...motionProps
 }: ShimmerButtonProps) {
+  const ref = useRef<HTMLButtonElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const rotateX = ((y - cy) / cy) * -10;
+    const rotateY = ((x - cx) / cx) * 10;
+    el.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  };
+
+  const handleMouseLeave = () => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transform = `perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)`;
+  };
+
   return (
     <motion.button
+      ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: animationDelay }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className={`
         group relative
         text-[12px] uppercase tracking-widest
@@ -25,6 +50,7 @@ export default function ShimmerButton({
         cursor-pointer
         ${className}
       `}
+      style={{ transformStyle: "preserve-3d", willChange: "transform" }}
       {...motionProps}
     >
       {/* Shimmer streak */}

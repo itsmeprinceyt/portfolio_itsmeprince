@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import PageWrapper from "../(components)/PageWrapper";
 import services from "../../utils/data/services.util";
+import ShimmerLinkNormal from "../(components)/Utils/ShimmerLinkNormal";
+import { ChevronRight } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -79,15 +80,15 @@ export default function Services() {
               the contact page. No forms, no fluff &mdash; just a message.
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="group relative shrink-0 text-[11px] uppercase tracking-widest px-8 py-3 border border-stone-800 text-stone-400 hover:text-white hover:border-stone-600 overflow-hidden transition-colors duration-300"
-          >
-            <span className="absolute inset-0 -skew-x-12 translate-x-[-150%] group-hover:translate-x-[250%] transition-transform duration-500 ease-in-out bg-linear-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
-            <span className="relative flex items-center gap-2">
-              Contact me &rarr;
-            </span>
-          </Link>
+
+          <ShimmerLinkNormal animationDelay={0.8} href={"/contact"}>
+            Contact
+            <ChevronRight
+              strokeWidth={1}
+              size={17}
+              className="group-hover:translate-x-0.5 transition-transform duration-300"
+            />
+          </ShimmerLinkNormal>
         </motion.div>
 
         <div className="fixed w-96 h-96 bg-white/5 blur-3xl rounded-full -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />

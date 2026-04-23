@@ -59,7 +59,7 @@ export default function CrystalNavbar() {
         role="dialog"
         aria-modal="true"
         aria-hidden={!open}
-        onClick={(e) => e.target === e.currentTarget && setOpen(false)}
+        onClick={() => setOpen(false)}
         className={`
           fixed inset-0 z-9998
           flex flex-col items-center 
@@ -68,7 +68,7 @@ export default function CrystalNavbar() {
           ${
             open
               ? "bg-black/80 backdrop-blur-sm pointer-events-auto"
-              : "bg-transparent pointer-events-none"
+              : "bg-transparent pointer-events-none invisible"
           }
         `}
       >

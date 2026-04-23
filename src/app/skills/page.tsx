@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import PageWrapper from "../(components)/PageWrapper";
 import devSkills from "../../utils/data/skills/devSkills.util";
 import creativeTools from "../../utils/data/skills/creative-tools.util";
@@ -54,8 +55,36 @@ function SkillTag({
   fullName: string;
   prefix: string;
 }) {
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const rotateX = ((y - cy) / cy) * -10;
+    const rotateY = ((x - cx) / cx) * 10;
+    el.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  };
+
+  const handleMouseLeave = () => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transform = `perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)`;
+  };
+
   return (
-    <Link href={`/skills/${fullName}`} className="group relative">
+    <Link
+      ref={ref}
+      href={`/skills/${fullName}`}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="group relative"
+      style={{ transformStyle: "preserve-3d", willChange: "transform" }}
+    >
       {/* Hover popup */}
       {file && (
         <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 -top-2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
