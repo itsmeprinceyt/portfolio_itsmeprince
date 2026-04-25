@@ -35,7 +35,7 @@ export default function CrystalNavbar() {
               crystal-ball
               relative w-5 h-5 rounded-full overflow-hidden
               shadow-[0_0_8px_2px_rgba(255,255,255,0.08),0_0_20px_4px_rgba(0,0,0,0.9),inset_0_1px_2px_rgba(255,255,255,0.18),inset_0_-1px_2px_rgba(0,0,0,0.8)]
-              transition-all duration-150 ease-in-out
+              transition-all duration-200 ease-in-out
               group-hover:scale-[1.15]
               group-hover:shadow-[0_0_12px_4px_rgba(255,255,255,0.12),0_0_30px_8px_rgba(80,80,80,0.3),inset_0_1px_2px_rgba(255,255,255,0.22),inset_0_-1px_2px_rgba(0,0,0,0.8)]
             "

@@ -44,7 +44,7 @@ export default function SurprisePage() {
 
   return (
     <PageWrapper>
-      <main className="min-h-screen bg-black flex flex-col items-center justify-center px-6">
+      <main className="min-h-screen flex flex-col items-center justify-center px-6">
         {/* Quote card */}
         <button
           ref={ref}
@@ -54,7 +54,7 @@ export default function SurprisePage() {
           onMouseLeave={handleMouseLeave}
           aria-label="Next quote"
           className={`
-          group
+          group 
           relative max-w-xl w-full text-center
           cursor-pointer focus:outline-none
           transition-opacity duration-400 ease-in-out
@@ -67,7 +67,7 @@ export default function SurprisePage() {
           }}
         >
           {/* Shimmer border frame */}
-          <div className="relative overflow-hidden border border-stone-900 hover:border-stone-700 transition-colors duration-300 px-8 py-10 sm:px-12 sm:py-14">
+          <div className="relative overflow-hidden bg-black/20 border border-stone-900 hover:border-stone-700 transition-colors duration-300 px-8 py-10 sm:px-12 sm:py-14 ">
             {/* Shimmer streak */}
             <span className="absolute inset-0 -skew-x-12 translate-x-[-150%] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out bg-linear-to-r from-transparent via-white/5 to-transparent pointer-events-none" />
 
