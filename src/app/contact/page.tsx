@@ -236,7 +236,7 @@ export default function ContactPage() {
                 placeholder:text-stone-500
                 disabled:opacity-40
               `}
-                placeholder="what's on your mind... how may I help you?"
+                placeholder="what's on your mind... how can I help you?"
               />
               {errors.message && (
                 <p className="text-[9px] uppercase tracking-[0.2em] text-red-600">
