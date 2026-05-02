@@ -1,8 +1,26 @@
-export default function sitemap() {
-  return [
-    {
-      url: "https://www.itsmeprince.com",
-      lastModified: new Date(),
-    },
+import { MetadataRoute } from "next";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://www.itsmeprince.com";
+
+  const staticRoutes = [
+    "",
+    "/about",
+    "/contact",
+    "/experience",
+    "/generate-project",
+    "/projects",
+    "/resume",
+    "/services",
+    "/skills",
+    "/support",
+    "/surprise",
   ];
+
+  const staticUrls = staticRoutes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticUrls];
 }
