@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import SkillPage from "../../(components)/Pages/SkillSinglePage";
+import capitalizeWords from "../../../utils/capitalizeWords.util";
 
 export async function generateMetadata({
   params,
@@ -8,7 +9,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { skill } = await params;
 
-  const skillName = skill.replace("-", " ");
+  const skillName = capitalizeWords(skill);
 
   return {
     title: `${skillName} Skill`,
