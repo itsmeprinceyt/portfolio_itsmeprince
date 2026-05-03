@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
   title: {
     default: "Mohd Uvaish | ItsMe Prince - Portfolio",
-    template: `%s | Mohd Uvaish`,
+    template: `%s | Mohd Uvaish a.k.a ItsMe Prince - Portfolio`,
   },
 
   description:
