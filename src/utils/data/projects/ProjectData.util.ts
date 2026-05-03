@@ -833,11 +833,9 @@ export const miniProjects: Project[] = [
   {
     id: `im-rich`,
     name: `I'm Rich - Every Millisecond Counts`,
-    description: `I'm Rich - A real-time earnings tracker by Mohd Uvaish (ItsMe Prince). Watch your income grow every millisecond.`,
+    description: `I'm Rich - A real-time earnings watcher. Watch your income grow every millisecond.`,
     full_description: {
-      intro: `A real-time earnings tracker that shows your income growing every millisecond.
-
-Every day, every hour, every minute, every second matters in our life. The amount you see increasing is worth your every second. So do not stop at any cost, work hard to make this amount increase even faster.`,
+      intro: `A real-time earnings tracker that shows your income growing every millisecond. Every day, every hour, every minute, every second matters in our life. The amount you see increasing is worth your every second. So do not stop at any cost, work hard to make this amount increase even faster but always remember to be humble!`,
       features: [
         {
           title: `Real-time income counter`,
