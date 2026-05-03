@@ -2,7 +2,16 @@ import { SkillInterface } from "../../../types/skills.type";
 
 const devOps: SkillInterface[] = [
   {
-    file: "1.vercel.svg",
+    file: "1.cicd.svg",
+    fullName: "CI & CD Pipelines",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+  },
+  {
+    file: "2.vercel.svg",
     fullName: "Vercel",
     SkillInfo: [
       {
@@ -11,7 +20,7 @@ const devOps: SkillInterface[] = [
     ],
   },
   {
-    file: "2.ubuntu.svg",
+    file: "3.ubuntu.svg",
     fullName: "Ubuntu",
     SkillInfo: [
       {
@@ -20,7 +29,7 @@ const devOps: SkillInterface[] = [
     ],
   },
   {
-    file: "3.nginx.svg",
+    file: "4.nginx.svg",
     fullName: "NginX",
     SkillInfo: [
       {
@@ -29,7 +38,7 @@ const devOps: SkillInterface[] = [
     ],
   },
   {
-    file: "4.docker.svg",
+    file: "5.docker.svg",
     fullName: "Docker",
     SkillInfo: [
       {
