@@ -831,6 +831,54 @@ export const majorProjects: Project[] = [
 /* ============================================================================= */
 export const miniProjects: Project[] = [
   {
+    id: `im-rich`,
+    name: `I'm Rich - Every Millisecond Counts`,
+    description: `I'm Rich - A real-time earnings tracker by Mohd Uvaish (ItsMe Prince). Watch your income grow every millisecond.`,
+    full_description: {
+      intro: `A real-time earnings tracker that shows your income growing every millisecond.
+
+Every day, every hour, every minute, every second matters in our life. The amount you see increasing is worth your every second. So do not stop at any cost, work hard to make this amount increase even faster.`,
+      features: [
+        {
+          title: `Real-time income counter`,
+          detail: `Watch your money update every frame.`,
+        },
+        {
+          title: `Customizable monthly income`,
+          detail: `You can customize your monthly income as the project support high responsive integer values`,
+        },
+        {
+          title: `Interactive UI `,
+          detail: `Watch the progress ring complete as your earning is increasing with rate cards`,
+        },
+        {
+          title: `Data persistent`,
+          detail: `You income you entered is savely stored in your browser`,
+        },
+      ],
+      usage_examples: [
+        `Unlimited motivation to work hard to see your income generate even faster!`,
+      ],
+    },
+    tags: [`next.js`, `tailwind-css`, `typescript`],
+    links: {
+      live: {
+        url: `https://im-rich-by-prince.vercel.app/`,
+        enabled: true,
+      },
+      github: {
+        url: `https://github.com/itsmeprinceyt/im-rich`,
+        enabled: true,
+      },
+      youtube: {
+        url: ``,
+        enabled: false,
+      },
+    },
+    banner: `/projects/im-rich/1.png`,
+    date: `03-05-2026`,
+  },
+  {
     id: `minus-plus-counter`,
     name: `Minus Plus Counter`,
     description: `A beautifully simple tally counter app with persistent local storage and smart number formatting.`,
