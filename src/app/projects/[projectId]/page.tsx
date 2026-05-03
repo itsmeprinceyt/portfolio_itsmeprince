@@ -283,7 +283,7 @@ export default function ProjectPage({
           <div className="flex flex-wrap gap-5">
             {project.links.live.enabled && (
               <ShimmerLinkNormal external={true} href={project.links.live.url}>
-                Live
+                Demo / Live
                 <ArrowUpRight
                   size={14}
                   className="group-hover:translate-y-0.5 transition-transform duration-300"
@@ -484,7 +484,7 @@ export default function ProjectPage({
                 src={images[index]}
                 alt={`${project.name} fullscreen`}
                 fill
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, 1200px"
                 className="object-contain w-full h-full select-none pointer-events-none"
                 draggable={false}
               />
