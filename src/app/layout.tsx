@@ -92,6 +92,36 @@ export default function RootLayout({
           name="google-site-verification"
           content="M1A8jTpS9-VNjplosJ1Fvtf63eJSj8rK8JPoWZaNJ3w"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Mohd Uvaish",
+              alternateName: "ItsMe Prince",
+              url: "https://www.itsmeprince.com",
+              image:
+                "https://www.itsmeprince.com/photos-logos/logo2_circle.png",
+              jobTitle: "Full Stack Developer",
+              worksFor: {
+                "@type": "Organization",
+                name: "Freelance",
+              },
+              sameAs: [
+                "https://github.com/itsmeprinceyt",
+                "https://www.linkedin.com/in/mohduvaish/",
+              ],
+              knowsAbout: [
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Node.js",
+                "Full Stack Development",
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="select-none">
         <Suspense fallback={<CustomLoader />}>
@@ -100,35 +130,6 @@ export default function RootLayout({
           <Footer />
         </Suspense>
       </body>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Mohd Uvaish",
-            alternateName: "ItsMe Prince",
-            url: "https://www.itsmeprince.com",
-            image: "https://www.itsmeprince.com/photos-logos/logo2_circle.png",
-            jobTitle: "Full Stack Developer",
-            worksFor: {
-              "@type": "Organization",
-              name: "Freelance",
-            },
-            sameAs: [
-              "https://github.com/itsmeprinceyt",
-              "https://www.linkedin.com/in/mohduvaish/",
-            ],
-            knowsAbout: [
-              "Next.js",
-              "React",
-              "TypeScript",
-              "Node.js",
-              "Full Stack Development",
-            ],
-          }),
-        }}
-      />
     </html>
   );
 }
