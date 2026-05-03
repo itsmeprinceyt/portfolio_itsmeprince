@@ -56,6 +56,24 @@ const devTools: SkillInterface[] = [
       },
     ],
   },
+  {
+    file: "6.bruno.svg",
+    fullName: "Bruno",
+    SkillInfo: [
+      {
+        description: [
+          "Bruno is a lightweight, developer-first API client that serves as a powerful alternative to Postman. Unlike Postman, which has become so annoying at this point since integrating AI and many other stuff and it has gotten very heavy. Bruno keeps things simple and easy to use and does what it should be.",
+        ],
+        Links: [
+          {
+            linkName: "You can download Bruno from here",
+            linkURL: "https://www.usebruno.com",
+          },
+        ],
+      },
+    ],
+    date: "03-05-2026",
+  },
 ];
 
 export default devTools;
