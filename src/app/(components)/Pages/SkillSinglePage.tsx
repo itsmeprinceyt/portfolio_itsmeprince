@@ -145,7 +145,7 @@ export default function SkillClient({ rawSkill }: { rawSkill: string }) {
                       .map((line, i) => (
                         <p
                           key={i}
-                          className="text-sm text-stone-600 leading-loose"
+                          className="text-sm text-stone-400 leading-loose"
                         >
                           {line}
                         </p>
@@ -214,10 +214,10 @@ export default function SkillClient({ rawSkill }: { rawSkill: string }) {
 
         <motion.div {...fadeUp(0.35)} className="mt-16 space-y-4">
           <div className="border-l border-stone-800 pl-4 py-2">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-stone-600 mb-2">
               Disclaimer
             </p>
-            <p className="text-sm text-stone-600 leading-loose">
+            <p className="text-sm text-stone-500 leading-loose">
               Most of these resources are ones I&apos;ve personally learned from
               — YouTube videos, books, or courses I found helpful. Some come
               from friends who found something useful and insisted I include it.
@@ -225,10 +225,10 @@ export default function SkillClient({ rawSkill }: { rawSkill: string }) {
             </p>
           </div>
           <div className="border-l border-stone-800 pl-4 py-2">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-stone-600 mb-2">
               Pro tip
             </p>
-            <p className="text-sm text-stone-600 leading-loose">
+            <p className="text-sm text-stone-500 leading-loose">
               Never limit yourself to a single course, platform, or creator.
               Exploring a variety of resources exposes you to different teaching
               approaches — and that can make all the difference in how well you

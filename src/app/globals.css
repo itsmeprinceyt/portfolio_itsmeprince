@@ -13,15 +13,16 @@ body {
             #2a2a2a 30%,
             #111111 55%,
             #000000 100%);
+    animation: attention-nudge 5s ease-in-out infinite;
 }
 
 .crystal-ball::before {
     content: "";
     position: absolute;
-    top: 4px;
-    left: 5px;
-    width: 6px;
-    height: 4px;
+    top: 5px;
+    left: 6px;
+    width: 8px;
+    height: 5px;
     background: radial-gradient(ellipse, rgba(255, 255, 255, 0.55) 0%, transparent 100%);
     border-radius: 50%;
     transform: rotate(-30deg);
@@ -30,24 +31,56 @@ body {
 .crystal-ball::after {
     content: "";
     position: absolute;
-    bottom: 4px;
-    right: 4px;
-    width: 3px;
-    height: 2px;
+    bottom: 5px;
+    right: 5px;
+    width: 4px;
+    height: 3px;
     background: radial-gradient(ellipse, rgba(255, 255, 255, 0.18) 0%, transparent 100%);
     border-radius: 50%;
 }
 
+@keyframes attention-nudge {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 8px 2px rgba(255, 255, 255, 0.08),
+            0 0 20px 4px rgba(0, 0, 0, 0.9),
+            inset 0 1px 2px rgba(255, 255, 255, 0.18),
+            inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    10% {
+        transform: scale(1.28);
+        box-shadow:
+            0 0 18px 6px rgba(255, 255, 255, 0.16),
+            0 0 40px 14px rgba(200, 200, 200, 0.10),
+            inset 0 1px 2px rgba(255, 255, 255, 0.28),
+            inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    20% {
+        transform: scale(1);
+        box-shadow:
+            0 0 8px 2px rgba(255, 255, 255, 0.08),
+            0 0 20px 4px rgba(0, 0, 0, 0.9),
+            inset 0 1px 2px rgba(255, 255, 255, 0.18),
+            inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Double-pulse: two bursts of 3 rings each */
 @keyframes pulseRing {
     0% {
-        width: 20px;
-        height: 20px;
-        opacity: 0.7;
+        width: 28px;
+        height: 28px;
+        opacity: 0.65;
     }
 
     100% {
-        width: 52px;
-        height: 52px;
+        width: 64px;
+        height: 64px;
         opacity: 0;
     }
 }
@@ -59,16 +92,34 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 1px solid rgba(200, 200, 200, 0.25);
-    animation: pulseRing 2.4s ease-out infinite;
+    animation: pulseRing 2s ease-out infinite;
     pointer-events: none;
 }
 
+/* First burst — rings 1, 2, 3 */
+.pulse-ring:nth-child(1) {
+    animation-delay: 0s;
+}
+
 .pulse-ring:nth-child(2) {
-    animation-delay: 0.8s;
+    animation-delay: 0.3s;
 }
 
 .pulse-ring:nth-child(3) {
-    animation-delay: 1.6s;
+    animation-delay: 0.6s;
+}
+
+/* Second burst — rings 4, 5, 6 — starts 1.2s after first */
+.pulse-ring:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.pulse-ring:nth-child(5) {
+    animation-delay: 1.5s;
+}
+
+.pulse-ring:nth-child(6) {
+    animation-delay: 1.8s;
 }
 
 @keyframes hint-pulse {
