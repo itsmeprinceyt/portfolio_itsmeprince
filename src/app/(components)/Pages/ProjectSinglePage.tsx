@@ -204,7 +204,7 @@ export default function ProjectSinglePage({
             <h1 className="text-4xl md:text-5xl font-cinzel tracking-wide uppercase leading-none mb-4">
               {project.name}
             </h1>
-            <p className="text-sm text-stone-600 leading-loose">
+            <p className="text-sm text-stone-400 leading-loose">
               {project.description}
             </p>
           </div>
@@ -331,7 +331,7 @@ export default function ProjectSinglePage({
             </p>
             <div className="flex-1 h-px bg-stone-950" />
           </div>
-          <p className="text-sm text-stone-600 leading-loose">
+          <p className="text-sm text-stone-400 leading-loose">
             {project.full_description.intro}
           </p>
         </motion.div>
@@ -361,7 +361,7 @@ export default function ProjectSinglePage({
                         <p className="text-lg text-stone-300 leading-snug font-medium">
                           {feature.title}
                         </p>
-                        <p className="text-sm text-stone-600 leading-relaxed">
+                        <p className="text-sm text-stone-500 leading-relaxed">
                           {feature.detail}
                         </p>
                       </div>
@@ -385,7 +385,7 @@ export default function ProjectSinglePage({
             {project.tags.map((tag, i) => (
               <span
                 key={i}
-                className="text-[10px] tracking-[0.2em] uppercase text-stone-600 border border-stone-900 px-3 py-1.5 hover:border-stone-700 hover:text-stone-300 transition-colors duration-200"
+                className="text-[10px] tracking-[0.2em] uppercase text-stone-400 border border-stone-900 px-3 py-1.5 hover:border-stone-700 hover:text-stone-300 transition-colors duration-200"
               >
                 {tag.replace("/", "")}
               </span>
@@ -410,12 +410,10 @@ export default function ProjectSinglePage({
                     key={i}
                     className="flex items-center gap-3 border-l border-stone-900 pl-4 py-1"
                   >
-                    <span className="text-[10px] text-stone-600  mt-0.5 shrink-0 tabular-nums">
+                    <span className="text-[10px] text-stone-400  mt-0.5 shrink-0 tabular-nums">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-sm text-stone-600 hover:text-stone-400">
-                      {dep}
-                    </p>
+                    <p className="text-sm text-stone-400">{dep}</p>
                   </div>
                 ))}
               </div>
@@ -436,10 +434,10 @@ export default function ProjectSinglePage({
               <div className="space-y-3">
                 {project.full_description.usage_examples.map((ex, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span className="text-stone-600 shrink-0 text-xs mt-0.5">
+                    <span className="text-stone-400 shrink-0 text-xs mt-0.5">
                       &mdash;
                     </span>
-                    <p className="text-sm text-stone-600 leading-loose">{ex}</p>
+                    <p className="text-sm text-stone-400 leading-loose">{ex}</p>
                   </div>
                 ))}
               </div>
