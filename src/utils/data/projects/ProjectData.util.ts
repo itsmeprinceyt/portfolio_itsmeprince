@@ -851,7 +851,7 @@ export const miniProjects: Project[] = [
         },
         {
           title: `Data persistent`,
-          detail: `You income you entered is savely stored in your browser`,
+          detail: `Income you enter is savely stored in your browser`,
         },
       ],
       usage_examples: [
