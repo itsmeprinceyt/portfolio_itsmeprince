@@ -73,15 +73,13 @@ body {
 /* Double-pulse: two bursts of 3 rings each */
 @keyframes pulseRing {
     0% {
-        width: 28px;
-        height: 28px;
+        transform: scale(1);
         opacity: 0.65;
     }
 
     100% {
-        width: 64px;
-        height: 64px;
-        opacity: 0;
+        transform: scale(2.28);
+        opacity: 0.001;
     }
 }
 
@@ -89,11 +87,16 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    margin-top: -14px;
+    margin-left: -14px;
+    transform: scale(1);
     border-radius: 50%;
     border: 1px solid rgba(200, 200, 200, 0.25);
     animation: pulseRing 2s ease-out infinite;
     pointer-events: none;
+    will-change: transform, opacity;
 }
 
 /* First burst — rings 1, 2, 3 */
