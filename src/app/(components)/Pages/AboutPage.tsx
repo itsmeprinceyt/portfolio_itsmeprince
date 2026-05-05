@@ -10,6 +10,22 @@ import useProjectCount from "../../../hooks/useProjectCount";
 import PageWrapper from "../PageWrapper";
 import { BIRTH_DATE, CODING_SINCE } from "../../../utils/main.util";
 import useCodingSince from "../../../hooks/useCodingSince";
+import confetti from "canvas-confetti";
+
+const fireConfetti = (e: React.MouseEvent<HTMLDivElement>) => {
+  const rect = (e.target as HTMLElement).getBoundingClientRect();
+
+  const x = (rect.left + rect.width / 2) / window.innerWidth;
+  const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+  confetti({
+    particleCount: 40,
+    spread: 100,
+    startVelocity: 25,
+    origin: { x, y },
+    scalar: 0.7,
+  });
+};
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -29,6 +45,14 @@ export default function AboutPage() {
   const [photos, setPhotos] = useState<string[]>([]);
   const [current, setCurrent] = useState<number>(0);
   const [direction, setDirection] = useState<1 | -1>(1);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const load = () => {
+      setMounted(true);
+    };
+    load();
+  }, []);
 
   useEffect(() => {
     axios
@@ -156,7 +180,7 @@ export default function AboutPage() {
                   >
                     {tag.label}
                   </span>
-                )
+                ),
               )}
             </div>
 
@@ -173,7 +197,11 @@ export default function AboutPage() {
                   label: "Projects built",
                   href: "/projects",
                 },
-                { num: `Age: ${age} `, label: countdown },
+                {
+                  num: `Age: ${age}`,
+                  label: countdown,
+                  isAge: true,
+                },
               ].map((s, i) => {
                 const inner = (
                   <>
@@ -181,7 +209,7 @@ export default function AboutPage() {
                       {s.num}
                     </span>
                     <span className="text-[9px] tracking-[0.25em] uppercase text-stone-600">
-                      {s.label}
+                      {mounted ? s.label : ""}
                     </span>
                   </>
                 );
@@ -189,9 +217,12 @@ export default function AboutPage() {
                 return (
                   <div
                     key={s.label}
-                    className={`${
-                      i < 2 ? "border-r border-stone-950 pr-4" : ""
-                    } ${i > 0 ? "pl-4" : ""}`}
+                    onClick={s.isAge ? fireConfetti : undefined}
+                    className={`
+                          ${i < 2 ? "border-r border-stone-950 pr-4" : ""}
+                          ${i > 0 ? "pl-4" : ""}
+                          ${s.isAge ? "cursor-pointer active:scale-95 transition" : ""}
+                        `}
                   >
                     {s.href ? (
                       <Link

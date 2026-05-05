@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import Navbar from "./(components)/Navbar";
 import CustomLoader from "./(components)/Components/CustomLoader";
 import Footer from "./(components)/Footer";
+import LenisSmooth from "./(components)/Components/LenisSmooth";
 
 const SITE_URL: string = "https://www.itsmeprince.com";
 const SITE_NAME: string = "Mohd Uvaish a.k.a ItsMe Prince Portfolio";
@@ -125,6 +126,7 @@ export default function RootLayout({
       </head>
       <body className="select-none">
         <Suspense fallback={<CustomLoader />}>
+          <LenisSmooth />
           <Navbar />
           {children}
           <Footer />
