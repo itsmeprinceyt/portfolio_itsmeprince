@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import { NAV_ITEMS, STAGGER_DELAYS } from "../../utils/navbar.util";
 import { ChevronRight } from "lucide-react";
 import ShimmerLink from "./Utils/ShimmerLink";
@@ -58,9 +58,6 @@ export default function CrystalNavbar() {
           className="group relative pointer-events-auto w-7 h-7 cursor-pointer focus:outline-none"
         >
           {/* Six rings — two bursts of three for double-pulse effect */}
-          <span className="pulse-ring" />
-          <span className="pulse-ring" />
-          <span className="pulse-ring" />
           <span className="pulse-ring" />
           <span className="pulse-ring" />
           <span className="pulse-ring" />
