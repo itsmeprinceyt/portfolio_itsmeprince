@@ -1,17 +1,50 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Lenis from "@studio-freight/lenis";
 import { NAV_ITEMS, STAGGER_DELAYS } from "../../utils/navbar.util";
 import { ChevronRight } from "lucide-react";
 import ShimmerLink from "./Utils/ShimmerLink";
+import { getLenis } from "../../utils/Lenis.util";
 
 export default function CrystalNavbar() {
   const [open, setOpen] = useState<boolean>(false);
+
+  const overlayRef = useRef<HTMLDivElement | null>(null);
+  const overlayLenis = useRef<Lenis | null>(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  useEffect(() => {
+    const pageLenis = getLenis();
+
+    if (open) {
+      pageLenis?.stop();
+
+      if (overlayRef.current) {
+        overlayLenis.current = new Lenis({
+          wrapper: overlayRef.current,
+          content: overlayRef.current,
+          duration: 1.2,
+          smoothWheel: true,
+        });
+
+        function raf(time: number) {
+          overlayLenis.current?.raf(time);
+          requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+      }
+    } else {
+      overlayLenis.current?.destroy();
+      overlayLenis.current = null;
+      pageLenis?.start();
+    }
+  }, [open]);
 
   return (
     <>
@@ -38,7 +71,7 @@ export default function CrystalNavbar() {
               crystal-ball
               relative w-7 h-7 rounded-full overflow-hidden
               shadow-[0_0_8px_2px_rgba(255,255,255,0.08),0_0_20px_4px_rgba(0,0,0,0.9),inset_0_1px_2px_rgba(255,255,255,0.18),inset_0_-1px_2px_rgba(0,0,0,0.8)]
-              transition-shadow duration-200 ease-in-out
+              transition-all duration-200 ease-in-out
               group-hover:scale-[1.15]
               group-hover:shadow-[0_0_12px_4px_rgba(255,255,255,0.12),0_0_30px_8px_rgba(80,80,80,0.3),inset_0_1px_2px_rgba(255,255,255,0.22),inset_0_-1px_2px_rgba(0,0,0,0.8)]
             "
@@ -62,7 +95,10 @@ export default function CrystalNavbar() {
         role="dialog"
         aria-modal="true"
         aria-hidden={!open}
-        onClick={() => setOpen(false)}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) setOpen(false);
+        }}
+        ref={overlayRef}
         className={`
           fixed inset-0 z-9998
           flex flex-col items-center 
