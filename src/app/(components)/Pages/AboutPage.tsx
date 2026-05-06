@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useBirthday from "../../../hooks/useBirthdayCount";
 import useProjectCount from "../../../hooks/useProjectCount";
 import PageWrapper from "../PageWrapper";
@@ -29,6 +29,8 @@ export default function AboutPage() {
   const [photos, setPhotos] = useState<string[]>([]);
   const [current, setCurrent] = useState<number>(0);
   const [direction, setDirection] = useState<1 | -1>(1);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxDirection, setLightboxDirection] = useState<1 | -1>(1);
 
   useEffect(() => {
     axios
@@ -47,16 +49,65 @@ export default function AboutPage() {
     setCurrent((c) => (c + 1) % photos.length);
   }, [photos.length]);
 
+  const lightboxPrev = useCallback(() => {
+    setLightboxDirection(-1);
+    setCurrent((c) => (c - 1 + photos.length) % photos.length);
+  }, [photos.length]);
+
+  const lightboxNext = useCallback(() => {
+    setLightboxDirection(1);
+    setCurrent((c) => (c + 1) % photos.length);
+  }, [photos.length]);
+
+  const openLightbox = useCallback(() => {
+    setLightboxOpen(true);
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightboxOpen(false);
+  }, []);
+
+  // Close lightbox on Escape key
   useEffect(() => {
-    if (photos.length <= 1) return;
+    if (!lightboxOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") lightboxPrev();
+      if (e.key === "ArrowRight") lightboxNext();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [lightboxOpen, lightboxPrev, lightboxNext, closeLightbox]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightboxOpen]);
+
+  // Auto-advance slider (only when lightbox is closed)
+  useEffect(() => {
+    if (photos.length <= 1 || lightboxOpen) return;
     const id = setInterval(next, 7000);
     return () => clearInterval(id);
-  }, [photos.length, next]);
+  }, [photos.length, next, lightboxOpen]);
 
   const slideVariants = {
     enter: (dir: number) => ({ x: dir * 40, opacity: 0 }),
     center: { x: 0, opacity: 1 },
     exit: (dir: number) => ({ x: dir * -40, opacity: 0 }),
+  };
+
+  const lightboxSlideVariants = {
+    enter: (dir: number) => ({ x: dir * 60, opacity: 0, scale: 0.98 }),
+    center: { x: 0, opacity: 1, scale: 1 },
+    exit: (dir: number) => ({ x: dir * -60, opacity: 0, scale: 0.98 }),
   };
 
   return (
@@ -265,7 +316,10 @@ export default function AboutPage() {
 
           {/* Slider */}
           {photos.length > 0 ? (
-            <div className="relative w-full aspect-video bg-stone-950 border border-stone-800/60 overflow-hidden mb-4 group">
+            <div
+              className="relative w-full aspect-video bg-stone-950 border border-stone-800/60 overflow-hidden mb-4 group cursor-zoom-in"
+              onClick={openLightbox}
+            >
               <AnimatePresence custom={direction} mode="popLayout">
                 <motion.div
                   key={photos[current]}
@@ -280,7 +334,7 @@ export default function AboutPage() {
                   <Image
                     src={photos[current]}
                     alt={`Setup ${current + 1}`}
-                    sizes="(max-width: 768px) 100vw, 1200px"
+                    sizes="(max-width: 768px) 100vw, 2560px"
                     fill
                     loading="eager"
                     className="object-cover"
@@ -291,13 +345,19 @@ export default function AboutPage() {
               {photos.length > 1 && (
                 <>
                   <button
-                    onClick={prev}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      prev();
+                    }}
                     className="absolute left-0 top-0 h-full px-4 z-10 text-stone-700 hover:text-stone-300 transition-colors duration-200 opacity-0 group-hover:opacity-100 cursor-pointer"
                   >
                     <ChevronLeft size={18} strokeWidth={1} />
                   </button>
                   <button
-                    onClick={next}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      next();
+                    }}
                     className="absolute right-0 top-0 h-full px-4 z-10 text-stone-700 hover:text-stone-300 transition-colors duration-200 opacity-0 group-hover:opacity-100 cursor-pointer"
                   >
                     <ChevronRight size={18} strokeWidth={1} />
@@ -309,8 +369,113 @@ export default function AboutPage() {
             <div className="w-full aspect-video bg-stone-950 border border-stone-800/60 mb-4 animate-pulse" />
           )}
         </motion.div>
+
         <div className="fixed w-96 h-96 bg-white/5 blur-3xl rounded-full -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       </div>
+
+      {/* ── Fullscreen Lightbox ── */}
+      <AnimatePresence>
+        {lightboxOpen && photos.length > 0 && (
+          <motion.div
+            key="lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            {/* Close button */}
+            <motion.button
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, delay: 0.1 }}
+              onClick={closeLightbox}
+              className="absolute top-5 right-5 z-20 text-stone-500 hover:text-white transition-colors duration-200 cursor-pointer"
+            >
+              <X size={20} strokeWidth={1} />
+            </motion.button>
+
+            {/* Image container */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
+              className="relative w-full h-full max-w-[95vw] max-h-[90vh] mx-auto flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-full">
+                <AnimatePresence custom={lightboxDirection} mode="popLayout">
+                  <motion.div
+                    key={`lightbox-${photos[current]}`}
+                    custom={lightboxDirection}
+                    variants={lightboxSlideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.45, ease: [0.32, 0.72, 0, 1] }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={photos[current]}
+                      alt={`Setup ${current + 1}`}
+                      sizes="100vw"
+                      fill
+                      loading="eager"
+                      className="object-contain"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
+
+            {/* Lightbox nav buttons */}
+            {photos.length > 1 && (
+              <>
+                <motion.button
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -8 }}
+                  transition={{ duration: 0.25, delay: 0.1 }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    lightboxPrev();
+                  }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-stone-500 hover:text-white transition-colors duration-200 cursor-pointer p-2"
+                >
+                  <ChevronLeft size={28} strokeWidth={1} />
+                </motion.button>
+                <motion.button
+                  initial={{ opacity: 0, x: 8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 8 }}
+                  transition={{ duration: 0.25, delay: 0.1 }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    lightboxNext();
+                  }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-stone-500 hover:text-white transition-colors duration-200 cursor-pointer p-2"
+                >
+                  <ChevronRight size={28} strokeWidth={1} />
+                </motion.button>
+
+                {/* Photo counter */}
+                <motion.span
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.25, delay: 0.1 }}
+                  className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[9px] tracking-[0.4em] uppercase text-stone-600"
+                >
+                  {current + 1} / {photos.length}
+                </motion.span>
+              </>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </PageWrapper>
   );
 }

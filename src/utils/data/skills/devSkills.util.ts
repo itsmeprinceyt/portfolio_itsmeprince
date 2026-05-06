@@ -512,6 +512,17 @@ const devSkills: SkillInterface[] = [
       },
     ],
   },
+  {
+    file: "23.technical-seo.svg",
+    fullName: "Technical SEO",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+
+    date: "06-05-2026",
+  },
 ];
 
 export default devSkills;
