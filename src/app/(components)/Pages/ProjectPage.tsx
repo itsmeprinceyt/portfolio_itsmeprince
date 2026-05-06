@@ -37,7 +37,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div {...fadeUp(0.05 * index)}>
       <Link href={`/projects/${project.id}`} className="group block">
-        <div className=" hover:border-stone-800 hover:bg-stone-950 transition-all duration-200">
+        <div
+          className={`hover:border-stone-800 hover:bg-stone-950/60 transition-all duration-200`}
+        >
           {/* Banner */}
           {project.banner ? (
             <div className="relative w-full aspect-video overflow-hidden border-b border-stone-950 group-hover:border-stone-800 transition-colors duration-200">
@@ -113,7 +115,7 @@ export default function ProjectsPage() {
       (p) =>
         p.name.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q) ||
-        p.tags.some((t) => t.toLowerCase().includes(q))
+        p.tags.some((t) => t.toLowerCase().includes(q)),
     );
   }, [query]);
 

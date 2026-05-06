@@ -30,12 +30,13 @@ export default function SnowFall() {
 
   return (
     <Snowfall
-      speed={[0.2, 0.8]}
-      wind={[-1, 0.5]}
-      radius={[0.3, 1.8]}
-      snowflakeCount={350}
-      opacity={[0.2, 0.7]}
-      rotationSpeed={[-0.5, 0.5]}
+      enable3DRotation
+      speed={[0.05, 0.6]} // Very slow drift — barely perceptible movement
+      wind={[-0.3, 0.1]} // Slight leftward drift, minimal horizontal push
+      radius={[0.3, 0.9]} // Tiny particles — no big obvious flakes
+      snowflakeCount={205} // Sparse — real snow at distance looks sparse
+      opacity={[0.08, 0.65]} // Very translucent — feels atmospheric, not decorative
+      rotationSpeed={[-0.2, 0.2]} // Barely any rotation — small flakes tumble slowly
     />
   );
 }
