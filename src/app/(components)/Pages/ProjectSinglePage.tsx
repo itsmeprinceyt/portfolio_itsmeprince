@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowLeft,
   ArrowUpRight,
   ChevronLeft,
   ChevronRight,
@@ -188,9 +187,13 @@ export default function ProjectSinglePage({
           <div className="flex items-start justify-between gap-4 mb-6">
             <Link
               href="/projects"
-              className="flex items-center gap-2 text-[9px] tracking-[0.35em] uppercase text-stone-400 hover:text-stone-400 transition-colors duration-200 mt-1"
+              className="group flex items-center gap-2 text-[9px] tracking-[0.35em] uppercase text-stone-400 hover:text-stone-400 transition-colors duration-200"
             >
-              <ArrowLeft size={12} strokeWidth={1} />
+              <ChevronLeft
+                strokeWidth={2}
+                size={12}
+                className="group-hover:-translate-x-0.5 transition-transform duration-300"
+              />
               Back to projects
             </Link>
             {project.date && (

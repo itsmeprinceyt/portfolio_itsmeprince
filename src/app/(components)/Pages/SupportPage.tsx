@@ -4,7 +4,7 @@ import { BsPaypal } from "react-icons/bs";
 import { SiKofi } from "react-icons/si";
 import { BsCash } from "react-icons/bs";
 import { useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageWrapperNormal from "../PageWrapper";
 import { UPI_ID } from "../../../utils/main.util";
@@ -87,8 +87,13 @@ export default function SupportPage() {
                 paypal.me/itsmeprinceyt
               </p>
             </div>
-            <span className="text-[9px] tracking-[0.3em] uppercase text-stone-600 group-hover:text-stone-500 transition-colors duration-300 mt-auto">
-              Open &rarr;
+            <span className="flex items-center justify-start text-[9px] tracking-[0.3em] uppercase text-stone-600 group-hover:text-stone-500 transition-colors duration-300 mt-auto">
+              Open
+              <ChevronRight
+                strokeWidth={2}
+                size={12}
+                className="group-hover:translate-x-0.5 transition-transform duration-300"
+              />
             </span>
           </Link>
 
@@ -111,8 +116,13 @@ export default function SupportPage() {
                 ko-fi.com/itsmeprinceyt
               </p>
             </div>
-            <span className="text-[9px] tracking-[0.3em] uppercase text-stone-600 group-hover:text-stone-500 transition-colors duration-300 mt-auto">
-              Open &rarr;
+            <span className="flex items-center justify-start text-[9px] tracking-[0.3em] uppercase text-stone-600 group-hover:text-stone-500 transition-colors duration-300 mt-auto">
+              Open{" "}
+              <ChevronRight
+                strokeWidth={2}
+                size={12}
+                className="group-hover:translate-x-0.5 transition-transform duration-300"
+              />
             </span>
           </Link>
 
@@ -133,8 +143,13 @@ export default function SupportPage() {
                 Indian payments
               </p>
             </div>
-            <span className="text-[9px] tracking-[0.3em] uppercase text-stone-600 group-hover:text-stone-500 transition-colors duration-300 mt-auto">
-              {showUpi ? "Hide" : "Show ID"} &rarr;
+            <span className="flex items-center justify-start text-[9px] tracking-[0.3em] uppercase text-stone-600 group-hover:text-stone-500 transition-colors duration-300 mt-auto">
+              {showUpi ? "Hide" : "Show ID"}
+              <ChevronRight
+                strokeWidth={2}
+                size={12}
+                className="group-hover:translate-x-0.5 transition-transform duration-300"
+              />
             </span>
           </button>
         </motion.div>

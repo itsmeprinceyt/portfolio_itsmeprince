@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PageWrapper from "../PageWrapper";
 import { experiences } from "../../../utils/data/experience.util";
 import ShimmerLinkNormal from "../Utils/ShimmerLinkNormal";
+import { ChevronRight } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -95,7 +96,12 @@ export default function ExperiencePage() {
                         key={i}
                         href={link.href}
                       >
-                        {link.label} &rarr;
+                        {link.label}
+                        <ChevronRight
+                          strokeWidth={1}
+                          size={17}
+                          className="group-hover:translate-x-0.5 transition-transform duration-300"
+                        />
                       </ShimmerLinkNormal>
                     ))}
                   </div>

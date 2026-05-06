@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
@@ -90,15 +90,19 @@ export default function SkillClient({ rawSkill }: { rawSkill: string }) {
           <div className="flex items-start justify-between gap-4 mb-6">
             <Link
               href="/skills"
-              className="flex items-center gap-2 text-[9px] tracking-[0.35em] uppercase text-stone-600 hover:text-stone-400 transition-colors duration-200 mt-1"
+              className="group flex items-center gap-2 text-[9px] tracking-[0.35em] uppercase text-stone-400 hover:text-stone-400 transition-colors duration-200"
             >
-              <ArrowLeft size={12} strokeWidth={1} />
+              <ChevronLeft
+                strokeWidth={2}
+                size={12}
+                className="group-hover:-translate-x-0.5 transition-transform duration-300"
+              />
               Back to skills
             </Link>
 
             <div className="flex items-center gap-3">
               {matched.skill.date && (
-                <span className="text-[9px] tracking-[0.3em] uppercase text-stone-600">
+                <span className="text-[9px] tracking-[0.3em] uppercase text-stone-400">
                   Last Updated {matched.skill.date}
                 </span>
               )}
