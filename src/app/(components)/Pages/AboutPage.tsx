@@ -11,6 +11,7 @@ import PageWrapper from "../PageWrapper";
 import { BIRTH_DATE, CODING_SINCE } from "../../../utils/main.util";
 import useCodingSince from "../../../hooks/useCodingSince";
 import confetti from "canvas-confetti";
+import { balloons } from "balloons-js";
 
 const fireConfetti = (e: React.MouseEvent<HTMLDivElement>) => {
   const rect = (e.target as HTMLElement).getBoundingClientRect();
@@ -52,7 +53,18 @@ export default function AboutPage() {
   useEffect(() => {
     const load = () => {
       setMounted(true);
+
+      const today = new Date();
+
+      const isBirthday =
+        today.getDate() === BIRTH_DATE.getDate() &&
+        today.getMonth() === BIRTH_DATE.getMonth();
+
+      if (isBirthday) {
+        balloons();
+      }
     };
+
     load();
   }, []);
 
