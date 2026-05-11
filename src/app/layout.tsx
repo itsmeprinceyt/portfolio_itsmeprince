@@ -5,6 +5,7 @@ import Navbar from "./(components)/Navbar";
 import CustomLoader from "./(components)/Components/CustomLoader";
 import Footer from "./(components)/Footer";
 import LenisSmooth from "./(components)/Components/LenisSmooth";
+import { Analytics } from "@vercel/analytics/next";
 
 const SITE_URL: string = "https://www.itsmeprince.com";
 const SITE_NAME: string = "Mohd Uvaish a.k.a ItsMe Prince Portfolio";
@@ -130,6 +131,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <Analytics />
         </Suspense>
       </body>
     </html>
