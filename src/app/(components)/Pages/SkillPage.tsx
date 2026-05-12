@@ -12,6 +12,7 @@ import hobbiesInterests from "../../../utils/data/skills/hobbiesInterests.util";
 import database from "../../../utils/data/skills/database.util";
 import aiTools from "../../../utils/data/skills/ai-tools.util";
 import devOps from "../../../utils/data/skills/dev-ops.util";
+import GitHubTopLanguages from "../Components/GitHubSection.TopLanguages";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -149,7 +150,7 @@ export default function SkillPage() {
         {/* ── Highlight cards ── */}
         <motion.div
           {...fadeUp(0.2)}
-          className="grid grid-cols-1 md:grid-cols-3 border border-stone-950 mb-20"
+          className="grid grid-cols-1 md:grid-cols-3 border border-stone-950"
         >
           {[
             {
@@ -206,6 +207,10 @@ export default function SkillPage() {
             </div>
           ))}
         </motion.div>
+
+        <div className="py-10">
+          <GitHubTopLanguages />
+        </div>
 
         {/* ── Skill sections ── */}
         <div className="flex flex-col gap-16">
