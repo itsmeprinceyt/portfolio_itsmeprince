@@ -10,12 +10,11 @@ import resumeDownloaderUtility from "../../../utils/resumeDownloader.util";
 export default function HomePage() {
   return (
     <PageWrapper>
-      <div className="text-white min-h-screen flex flex-col items-center justify-center text-center px-6 uppercase">
+      <div className="text-white min-h-screen flex flex-col items-center justify-center text-center px-6 uppercase relative">
         <Link
           href="/about"
           className="flex flex-col items-center cursor-pointer"
         >
-          {/* Top subtle intro */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 0.6, y: 0 }}
@@ -25,7 +24,6 @@ export default function HomePage() {
             I AM
           </motion.p>
 
-          {/* Main Name */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,7 +33,6 @@ export default function HomePage() {
             Mohd Uvaish
           </motion.h1>
 
-          {/* Divider */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -43,7 +40,6 @@ export default function HomePage() {
             className="w-24 h-px bg-stone-800 my-4"
           />
 
-          {/* AKA */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.6 }}
@@ -53,7 +49,6 @@ export default function HomePage() {
             ALSO KNOWN AS
           </motion.p>
 
-          {/* Alias */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,7 +76,6 @@ export default function HomePage() {
             />
             Skills
           </ShimmerLinkNormal>
-
           <ShimmerButton animationDelay={0.8} onClick={resumeDownloaderUtility}>
             <Download
               strokeWidth={1}
@@ -91,7 +85,7 @@ export default function HomePage() {
             resume
           </ShimmerButton>
         </div>
-        {/* Subtle glow */}
+
         <div className="absolute w-75 h-75 bg-white/5 blur-3xl rounded-full -z-10" />
       </div>
     </PageWrapper>

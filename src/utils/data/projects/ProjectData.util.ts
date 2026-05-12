@@ -1325,7 +1325,6 @@ export const playgroundProjects: Project[] = [
       ],
 
       usage_examples: [
-        "Visit the live game: https://reflex-time.vercel.app/",
         "Click 'Start' to begin your 60-second challenge.",
         "Click the number that matches the one displayed at the top.",
         "Try to hit as many correct numbers as possible before time runs out.",
@@ -1342,7 +1341,7 @@ export const playgroundProjects: Project[] = [
       youtube: { url: ``, enabled: false },
     },
     banner: `/projects/reflex-time/1.png`,
-    date: "29-07-2025",
+    date: "12-05-2026",
   },
 ];
 /* ============================================================================= */

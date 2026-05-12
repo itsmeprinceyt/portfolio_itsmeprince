@@ -1,16 +1,10 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  ChevronLeft,
-  ChevronRight,
-  Minus,
-  Plus,
-} from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowUpRight, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import PageWrapper from "../../(components)/PageWrapper";
 import {
   bestProjects,
@@ -18,8 +12,8 @@ import {
   miniProjects,
   playgroundProjects,
 } from "../../../utils/data/projects/ProjectData.util";
-import ShimmerButton from "../../(components)/Utils/ShimmerButton";
 import ShimmerLinkNormal from "../../(components)/Utils/ShimmerLinkNormal";
+import axios from "axios";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -54,129 +48,86 @@ export default function ProjectSinglePage({
   const [index, setIndex] = useState<number>(0);
   const [loadingImages, setLoadingImages] = useState<boolean>(true);
   const [fullscreen, setFullscreen] = useState<boolean>(false);
-  const [zoom, setZoom] = useState<number>(1);
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState<boolean>(false);
-  const dragStart = useRef<{
-    x: number;
-    y: number;
-    ox: number;
-    oy: number;
-  } | null>(null);
-  const transformRef = useRef<HTMLDivElement>(null);
-
-  const ZOOM_MIN = 1,
-    ZOOM_MAX = 12,
-    ZOOM_STEP = 0.5;
-  const clamp = (v: number, min: number, max: number) =>
-    Math.min(max, Math.max(min, v));
-
-  const applyTransform = useCallback(
-    (z: number, o: { x: number; y: number }) => {
-      const el = transformRef.current;
-      if (!el) return;
-      el.style.transform = `translate(${o.x}px, ${o.y}px) scale(${z})`;
-      el.style.transformOrigin = "center center";
-    },
-    []
-  );
+  const [lightboxDirection, setLightboxDirection] = useState<1 | -1>(1);
+  const [sliderDirection, setSliderDirection] = useState<1 | -1>(1);
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const res = await fetch(
+        const { data } = await axios.get(
           `/api/getProjectImages?projectId=${project?.id}`
         );
-        const data = await res.json();
-        setImages(data.images);
-      } catch (e) {
-        console.error(e);
+        setImages(data.images ?? []);
+      } catch (error) {
+        console.error(error);
       } finally {
         setLoadingImages(false);
       }
     };
-    if (project?.id) fetchImages();
+
+    if (project?.id) {
+      fetchImages();
+    }
   }, [project?.id]);
+
+  const nextImage = useCallback(() => {
+    setSliderDirection(1);
+    setIndex((p) => (p + 1) % images.length);
+  }, [images.length]);
+
+  const prevImage = useCallback(() => {
+    setSliderDirection(-1);
+    setIndex((p) => (p - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  const lightboxNext = useCallback(() => {
+    setLightboxDirection(1);
+    setIndex((p) => (p + 1) % images.length);
+  }, [images.length]);
+
+  const lightboxPrev = useCallback(() => {
+    setLightboxDirection(-1);
+    setIndex((p) => (p - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  const openLightbox = useCallback(() => setFullscreen(true), []);
+  const closeLightbox = useCallback(() => setFullscreen(false), []);
 
   useEffect(() => {
     if (!fullscreen) return;
-    applyTransform(zoom, offset);
-  }, [fullscreen, zoom, offset, applyTransform]);
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") lightboxPrev();
+      if (e.key === "ArrowRight") lightboxNext();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [fullscreen, lightboxPrev, lightboxNext, closeLightbox]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (fullscreen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [fullscreen]);
 
   if (!project) return notFound();
 
-  const nextImage = () => setIndex((p) => (p + 1) % images.length);
-  const prevImage = () =>
-    setIndex((p) => (p - 1 + images.length) % images.length);
-
-  const zoomIn = () =>
-    setZoom((z) => {
-      const nz = clamp(z + ZOOM_STEP, ZOOM_MIN, ZOOM_MAX);
-      applyTransform(nz, offset);
-      return nz;
-    });
-  const zoomOut = () =>
-    setZoom((z) => {
-      const nz = clamp(z - ZOOM_STEP, ZOOM_MIN, ZOOM_MAX);
-      applyTransform(nz, offset);
-      return nz;
-    });
-  const resetZoom = () => {
-    setZoom(1);
-    setOffset({ x: 0, y: 0 });
-    applyTransform(1, { x: 0, y: 0 });
+  const slideVariants = {
+    enter: (dir: number) => ({ x: dir * 40, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir * -40, opacity: 0 }),
   };
 
-  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const nz = clamp(
-      zoom + (e.deltaY > 0 ? -1 : 1) * ZOOM_STEP,
-      ZOOM_MIN,
-      ZOOM_MAX
-    );
-    setZoom(nz);
-    applyTransform(nz, offset);
-  };
-  const onMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    dragStart.current = {
-      x: e.clientX,
-      y: e.clientY,
-      ox: offset.x,
-      oy: offset.y,
-    };
-  };
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !dragStart.current) return;
-    const { x, y, ox, oy } = dragStart.current;
-    const no = { x: ox + (e.clientX - x), y: oy + (e.clientY - y) };
-    setOffset(no);
-    applyTransform(zoom, no);
-  };
-  const onMouseUp = () => {
-    setIsDragging(false);
-    dragStart.current = null;
-  };
-  const onTouchStart = (e: React.TouchEvent) => {
-    if (e.touches.length !== 1) return;
-    const t = e.touches[0];
-    dragStart.current = {
-      x: t.clientX,
-      y: t.clientY,
-      ox: offset.x,
-      oy: offset.y,
-    };
-  };
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (!dragStart.current || e.touches.length !== 1) return;
-    const t = e.touches[0];
-    const { x, y, ox, oy } = dragStart.current;
-    const no = { x: ox + (t.clientX - x), y: oy + (t.clientY - y) };
-    setOffset(no);
-    applyTransform(zoom, no);
-  };
-  const onTouchEnd = () => {
-    dragStart.current = null;
+  const lightboxSlideVariants = {
+    enter: (dir: number) => ({ x: dir * 60, opacity: 0, scale: 0.98 }),
+    center: { x: 0, opacity: 1, scale: 1 },
+    exit: (dir: number) => ({ x: dir * -60, opacity: 0, scale: 0.98 }),
   };
 
   return (
@@ -231,44 +182,64 @@ export default function ProjectSinglePage({
                   Screenshots
                 </p>
                 <div className="flex-1 h-px bg-stone-950" />
-                <span className="text-[12px] tracking-[0.3em] uppercase text-stone-400">
-                  {index + 1} / {images.length}
-                </span>
+                {images.length > 1 && (
+                  <span className="text-[12px] tracking-[0.3em] uppercase text-stone-400">
+                    {index + 1} / {images.length}
+                  </span>
+                )}
               </div>
 
-              <button
-                onClick={() => setFullscreen(true)}
-                className="block w-full overflow-hidden cursor-pointer"
+              {/* Slider */}
+              <div
+                className="relative w-full aspect-video bg-stone-950 border border-stone-800/60 overflow-hidden mb-2 group cursor-zoom-in"
+                onClick={openLightbox}
               >
-                <div className="relative w-full aspect-video">
-                  <Image
-                    src={images[index]}
-                    alt={`${project.name} screenshot ${index + 1}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 768px"
-                    className="object-contain object-top"
-                    priority
-                    draggable={false}
-                  />
-                </div>
-              </button>
+                <AnimatePresence custom={sliderDirection} mode="popLayout">
+                  <motion.div
+                    key={images[index]}
+                    custom={sliderDirection}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.55, ease: [0.32, 0.72, 0, 1] }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={images[index]}
+                      alt={`${project.name} screenshot ${index + 1}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 768px"
+                      className="object-contain object-top"
+                      priority
+                      draggable={false}
+                    />
+                  </motion.div>
+                </AnimatePresence>
 
-              {images.length > 1 && (
-                <div className="flex items-center gap-2 mt-2">
-                  <button
-                    onClick={prevImage}
-                    className="flex flex-1 items-center justify-center gap-1 border border-stone-950 hover:border-stone-900 px-6 py-2.5 text-[10px] tracking-[0.3em] uppercase text-stone-400 hover:text-stone-400 transition-all duration-200 cursor-pointer"
-                  >
-                    <ChevronLeft size={16} className="mb-0.5" /> Prev
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="flex flex-1 items-center justify-center gap-1 border border-stone-950 hover:border-stone-900 px-6 py-2.5 text-[10px] tracking-[0.3em] uppercase text-stone-400 hover:text-stone-400 transition-all duration-200 cursor-pointer"
-                  >
-                    Next <ChevronRight size={16} className="mb-0.5" />
-                  </button>
-                </div>
-              )}
+                {images.length > 1 && (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        prevImage();
+                      }}
+                      className="absolute left-0 top-0 h-full px-4 z-10 text-stone-700 hover:text-stone-300 transition-colors duration-200 opacity-0 group-hover:opacity-100 cursor-pointer"
+                    >
+                      <ChevronLeft size={18} strokeWidth={1} />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        nextImage();
+                      }}
+                      className="absolute right-0 top-0 h-full px-4 z-10 text-stone-700 hover:text-stone-300 transition-colors duration-200 opacity-0 group-hover:opacity-100 cursor-pointer"
+                    >
+                      <ChevronRight size={18} strokeWidth={1} />
+                    </button>
+                  </>
+                )}
+              </div>
             </motion.div>
           )
         )}
@@ -413,7 +384,7 @@ export default function ProjectSinglePage({
                     key={i}
                     className="flex items-center gap-3 border-l border-stone-900 pl-4 py-1"
                   >
-                    <span className="text-[10px] text-stone-400  mt-0.5 shrink-0 tabular-nums">
+                    <span className="text-[10px] text-stone-400 mt-0.5 shrink-0 tabular-nums">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <p className="text-sm text-stone-400">{dep}</p>
@@ -450,89 +421,110 @@ export default function ProjectSinglePage({
         <div className="fixed w-96 h-96 bg-white/5 blur-3xl rounded-full -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       </div>
 
-      {/* ── Fullscreen ── */}
-      {fullscreen && (
-        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center gap-6">
-          <div className="absolute top-6 right-6">
-            <ShimmerButton
-              onClick={() => {
-                setFullscreen(false);
-                resetZoom();
-              }}
-            >
-              Close
-            </ShimmerButton>
-          </div>
-          <div
-            className={`relative w-full max-w-6xl aspect-video max-h-[75vh] overflow-hidden ${
-              isDragging ? "cursor-grabbing" : "cursor-grab"
-            }`}
-            onWheel={handleWheel}
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUp}
-            onMouseLeave={onMouseUp}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
+      {/* ── Fullscreen Lightbox ── */}
+      <AnimatePresence>
+        {fullscreen && images.length > 0 && (
+          <motion.div
+            key="lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center"
+            onClick={closeLightbox}
           >
-            <div
-              ref={transformRef}
-              className="absolute inset-0 will-change-transform"
+            {/* Close button */}
+            <motion.button
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, delay: 0.1 }}
+              onClick={closeLightbox}
+              className="absolute top-5 right-5 z-20 text-stone-500 hover:text-white transition-colors duration-200 cursor-pointer"
             >
-              <Image
-                src={images[index]}
-                alt={`${project.name} fullscreen`}
-                fill
-                sizes="(max-width: 768px) 100vw, 1200px"
-                className="object-contain w-full h-full select-none pointer-events-none"
-                draggable={false}
-              />
-            </div>
-          </div>
+              <X size={20} strokeWidth={1} />
+            </motion.button>
 
-          <div className="flex items-center gap-2">
+            {/* Image container */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
+              className="relative w-full h-full max-w-[95vw] max-h-[90vh] mx-auto flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-full">
+                <AnimatePresence custom={lightboxDirection} mode="popLayout">
+                  <motion.div
+                    key={`lightbox-${images[index]}`}
+                    custom={lightboxDirection}
+                    variants={lightboxSlideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.45, ease: [0.32, 0.72, 0, 1] }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={images[index]}
+                      alt={`${project.name} fullscreen ${index + 1}`}
+                      fill
+                      sizes="100vw"
+                      loading="eager"
+                      className="object-contain"
+                      draggable={false}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
+
+            {/* Lightbox nav buttons */}
             {images.length > 1 && (
               <>
-                <button
-                  onClick={prevImage}
-                  className="flex items-center gap-1 border border-stone-950 hover:border-stone-900 px-6 py-2.5 text-[10px] tracking-[0.3em] uppercase text-stone-400 hover:text-stone-400 transition-all duration-200 cursor-pointer"
+                <motion.button
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -8 }}
+                  transition={{ duration: 0.25, delay: 0.1 }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    lightboxPrev();
+                  }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-stone-500 hover:text-white transition-colors duration-200 cursor-pointer p-2"
                 >
-                  <ChevronLeft size={16} className="mb-0.5" /> Prev
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="flex items-center gap-1 border border-stone-950 hover:border-stone-900 px-6 py-2.5 text-[10px] tracking-[0.3em] uppercase text-stone-400 hover:text-stone-400 transition-all duration-200 cursor-pointer"
+                  <ChevronLeft size={28} strokeWidth={1} />
+                </motion.button>
+                <motion.button
+                  initial={{ opacity: 0, x: 8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 8 }}
+                  transition={{ duration: 0.25, delay: 0.1 }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    lightboxNext();
+                  }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-stone-500 hover:text-white transition-colors duration-200 cursor-pointer p-2"
                 >
-                  Next <ChevronRight size={16} className="mb-0.5" />
-                </button>
+                  <ChevronRight size={28} strokeWidth={1} />
+                </motion.button>
+
+                {/* Photo counter */}
+                <motion.span
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.25, delay: 0.1 }}
+                  className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[9px] tracking-[0.4em] uppercase text-stone-600"
+                >
+                  {index + 1} / {images.length}
+                </motion.span>
               </>
             )}
-            <button
-              onClick={zoomOut}
-              className="border border-stone-950 hover:border-stone-900 px-4 py-2.5 text-[10px] tracking-[0.3em] uppercase text-stone-400 hover:text-stone-400 transition-all duration-200 cursor-pointer"
-            >
-              <Minus size={16} />
-            </button>
-            <button
-              onClick={resetZoom}
-              className="border border-stone-950 hover:border-stone-900 px-4 py-2.5 text-[12px] tracking-[0.2em] uppercase text-stone-400 hover:text-stone-400 transition-all duration-200 cursor-pointer"
-            >
-              {zoom.toFixed(1)}×
-            </button>
-            <button
-              onClick={zoomIn}
-              className="border border-stone-950 hover:border-stone-900 px-4 py-2.5 text-[10px] tracking-[0.3em] uppercase text-stone-400 hover:text-stone-400 transition-all duration-200 cursor-pointer"
-            >
-              <Plus size={16} />
-            </button>
-          </div>
-
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone-600">
-            {index + 1} / {images.length}
-          </span>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </PageWrapper>
   );
 }
