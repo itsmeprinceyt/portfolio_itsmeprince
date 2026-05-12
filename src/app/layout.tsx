@@ -6,9 +6,10 @@ import CustomLoader from "./(components)/Components/CustomLoader";
 import Footer from "./(components)/Footer";
 import LenisSmooth from "./(components)/Components/LenisSmooth";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const SITE_URL: string = "https://www.itsmeprince.com";
-const SITE_NAME: string = "Mohd Uvaish a.k.a ItsMe Prince Portfolio";
+const SITE_NAME: string = "Mohd Uvaish | ItsMe Prince - Portfolio";
 const LOGO: string = "/photos-logos/logo2_circle.png";
 const LOGO_RECTANGLE: string = "/photos-logos/logo2_rectangle.jpg";
 
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 
   title: {
     default: "Mohd Uvaish | ItsMe Prince - Portfolio",
-    template: `%s | Mohd Uvaish a.k.a ItsMe Prince - Portfolio`,
+    template: `%s | Mohd Uvaish | ItsMe Prince - Portfolio`,
   },
 
   description:
@@ -25,15 +26,56 @@ export const metadata: Metadata = {
 
   keywords: [
     "Mohd Uvaish",
+    "Mohd Uvaish Portfolio",
     "ItsMe Prince",
+    "ItsMe Prince Portfolio",
+    "itsmeprince.com",
     "Full Stack Developer",
+    "Full Stack Developer India",
+    "MERN Stack Developer",
+    "MERN Developer",
     "Next.js Developer",
-    "React Developer India",
-    "Portfolio Website",
-    "Web Developer Portfolio",
+    "React Developer",
+    "TypeScript Developer",
     "JavaScript Developer",
     "Frontend Developer",
-    "MERN Stack Developer",
+    "Backend Developer",
+    "Software Engineer",
+    "Web Developer India",
+    "Portfolio Website",
+    "Developer Portfolio",
+    "Modern Web Developer",
+    "UI UX Developer",
+    "Discord Bot Developer",
+    "Node.js Developer",
+    "Express.js Developer",
+    "MongoDB Developer",
+    "MySQL Developer",
+    "Tailwind CSS Developer",
+    "REST API Developer",
+    "Freelance Web Developer",
+    "Freelance MERN Developer",
+    "Personal Portfolio Website",
+    "Next.js Portfolio",
+    "React Portfolio",
+    "Cyber Security Enthusiast",
+    "DevOps Enthusiast",
+    "Open Source Developer",
+    "Indian Developer",
+    "Kanpur Developer",
+    "Uttar Pradesh Developer",
+    "Tech Content Creator",
+    "YouTube Coding Creator",
+    "Discord Automation Developer",
+    "Full Stack Software Engineer",
+    "Modern Web Applications",
+    "Scalable Web Applications",
+    "Responsive Web Design",
+    "Professional Portfolio",
+    "Creative Developer",
+    "Web App Developer",
+    "Custom Web Solutions",
+    "Tech Enthusiast",
   ],
 
   authors: [{ name: "Mohd Uvaish" }],
@@ -132,6 +174,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <Analytics />
+          <SpeedInsights />
         </Suspense>
       </body>
     </html>
