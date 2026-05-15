@@ -121,7 +121,7 @@ export default function ContactPage() {
 
   return (
     <PageWrapper>
-      <div className="text-white min-h-screen px-6 py-24 max-w-4xl mx-auto">
+      <div className="text-white min-h-screen px-6 py-24 max-w-5xl mx-auto">
         {/* ── Header ── */}
         <motion.div
           {...fadeIn(0)}

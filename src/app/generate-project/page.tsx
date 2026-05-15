@@ -250,7 +250,7 @@ export default function ProjectGeneratorPage() {
 
   return (
     <PageWrapper>
-      <div className="text-white min-h-screen px-6 py-24 max-w-3xl mx-auto">
+      <div className="text-white min-h-screen px-6 py-24 max-w-5xl mx-auto">
         {/* ── Header ── */}
         <div className="mb-16">
           <div className="border-l border-stone-950 pl-6">
