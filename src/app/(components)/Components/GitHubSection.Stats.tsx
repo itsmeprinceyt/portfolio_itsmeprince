@@ -21,7 +21,7 @@ export default function StatCard({
       transition={{ duration: 0.5, delay }}
       className="group relative flex flex-col items-center gap-2 px-8 py-5 border border-stone-800/60 hover:border-stone-700 overflow-hidden transition-all duration-300 cursor-default"
     >
-      <span className="relative text-stone-600 transition-colors duration-300 group-hover:text-stone-400">
+      <span className="relative text-stone-500 transition-colors duration-300 group-hover:text-stone-400">
         {icon}
       </span>
 
@@ -29,7 +29,7 @@ export default function StatCard({
         {value}
       </span>
 
-      <span className="relative text-xs tracking-[0.3em] text-stone-600 uppercase">
+      <span className="relative text-xs text-center tracking-[0.3em] text-stone-500 uppercase">
         {label}
       </span>
     </motion.div>
