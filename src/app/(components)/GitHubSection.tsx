@@ -34,7 +34,7 @@ export default function GitHubSection({
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [totalStars, setTotalStars] = useState<number>(0);
   const [topLangs, setTopLangs] = useState<{ name: string; count: number }[]>(
-    []
+    [],
   );
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
@@ -49,12 +49,12 @@ export default function GitHubSection({
         const [userResponse, reposResponse] = await Promise.all([
           axios.get<GitHubUser>(
             `https://api.github.com/users/${GITHUB_USERNAME}`,
-            { headers }
+            { headers },
           ),
 
           axios.get<GitHubRepo[]>(
             `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
-            { headers }
+            { headers },
           ),
         ]);
 
@@ -69,14 +69,14 @@ export default function GitHubSection({
 
         const stars = validRepos.reduce(
           (sum, repo) => sum + repo.stargazers_count,
-          0
+          0,
         );
 
         setTotalStars(stars);
 
         // top pinned-style: sort by stars
         const sorted = [...validRepos].sort(
-          (a, b) => b.stargazers_count - a.stargazers_count
+          (a, b) => b.stargazers_count - a.stargazers_count,
         );
 
         setRepos(sorted.slice(0, 12));
@@ -140,7 +140,7 @@ export default function GitHubSection({
       ) : (
         <>
           {/* Stat pills */}
-          <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full">
             <StatCard
               label="Public Repositories"
               value={user?.public_repos ?? 0}
@@ -199,7 +199,7 @@ export default function GitHubSection({
                             backgroundColor: LANG_COLORS[lang.name] ?? "#555",
                             transformOrigin: "left",
                           }}
-                          className="absolute top-0 left-0 h-full opacity-70 rounded-full"
+                          className="absolute top-0 left-0 h-full  rounded-full"
                         />
                       </div>
                       <span className="text-xs text-stone-700 w-6 text-right">

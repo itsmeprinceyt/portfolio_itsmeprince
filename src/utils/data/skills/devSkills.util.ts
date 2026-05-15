@@ -523,6 +523,28 @@ const devSkills: SkillInterface[] = [
 
     date: "06-05-2026",
   },
+  {
+    file: "24.cyber-security.svg",
+    fullName: "Cyber Security",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+
+    date: "15-05-2026",
+  },
+  {
+    file: "25.system-design.svg",
+    fullName: "System Design",
+    SkillInfo: [
+      {
+        description: [""],
+      },
+    ],
+
+    date: "15-05-2026",
+  },
 ];
 
 export default devSkills;

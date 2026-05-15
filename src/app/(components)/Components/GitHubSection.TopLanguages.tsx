@@ -9,7 +9,7 @@ import { GitHubRepo } from "../../../types/githubstats.type";
 
 export default function GitHubTopLanguages() {
   const [topLangs, setTopLangs] = useState<{ name: string; count: number }[]>(
-    []
+    [],
   );
 
   const [loading, setLoading] = useState(true);
@@ -23,7 +23,7 @@ export default function GitHubTopLanguages() {
             headers: {
               Accept: "application/vnd.github+json",
             },
-          }
+          },
         );
 
         const validRepos = Array.isArray(data) ? data : [];
@@ -100,7 +100,7 @@ export default function GitHubTopLanguages() {
                   backgroundColor: LANG_COLORS[lang.name] ?? "#555",
                   transformOrigin: "left",
                 }}
-                className="absolute top-0 left-0 h-full opacity-70 rounded-full"
+                className="absolute top-0 left-0 h-full rounded-full"
               />
             </div>
 
