@@ -3,7 +3,7 @@ export const YouTubeLink: string = "https://www.youtube.com/@itsmeprinceyt";
 export const LinkedInLink: string = "https://www.linkedin.com/in/mohduvaish";
 export const InstagramLink: string = "https://www.instagram.com/itsmeprinceyt";
 
-export const UPI_ID: string = "itsmeprincekotak@yespop";
+export const UPI_ID: string = "itsmeprinceyt@axl";
 export const GITHUB_USERNAME: string = "itsmeprinceyt";
 
 // YEAR | MONTH ( INDEX-WISE 0-11 ) | DAY
