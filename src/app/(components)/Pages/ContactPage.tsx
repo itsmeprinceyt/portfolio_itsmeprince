@@ -172,7 +172,7 @@ export default function ContactPage() {
                     <SocialIcon
                       url={url}
                       as="div"
-                      style={{ height: 32, width: 32, pointerEvents: "none" }}
+                      style={{ height: 32, pointerEvents: "none" }}
                       bgColor="transparent"
                       className="opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                     />

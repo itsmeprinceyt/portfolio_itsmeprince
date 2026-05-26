@@ -22,9 +22,9 @@ export default function RepoCard({
     const y = e.clientY - rect.top;
     const cx = rect.width / 2;
     const cy = rect.height / 2;
-    const rotateX = ((y - cy) / cy) * -10;
-    const rotateY = ((x - cx) / cx) * 10;
-    el.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    const rotateX = ((y - cy) / cy) * -5;
+    const rotateY = ((x - cx) / cx) * 5;
+    el.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1)`;
   };
 
   const handleMouseLeave = () => {
@@ -46,7 +46,7 @@ export default function RepoCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ transformStyle: "preserve-3d", willChange: "transform" }}
-      className="group relative flex flex-col gap-3 p-5 border border-stone-800/60 hover:border-stone-700 overflow-hidden transition-colors duration-300 text-left"
+      className="group relative flex flex-col gap-3 p-5 border border-stone-800/60 hover:border-stone-700 overflow-hidden transition-all duration-150 ease-out text-left"
     >
       {/* Shimmer streak */}
       <span className="absolute inset-0 -skew-x-12 translate-x-[-150%] group-hover:translate-x-[250%] transition-transform duration-500 ease-in-out bg-linear-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
