@@ -2,6 +2,7 @@ export const GitHubLink: string = "https://github.com/itsmeprinceyt";
 export const YouTubeLink: string = "https://www.youtube.com/@itsmeprinceyt";
 export const LinkedInLink: string = "https://www.linkedin.com/in/mohduvaish";
 export const InstagramLink: string = "https://www.instagram.com/itsmeprinceyt";
+export const resumeFileName: string = "MohdUvaishResumeV3.0_No_number.pdf";
 
 export const UPI_ID: string = "itsmeprinceyt@axl";
 export const GITHUB_USERNAME: string = "itsmeprinceyt";

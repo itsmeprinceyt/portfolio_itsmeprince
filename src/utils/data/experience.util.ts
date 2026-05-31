@@ -3,66 +3,77 @@ import { Experience } from "../../types/experience.type";
 export const experiences: Experience[] = [
   {
     company: "RagyaTech Pvt. Ltd.",
-    role: "Full Stack MERN Developer",
+    role: "Full Stack Developer",
     period: "Aug 2025 – Present",
     mode: "On-Site",
     description: [
-      "Developed and deployed end-to-end full stack applications to meet client and service requirements.",
-      "Managed the entire project lifecycle, from database design and migrations to scalable deployment.",
-      "Designed and implemented user-friendly, high-performance UI/UX that balances aesthetics with speed and efficiency.",
+      "Led end-to-end development of the Apnii Car vehicle rental platform using Next.js, TypeScript, Node.js, MySQL, and Flutter, building both frontend and backend systems.",
+      "Designed scalable database architecture, REST APIs, authentication workflows, audit logging systems, booking management modules, and Razorpay payment integration.",
+      "Architected backend workflows including booking extensions, user verification, administrative operations, reporting systems, and role-based access controls.",
+      "Containerized applications using Docker and configured Nginx-based deployment infrastructure, reverse proxy routing, and load-balancing strategies for production environments.",
+      "Designed and optimized database schemas, API structures, and business workflows focused on maintainability, performance, and long-term scalability.",
+      "Developed and maintained the Flutter mobile application for vehicle browsing, booking management, and customer interaction.",
+      "Contributed to the Dual Leaf Mattress platform through frontend feature development, backend refactoring, and user experience improvements.",
     ],
     links: [{ label: "Official Website", href: "https://ragyatech.in/" }],
   },
+
   {
     company: "Mazoku",
-    role: "Discord Bot Backend Developer",
-    period: "Mar 2025 – Sept 2025",
+    role: "TypeScript Backend Developer",
+    period: "Mar 2025 – Aug 2025",
     mode: "Remote",
     description: [
-      "Developed backend services, commands, and API integrations for Mazoku Bot.",
-      "Collaborated on design improvements for better player engagement and UI flow.",
-      "Worked closely with team to ensure scalability and uptime under heavy load.",
+      "Developed and maintained backend systems for a TypeScript-based gaming platform, implementing new features, event systems, and gameplay enhancements.",
+      "Built backend services, commands, and third-party integrations while contributing to scalability, maintainability, and performance improvements.",
+      "Collaborated within a GitHub-driven development workflow utilizing pull requests, code reviews, and version control best practices.",
+      "Worked with an established production codebase to deliver feature enhancements, resolve issues, and maintain engineering standards.",
+      "Partnered with designers and developers to improve user experience, engagement, and product functionality.",
     ],
     links: [
       { label: "Mazoku Website", href: "https://mazoku.cc/" },
       { label: "Mazoku Discord Server", href: "https://discord.gg/mazoku" },
     ],
   },
+
   {
     company: "Nezuware",
-    role: "Web Developer Intern",
+    role: "Full Stack Developer Intern",
     period: "Apr 2025 – May 2025",
     mode: "Remote",
     description: [
-      "Developed a full-stack web application called ShareAway, enabling users to post and share thoughts anonymously for a secure and seamless experience.",
-      "Built both the frontend and backend from scratch using modern technologies such as Next.js, Express.js, and MySQL.",
-      "Created and refined to showcase skills in full-stack development and UI/UX design.",
-      "Certificate ID: CNO5202040101",
+      "Built ShareAway, a full-stack platform allowing users to anonymously share thoughts and stories in a secure environment.",
+      "Developed both frontend and backend systems using Next.js, Express.js, and MySQL.",
+      "Designed intuitive user interfaces and user experience workflows focused on responsiveness, accessibility, and usability.",
+      "Implemented application architecture, API integrations, database connectivity, and authentication workflows.",
     ],
     links: [
-      { label: "Share Away", href: "https://share-away-prince.vercel.app/" },
+      { label: "ShareAway", href: "https://share-away-prince.vercel.app/" },
     ],
   },
+
   {
     company: "Apna Competitive Corner",
     role: "Web Developer Intern",
     period: "Oct 2024 – Nov 2024",
     mode: "Remote",
     description: [
-      "Collaborated with a skilled team to develop an innovative Watch Party Video Sharing Platform.",
-      "Contributed to full-stack development, covering front-end, back-end, and UI/UX design in Figma to ensure a seamless user experience.",
-      "Received hands-on training in Web3 fundamentals, exploring blockchain technologies and decentralized applications to expand technical expertise.",
+      "Collaborated with a multidisciplinary team to develop a Watch Party video-sharing platform.",
+      "Contributed to frontend development, backend implementation, and UI/UX design using Figma.",
+      "Participated in technical discussions, feature planning, and architecture decisions to improve user experience.",
+      "Explored Web3 fundamentals and decentralized application concepts to broaden technical understanding.",
     ],
   },
+
   {
     company: "GrapplTech",
     role: "Web Developer Intern",
     period: "Sep 2024 – Oct 2024",
     mode: "Remote",
     description: [
-      "Leveraged Next.js and Tailwind CSS to develop polished website.",
-      "Designed and implemented a Hero Section for a Food Shop website, focusing on elegant, clean, and responsive web design.",
-      "Engineered dynamic menu browsing functionality, optimizing user experience and visual appeal through intuitive navigation.",
+      "Developed responsive frontend interfaces using Next.js and Tailwind CSS, focusing on performance and user experience.",
+      "Designed and implemented landing page components, hero sections, and product presentation layouts.",
+      "Built dynamic navigation and menu browsing experiences to improve usability and customer engagement.",
     ],
     links: [
       { label: "Official Website", href: "https://grappltech.in/" },
@@ -72,16 +83,16 @@ export const experiences: Experience[] = [
       },
     ],
   },
+
   {
     company: "TechnoHacks EduTech",
     role: "Web Developer Intern",
     period: "Aug 2024 – Sep 2024",
     mode: "Remote",
     description: [
-      "Developed modern web applications using Next.js and Tailwind CSS, gaining expertise in responsive web design and component-based architecture.",
-      "Completed project-based tasks focusing on full-stack development, API integration, and user interface optimization.",
-      "Enhanced skills in building scalable and efficient web interfaces through hands-on experience with industry-standard technologies.",
-      "Certificate ID: TH06427",
+      "Developed modern web applications using Next.js and Tailwind CSS while strengthening frontend engineering fundamentals.",
+      "Completed project-based assignments involving API integration, responsive design, and component-driven development.",
+      "Enhanced skills in building scalable and maintainable user interfaces using modern web technologies.",
     ],
     links: [
       { label: "Official Website", href: "https://technohacks.co.in/" },
