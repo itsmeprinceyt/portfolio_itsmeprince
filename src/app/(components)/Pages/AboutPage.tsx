@@ -224,7 +224,7 @@ export default function AboutPage() {
                 [
                   { label: "Fullstack Software Engineer", href: "/skills" },
                   { label: "Dev Ops", href: "/skills" },
-                  { label: "Cyber Security", href: "/skills" },
+                  { label: "OWASP Best Practices", href: "/skills" },
                   { label: "Side-project paglu", href: "/projects" },
                 ] as { label: string; href?: string }[]
               ).map((tag) =>
@@ -243,7 +243,7 @@ export default function AboutPage() {
                   >
                     {tag.label}
                   </span>
-                )
+                ),
               )}
             </div>
 

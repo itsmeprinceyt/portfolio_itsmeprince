@@ -525,7 +525,7 @@ const devSkills: SkillInterface[] = [
   },
   {
     file: "24.cyber-security.svg",
-    fullName: "Cyber Security",
+    fullName: "OWASP Best Practices",
     SkillInfo: [
       {
         description: [""],

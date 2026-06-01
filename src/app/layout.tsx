@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "Personal Portfolio Website",
     "Next.js Portfolio",
     "React Portfolio",
-    "Cyber Security Enthusiast",
+    "OWASP Security Enthusiast",
     "DevOps Enthusiast",
     "Open Source Developer",
     "Indian Developer",
