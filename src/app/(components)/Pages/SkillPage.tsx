@@ -159,7 +159,7 @@ export default function SkillPage() {
                 "Building SPAs & Web apps",
                 "REST APIs are my friend",
                 "Optimizing for scale",
-                "Let's not forget cyber security",
+                "Let's not forget OWASP",
               ],
             },
             {
