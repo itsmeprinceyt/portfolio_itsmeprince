@@ -5,8 +5,26 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/admin/", "/_next/"],
+        allow: [
+          "/",
+          "/about",
+          "/contact",
+          "/experience",
+          "/projects",
+          "/resume",
+          "/blogs",
+          "/github",
+          "/services",
+          "/skills",
+          "/support",
+        ],
+        disallow: [
+          "/api/",
+          "/admin/",
+          "/_next/",
+          "/generate-project",
+          "/surprise",
+        ],
       },
     ],
 
