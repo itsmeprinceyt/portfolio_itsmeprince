@@ -12,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
           "/experience",
           "/projects",
           "/resume",
-          "/blogs",
+          "/blog",
           "/github",
           "/services",
           "/skills",
