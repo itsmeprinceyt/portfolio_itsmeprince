@@ -136,6 +136,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="M1A8jTpS9-VNjplosJ1Fvtf63eJSj8rK8JPoWZaNJ3w"
         />
+        <meta name="google-adsense-account" content="ca-pub-2413861441727288" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
